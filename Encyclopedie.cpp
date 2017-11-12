@@ -1,11 +1,7 @@
 /*
-
     Zelda Time to Triumph
-
     Copyright (C) 2007-2009  Vincent Jouillat
-
     Please send bugreports with examples or suggestions to www.zeldaroth.fr
-
 */
 
 #include "Encyclopedie.h"
@@ -69,7 +65,7 @@ void Encyclopedie::fond() {
     
     
     ostringstream os; os << (page+1);
-    gpJeu->affiche(image, "MONSTERS "+os.str(), 40, 17);
+    gpJeu->affiche(image, "MONSTRES "+os.str(), 40, 17);
     
     placeCadres();
     

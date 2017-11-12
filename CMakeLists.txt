@@ -65,6 +65,7 @@ target_link_libraries(${VITA_APPNAME}
   png
   vita2d
   z
+  SceCommonDialog_stub
   SceAudio_stub
   SceCtrl_stub
   SceDisplay_stub

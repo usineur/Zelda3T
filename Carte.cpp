@@ -1057,21 +1057,21 @@ void Carte::initName() {
     int zone = gpJeu->getZone();
     //message
     switch (zone-46) {
-        case 0 : gpJeu->affiche(image, "Temple of Courage",128,25); break;
-        case 1 : gpJeu->affiche(image, "Temple of Wisdom",128,25); break;
-        case 2 : gpJeu->affiche(image, "Temple of Power",128,25); break;
-        case 3 : gpJeu->affiche(image, "Abyss Ruins",128,25); break;
-        case 4 : gpJeu->affiche(image, "Phantom Pyramid",128,25); break;
-        case 5 : gpJeu->affiche(image, "Great Pyramid",128,25); break;
-        case 6 : gpJeu->affiche(image, "Temple of Earth",128,25); break;
-        case 7 : gpJeu->affiche(image, "Temple of Air",128,25); break;
-        case 8 : gpJeu->affiche(image, "Temple of Water",128,25); break;
-        case 9 : gpJeu->affiche(image, "Temple of Fire",128,25); break;
-        case 10 : gpJeu->affiche(image, "Temple of Goddesses",128,25); break;
-        case 11 : gpJeu->affiche(image, "Hyrule Castle",128,25); break;
+        case 0 : gpJeu->affiche(image, "Temple du Courage",128,25); break;
+        case 1 : gpJeu->affiche(image, "Temple de la Sagesse",128,25); break;
+        case 2 : gpJeu->affiche(image, "Temple de la Force",128,25); break;
+        case 3 : gpJeu->affiche(image, "Ruines des Abysses",128,25); break;
+        case 4 : gpJeu->affiche(image, "Pyramide Fantôme",128,25); break;
+        case 5 : gpJeu->affiche(image, "Grande Pyramide",128,25); break;
+        case 6 : gpJeu->affiche(image, "Temple de la Terre",128,25); break;
+        case 7 : gpJeu->affiche(image, "Temple de l'Air",128,25); break;
+        case 8 : gpJeu->affiche(image, "Temple de l'Eau",128,25); break;
+        case 9 : gpJeu->affiche(image, "Temple du Feu",128,25); break;
+        case 10 : gpJeu->affiche(image, "Temple des Déesses",128,25); break;
+        case 11 : gpJeu->affiche(image, "Château d'Hyrule",128,25); break;
         case 12 : gpJeu->affiche(image, "Casino",128,25); break;
-        case 13 : gpJeu->affiche(image, "Tower of Gem",128,25); break;
-        case 14 : gpJeu->affiche(image, "Final Destination",128,25); break;
+        case 13 : gpJeu->affiche(image, "Tour des Gemmes",128,25); break;
+        case 14 : gpJeu->affiche(image, "Destination Finale",128,25); break;
     }
 }
 

@@ -112,7 +112,7 @@ void Generique::initSelection() {
     src.x = 0; src.y = 32; dst.x = 16; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 8; i++) {
         src.x = 16; src.y = 0; dst.x = 32+16*i; dst.y = 0; 
         SDL_BlitSurface(imageCadre, &src, image, &dst);
         src.x = 16; src.y = 64; dst.x = 32+16*i; dst.y = 16; 
@@ -121,11 +121,11 @@ void Generique::initSelection() {
         SDL_BlitSurface(imageCadre, &src, image, &dst);
     }
     
-    src.x = 32; src.y = 0; dst.x = 160-32; dst.y = 0; 
+    src.x = 32; src.y = 0; dst.x = 160; dst.y = 0; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
-    src.x = 32; src.y = 16; dst.x = 160-32; dst.y = 16; 
+    src.x = 32; src.y = 16; dst.x = 160; dst.y = 16; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
-    src.x = 32; src.y = 32; dst.x = 160-32; dst.y = 32; 
+    src.x = 32; src.y = 32; dst.x = 160; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
     cadre(16,48,288,32);
@@ -134,7 +134,7 @@ void Generique::initSelection() {
     cadre(16,192,136,32);
     cadre(168,192,136,32);
     
-    gpJeu->affiche(image, "PLAYER SELECT", 40, 16);
+    gpJeu->affiche(image, "ECRAN DE SELECTION", 40, 16);
     gpJeu->affiche(image, "1.", 44, 56);
     gpJeu->affiche(image, "2.", 44, 104);
     gpJeu->affiche(image, "3.", 44, 152);
@@ -264,9 +264,9 @@ void Generique::initOption() {
     cadre(16,192,136,32);
     
     gpJeu->affiche(image, "OPTIONS", 40, 16);
-    gpJeu->affiche(image, "MUSIC", 60, 72);
-    gpJeu->affiche(image, "SOUNDS", 60, 136);
-    gpJeu->affiche(image, "RETURN", 63, 200);
+    gpJeu->affiche(image, "MUSIQUE", 60, 72);
+    gpJeu->affiche(image, "SON", 60, 136);
+    gpJeu->affiche(image, "RETOUR", 63, 200);
     
     src.x = 0; src.y = 96; dst.x = 128; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
@@ -339,12 +339,12 @@ void Generique::initRecord() {
     
     
     gpJeu->affiche(image, "RECORDS", 40, 16);
-    gpJeu->affiche(image, "BEST TIME : " + oss.str(), 140, 16);
-    gpJeu->affiche(image, "100% RANK", 44, 56);
-    gpJeu->affiche(image, "ULTIMATE RANK", 44, 104);
-    gpJeu->affiche(image, "SPEED RANK", 44, 152);
-    gpJeu->affiche(image, "RETURN", 63, 200);
-    gpJeu->affiche(image, "ERASE", 215, 200);
+    gpJeu->affiche(image, "MEILLEUR TEMPS : " + oss.str(), 140, 16);
+    gpJeu->affiche(image, "RANG DES 100%", 44, 56);
+    gpJeu->affiche(image, "RANG ULTIME", 44, 104);
+    gpJeu->affiche(image, "RANG DE RAPIDITE", 44, 152);
+    gpJeu->affiche(image, "RETOUR", 63, 200);
+    gpJeu->affiche(image, "EFFACER", 215, 200);
     
     SDL_Surface* objets = gpJeu->loadImg("data/images/statut/objets.png");
     
@@ -377,16 +377,16 @@ void Generique::initRecord() {
 
 void Generique::initEffacer() {
     cadre(104,84,112,72);
-    gpJeu->affiche(image, "ERASE ?", 133, 93);
-    gpJeu->affiche(image, "YES", 151, 113);
-    gpJeu->affiche(image, "NO", 151, 133);
+    gpJeu->affiche(image, "EFFACER ?", 133, 93);
+    gpJeu->affiche(image, "OUI", 151, 113);
+    gpJeu->affiche(image, "NON", 151, 133);
 }
 
 void Generique::initCharger() {
     cadre(104,84,112,72);
-    gpJeu->affiche(image, "LOAD", 139, 93);
-    gpJeu->affiche(image, "ERASE", 139, 113);
-    gpJeu->affiche(image, "CANCEL", 139, 133);
+    gpJeu->affiche(image, "CHARGER", 139, 93);
+    gpJeu->affiche(image, "EFFACER", 139, 113);
+    gpJeu->affiche(image, "ANNULER", 139, 133);
 }
 
 void Generique::initIntro() {
@@ -454,117 +454,117 @@ void Generique::initAide1() {
     cadre(16,192+8,288,32);
     
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Return to the game: Cross - Next: Right", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : Croix - Suite : Droite", 24, 208);
 #else
-    gpJeu->affiche(image, "Return to the game: Enter - Next: Right", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : Entrée - Suite : Droite", 24, 208);
 #endif
     
     int ligne = 64;
     Joueur* gpJoueur = gpJeu->getJoueur();
     
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Read / Open / Speak : Circle", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Confirm / Pass text: Cross", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Move Link: Left stick", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Lire / Ouvrir / Parler : Rond", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Valider / Passer texte : Croix", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Déplacer Link : Stick Gauche", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Read / Open / Speak : Space", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Confirm / Pass text: Enter", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Move Link: Arrows", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Lire / Ouvrir / Parler : Espace", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Valider / Passer texte : Entrée", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Déplacer Link : Flèches de direction", 24, ligne); ligne+=16;
 #endif
     if (gpJoueur->hasObjet(O_BOTTES)) {
 #ifdef __PSP2__
-        gpJeu->affiche(image, "Run: Hold R", 24, ligne); 
+        gpJeu->affiche(image, "Courir : Maintenir R", 24, ligne); 
 #else
-        gpJeu->affiche(image, "Run: Shift hold or Caps lock", 24, ligne); 
+        gpJeu->affiche(image, "Courir : Shift maintenu ou Capslock", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->getEpee()) {
 #ifdef __PSP2__
-        gpJeu->affiche(image, "Use sword: Square", 24, ligne); ligne+=16;
-        gpJeu->affiche(image, "Spin attack: Hold square then dropped", 24, ligne); 
+        gpJeu->affiche(image, "Coup d'épée : Croix", 24, ligne); ligne+=16;
+        gpJeu->affiche(image, "Attaque Tornade : Croix maintenu puis lâché", 24, ligne); 
 #else
-        gpJeu->affiche(image, "Use sword: Z or W", 24, ligne); ligne+=16;
-        gpJeu->affiche(image, "Spin attack: Z or W hold then dropped", 24, ligne); 
+        gpJeu->affiche(image, "Coup d'épée : W ou Z", 24, ligne); ligne+=16;
+        gpJeu->affiche(image, "Attaque Tornade : W ou Z maintenu puis lâché", 24, ligne); 
 #endif
         ligne+=16;}
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Item selection: Right D-Pad", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Menu de sélection d'objet : D-Pad Droit", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Item selection: Enter", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Menu de sélection d'objet : Entrée", 24, ligne); ligne+=16;
 #endif
     if (ligne < 176)
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Use selected object: Triangle", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Triangle", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Use selected object: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : X", 24, ligne); ligne+=16;
 #endif
     if (gpJoueur->hasObjet(O_GANTS)) {
 #ifdef __PSP2__
-        if (ligne < 176) gpJeu->affiche(image, "Carry: Cross", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Porter : Croix", 24, ligne); 
 #else
-        if (ligne < 176) gpJeu->affiche(image, "Carry: C", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Porter : C", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_CARTE)) {
         if (ligne < 176) 
 #ifdef __PSP2__
-            gpJeu->affiche(image, "See the map: L (outside or dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : L (extérieur ou donjons)", 24, ligne);
 #else
-            gpJeu->affiche(image, "See the map: P (outside or dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : P (extérieur ou donjons)", 24, ligne);
 #endif
     } else 
         if (ligne < 176) 
 #ifdef __PSP2__
-            gpJeu->affiche(image, "See the map: L (in dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : L (dans les donjons)", 24, ligne);
 #else
-            gpJeu->affiche(image, "See the map: P (in dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : P (dans les donjons)", 24, ligne);
 #endif
     ligne+=16;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
 #ifdef __PSP2__
-        if (ligne < 176) gpJeu->affiche(image, "See defeated monsters: Up D-Pad", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Afficher les monstres vaincus : D-Pad Haut", 24, ligne); 
 #else
-        if (ligne < 176) gpJeu->affiche(image, "See defeated monsters: M", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Afficher les monstres vaincus : M", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_POISSONS)) {
 #ifdef __PSP2__
-        if (ligne < 176) gpJeu->affiche(image, "See fishes : Down D-Pad", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Afficher la liste des poissons péchés : D-Pad Bas", 24, ligne); 
 #else
-        if (ligne < 176) gpJeu->affiche(image, "See fishes : L", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Afficher la liste des poissons péchés : L", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_SAC_TROC)) {
 #ifdef __PSP2__
-        if (ligne < 176) gpJeu->affiche(image, "See barter items : Left D-Pad", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Afficher les items de troc : D-Pad Gauche", 24, ligne); 
 #else
-        if (ligne < 176) gpJeu->affiche(image, "See barter items : I", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Afficher les items de troc : I", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_MASQUE)) {
 #ifdef __PSP2__
-        if (ligne < 176) gpJeu->affiche(image, "Oni Link transformation : L + R", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Transformation Oni Link : L + R", 24, ligne); 
 #else
-        if (ligne < 176) gpJeu->affiche(image, "Oni Link transformation : O", 24, ligne); 
+        if (ligne < 176) gpJeu->affiche(image, "Transformation Oni Link : O", 24, ligne); 
 #endif
         ligne+=16;}
     if (ligne < 176)
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Look around: Right stick", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : Stick Droite", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Look around: Ctrl and direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : Ctrl et direction", 24, ligne); ligne+=16;
     if (ligne < 176)
-    gpJeu->affiche(image, "Enlarge / Shrink: Ctrl and Enter", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandir / Rétrécir: Ctrl et Entrée", 24, ligne); ligne+=16;
 #endif
     if (ligne < 176)
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Save / Quit: Start", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sauvegarder / Quitter : Start", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Save / Quit: Esc", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sauvegarder / Quitter : Echap", 24, ligne); ligne+=16;
 #endif
     
-    if (ligne >= 288) gpJeu->affiche(image, "HELP 1/3", 40, 16);
-    else gpJeu->affiche(image, "HELP 1/2", 40, 16);
+    if (ligne >= 288) gpJeu->affiche(image, "AIDE 1/3", 40, 16);
+    else gpJeu->affiche(image, "AIDE 1/2", 40, 16);
 }
 
 void Generique::initAide2() {
@@ -612,106 +612,106 @@ void Generique::initAide2() {
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Use selected object: Triangle", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Triangle", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Use selected object: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : X", 24, ligne); ligne+=16;
 #endif
     if (gpJoueur->hasObjet(O_GANTS)) {
 #ifdef __PSP2__
-        if (ligne >= 64) gpJeu->affiche(image, "Carry: Cross", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Porter : Croix", 24, ligne); 
 #else
-        if (ligne >= 64) gpJeu->affiche(image, "Carry: C", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Porter : C", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_CARTE)) {
         if (ligne >= 64) 
 #ifdef __PSP2__
-            gpJeu->affiche(image, "See the map: L (outside or dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : L (extérieur ou donjons)", 24, ligne);
 #else
-            gpJeu->affiche(image, "See the map: P (outside or dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : P (extérieur ou donjons)", 24, ligne);
 #endif
     } else 
         if (ligne >= 64) 
 #ifdef __PSP2__
-            gpJeu->affiche(image, "See the map: L (in dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : L (dans les donjons)", 24, ligne);
 #else
-            gpJeu->affiche(image, "See the map: P (in dungeons)", 24, ligne);
+            gpJeu->affiche(image, "Afficher la carte : P (dans les donjons)", 24, ligne);
 #endif
     ligne+=16;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
 #ifdef __PSP2__
-        if (ligne >= 64) gpJeu->affiche(image, "See defeated monsters: Up D-Pad", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Afficher les monstres vaincus : D-Pad Haut", 24, ligne); 
 #else
-        if (ligne >= 64) gpJeu->affiche(image, "See defeated monsters: M", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Afficher les monstres vaincus : M", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_POISSONS)) {
 #ifdef __PSP2__
-        if (ligne >= 64) gpJeu->affiche(image, "See fishes : Down D-Pad", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Afficher la liste des poissons péchés : D-Pad Bas", 24, ligne); 
 #else
-        if (ligne >= 64) gpJeu->affiche(image, "See fishes : L", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Afficher la liste des poissons péchés : L", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_SAC_TROC)) {
 #ifdef __PSP2__
-        if (ligne >= 64) gpJeu->affiche(image, "See barter items : Left D-Pad", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Afficher les items de troc : D-Pad Gauche", 24, ligne); 
 #else
-        if (ligne >= 64) gpJeu->affiche(image, "See barter items : I", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Afficher les items de troc : I", 24, ligne); 
 #endif
         ligne+=16;}
     if (gpJoueur->hasObjet(O_MASQUE)) {
 #ifdef __PSP2__
-        if (ligne >= 64) gpJeu->affiche(image, "Oni Link transformation : L + R", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Transformation Oni Link : L + R", 24, ligne); 
 #else
-        if (ligne >= 64) gpJeu->affiche(image, "Oni Link transformation : O", 24, ligne); 
+        if (ligne >= 64) gpJeu->affiche(image, "Transformation Oni Link : O", 24, ligne); 
 #endif
         ligne+=16;}
     if (ligne >= 176) {
         gpJeu->affiche(image, "HELP 2/3", 40, 16); 
 #ifdef __PSP2__
-        gpJeu->affiche(image, "Return to the game: Cross - Next: Right", 24, 208);
+        gpJeu->affiche(image, "Retour au jeu : Croix - Suite : Droite", 24, 208);
 #else
-        gpJeu->affiche(image, "Return to the game: Enter - Next: Right", 24, 208);
+        gpJeu->affiche(image, "Retour au jeu : Entrée - Suite : Droite", 24, 208);
 #endif
         return;}
     if (ligne >= 64) 
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Look around: Right stick", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : Stick Droite", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Look around: Ctrl and direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : Ctrl et direction", 24, ligne); ligne+=16;
 #endif
     if (ligne >= 176) {
-        gpJeu->affiche(image, "HELP 2/3", 40, 16); 
+        gpJeu->affiche(image, "AIDE 2/3", 40, 16); 
 #ifdef __PSP2__
-        gpJeu->affiche(image, "Return to the game: Cross - Next: Right", 24, 208);
+        gpJeu->affiche(image, "Retour au jeu : Croix - Suite : Droite", 24, 208);
 #else
-        gpJeu->affiche(image, "Return to the game: Enter - Next: Right", 24, 208);
+        gpJeu->affiche(image, "Retour au jeu : Entrée - Suite : Droite", 24, 208);
 #endif
         return;}
 #ifndef __PSP2__
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Enlarge / Shrink: Ctrl and Enter", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandir / Rétrécir : Ctrl et Entrée", 24, ligne); ligne+=16;
 #endif
     if (ligne >= 176) {
-        gpJeu->affiche(image, "HELP 2/3", 40, 16); 
+        gpJeu->affiche(image, "AIDE 2/3", 40, 16); 
 #ifdef __PSP2__
-        gpJeu->affiche(image, "Return to the game: Cross - Next: Right", 24, 208);
+        gpJeu->affiche(image, "Retour au jeu : Croix - Suite : Droite", 24, 208);
 #else
-        gpJeu->affiche(image, "Return to the game: Enter - Next: Right", 24, 208);
+        gpJeu->affiche(image, "Retour au jeu : Entrée - Suite : Droite", 24, 208);
 #endif
         return;}
     if (ligne >= 64) 
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Save / Quit: Start", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sauvegarder / Quitter : Start", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Save / Quit: Esc", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sauvegarder / Quitter : Echap", 24, ligne); ligne+=16;
 #endif
     
-    gpJeu->affiche(image, "HELP 2/2", 40, 16);
+    gpJeu->affiche(image, "AIDE 2/2", 40, 16);
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Return to the game: Cross - Previous: Left", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : Croix - Précédent : Gauche", 24, 208);
 #else
-    gpJeu->affiche(image, "Return to the game: Enter - Previous: Left", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : Entrée - Précédent : Gauche", 24, 208);
 #endif
 }
 
@@ -752,12 +752,12 @@ bool Generique::initAide3() {
     
     cadre(16,192+8,288,32);
     
-    gpJeu->affiche(image, "HELP 3/3", 40, 16);
+    gpJeu->affiche(image, "AIDE 3/3", 40, 16);
     
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Return to the game: Cross - Previous: Left", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : Croix - Précédent : Gauche", 24, 208);
 #else
-    gpJeu->affiche(image, "Return to the game: Enter - Previous: Left", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : Entrée - Précédent : Gauche", 24, 208);
 #endif
     
     int ligne = 64-112*2;
@@ -775,17 +775,17 @@ bool Generique::initAide3() {
     if (gpJoueur->hasObjet(O_MASQUE)) ligne+=16;
     if (ligne >= 64) 
 #ifdef __PSP2__
-    gpJeu->affiche(image, "Look around: Right stick", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : Stick Droite", 24, ligne); ligne+=16;
 #else
-    gpJeu->affiche(image, "Look around: Ctrl and direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : Ctrl et direction", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Enlarge / Shrink: Ctrl and Enter", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandir / Rétrécir : Ctrl et Entrée", 24, ligne); ligne+=16;
 #endif
     if (ligne >= 64) 
 #ifdef __PSP2__
-        gpJeu->affiche(image, "Save / Quit: Start", 24, ligne);
+        gpJeu->affiche(image, "Sauvegarder / Quitter : Start", 24, ligne);
 #else
-        gpJeu->affiche(image, "Save / Quit: Esc", 24, ligne);
+        gpJeu->affiche(image, "Sauvegarder / Quitter : Echap", 24, ligne);
 #endif
     else {
         initAide2();
@@ -840,7 +840,7 @@ void Generique::initTroc() {
     
     SDL_FreeSurface(imageCadreTroc);
     
-    gpJeu->affiche(image, "BARTER ITEMS", 38-3, 16);
+    gpJeu->affiche(image, "SAC DE TROC", 38-3, 16);
     
     int ligne = 58;
     int colonne = 44;
@@ -862,64 +862,64 @@ void Generique::initTroc() {
             switch (i) {
                 case 0 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" BAGS OF RICE", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" SACS DE RIZ", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" BAG OF RICE", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" SAC DE RIZ", colonne, ligne); break;
                 case 1 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" JARS OF SPICES", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" BOCAUX D'EPICES", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" JAR OF SPICES", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" BOCAL D'EPICES", colonne, ligne); break;
                 case 2 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" BAGS OF OLIVES", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" SACS D'OLIVES", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" BAG OF OLIVES", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" SAC D'OLIVES", colonne, ligne); break;
                 case 3 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" PEARLS", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" PERLES", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" PEARL", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" PERLE", colonne, ligne); break;
                 case 4 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" FEATHERS", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" PLUMES", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" FEATHER", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" PLUME", colonne, ligne); break;
                 case 5 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" CHIKENS", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" POULETS", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" CHICKEN", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" POULET", colonne, ligne); break;
                 case 6 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" TAPESTRIES", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" TAPISSERIES", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" TAPESTRY", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" TAPISSERIE", colonne, ligne); break;
                 case 7 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" AMULETS", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" AMULETTES", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" AMULET", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" AMULETTE", colonne, ligne); break;
                 case 8 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" PERFUMES", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" PARFUMS", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" PERFUME", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" PARFUM", colonne, ligne); break;
                 case 9 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" MAGMA ROCKS", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" ROCS MAGMA", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" MAGMA ROCK", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" ROC MAGMA", colonne, ligne); break;
                 case 10 : 
                     if (gpJoueur->getTroc(i)>1)
-                        gpJeu->affiche(image, oss.str()+" FROSTY ROCKS", colonne, ligne);
+                        gpJeu->affiche(image, oss.str()+" ROCS GIVRE", colonne, ligne);
                     else
-                        gpJeu->affiche(image, oss.str()+" FROSTY ROCK", colonne, ligne); break;
-                case 11 : gpJeu->affiche(image, oss.str()+" PEPPER", colonne, ligne); break;
-                case 12 : gpJeu->affiche(image, oss.str()+" COGWHEEL", colonne, ligne); break;
-                case 13 : gpJeu->affiche(image, oss.str()+" GAUGE", colonne, ligne); break;
-                case 14 : gpJeu->affiche(image, oss.str()+" WHEEL", colonne, ligne); break;
-                case 15 : gpJeu->affiche(image, oss.str()+" ENERGY CORE", colonne, ligne); break;
+                        gpJeu->affiche(image, oss.str()+" ROC GIVRE", colonne, ligne); break;
+                case 11 : gpJeu->affiche(image, oss.str()+" POIVRON", colonne, ligne); break;
+                case 12 : gpJeu->affiche(image, oss.str()+" ROUAGE", colonne, ligne); break;
+                case 13 : gpJeu->affiche(image, oss.str()+" JAUGE", colonne, ligne); break;
+                case 14 : gpJeu->affiche(image, oss.str()+" ROUE", colonne, ligne); break;
+                case 15 : gpJeu->affiche(image, oss.str()+" SOURCE D'ENERGIE", colonne, ligne); break;
         }
         
         }
@@ -938,18 +938,18 @@ void Generique::initRang(int i) {
             if (gpJeu->getKeyboard()->getRang(i) 
             && gpJeu->getKeyboard()->getRang(i+3) 
             && gpJeu->getKeyboard()->getRang(i+6)) 
-                gpJeu->affiche(image, "RANK : Legendary Hero", 72+8, 104);
+                gpJeu->affiche(image, "RANG : Héros Légendaire", 72+8, 104);
             else if ((gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3))
             || (gpJeu->getKeyboard()->getRang(i+3) && gpJeu->getKeyboard()->getRang(i+6))) 
-                gpJeu->affiche(image, "RANK : Hero of Two Worlds", 72+8, 104);
+                gpJeu->affiche(image, "RANG : Héros des deux Mondes", 72+8, 104);
             else if (gpJeu->getKeyboard()->getRang(i)) 
-                gpJeu->affiche(image, "RANK : Heros of Hyrule", 72+8, 104);
+                gpJeu->affiche(image, "RANG : Héros d'Hyrule", 72+8, 104);
             else if (gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANK : Hero of Termina", 72+8, 104);
+                gpJeu->affiche(image, "RANG : Héros de Termina", 72+8, 104);
             else if (gpJeu->getKeyboard()->getRang(i+6)) 
-                gpJeu->affiche(image, "RANK : Hero of Time", 72+8, 104);
-            else gpJeu->affiche(image, "RANK : UNKNOWN", 72+8, 104);
-            gpJeu->affiche(image, "100% complete the game.", 72+8, 120);
+                gpJeu->affiche(image, "RANG : Héros du Temps", 72+8, 104);
+            else gpJeu->affiche(image, "RANG : INCONNU", 72+8, 104);
+            gpJeu->affiche(image, "Finir le jeu à 100%.", 72+8, 120);
             break;
         case 1 :
             cadre(64,80,192+16,80);
@@ -957,41 +957,41 @@ void Generique::initRang(int i) {
             if (gpJeu->getKeyboard()->getRang(i) 
             && gpJeu->getKeyboard()->getRang(i+3)
             && gpJeu->getKeyboard()->getRang(i+6)) 
-                gpJeu->affiche(image, "RANG : Legendary Sword Master", 72, l);
+                gpJeu->affiche(image, "RANG : Epéiste Légendaire", 72, l);
             else if ((gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
             || (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+6))
             || (gpJeu->getKeyboard()->getRang(i+3) && gpJeu->getKeyboard()->getRang(i+6)))
-                gpJeu->affiche(image, "RANK : Sword Master", 72, l);
+                gpJeu->affiche(image, "RANG : Maître Epéiste", 72, l);
             else if (gpJeu->getKeyboard()->getRang(i)) 
-                gpJeu->affiche(image, "RANK : Swanky", 72, l);
+                gpJeu->affiche(image, "RANG : Frimeur", 72, l);
             else if (gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANK : Bigheaded", 72, l);
+                gpJeu->affiche(image, "RANG : Crâneur", 72, l);
             else if (gpJeu->getKeyboard()->getRang(i+6)) 
-                gpJeu->affiche(image, "RANK : Proud", 72, l);
-            else gpJeu->affiche(image, "RANK : UNKNOWN", 72, l);
+                gpJeu->affiche(image, "RANG : Orgueilleux", 72, l);
+            else gpJeu->affiche(image, "RANG : INCONNU", 72, l);
             l+=16;
-            gpJeu->affiche(image, "Complete the game not dead,", 72, l);l+=16;
-            gpJeu->affiche(image, "with 12 hearts at the very most,", 72, l);l+=16;
-            gpJeu->affiche(image, "and without buying a bottle.", 72, l);l+=16;
+            gpJeu->affiche(image, "Finir le jeu sans mourir,", 72, l);l+=16;
+            gpJeu->affiche(image, "avec 12 coeurs au maximum,", 72, l);l+=16;
+            gpJeu->affiche(image, "et sans flacons.", 72, l);l+=16;
             break;
         case 2 :
             cadre(48,88,224,64);
             if (gpJeu->getKeyboard()->getRang(i) 
             && gpJeu->getKeyboard()->getRang(i+3)
             && gpJeu->getKeyboard()->getRang(i+6)) 
-                gpJeu->affiche(image, "RANK : Legendary Marathon Runner", 56, 96);
+                gpJeu->affiche(image, "RANG : Marathonien Légendaire", 56, 96);
             else if ((gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3))
             || (gpJeu->getKeyboard()->getRang(i+3) && gpJeu->getKeyboard()->getRang(i+6))) 
-                gpJeu->affiche(image, "RANK : Two Worlds Marathon Runner", 56, 96);
+                gpJeu->affiche(image, "RANG : Marathonien des deux Mondes", 56, 96);
             else if (gpJeu->getKeyboard()->getRang(i)) 
-                gpJeu->affiche(image, "RANK : Hyrule Marathon Runner", 56, 96);
+                gpJeu->affiche(image, "RANG : Marathonien d'Hyrule", 56, 96);
             else if (gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANK : Termina Marathon Runner", 56, 96);
+                gpJeu->affiche(image, "RANG : Marathonien de Termina", 56, 96);
             else if (gpJeu->getKeyboard()->getRang(i+6)) 
-                gpJeu->affiche(image, "RANK : Marathon Runner of Time", 56, 96);
-            else gpJeu->affiche(image, "RANK : UNKNOWN", 56, 96);
-            gpJeu->affiche(image, "Complete the game in less than", 56, 112);
-            gpJeu->affiche(image, "seven hours.", 56, 128);
+                gpJeu->affiche(image, "RANG : Marathonien du Temps", 56, 96);
+            else gpJeu->affiche(image, "RANG : INCONNU", 56, 96);
+            gpJeu->affiche(image, "Finir le jeu en moins de sept", 56, 112);
+            gpJeu->affiche(image, "heures.", 56, 128);
             break;
     }
 }
@@ -1058,7 +1058,7 @@ void Generique::initScore() {
     
     ostringstream oss;
     int pctg = 0;
-    gpJeu->affiche(image, "RESULTS :", 136, 10);
+    gpJeu->affiche(image, "SCORES :", 136, 10);
     
     int temps = gpJoueur->getTemps(0)+gpJoueur->getTemps(1)*60+gpJoueur->getTemps(2)*3600;
     if (temps < gpJeu->getKeyboard()->getTemps() || gpJeu->getKeyboard()->getTemps()==0) {
@@ -1068,19 +1068,19 @@ void Generique::initScore() {
     if (gpJoueur->getTemps(2)<10)oss<<"0";oss << gpJoueur->getTemps(2) << ":";
     if (gpJoueur->getTemps(1)<10)oss<<"0";oss << gpJoueur->getTemps(1) << ":";
     if (gpJoueur->getTemps(0)<10)oss<<"0";oss << gpJoueur->getTemps(0);
-    gpJeu->affiche(image, ("Game time: " + oss.str()).c_str(), 10, 30);
+    gpJeu->affiche(image, ("Temps de jeu : " + oss.str()).c_str(), 10, 30);
     
     int tmp=gpJoueur->getMort();
     oss.str(""); oss << tmp;
-    gpJeu->affiche(image, ("Dead " + oss.str() + " times").c_str(), 160, 30);
+    gpJeu->affiche(image, ("Mort " + oss.str() + " fois").c_str(), 160, 30);
     
     tmp=gpJoueur->nbQuarts();
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Pieces of heart: " + oss.str() + " / 16").c_str(), 10, 50);
+    gpJeu->affiche(image, ("1/4 Coeurs : " + oss.str() + " / 16").c_str(), 10, 50);
 
     tmp=gpJoueur->getNbGemmes();
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Power Gems: " + oss.str() + " / 200").c_str(), 160, 50);
+    gpJeu->affiche(image, ("Gemmes force : " + oss.str() + " / 200").c_str(), 160, 50);
 
     tmp=0;
     for (int i = 0; i < 16; i++) if (gpJoueur->hasObjet(i)) tmp++;
@@ -1114,7 +1114,7 @@ void Generique::initScore() {
     for (int i = 0; i < 7; i++) if (gpJoueur->hasCristal(i)) tmp++;
     for (int j = 0; j < 15; j++) for (int i = 0; i < 3; i++) if (gpJoueur->getCle(j,i)) tmp++;
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Objects: " + oss.str() + " / 139").c_str(), 10, 70);
+    gpJeu->affiche(image, ("Objets: " + oss.str() + " / 139").c_str(), 10, 70);
     
     tmp=0;
     for (int i = 0; i < 16; i++) if (gpJoueur->getTroc(i) > -1) tmp++;
@@ -1127,70 +1127,74 @@ void Generique::initScore() {
     if (gpJoueur->hasObjet(O_TROC4) < 10) tmp+=gpJoueur->hasObjet(O_TROC4);
     else tmp+=7;
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Barter items: " + oss.str() + " / 45").c_str(), 160, 70);
+    gpJeu->affiche(image, ("Objets de troc : " + oss.str() + " / 45").c_str(), 160, 70);
     
     tmp=gpJoueur->nbPoissons();
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Fishes: " + oss.str() + " / 30").c_str(), 10, 90);
+    gpJeu->affiche(image, ("Poissons : " + oss.str() + " / 30").c_str(), 10, 90);
     
     
     tmp=gpJoueur->nbEnnemis();
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Enemies: " + oss.str() + " / 100").c_str(), 160, 90);
+    gpJeu->affiche(image, ("Ennemis : " + oss.str() + " / 100").c_str(), 160, 90);
     
     pctg=(int)((pctg*100)/530);
     oss.str(""); oss << pctg;
-    gpJeu->affiche(image, ("You complete the game with " + oss.str() + "%, congratulations!").c_str(), 
+    gpJeu->affiche(image, ("Tu as fini ce jeu à " + oss.str() + "%, félicitation !").c_str(), 
         10, 130);
     
     string result;
     int ligne = 170;
-    gpJeu->affiche(image, "RANK : ", 10, ligne);
+    gpJeu->affiche(image, "RANG : ", 10, ligne);
     
     if (gpJoueur->getMort()==0 && gpJoueur->hasBouteille(0)==0
         && gpJoueur->hasBouteille(1)==0 && gpJoueur->hasBouteille(2)==0
         && gpJoueur->hasBouteille(3)==0 && gpJoueur->getVieMax()==24) {
             if (gpJeu->getKeyboard()->getRang(1) && gpJeu->getKeyboard()->getRang(4)) 
-                result="Legendary Sword Master"; 
+                result="Epéiste Légendaire"; 
             else if (gpJeu->getKeyboard()->getRang(1))
-                result="Sword Master"; 
+                result="Maître Epéiste"; 
             else if (gpJeu->getKeyboard()->getRang(4))
-                result="Sword Master"; 
-            else result="Proud"; 
+                result="Maître Epéiste"; 
+            else result="Orgueilleux"; 
             gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;
             gpJeu->getKeyboard()->setRang(7); gpJeu->getKeyboard()->saveP();}
     else {
         if (pctg==100) {
             if (gpJeu->getKeyboard()->getRang(0) && gpJeu->getKeyboard()->getRang(3)) 
-                result="Legendary Hero"; 
+                result="Héros Légendaire"; 
             else if (gpJeu->getKeyboard()->getRang(0))
-                result="Hero of Hyrule"; 
+                result="Héros d'Hyrule"; 
             else if (gpJeu->getKeyboard()->getRang(3))
-                result="Hero of Two Worlds"; 
-            else result="Hero of Time"; 
+                result="Héros des deux Mondes"; 
+            else result="Héros du Temps"; 
             gpJeu->getKeyboard()->setRang(6); gpJeu->getKeyboard()->saveP();}
-        if (pctg<100) result="Perfectionist";
-        if (pctg<95) result="Zelda Fan";
-        if (pctg<90) result="Keyboard professional";
-        if (pctg<85) result="Experienced";
-        if (pctg<80) result="Novice";
+        if (pctg<100) result="Perfectionniste";
+        if (pctg<95) result="Fan de Zelda";
+#ifdef __PSP2__
+        if (pctg<90) result="Pro du clavier";
+#else
+		if (pctg<90) result="Pro du pad";
+#endif
+        if (pctg<85) result="Confirmé";
+        if (pctg<80) result="Débutant";
         gpJeu->affiche(image, " - "+result, 52, ligne);
         ligne+=20;
     }
     
     if (gpJoueur->getMort()>=100) {
-        result="Living dead"; gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
+        result="Mort-vivant"; gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
     else if (gpJoueur->getMort()>=50) {
         result="Kamikaze"; gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
         
     if (temps<=25200) {
         if (gpJeu->getKeyboard()->getRang(2) && gpJeu->getKeyboard()->getRang(5)) 
-            result="Legendary Marathon Runner";
+            result="Marathonien Légendaire";
         else if (gpJeu->getKeyboard()->getRang(2)) 
-            result="Hyrule Marathon Runner";
+            result="Marathonien d'Hyrule";
         else if (gpJeu->getKeyboard()->getRang(5)) 
-            result="Two Worlds Marathon Runner";
-        else result="Marathon Runner of Time"; 
+            result="Marathonien des deux Mondes";
+        else result="Marathonien du Temps"; 
         gpJeu->getKeyboard()->setRang(8); gpJeu->getKeyboard()->saveP();
         gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
 }

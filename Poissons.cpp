@@ -220,36 +220,36 @@ void Poissons::cadre(int x, int y, int w, int h, int id) {
     
     if (gpJeu->getJoueur()->getPoisson(id)) {
         switch (id) {
-            case 0 : gpJeu->affiche(image, "Crawfish", x+8, y+8); break;
-            case 1 : gpJeu->affiche(image, "Smelt", x+8, y+8); break;
-            case 2 : gpJeu->affiche(image, "Zebrafish", x+8, y+8); break;
-            case 3 : gpJeu->affiche(image, "Goby", x+8, y+8); break;
-            case 4 : gpJeu->affiche(image, "Crab", x+8, y+8); break;
-            case 5 : gpJeu->affiche(image, "Eel larvae", x+8, y+8); break;
-            case 6 : gpJeu->affiche(image, "Minnow", x+8, y+8); break;
-            case 7 : gpJeu->affiche(image, "Goldfish", x+8, y+8); break;
-            case 8 : gpJeu->affiche(image, "Bleak", x+8, y+8); break;
-            case 9 : gpJeu->affiche(image, "Gudgeon", x+8, y+8); break;
-            case 10 : gpJeu->affiche(image, "Loach", x+8, y+8); break;
-            case 11 : gpJeu->affiche(image, "Stickleback", x+8, y+8); break;
-            case 12 : gpJeu->affiche(image, "Ruffe", x+8, y+8); break;
-            case 13 : gpJeu->affiche(image, "Blenny", x+8, y+8); break;
-            case 14 : gpJeu->affiche(image, "Magikarp", x+8, y+8); break;
-            case 15 : gpJeu->affiche(image, "Trout", x+8, y+8); break;
+            case 0 : gpJeu->affiche(image, "Ecrevisse", x+8, y+8); break;
+            case 1 : gpJeu->affiche(image, "Eperlan", x+8, y+8); break;
+            case 2 : gpJeu->affiche(image, "Poisson-zèbre", x+8, y+8); break;
+            case 3 : gpJeu->affiche(image, "Gobie", x+8, y+8); break;
+            case 4 : gpJeu->affiche(image, "Crabe", x+8, y+8); break;
+            case 5 : gpJeu->affiche(image, "Pibale", x+8, y+8); break;
+            case 6 : gpJeu->affiche(image, "Vairon", x+8, y+8); break;
+            case 7 : gpJeu->affiche(image, "Carassin doré", x+8, y+8); break;
+            case 8 : gpJeu->affiche(image, "Ablette", x+8, y+8); break;
+            case 9 : gpJeu->affiche(image, "Goujon", x+8, y+8); break;
+            case 10 : gpJeu->affiche(image, "Loche", x+8, y+8); break;
+            case 11 : gpJeu->affiche(image, "Epinoche", x+8, y+8); break;
+            case 12 : gpJeu->affiche(image, "Grémille", x+8, y+8); break;
+            case 13 : gpJeu->affiche(image, "Blennie", x+8, y+8); break;
+            case 14 : gpJeu->affiche(image, "Magicarpe", x+8, y+8); break;
+            case 15 : gpJeu->affiche(image, "Truite", x+8, y+8); break;
             case 16 : gpJeu->affiche(image, "Ayu", x+8, y+8); break;
-            case 17 : gpJeu->affiche(image, "Black perch", x+8, y+8); break;
-            case 18 : gpJeu->affiche(image, "Eel", x+8, y+8); break;
-            case 19 : gpJeu->affiche(image, "Catfish", x+8, y+8); break;
-            case 20 : gpJeu->affiche(image, "Largemouth", x+8, y+8); break;
-            case 21 : gpJeu->affiche(image, "Huchen", x+8, y+8); break;
-            case 22 : gpJeu->affiche(image, "Barbell", x+8, y+8); break;
-            case 23 : gpJeu->affiche(image, "Lamprey", x+8, y+8); break;
-            case 24 : gpJeu->affiche(image, "Nase", x+8, y+8); break;
-            case 25 : gpJeu->affiche(image, "Salmon", x+8, y+8); break;
-            case 26 : gpJeu->affiche(image, "Sturgeon", x+8, y+8); break;
-            case 27 : gpJeu->affiche(image, "Arctic charr", x+8, y+8); break;
-            case 28 : gpJeu->affiche(image, "Carp", x+8, y+8); break;
-            case 29 : gpJeu->affiche(image, "Brown bullhead", x+8, y+8); break;
+            case 17 : gpJeu->affiche(image, "Perche noire", x+8, y+8); break;
+            case 18 : gpJeu->affiche(image, "Anguille", x+8, y+8); break;
+            case 19 : gpJeu->affiche(image, "Poisson-chat", x+8, y+8); break;
+            case 20 : gpJeu->affiche(image, "Black-bass", x+8, y+8); break;
+            case 21 : gpJeu->affiche(image, "Huchon", x+8, y+8); break;
+            case 22 : gpJeu->affiche(image, "Barbeau", x+8, y+8); break;
+            case 23 : gpJeu->affiche(image, "Lamproie", x+8, y+8); break;
+            case 24 : gpJeu->affiche(image, "Hotu", x+8, y+8); break;
+            case 25 : gpJeu->affiche(image, "Saumon", x+8, y+8); break;
+            case 26 : gpJeu->affiche(image, "Esturgeon", x+8, y+8); break;
+            case 27 : gpJeu->affiche(image, "Omble-chevalier", x+8, y+8); break;
+            case 28 : gpJeu->affiche(image, "Carpe", x+8, y+8); break;
+            case 29 : gpJeu->affiche(image, "Silure", x+8, y+8); break;
         }
     } else gpJeu->affiche(image, "???", x+8, y+8);
 }
