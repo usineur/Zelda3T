@@ -38,7 +38,7 @@ special1(0), special2(0), persistent(p), type_att(ENNEMI), dist(16) {
             chargeIm = true;
         }
         x=i; y=j; saveEmpl();
-        special1=0; // à sortir pour l'ennemi 20
+        special1=0; // A sortir pour l'ennemi 20
         init();
     }
 }
@@ -703,11 +703,11 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
                     break;
             }
     
-            //de 0 à 3, ne fait rien
-            //de 4 à 7, tourbillon
-            //de 8 à 9, sorti de l'eau
-            //de 10 à 16 bouche ouverte, tire en 11, 13, 15
-            //de 17 à 20 tourbillon
+            //de 0 Ã  3, ne fait rien
+            //de 4 Ã  7, tourbillon
+            //de 8 Ã  9, sorti de l'eau
+            //de 10 Ã  16 bouche ouverte, tire en 11, 13, 15
+            //de 17 Ã  20 tourbillon
         }
         
         if (id==94) {
@@ -761,13 +761,13 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
                         direction=S; special1=1; lastAnimTime = SDL_GetTicks();
                     }
                 }
-                //si Link à gauche ou à droite
+                //si Link Ã  gauche ou Ã  droite
                 if (gpJoueur->getY()+24>y+24 && gpJoueur->getY()+8<y+h) {
-                    //si à gauche
+                    //si Ã  gauche
                     if (gpJoueur->getX()+16 < x && gpJoueur->getX()>x-64) {
                         direction=O; special1=1; lastAnimTime = SDL_GetTicks();
                     }
-                    //si à droite
+                    //si Ã  droite
                     if (gpJoueur->getX() > x+w && gpJoueur->getX()+16<x+w+64) {
                         direction=E; special1=1; lastAnimTime = SDL_GetTicks();
                     }
@@ -911,11 +911,11 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
                     break;
             }
     
-            //de 0 à 3, ne fait rien
-            //de 4 à 7, tourbillon
-            //de 8 à 9, sorti de l'eau
-            //de 10 à 16 bouche ouverte, tire en 11, 13, 15
-            //de 17 à 20 tourbillon
+            //de 0 Ã  3, ne fait rien
+            //de 4 Ã  7, tourbillon
+            //de 8 Ã  9, sorti de l'eau
+            //de 10 Ã  16 bouche ouverte, tire en 11, 13, 15
+            //de 17 Ã  20 tourbillon
         }
         
         if (id == 99) {
@@ -1142,14 +1142,14 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
                         ajuste();
                     }
                 }
-                //si Link à gauche ou à droite
+                //si Link Ã  gauche ou Ã  droite
                 if (gpJoueur->getY()>y && gpJoueur->getY()+8<y+h) {
-                    //si à gauche
+                    //si Ã  gauche
                     if (gpJoueur->getX()+16 < x && gpJoueur->getX()>x-64) {
                         direction=O; special1=1; lastAnimTime = SDL_GetTicks();
                         ajuste();
                     }
-                    //si à droite
+                    //si Ã  droite
                     if (gpJoueur->getX() > x+w && gpJoueur->getX()+16<x+w+64) {
                         direction=E; special1=1; lastAnimTime = SDL_GetTicks();
                         ajuste();
@@ -1226,11 +1226,11 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
         }
         
         if (id == 110) {
-            //anim de 0 à 14 : au sol
-            //anim à 15 : se relève
-            //anim de 16 à 28 : debout
-            //anim à 29 : se rabaisse
-            //anim de 30 à 31 : au sol
+            //anim de 0 Ã  14 : au sol
+            //anim Ã  15 : se relÃ¨ve
+            //anim de 16 Ã  28 : debout
+            //anim Ã  29 : se rabaisse
+            //anim de 30 Ã  31 : au sol
             
             if (gpJeu->getKeyboard()->getMode()==13) anim=16;
             
@@ -1258,13 +1258,13 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
                         direction=S; special1=1; lastAnimTime = SDL_GetTicks();
                     }
                 }
-                //si Link à gauche ou à droite
+                //si Link Ã  gauche ou Ã  droite
                 if (gpJoueur->getY()>y && gpJoueur->getY()+8<y+h && !special1) {
-                    //si à gauche
+                    //si Ã  gauche
                     if (gpJoueur->getX()+16 < x && gpJoueur->getX()>x-64) {
                         direction=O; special1=1; lastAnimTime = SDL_GetTicks();
                     }
-                    //si à droite
+                    //si Ã  droite
                     else if (gpJoueur->getX() > x+w && gpJoueur->getX()+16<x+w+64) {
                         direction=E; special1=1; lastAnimTime = SDL_GetTicks();
                     }
@@ -1287,10 +1287,10 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
             else if (anim < 16) src.x=(anim-13)*w;
             else if (anim < 30) src.x=w*3;
             else if (anim < 32) src.x=w*(3-(anim-29));
-            //0 à 13 : oeil fermé
-            //14 à 15 : oeil s'ouvre
-            //16 à 29 : oeil ouvert
-            //30 à 31 : oeil se ferme
+            //0 Ã  13 : oeil fermÃ©
+            //14 Ã  15 : oeil s'ouvre
+            //16 Ã  29 : oeil ouvert
+            //30 Ã  31 : oeil se ferme
         }
         
         if (id == 115 && special2>=0) {
@@ -1355,7 +1355,7 @@ void Ennemi::draw(SDL_Surface* gpScreen) {
         }
         
         if (id == 120) {
-            //décide quoi faire
+            //dÃ©cide quoi faire
             if (special2 == 0) special2 = 1 + (rand()%3);
             if (special1 > 1 && special1 <(3 + (vie / 15))) src.x=w*special2;
         }
@@ -1973,7 +1973,7 @@ void Ennemi::pousse(Direction dir) {
         case O : for (int i = 0; i < recul; i++) moveX(-1, 1, 1, spectre); break;
         case E : for (int i = 0; i < recul; i++) moveX(1, 1, 1, spectre); break;
     }
-    //rajouter vérif eau/vide
+    //rajouter vÃ©rif eau/vide
     if (gpJeu->isVide(x+gpZoneBase->getZone()->x,y+gpZoneBase->getZone()->y,
     gpZoneBase->getZone()->w,gpZoneBase->getZone()->h) && !vol && !spectre) {
         vie = 0; gpJeu->getAudio()->playSound(6);
@@ -2321,7 +2321,7 @@ void Ennemi::setVie(int i) {
         special2=1;
         typeIA = IA_RIEN;
         gpJeu->getAudio()->playSound(7);
-        //vérifie que les 4 sont ok
+        //vÃ©rifie que les 4 sont ok
         int ok[] = {0,0,0,0};
         int nb = 0;
         Ennemi* enn = gpJeu->getEnnemi()->getSuivant();
@@ -2936,17 +2936,17 @@ void Ennemi::IAZoraG() {
             break;
     }
     
-    //de 0 à 3, ne fait rien
-    //de 4 à 7, tourbillon
-    //de 8 à 9, sorti de l'eau
-    //de 10 à 16 bouche ouverte, tire en 11, 13, 15
-    //de 17 à 20 tourbillon
+    //de 0 Ã  3, ne fait rien
+    //de 4 Ã  7, tourbillon
+    //de 8 Ã  9, sorti de l'eau
+    //de 10 Ã  16 bouche ouverte, tire en 11, 13, 15
+    //de 17 Ã  20 tourbillon
 }
 
 void Ennemi::IACrabe() {
     //si special1=0, va chercher pierre
-    //si bien placé, ramasse pierre avec special1=1
-    //si special1=2, pierre rammassée, crâbe va vers Link
+    //si bien placÃ©, ramasse pierre avec special1=1
+    //si special1=2, pierre rammassÃ©e, crÃ¢be va vers Link
     //si au dessus de Link, lance pierre, special1=0
     if (special1==0) {
         if (x>354*16+4) x=354*16+4;
@@ -2997,9 +2997,9 @@ void Ennemi::IAImp() {
         }
     }//sinon, va vers un interrupteur
     else {
-        //quand il reste des interrupteur, special1 => début de saut
+        //quand il reste des interrupteur, special1 => dÃ©but de saut
         if (special1 == 0) {
-            // special2 indique l'interrupteur visé ( 1, 2 ou 3 )
+            // special2 indique l'interrupteur visÃ© ( 1, 2 ou 3 )
             if (special2 == 0) {
                 if (total == 1) {
                     if (gpMonde->motifValue(124*16,33*16)==1004) special2=1;
@@ -3051,7 +3051,7 @@ void Ennemi::IAImp() {
             if (special1) lastAnimTime = SDL_GetTicks();
         }
         else {
-            //si le saut arrive à son terme, on active l'interrupteur
+            //si le saut arrive Ã  son terme, on active l'interrupteur
             if (special1>=3) {
                 special1=0; special2=0;
             }

@@ -95,7 +95,7 @@ void Joueur::save() {
     if (tps > 359999) tps = 359999;
     ostringstream im;
     im << numSave;
-#ifdef __PSP2__
+#ifdef __vita__
     ofstream f(("ux0:data/z3t/save/3t" + im.str() + ".dat").c_str(),ios::out | ios::binary);
 #else
     ofstream f(("data/save/3t" + im.str() + ".dat").c_str(),ios::out | ios::binary);
@@ -167,7 +167,7 @@ void Joueur::load() {
     int zone;
     ostringstream im;
     im << numSave;
-#ifdef __PSP2__
+#ifdef __vita__
     ifstream f(("ux0:data/z3t/save/3t" + im.str() + ".dat").c_str(),ios::in | ios::binary);
 #else
     ifstream f(("data/save/3t" + im.str() + ".dat").c_str(),ios::in | ios::binary);
@@ -376,7 +376,7 @@ void Joueur::draw(SDL_Surface* gpScreen) {
     // chute
     if (typeanim == CHUTE) drawChute(gpScreen);
     
-    // coup d'épée
+    // coup d'Ã©pÃ©e
     if (typeanim == EPEE) drawEpee(gpScreen);
     
     // attaque spin
@@ -397,7 +397,7 @@ void Joueur::draw(SDL_Surface* gpScreen) {
     // fotte
     if (typeanim == FLOTTE || typeanim == NAGE) drawFlotte(gpScreen);
     
-    // soulève
+    // soulÃ¨ve
     if (typeanim == LOURD || typeanim == SOULEVE || typeanim == PORTE 
     || typeanim == EMMENE || typeanim == LANCE) drawSouleve(gpScreen);
     
@@ -1512,7 +1512,7 @@ void Joueur::drawCharge(SDL_Surface* gpScreen) {
         dst.x+phg[0], dst.y+phg[1], src.w, src.h, COUP_EPEE, force, direction)) 
         dechargeSpin();
     
-    // étoile
+    // Etoile
     if (charge < 20) {
         src.x = 18; src.y = 14; src.w = 7; src.h = 7;
         switch (direction) {
@@ -1656,7 +1656,7 @@ void Joueur::drawSpin(SDL_Surface* gpScreen) {
     src.w = w; src.h = h;
     dst.x = x - phg[0]; dst.y = y - phg[1];
     
-    src2.w = 12; src2.h = 12; //épée
+    src2.w = 12; src2.h = 12; //EpÃ©e
     if (epee > 1 || oni) { src2.w+=2; src2.h+=2;}
     
     int anim2;
@@ -1675,7 +1675,7 @@ void Joueur::drawSpin(SDL_Surface* gpScreen) {
             if (anim > 26) {anim2=anim; anim=0; drawImmoMarche(gpScreen); anim=anim2;}
             else {
             
-                //Epée
+                //EpÃ©e
                 if (anim==0 || anim==5 || (anim>=21 && anim<=26)) { 
                     dst2.x=dst.x-4; dst2.y=dst.y+17;src2.x = 68; src2.y = 12;
                     if (epee>1 || oni) {dst2.x--; src2.x = 94; src2.y = 14;}
@@ -1736,7 +1736,7 @@ void Joueur::drawSpin(SDL_Surface* gpScreen) {
             if (anim > 26) {anim2=anim; anim=0; drawImmoMarche(gpScreen); anim=anim2;}
             else {
             
-                //Epée
+                //EpÃ©e
                 if (anim==0 || anim==5 || (anim>=21 && anim<=26)) { 
                     dst2.x=dst.x+13; dst2.y=dst.y-2;src2.x = 56; src2.y = 0;
                     if (epee>1 || oni) {dst2.y-=2; src2.x = 80; src2.y = 0;}
@@ -1797,7 +1797,7 @@ void Joueur::drawSpin(SDL_Surface* gpScreen) {
             if (anim > 26) {anim2=anim; anim=0; drawImmoMarche(gpScreen); anim=anim2;}
             else {
             
-                //Epée
+                //EpÃ©e
                 if (anim==0 || anim==5 || (anim>=21 && anim<=26)) { 
                     dst2.x=dst.x+11; dst2.y=dst.y+16;src2.x = 68; src2.y = 24;
                     if (epee>1 || oni) {src2.x = 94; src2.y = 28;}
@@ -1859,7 +1859,7 @@ void Joueur::drawSpin(SDL_Surface* gpScreen) {
             if (anim > 26) {anim2=anim; anim=0; drawImmoMarche(gpScreen); anim=anim2;}
             else {
             
-                //Epée
+                //EpÃ©e
                 if (anim==0 || anim==5 || (anim>=21 && anim<=26)) { 
                     dst2.x=dst.x-8; dst2.y=dst.y+6;src2.x = 56; src2.y = 36;
                     if (epee>1 || oni) {dst2.x-=2; dst2.y--; src2.x = 80; src2.y = 42;}
@@ -1912,7 +1912,7 @@ void Joueur::drawSpin(SDL_Surface* gpScreen) {
             break;
     }
     
-    // lumière
+    // lumiÃ¨re
     int force = getForce();
     switch (anim) {
         case 0 :
@@ -3102,7 +3102,7 @@ void Joueur::drawBoire(SDL_Surface* gpScreen) {
     
     SDL_BlitSurface(imageObjets, &src, gpScreen, &dst);
     
-    //joue mélodie
+    //joue mÃ©lodie
     if (typeanim==JOUE) {
         int idMel = -1;
         for (int i = 0; i < 3; i++) if (melodie[i]==3) {idMel = i; break;}
@@ -3369,7 +3369,7 @@ void Joueur::drawWagon(SDL_Surface* gpScreen) {
             break;
     }
     
-    //déplacements
+    //dÃ©placements
     int vit = 4;
     
     for (int i = 0; i < vit; i++) {
@@ -3444,7 +3444,7 @@ void Joueur::drawWagon(SDL_Surface* gpScreen) {
                 else {posWagon=0; gpJeu->descendWagon(); i=3;}
             }
         }
-        //gars de la mine aidé
+        //gars de la mine aidÃ©
         if (getAvancement() >= GARS_MINE_AIDE && ((y==8*16+8 && x==35*16 && posWagon==0
         && gpJeu->getMonde()->motifValue(41*16,9*16)==2367)
         || (y==18*16+8 && x==31*16 && posWagon==0
@@ -3491,7 +3491,7 @@ void Joueur::drawTrouve(SDL_Surface* gpScreen) {
         boucl->draw(gpScreen, 16, 0, new ZoneRect(bcl), O);
     }
     int im = 1;
-    //objet trouvé
+    //objet trouvÃ©
     switch (trouve) {
         case C_BOUCLIER : src.w = 8; src.h = 10; src.x=16; src.y=75; dst.x+=4; break;
         case C_EPEE : src.w = 6; src.h = 13; src.x=9; src.y=72; dst.x+=11; break;

@@ -6,7 +6,7 @@ The second one was to correct some missing references on compilation files.
 Thanks to usineur for his work and help.
 
 ## VPK
-Latest version is available [here](https://github.com/usineur/Zelda3T/releases).
+Latest version is available [here](https://github.com/NicolasR/Zelda3T-French/releases).
 
 Note: saves can be found in `ux0:data/z3t/save` directory.
 
@@ -49,6 +49,9 @@ Note: saves can be found in `ux0:data/z3t/save` directory.
 - littlebalup, for key mapping inspiration
 
 ## Changelog:
+
+1.1b:
+- Added missing translation
 
 1.1:
 - Fix more memory leaks

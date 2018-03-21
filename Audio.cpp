@@ -16,14 +16,14 @@
 
 #include "Audio.h"
 
-#ifdef __PSP2__
+#ifdef __vita__
 #include <sys/stat.h>
 #endif
 
 Audio::Audio() : musiqueId(0), specialId(0) {
     SOUND = true;
     music = NULL;
-#ifdef __PSP2__
+#ifdef __vita__
     f = NULL;
     mem = NULL;
 #endif
@@ -31,7 +31,7 @@ Audio::Audio() : musiqueId(0), specialId(0) {
     if(SDL_InitSubSystem(SDL_INIT_AUDIO) == -1) SOUND = false;
     
     if (SOUND) {
-#ifdef __PSP2__
+#ifdef __vita__
         Mix_OpenAudio(22050, AUDIO_S16SYS, 1, 1024);
 #else
         Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048);
@@ -86,10 +86,10 @@ void Audio::loadSounds() {
     sons[19] = getSound("happy"); // trouve objet
     sons[20] = getSound("door"); // ouvre porte
     sons[21] = getSound("pics"); // pics contre mur
-    sons[22] = getSound("sword"); // Epée
-    sons[23] = getSound("SwordCharging"); // chargée
+    sons[22] = getSound("sword"); // EpÃ©e
+    sons[23] = getSound("SwordCharging"); // chargÃ©e
     sons[24] = getSound("Sword360"); // spin
-    sons[25] = getSound("shoot"); // flèche
+    sons[25] = getSound("shoot"); // flÃ¨che
     sons[26] = getSound("hookshot"); // grappin
     sons[27] = getSound("stamp"); // pose bombe
     sons[28] = getSound("magic"); // magie
@@ -119,7 +119,7 @@ void Audio::freeSounds() {
 
 void Audio::freeMusic() {
     Mix_FreeMusic(music);
-#ifdef __PSP2__
+#ifdef __vita__
     if (mem != NULL) {
         free(mem);
         mem = NULL;
@@ -133,7 +133,7 @@ void Audio::freeMusic() {
 
 Mix_Chunk* Audio::getSound(const char* son) {
     char fSon[512];
-#ifdef __PSP2__
+#ifdef __vita__
     snprintf(fSon, sizeof(fSon), "%s/%s.ogg", "app0:data/sound", son);
 #else
     snprintf(fSon, sizeof(fSon), "%s/%s.ogg", "data/sound", son);
@@ -143,7 +143,7 @@ Mix_Chunk* Audio::getSound(const char* son) {
 
 Mix_Music* Audio::getMusic(const char* zik) {
     char fZik[512];
-#ifdef __PSP2__
+#ifdef __vita__
     struct stat info;
     snprintf(fZik, sizeof(fZik), "%s/%s.it", "app0:data/music", zik);
     stat(fZik, &info);

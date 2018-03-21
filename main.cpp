@@ -18,7 +18,7 @@
 #include "Keyboard.h"
 #include "Generique.h"
 
-#ifdef __PSP2__
+#ifdef __vita__
 #include <psp2/power.h>
 #include <psp2/kernel/processmgr.h>
 #include <psp2/io/fcntl.h>
@@ -33,7 +33,7 @@ SDL_Surface* init(bool* etire) {             // initialise SDL
     atexit(SDL_Quit);
     //if(SDL_InitSubSystem(SDL_INIT_AUDIO) == -1) *SOUND = false;
 
-#ifndef __PSP2__
+#ifndef __vita__
     SDL_WM_SetCaption("Time to Triumph",NULL);
     SDL_Surface* icon = SDL_LoadBMP("data/images/logos/ocarina.ico");
     SDL_SetColorKey(icon,SDL_SRCCOLORKEY,SDL_MapRGB(icon->format,0,0,0));
@@ -43,7 +43,7 @@ SDL_Surface* init(bool* etire) {             // initialise SDL
     SDL_ShowCursor(SDL_DISABLE);
 
 
-#ifdef __PSP2__
+#ifdef __vita__
     return SDL_SetVideoMode(640, 480, 16, SDL_HWSURFACE|SDL_DOUBLEBUF);
 #else
     SDL_Rect** modes;
@@ -69,14 +69,14 @@ SDL_Surface* init(bool* etire) {             // initialise SDL
 }
 
 int main(int argc, char** argv) {
-#ifdef __PSP2__
+#ifdef __vita__
     sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
     scePowerSetArmClockFrequency(444);
 
     sceIoMkdir("ux0:data/z3t", 0777);
     sceIoMkdir("ux0:data/z3t/save", 0777);
 #endif
-    if (argc && argv); //pour éviter un warning.....
+    if (argc && argv); //pour Ã©viter un warning.....
     
     std::srand(std::time(NULL));
     
@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
     bool etire = false;
     
     gpScreen = init(&etire);
-#ifdef __PSP2__
+#ifdef __vita__
     int sh = 544;
     int sw = (float)gpScreen->w*((float)sh/(float)gpScreen->h);
     int x = (960 - sw)/2;
@@ -115,7 +115,7 @@ int main(int argc, char** argv) {
     gpJeu->setGenerique(gpGenerique);
     gpGenerique->initLogo();
     
-    //gpJeu->init(0); //à virer
+    //gpJeu->init(0); //Ã  virer
     
     bool gLoop = true;
     
@@ -131,7 +131,7 @@ int main(int argc, char** argv) {
             case 1 : //disclamer
             case 2 : //logo
             case 3 : //titre
-            case 14 : //générique score
+            case 14 : //gÃ©nÃ©rique score
             case 17 : //menu d'aide 1
             case 18 : //menu d'aide 2
             case 24 : //menu d'aide 3
@@ -147,32 +147,32 @@ int main(int argc, char** argv) {
             case 7 : //charger partie
                 gpGenerique->drawCharger(gpScreen2, gpKeyboard->getLigne(), 
                     gpKeyboard->getLigneVal()); break;
-            case 8 : //générique intro
+            case 8 : //gÃ©nÃ©rique intro
                 gpGenerique->drawIntro(gpScreen2, gpKeyboard->getIntro()); break;
             case 9 : //effacer partie
                 gpGenerique->drawEffacerSave(gpScreen2, gpKeyboard->getLigne(), 
                     gpKeyboard->getLigneVal()); break;
-            case 10 : //générique début chez link
+            case 10 : //gÃ©nÃ©rique dÃ©but chez link
                 gpGenerique->drawDebut(gpScreen2); break;
-            case 11 : //générique fin
+            case 11 : //gÃ©nÃ©rique fin
                 gpGenerique->drawFin(gpScreen2); break;
             case 12 : //carte
-            case 22 : //carte téléportation
+            case 22 : //carte tÃ©lÃ©portation
                 gpCarte->draw(gpScreen2); break;
-            case 13 : //encyclopédie des monstres
+            case 13 : //encyclopÃ©die des monstres
                 gpEncyclopedie->draw(gpScreen2); break;
             case 15 : //records
             case 19 : //rang 100%
             case 20 : //rang ultime
-            case 21 : //rang de rapidité
+            case 21 : //rang de rapiditÃ©
                 gpGenerique->drawRecord(gpScreen2, gpKeyboard->getLigneRecord(),
                     gpKeyboard->getColonneRecord()); break;
             case 16 : //effacer record
                 gpGenerique->drawEffacer(gpScreen2, gpKeyboard->getLigneVal()); break;
-            case 23 : //encyclopédie des poissons
+            case 23 : //encyclopÃ©die des poissons
                 gpPoissons->draw(gpScreen2); break;
-            case 26 : //générique vers présent
-            case 27 : //générique vers passé
+            case 26 : //gÃ©nÃ©rique vers prÃ©sent
+            case 27 : //gÃ©nÃ©rique vers passÃ©
                 gpGenerique->drawToPresent(gpScreen2); break;
             default : break;
         }

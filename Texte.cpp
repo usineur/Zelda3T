@@ -91,7 +91,7 @@ void Texte::chercheText() {
         case 43 : texte = "..."; idsuiv=44; break;
         case 44 : texte = "Le château. A l'est d'ici, tu n'as tout de même pas oublié ?"; break;
         case 45 : texte = "Hum Hum..."; idsuiv=46; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 46 : texte = "TUTORIEL : Appuyez sur Rond près de quelqu'un pour lui parler, ou près d'une pancarte pour la lire."; break;
 #else
         case 46 : texte = "TUTORIEL : Appuyez sur Espace près de quelqu'un pour lui parler, ou près d'une pancarte pour la lire."; break;
@@ -555,7 +555,11 @@ void Texte::chercheText() {
             || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
             break;
         case 266 : texte = "Les bottes de Pégase contre une tapisserie et un parfum ?*              oui              NON ?"; idsuiv=76; break;
+#ifdef __vita__
+        case 267 : texte = "Tu as obtenu les bottes de Pégase ! *Maintiens R pour courir !"; break;
+#else
         case 267 : texte = "Tu as obtenu les bottes de Pégase ! *Maintiens Shift ou appuie sur Capslock pour courir !"; break;
+#endif
         case 268 : 
             texte = "Un parfum contre 3 plumes et 4 sacs de riz ? **              OUI ?            non  "; 
             if (gpJeu->getJoueur()->getTroc(M_PLUME)<3
@@ -642,7 +646,11 @@ void Texte::chercheText() {
         case 313 : texte = "Tu as troqué la clochette contre une hache!"; break;
         case 314 : texte = "Ho! Ho! Ho!"; buffer="C'est bien gentil, mais comment je rentre moi ?"; break;
         case 315 : texte = "TUTORIEL :*Un choc sur une de ces sphères de couleur permute les obstacles levés."; break;
+#ifdef __vita__   
+        case 316 : texte = "Tu as trouvé une épée !!!*Sert-en avec Carré, ou maintiens Carré enfoncé pour charger une attaque tornade!"; break;
+#else     
         case 316 : texte = "Tu as trouvé une épée !!!*Sert-en avec la touche W (ou Z), ou maintiens W (ou Z) enfoncé pour charger une attaque tornade!"; break;
+#endif
         case 317 : texte = "TUTORIEL :*Tomber dans un trou permet de descendre au niveau inférieur, cependant, s'il n'y a pas de niveau inférieur tel que c'est le cas ici, une chute fait perdre de la vie et renvoie à l'entrée de la zone. Prudence donc!"; break;
         case 318 : texte = "TUTORIEL :*Au cours du jeu, vous pourriez être amené à rencontrer des zones apparemment inaccessibles comme la plate-forme en bas. Vous aurez alors"; buffer="besoin de revenir plus tard dans le jeu avec un équipement plus fournit pour y accéder."; break;
         case 319 : texte = "@+@+@+@+@+@+@@@+*@=++=@=+@=+@=+=@*+@+@+@+=+="; break;
@@ -651,7 +659,11 @@ void Texte::chercheText() {
         case 322 : texte = "A l'aube du cataclysme, le héros trouvera cette stèle. Les pendentifs du courage, de la sagesse et de la force en sa possession, l'unique chance de sauver le monde se présentera à lui."; break;
         case 323 : texte = "..."; buffer="J'ai peur que nous devions laisser tomber cette affaire d'ocarina pour le moment...*Si cette stèle dit vrai, tu dois trouver les 3 pendentifs dans les plus brefs délais..."; idsuiv=324; break;
         case 324 : texte = "Ils sont cachés dans 3 temples, le plus proche est une tour près des cascades au Nord d'ici... Prends cette carte, elle t'aidera à t'orienter!"; break;
+#ifdef __vita__
+        case 325 : texte = "Tu as obtenu la carte d'Hyrule!**Appuie sur L à l'extérieur pour la consulter."; break;
+#else
         case 325 : texte = "Tu as obtenu la carte d'Hyrule!**Appuie sur P à l'extérieur pour la consulter."; break;
+#endif
         case 326 : 
             if (!gpJeu->getJoueur()->hasMedaillon(0)) {texte = "Le premier médaillon se trouve dans la tour au Nord de cette forêt, sors de la forêt par l'Ouest puis va au Nord pour arriver dans la zone des cascades."; break;}
             if (!gpJeu->getJoueur()->hasMedaillon(1)) {texte = "Le second médaillon se trouve dans le temple au milieu du lac. Tu devras louer une barque près du village des Mouettes..."; break;}
@@ -781,7 +793,7 @@ void Texte::chercheText() {
         case 387 : texte = "Le détecteur pour 20 gemmes de force, ok ?**              OUI ?            non  ";
             if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385; break;
         case 388 : texte = "Le détecteur pour 20 gemmes de force, ok ?**              oui              NON ?"; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 389 : texte = "Tu as obtenu le détecteur !*Lorsque tu appuies sur Croix, le nombre de gemmes en ta possession sera écrit en vert si tu les as toutes dans la zone."; break;
 #else
         case 389 : texte = "Tu as obtenu le détecteur !*Lorsque tu appuies sur Entrée, le nombre de gemmes en ta possession sera écrit en vert si tu les as toutes dans la zone."; break;
@@ -882,7 +894,7 @@ void Texte::chercheText() {
         case 440 : texte = "Je pourrais toujours réparer le levier, mais j'ai besoin d'une pièce de rechange, et je ne peux pas quitter mon poste..."; idsuiv=441; break;
         case 441 : texte = "J'ai besoin d'un rouage, on en trouve sur la place du marché de la cité d'Hyrule."; idsuiv=442; break;
         case 442 : texte = "Tu connais le principe, non ? Chaque marchand te propose des marchandises contre d'autres, tu dois réunir ce qu'ils veulent pour obtenir ce que tu veux."; idsuiv=443; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 443 : texte = "Je vais te donner les marchandises que j'ai.*Si tu veux consulter ce que tu as déjà, appuie sur D-Pad Gauche."; break;
 #else
         case 443 : texte = "Je vais te donner les marchandises que j'ai.*Si tu veux consulter ce que tu as déjà, appuie sur I."; break;
@@ -944,7 +956,7 @@ void Texte::chercheText() {
         case 474 : texte = "Tu ne veux tout de même pas participer gratuitement ???*               si              NON ?"; idsuiv=476; break;
         case 475 : texte = "...*Voici une canne à pêche, reviens lorsque tu auras pêché 5 poissons différents."; break;
         case 476 : texte = "Va-t-en, ennemi de la pêche!"; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 477 : texte = "Tu as obtenu une canne à pêche!*Utilise-la à un ponton, puis remonte la ligne en appuyant à nouveau sur Triangle lorsque la ligne bouge."; break;
 #else
         case 477 : texte = "Tu as obtenu une canne à pêche!*Utilise-la à un ponton, puis remonte la ligne en appuyant à nouveau sur X lorsque la ligne bouge."; break;
@@ -961,7 +973,7 @@ void Texte::chercheText() {
         case 481 : texte = "J'imagine que tu vas vouloir ton prix...*Pour te récompenser d'avoir remporter le concours de pêche : *... ... ..."; idsuiv=482; break;
         case 482 : texte = "Je t'engage!"; idsuiv=483; break;
         case 483 : texte = "Il y a beaucoup d'autres espèces de poissons à Hyrule, je veux tous les répertorier par région."; idsuiv=484; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 484 : texte = "Je te récompenserai tous les 5 nouveaux poissons pêchés.*Tu peux désormais consulter la liste des poissons pêchés en appuyant sur D-Pad Bas"; idsuiv=485; break;
 #else
         case 484 : texte = "Je te récompenserai tous les 5 nouveaux poissons pêchés.*Tu peux désormais consulter la liste des poissons pêchés en appuyant sur L"; idsuiv=485; break;
@@ -1173,7 +1185,7 @@ void Texte::chercheText() {
             if (gpJeu->getJoueur()->hasObjet(O_ENCYCL)) {id=593; chercheText();break;}
             texte = "Bonjour Link, tu te souviens de moi ?"; idsuiv=590; break;
         case 590 : texte = "Des monstres sont apparus sur Hyrule aujourd'hui, alors une fois de plus je vais tâcher de tous les répertorier, et une fois de plus je compte sur ton aide."; idsuiv=591; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 591 : texte = "En appuyant sur D-Pad Haut, tu peux voir les monstres déjà répertorier. Tu n'as qu'à vaincre un monstre pour qu'il soit ajouté."; idsuiv=592; break;
 #else
         case 591 : texte = "En appuyant sur M, tu peux voir les monstres déjà répertorier. Tu n'as qu'à vaincre un monstre pour qu'il soit ajouté."; idsuiv=592; break;
@@ -1832,7 +1844,7 @@ void Texte::chercheText() {
         case 940 : texte = "           Seconde Quête - Niveau 2 :                                                                         Tour des Gemmes"; break;
         case 941 : texte = "         Seconde Quête - Niveau Final :                                                                      Destination Finale"; break;
         
-#ifdef __PSP2__
+#ifdef __vita__
         case 942 : texte = "Tu as trouvé la carte !!!**Appuie sur L pour voir le plan du donjon."; break;
 #else
         case 942 : texte = "Tu as trouvé la carte !!!**Appuie sur P pour voir le plan du donjon."; break;
@@ -1841,7 +1853,7 @@ void Texte::chercheText() {
         case 944 : texte = "Tu as trouvé la clé du boss !!!**Sers-t'en pour accéder à son repère."; break;
         case 945 : texte = "Tu as trouvé une petite clé.**Sers-t'en pour déverrouiller une porte."; break;
         case 946 : texte = "Tu as trouvé un nouveau coeur !!!**Ta vie maximale augmente d'un coeur !!!"; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 947 : texte = "Tu as trouvé un arc !!!**Equipe-le en appuyant sur Croix puis sert-en avec Triangle pour attaquer à distance !"; break;
 #else
         case 947 : texte = "Tu as trouvé un arc !!!**Equipe-le en appuyant sur Entrée puis sert-en avec X pour attaquer à distance !"; break;
@@ -1950,7 +1962,7 @@ void Texte::chercheText() {
             texte = "La Princesse vous a chargé d'enquêter sur le vol de l'Ocarina ? *Dans ce cas vous pouvez entrer, il n'y a de toute façon plus rien à garder ici..."; break;
         case 1023: texte = "Je suis resté à garder cette porte toute la nuit. Je suis certain que personne n'a franchi cette porte..."; break;
         case 1024: texte = "C'est ici qu'était gardé l'Ocarina. Le garde a entendu un grand bruit. Le temps qu'il réalise que cela venait de la chambre forte, le coffre avait été vidé."; idsuiv=1025; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 1025: texte = "Si tu vois quelque chose de louche, mets-toi devant et appuie sur Rond pour me le signaler."; break;
 #else
         case 1025: texte = "Si tu vois quelque chose de louche, mets-toi devant et appuie sur ESPACE pour me le signaler."; break;
@@ -1965,7 +1977,7 @@ void Texte::chercheText() {
         case 1031: texte = "Voilà par où a dû passer le voleur! *Qu'attends-tu ? Pars à sa poursuite!"; break;
         case 1032: texte = "J'ai l'impression qu'on m'a oublié... *Voilà que je garde une chambre forte vide et grande ouverte..."; break;
         case 1033: texte = "Le voleur doit être dans cette forêt, tu ne peux pas abandonner maintenant!"; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 1034: texte = "TUTORIEL : Appuyez sur Croix près d'un objet léger tel qu'un pot pour le soulever. Appuyez une seconde fois pour le lancer."; break;
         case 1035: texte = "TUTORIEL : Appuyez sur Rond près d'un coffre pour l'ouvrir. Un coffre ne s'ouvre que par le bas."; break;
 #else
@@ -2453,7 +2465,7 @@ void Texte::chercheText() {
             if (gpJeu->getJoueur()->getCoffre(14,15)) {id=1334; chercheText();break;}
             if (gpJeu->getJoueur()->getCompteurEnn() >= 50 && gpJeu->getJoueur()->getCompteurType() >= 7) {id=1335; chercheText();break;}
             texte = "Elimine au moins 50 ennemis de 7 types différents et je t'ouvrirais cette porte."; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 1342: texte = "Tu as trouvé le masque d'Oni Link !!! *Maintiens R puis appuie sur L pour te transformer et devenir incroyablement puissant."; break;
 #else
         case 1342: texte = "Tu as trouvé le masque d'Oni Link !!! *Utilise 'O' pour te transformer et devenir incroyablement puissant."; break;
@@ -2487,7 +2499,7 @@ void Texte::chercheText() {
         case 1364: texte = "Mais tous deux savaient hélas que, du fond de l'enfer, l'immortel Ganon, tirant son incroyable puissance du voeu"; buffer="originel à la Triforce, rassemblait son armée en vue de son prochain assaut."; idsuiv=1365; break;
         case 1365: texte = "Jusqu'au jour où, après des mois passés à guetter une attaque, un évènement troublant vint mettre fin à cette interminable attente..."; break;
         case 1366: texte = "HO HE !!! *MESSIRE LINK !!!"; break;
-#ifdef __PSP2__
+#ifdef __vita__
         case 1367: texte = "AIDE : Appuie sur Select pour consulter l'aide."; break;
 #else
         case 1367: texte = "AIDE : Appuie sur F1 pour consulter l'aide."; break;
@@ -2516,6 +2528,850 @@ void Texte::affiche(SDL_Surface* gpScreen, std::string s, int a, int b) {
         afficheLettre(gpScreen, s.at(i),a,b);
         a+=6;
     }
+}
+
+void Texte::afficheTexteAvecId(SDL_Surface* gpScreen, int id, std::string s, int a, int b) {
+    std::string texte = "";
+    switch(id) {
+        // 0 -> 99 : Carte
+        case 0 : 
+            texte = "Temple du Courage"; 
+            break;
+        case 1 : 
+            texte = "Temple de la Sagesse"; 
+            break;
+        case 2 : 
+            texte = "Temple de la Force"; 
+            break;
+        case 3 : 
+            texte = "Ruines des Abysses"; 
+            break;
+        case 4 : 
+            texte = "Pyramide Fantôme"; 
+            break;
+        case 5 : 
+            texte = "Grande Pyramide"; 
+            break;
+        case 6 : 
+            texte = "Temple de la Terre"; 
+            break;
+        case 7 : 
+            texte = "Temple de l'Air"; 
+            break;
+        case 8 : 
+            texte = "Temple de l'Eau"; 
+            break;
+        case 9 : 
+            texte = "Temple du Feu"; 
+            break;
+        case 10 : 
+            texte = "Temple des Déesses"; 
+            break;
+        case 11 : 
+            texte = "Château d'Hyrule"; 
+            break;
+        case 12 : 
+            texte = "Casino"; 
+            break;
+        case 13 : 
+            texte = "Tour des Gemmes"; 
+            break;
+        case 14 : 
+            texte = "Destination Finale"; 
+            break;
+
+        // 100 -> 199 : Encyclopedie
+        case 100 :
+            texte = "MONSTRES " + s;
+            break;
+
+        // 200 -> 399 : Generique
+        case 200 : 
+            texte = "ECRAN DE SELECTION";
+            break;
+        case 201 :
+            texte = "1.";
+            break;
+        case 202 :
+            texte = "2.";
+            break;
+        case 203 :
+            texte = "3.";
+            break;
+        case 204 :
+            texte = "OPTIONS";
+            break;
+        case 205 :
+            texte = "RECORDS";
+            break;
+        case 206 :
+            texte = "OPTIONS";
+            break;
+        case 207 :
+            texte = "MUSIQUE";
+            break;
+        case 208 :
+            texte = "SON";
+            break;
+        case 209 :
+            texte = "RETOUR";
+            break;
+        case 210 :
+            texte = "RECORDS";
+            break;
+        case 211 :
+            texte = "MEILLEUR TEMPS : " + s;
+            break;
+        case 212 :
+            texte = "RANG DES 100%";
+            break;
+        case 213 :
+            texte = "RANG ULTIME";
+            break;
+        case 214 :
+            texte = "RANG DE RAPIDITE";
+            break;
+        case 215 :
+            texte = "RETOUR";
+            break;
+        case 216 :
+            texte = "EFFACER";
+            break;
+        case 217 :
+            texte = "EFFACER ?";
+            break;
+        case 218 :
+            texte = "OUI";
+            break;
+        case 219 :
+            texte = "NON";
+            break;
+        case 220 :
+            texte = "CHARGER";
+            break;
+        case 221 :
+            texte = "EFFACER";
+            break;
+        case 222 :
+            texte = "ANNULER";
+            break;
+        case 223 :
+#ifdef __vita__
+            texte = "Retour au jeu : Croix - Suite : Droite";
+#else
+            texte = "Retour au jeu : Entrée - Suite : Droite";
+#endif
+            break;
+        case 224 :
+#ifdef __vita__
+            texte = "Lire / Ouvrir / Parler : Rond";
+#else
+            texte = "Lire / Ouvrir / Parler : Espace";
+#endif
+            break;
+        case 225 :
+#ifdef __vita__
+            texte = "Valider / Passer texte : Croix";
+#else
+            texte = "Valider / Passer texte : Entrée";
+#endif
+            break;
+        case 226 :
+#ifdef __vita__
+            texte = "Déplacer Link : Stick Gauche";
+#else
+            texte = "Déplacer Link : Flèches de direction";
+#endif
+            break;
+        case 227 :
+#ifdef __vita__
+            texte = "Courir : Maintenir R"; 
+#else
+            texte = "Courir : Shift maintenu ou Capslock"; 
+#endif
+            break;
+        case 228 :
+#ifdef __vita__
+            texte = "Coup d'épée : Croix";
+#else
+            texte = "Coup d'épée : W ou Z";
+#endif
+            break;
+        case 229 :
+#ifdef __vita__
+            texte = "Attaque Tornade : Croix maintenu puis lâché";
+#else
+            texte = "Attaque Tornade : W ou Z maintenu puis lâché";
+#endif
+            break;
+        case 230 :
+#ifdef __vita__
+            texte = "Menu de sélection d'objet : D-Pad Droit";
+#else
+            texte = "Menu de sélection d'objet : Entrée";
+#endif
+            break;
+        case 231 :
+#ifdef __vita__
+            texte = "Utiliser l'objet sélectionné : Triangle";
+#else
+            texte = "Utiliser l'objet sélectionné : X";
+#endif
+            break;
+        case 232 :
+#ifdef __vita__
+            texte = "Porter : Croix"; 
+#else
+            texte = "Porter : C"; 
+#endif
+            break;
+        case 233 :
+#ifdef __vita__
+            texte = "Afficher la carte : L (extérieur ou donjons)";
+#else
+            texte = "Afficher la carte : P (extérieur ou donjons)";
+#endif
+            break;
+        case 234 :
+#ifdef __vita__
+            texte = "Afficher la carte : L (dans les donjons)";
+#else
+            texte = "Afficher la carte : P (dans les donjons)";
+#endif
+            break;
+        case 235 :
+#ifdef __vita__
+        texte = "Afficher les monstres vaincus : D-Pad Haut"; 
+#else
+        texte = "Afficher les monstres vaincus : M"; 
+#endif
+            break;
+        case 236 :
+#ifdef __vita__
+        texte = "Afficher la liste des poissons péchés : D-Pad Bas"; 
+#else
+        texte = "Afficher la liste des poissons péchés : L"; 
+#endif
+            break;
+        case 237 :
+#ifdef __vita__
+        texte = "Afficher les items de troc : D-Pad Gauche"; 
+#else
+        texte = "Afficher les items de troc : I"; 
+#endif
+            break;
+        case 238 :
+#ifdef __vita__
+        texte = "Transformation Oni Link : L + R"; 
+#else
+        texte = "Transformation Oni Link : O"; 
+#endif
+            break;
+        case 239 :
+#ifdef __vita__
+            texte = "Regarder autour : Stick Droite";
+#else
+            texte = "Regarder autour : Ctrl et direction";
+#endif
+            break;
+        case 240 :
+#ifdef __vita__
+            texte = "";
+#else
+            texte = "Agrandir / Rétrécir: Ctrl et Entrée";
+#endif
+            break;
+        case 241 :
+#ifdef __vita__
+            texte = "Sauvegarder / Quitter : Start";
+#else
+            texte = "Sauvegarder / Quitter : Echap";
+#endif
+            break;
+        case 242 :
+            texte = "AIDE 1/3";
+            break;
+        case 243 :
+            texte = "AIDE 1/2";
+            break;
+        case 244 :
+#ifdef __vita__
+            texte = "Utiliser l'objet sélectionné : Triangle";
+#else
+            texte = "Utiliser l'objet sélectionné : X";
+#endif
+            break;
+        case 245 :
+#ifdef __vita__
+            texte = "Porter : Croix"; 
+#else
+            texte = "Porter : C"; 
+#endif
+            break;
+        case 246 :
+#ifdef __vita__
+            texte = "Afficher la carte : L (extérieur ou donjons)";
+#else
+            texte = "Afficher la carte : P (extérieur ou donjons)";
+#endif
+            break;
+        case 247 :
+#ifdef __vita__
+            texte = "Afficher la carte : L (dans les donjons)";
+#else
+            texte = "Afficher la carte : P (dans les donjons)";
+#endif
+            break;
+        case 248 :
+#ifdef __vita__
+        texte = "Afficher les monstres vaincus : D-Pad Haut"; 
+#else
+        texte = "Afficher les monstres vaincus : M"; 
+#endif
+            break;
+        case 249 :
+#ifdef __vita__
+        texte = "Afficher la liste des poissons péchés : D-Pad Bas"; 
+#else
+        texte = "Afficher la liste des poissons péchés : L"; 
+#endif
+            break;
+        case 250 :
+#ifdef __vita__
+        texte = "Afficher les items de troc : D-Pad Gauche"; 
+#else
+        texte = "Afficher les items de troc : I"; 
+#endif
+            break;
+        case 251 :
+#ifdef __vita__
+        texte = "Transformation Oni Link : L + R"; 
+#else
+        texte = "Transformation Oni Link : O"; 
+#endif
+            break;
+        case 252 :
+            texte = "AIDE 2/3";
+            break;
+        case 253 :
+#ifdef __vita__
+            texte = "Retour au jeu : Croix - Suite : Droite";
+#else
+            texte = "Retour au jeu : Entrée - Suite : Droite";
+#endif
+            break;
+        case 254 :
+#ifdef __vita__
+            texte = "Regarder autour : Stick Droite";
+#else
+            texte = "Regarder autour : Ctrl et direction";
+#endif
+            break;
+        case 255 :
+            texte = "Agrandir / Rétrécir : Ctrl et Entrée";
+            break;
+        case 256 :
+            texte = "AIDE 2/2";
+            break;
+        case 257 :
+#ifdef __vita__
+            texte = "Retour au jeu : Croix - Précédent : Gauche";
+#else
+            texte = "Retour au jeu : Entrée - Précédent : Gauche";
+#endif
+            break;
+        case 258 :
+            texte = "AIDE 3/3";
+            break;
+        case 259 :
+            texte = "SAC DE TROC";
+            break;
+        case 260 :
+            texte = s + " SACS DE RIZ";
+            break;
+        case 261 :
+            texte = s + " SAC DE RIZ";
+            break;
+        case 262 :
+            texte = s + " BOCAUX D'EPICES";
+            break;
+        case 263 :
+            texte = s + " BOCAL D'EPICES";
+            break;
+        case 264 :
+            texte = s + " SACS D'OLIVES";
+            break;
+        case 265 :
+            texte = s + " SAC D'OLIVES";
+            break;
+        case 266 :
+            texte = s + " PERLES";
+            break;
+        case 267 :
+            texte = s + " PERLE";
+            break;
+        case 268 :
+            texte = s + " PLUMES";
+            break;
+        case 269 :
+            texte = s + " PLUME";
+            break;
+        case 270 :
+            texte = s + " POULETS";
+            break;
+        case 271 :
+            texte = s + " POULET";
+            break;
+        case 272 :
+            texte = s + " TAPISSERIES";
+            break;
+        case 273 :
+            texte = s + " TAPISSERIE";
+            break;
+        case 274 :
+            texte = s + " AMULETTES";
+            break;
+        case 275 :
+            texte = s + " AMULETTE";
+            break;
+        case 276 :
+            texte = s + " PARFUMS";
+            break;
+        case 277 :
+            texte = s + " PARFUM";
+            break;
+        case 278 :
+            texte = s + " ROCS MAGMA";
+            break;
+        case 279 :
+            texte = s + " ROC MAGMA";
+            break;
+        case 280 :
+            texte = s + " ROCS GIVRE";
+            break;
+        case 281 :
+            texte = s + " ROC GIVRE";
+            break;
+        case 282 :
+            texte = s + " POIVRON";
+            break;
+        case 283 :
+            texte = s + " ROUAGE";
+            break;
+        case 284 :
+            texte = s + " JAUGE";
+            break;
+        case 285 :
+            texte = s + " ROUE";
+            break;
+        case 286 :
+            texte = s + " SOURCE D'ENERGIE";
+            break;
+        case 287 :
+            texte = "RANG : Héros Légendaire";
+            break;
+        case 288 :
+            texte = "RANG : Héros des deux Mondes";
+            break;
+        case 289 :
+            texte = "RANG : Héros d'Hyrule";
+            break;
+        case 290 :
+            texte = "RANG : Héros de Termina";
+            break;
+        case 291 :
+            texte = "RANG : Héros du Temps";
+            break;
+        case 292 :
+            texte = "RANG : INCONNU";
+            break;
+        case 293 :
+            texte = "Finir le jeu à 100%.";
+            break;
+        case 294 :
+            texte = "RANG : Epéiste Légendaire";
+            break;
+        case 295 :
+            texte = "RANG : Maître Epéiste";
+            break;
+        case 296 :
+            texte = "RANG : Frimeur";
+            break;
+        case 297 :
+            texte = "RANG : Crâneur";
+            break;
+        case 298 :
+            texte = "RANG : Orgueilleux";
+            break;
+        case 299 :
+            texte = "RANG : INCONNU";
+            break;
+        case 300 :
+            texte = "Finir le jeu sans mourir,";
+            break;
+        case 301 :
+            texte = "avec 12 coeurs au maximum,";
+            break;
+        case 302 :
+            texte = "et sans flacons.";
+            break;
+        case 303 :
+            texte = "RANG : Marathonien Légendaire";
+            break;
+        case 304 :
+            texte = "RANG : Marathonien des deux Mondes";
+            break;
+        case 305 :
+            texte = "RANG : Marathonien d'Hyrule";
+            break;
+        case 306 :
+            texte = "RANG : Marathonien de Termina";
+            break;
+        case 307 :
+            texte = "RANG : Marathonien du Temps";
+            break;
+        case 308 :
+            texte = "Finir le jeu en moins de sept";
+            break;
+        case 309 :
+            texte = "heures.";
+            break;
+        case 310 :
+            texte = "SCORES :";
+            break;
+        case 311 :
+            texte = "Temps de jeu : " + s;
+            break;
+        case 312 :
+            texte = "Mort " + s;
+            break;
+        case 313 :
+            texte = "1/4 Coeurs : " + s;
+            break;
+        case 314 :
+            texte = "Gemmes force : " + s;
+            break;
+        case 315 :
+            texte = "Objets: " + s + " / 139";
+            break;
+        case 316 :
+            texte = "Objets de troc : " + s + " / 45";
+            break;
+        case 317 :
+            texte = "Poissons : " + s + " / 30";
+            break;
+        case 318 :
+            texte = "Ennemis : " + s + " / 100";
+            break;
+        case 319 :
+            texte = "Tu as fini ce jeu à " + s + "%, félicitation !";
+            break;
+        case 320 :
+            texte = "RANG : ";
+            break;
+        case 321 :
+            texte = " - Epéiste Légendaire";
+            break;
+        case 322 :
+            texte = " - Maître Epéiste";
+            break;
+        case 323 :
+            texte = " - Orgueilleux";
+            break;
+        case 324 :
+            texte = " - Héros Légendaire";
+            break;
+        case 325 :
+            texte = " - Héros d'Hyrule";
+        case 326 :
+            texte = " - Héros des deux Mondes";
+            break;
+        case 327 :
+            texte = " - Héros du Temps";
+            break;
+        case 328 :
+            texte = " - Perfectionniste";
+            break;
+        case 329 :
+            texte = " - Fan de Zelda";
+            break;
+        case 330 :
+            texte = " - Pro du clavier";
+            break;
+        case 331 :
+            texte = " - Pro du pad";
+            break;
+        case 332 :
+            texte = " - Confirmé";
+            break;
+        case 333 :
+            texte = " - Débutant";
+            break;
+        case 334 :
+            texte = " - Mort-vivant";
+            break;
+        case 335 :
+            texte = " - Kamikaze";
+            break;
+        case 336 :
+            texte = " - Marathonien Légendaire";
+            break;
+        case 337 :
+            texte = " - Marathonien d'Hyrule";
+            break;
+        case 338 :
+            texte = " - Marathonien des deux Mondes";
+            break;
+        case 339 :
+            texte = " - Marathonien du Temps";
+            break;
+        case 400 :
+            texte = "ARC";
+            break;
+        case 401 :
+            texte = "GRAND ARC DES FEES";
+            break;
+        case 402 :
+            texte = "GRAPPIN";
+            break;
+        case 403 :
+            texte = "BOMBES";
+            break;
+        case 404 :
+            texte = "FLECHE DE FEU";
+            break;
+        case 405 :
+            texte = "GEMME ROUGE";
+            break;
+        case 406 :
+            texte = "ENCLUME";
+            break;
+        case 407 :
+            texte = "FER A CHEVAL";
+            break;
+        case 408 :
+            texte = "BIJOU PRECIEUX";
+            break;
+        case 409 :
+            texte = "LETTRE";
+            break;
+        case 410 :
+            texte = "ALLIANCE";
+            break;
+        case 411 :
+            texte = "MARTEAU";
+            break;
+        case 412 :
+            texte = "BAGUETTE DE FEU";
+            break;
+        case 413 :
+            texte = "BAGUETTE DE GLACE";
+            break;
+        case 414 :
+            texte = "LANTERNE";
+            break;
+        case 415 :
+            texte = "FLECHE DE GLACE";
+            break;
+        case 416 :
+            texte = "GEMME BLEUE";
+            break;
+        case 417 :
+            texte = "VIEILLE BOTTE";
+            break;
+        case 418 :
+            texte = "MARTEAU LOURD";
+            break;
+        case 419 :
+            texte = "CLOCHETTE";
+            break;
+        case 420 :
+            texte = "HACHE BARBARE";
+            break;
+        case 421 :
+            texte = "CORDE EXPLICITE";
+            break;
+        case 422 :
+            texte = "PLAN DU PONT";
+            break;
+        case 423 :
+            texte = "MARTEAU MAGIQUE";
+            break;
+        case 424 :
+            texte = "OCARINA DU TEMPS";
+            break;
+        case 425 :
+            texte = "CANNE A PECHE";
+            break;
+        case 426 :
+            texte = "SUPER CANNE A PECHE";
+            break;
+        case 427 :
+            texte = "MEGA CANNE A PECHE";
+            break;
+        case 428 :
+            texte = "FLECHE DE LUMIERE";
+            break;
+        case 429 :
+            texte = "GEMME JAUNE";
+            break;
+        case 430 :
+            texte = "VIN GRAND CRU";
+            break;
+        case 431 :
+            texte = "POUDRE D'OR";
+            break;
+        case 432 :
+            texte = "MIROIR MAGIQUE";
+            break;
+        case 433 :
+            texte = "PETITE CUILLERE";
+            break;
+        case 434 :
+            texte = "CRANE";
+            break;
+        case 435 :
+            texte = "DETTE IMPAYEE";
+            break;
+        case 436 : 
+            texte = "SCIE";
+            break;
+        case 437 :
+            texte = "GEMME VERTE";
+            break;
+        case 438 :
+            texte = "CARTE DE VOYAGE";
+            break;
+        case 439 : 
+            texte = "BALAIS";
+            break;
+        case 440 :
+            texte = "CONFITURE FRAISE";
+            break;
+        case 441 :
+            texte = "CROISSANT";
+            break;
+        case 442 :
+            texte = "BIERE";
+            break;
+        case 443 :
+            texte = "CLOU";
+            break;
+        case 444 :
+            texte = "FLACON VIDE";
+            break;
+        case 445 :
+            texte = "POTION ROUGE";
+            break;
+        case 446 :
+            texte = "POTION VERTE";
+            break;
+        case 447 :
+            texte = "POTION BLEUE";
+            break;
+        case 448 :
+            texte = "EQUIPEMENT :";
+            break;
+        
+        // 500 -> 599 : Poissons
+        case 500 :
+            texte = "POISSONS " + s;
+            break;
+        case 501 : 
+            texte = "Ecrevisse"; 
+            break;
+        case 502 : 
+            texte = "Eperlan"; 
+            break;
+        case 503 : 
+            texte = "Poisson-zèbre"; 
+            break;
+        case 504 : 
+            texte = "Gobie"; 
+            break;
+        case 505 : 
+            texte = "Crabe"; 
+            break;
+        case 506 : 
+            texte = "Pibale"; 
+            break;
+        case 507 : 
+            texte = "Vairon"; 
+            break;
+        case 508 : 
+            texte = "Carassin doré"; 
+            break;
+        case 509 : 
+            texte = "Ablette"; 
+            break;
+        case 510 : 
+            texte = "Goujon";
+            break;
+        case 511 : 
+            texte = "Loche"; 
+            break;
+        case 512 : 
+            texte = "Epinoche"; 
+            break;
+        case 513 : 
+            texte = "Grémille"; 
+            break;
+        case 514 : 
+            texte = "Blennie"; 
+            break;
+        case 515 : 
+            texte = "Magicarpe"; 
+            break;
+        case 516 : 
+            texte = "Truite"; 
+            break;
+        case 517 : 
+            texte = "Ayu"; 
+            break;
+        case 518 : 
+            texte = "Perche noire"; 
+            break;
+        case 519 : 
+            texte = "Anguille"; 
+            break;
+        case 520 : 
+            texte = "Poisson-chat"; 
+            break;
+        case 521 : 
+            texte = "Black-bass"; 
+            break;
+        case 522 : 
+            texte = "Huchon"; 
+            break;
+        case 523 : 
+            texte = "Barbeau"; 
+            break;
+        case 524 : 
+            texte = "Lamproie"; 
+            break;
+        case 525 : 
+            texte = "Hotu"; 
+            break;
+        case 526 : 
+            texte = "Saumon"; 
+            break;
+        case 527 : 
+            texte = "Esturgeon"; 
+            break;
+        case 528 :
+            texte = "Omble-chevalier"; 
+            break;
+        case 529 : 
+            texte = "Carpe"; 
+            break;
+        case 530 : 
+            texte = "Silure"; 
+            break;
+        default:
+            texte = "[ERRREUR TEXTE]";
+    }
+
+    affiche(gpScreen, texte, a, b);
 }
 
 void Texte::draw(SDL_Surface* gpScreen) {

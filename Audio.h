@@ -42,7 +42,7 @@ class Audio {
         int specialId;
         Mix_Chunk** sons;
         Mix_Music* music;
-#ifdef __PSP2__
+#ifdef __vita__
         char* mem;
         FILE* f;
 #endif

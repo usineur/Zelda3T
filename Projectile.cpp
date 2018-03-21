@@ -46,7 +46,7 @@ void Projectile::draw(SDL_Surface* gpScreen) {
         phg[0] = gpJeu->getPhg(0);
         phg[1] = gpJeu->getPhg(1);
     
-        // déplacement
+        // dÃ©placement
         if (vie && !gpJeu->getStop() && vitesse) {
             for (int i=0; i<vitesse; i++) {
                 if (etape == 1) {
@@ -137,7 +137,7 @@ void Projectile::draw(SDL_Surface* gpScreen) {
                     if ((id == 1 || id == 2 || id == 4 || (id >= 7 && id <40) 
                     || id == 19 || id == 130 || id == 140) && (max > 0 || id == 140)) {
                         vie = 0;
-                        //anim Ganondorf se relève
+                        //anim Ganondorf se relÃ¨ve
                         if (id == 15 && gpJeu->getZone() == 57 && gpJeu->getJoueur()->getEnnemi(50) 
                         && gpJeu->getMonde()->regionValue(0)==160*16 
                         && gpJeu->getMonde()->regionValue(1)==15*16
@@ -474,12 +474,12 @@ void Projectile::changeType(int type) {
     id = type;
     SDL_FreeSurface(image);
     switch (type) {
-        case 1 : //flèche
-        case 2 : //flèche argent
-        case 30 : //flèche feu
-        case 31 : //flèche glace
-        case 32 : //flèche lumière
-        case 33 : //flèche d'or
+        case 1 : //flÃ¨che
+        case 2 : //flÃ¨che argent
+        case 30 : //flÃ¨che feu
+        case 31 : //flÃ¨che glace
+        case 32 : //flÃ¨che lumiÃ¨re
+        case 33 : //flÃ¨che d'or
             switch (id) {
                 case 1 : image = gpJeu->loadImg("data/images/objet/projectiles.png"); break;
                 case 2 : image = gpJeu->loadImg("data/images/objet/projectilesarg.png"); break;
@@ -541,19 +541,19 @@ void Projectile::changeType(int type) {
             max=6;
             gpJeu->getAudio()->playSound(38);
             break;
-        case 15 : //explosion fumée blanche
+        case 15 : //explosion fumÃ©e blanche
             image = gpJeu->loadImg("data/images/ennemi/explo.png");
             w=28; h=28;
             zx=0; zy=0; zw=w; zh=h;
             max=6; vanim=60;
             break;
-        case 16 : //explosion fumée rose
+        case 16 : //explosion fumÃ©e rose
             image = gpJeu->loadImg("data/images/link/exploLapin.png");
             w=28; h=28;
             zx=0; zy=0; zw=w; zh=h;
             max=3; vanim=60;
             break;
-        case 17 : //explosion fumée violette
+        case 17 : //explosion fumÃ©e violette
             image = gpJeu->loadImg("data/images/link/exploOni.png");
             w=28; h=28;
             zx=0; zy=0; zw=w; zh=h;

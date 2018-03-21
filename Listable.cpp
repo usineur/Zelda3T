@@ -37,7 +37,7 @@ Listable* Listable::enleve(Listable* l) {
     if (suivant == 0) return 0;
     if (l == suivant) {
         Listable* tmp = suivant->suivant;
-        suivant->suivant = 0; //pour éviter suppressions récursives
+        suivant->suivant = 0; //pour Ã©viter suppressions rÃ©cursives
         Listable* ret = suivant;
         suivant = tmp;
         return ret;

@@ -501,7 +501,7 @@ void Pnj::suit() {
     int difx = pnjCX - linkCX;
     int dify = pnjCY - linkCY;
     
-    //test portée
+    //test portÃ©e
     
     
     if ( max(abs(difx),abs(dify))>128) {

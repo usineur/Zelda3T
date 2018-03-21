@@ -477,7 +477,7 @@ void Jeu::lire() {
         ecrit(id);
         return;
     }
-    //demande infos à Zelda
+    //demande infos Ã  Zelda
     if (zone == 57 && gpJoueur->getAvancement()>=ZELDA_SOUS_SOL 
     && gpJoueur->getAvancement() <= RIDEAUX_REPERES
     && i > 100*16 && i < 120*16 && j > 165*16 && j < 180*16) {
@@ -486,7 +486,7 @@ void Jeu::lire() {
         if (val==6329) {ecrit(1028); return;}
         if (val==6126) {ecrit(1029); return;}
     }
-    //parle à un arbre
+    //parle Ã  un arbre
     if (val==4370 || val==4379) {
         ecrit(4);
         return;
@@ -1810,7 +1810,7 @@ bool Jeu::finTexte(int id) {
             break;
         case 1141 : gpJoueur->setCoffre(12,13,1); gpJoueur->setImmo(true); break;
         case 1142 : gpJoueur->setCoffre(12,13,6); gpJoueur->setImmo(true); break;
-        //quizz - bonne réponse
+        //quizz - bonne rÃ©ponse
         case 1156 : case 1160 : case 1164 : case 1168 : case 1172 :
         case 1176 : case 1180 : case 1184 : case 1188 : case 1192 :
         case 1196 : case 1200 : case 1204 : case 1208 : case 1212 :
@@ -1839,7 +1839,7 @@ bool Jeu::finTexte(int id) {
                 enn = enn->getSuivant();
             }
             break;
-        //quizz - mauvaise réponse
+        //quizz - mauvaise rÃ©ponse
         case 1157 : case 1161 : case 1165 : case 1169 : case 1173 :
         case 1177 : case 1181 : case 1185 : case 1189 : case 1193 :
         case 1197 : case 1201 : case 1205 : case 1209 : case 1213 :
@@ -2223,7 +2223,7 @@ bool Jeu::allumeTorche(int i, int j) {
         testAnim();
         return true;
     }
-    //sol gelé
+    //sol gelÃ©
     if (val==5629) {
         if (zone == 54) gpJoueur->setCoffre(8,54);
         
@@ -2401,7 +2401,7 @@ bool Jeu::exploseMur(int i, int j) {
         gpAudio->playSound(9);
         return true;
     }
-    //sol fissuré
+    //sol fissurÃ©
     if (val==3790 || val==3791 || val==3792 || val==5433) {
         if (zone == 50 && gpMonde->regionValue(0) == 0) gpJoueur->setCoffre(4,28);
         if (zone == 50 && gpMonde->regionValue(0) == 20*16 && i<26*16) gpJoueur->setCoffre(4,29);
@@ -2595,7 +2595,7 @@ void Jeu::donneObjet(Ennemi* ennemi) {
         ) obj = 0;
     }
     
-    //spécial
+    //spÃ©cial
     if ((zone==46 && gpMonde->regionValue(0)==200*16 && gpMonde->regionValue(1)==0 && gpJoueur->getCoffre(0,21)==0 && ennemi->getEnnId()==1) 
 /*    || (zone==20 && gpMonde->regionValue(0)==60*16 && gpMonde->regionValue(1)==45*16 && gpJoueur->getCoffre(5,4)==0 && nbEnnemis()==0)
     || (zone==20 && gpMonde->regionValue(0)==60*16 && gpMonde->regionValue(1)==60*16 && gpJoueur->getCoffre(5,5)==0 && nbEnnemis()==0)
@@ -2746,7 +2746,7 @@ void Jeu::ouvrePorteDonjon(int x, int y) {
         }
         gpMonde->passage(x1,y1,0);
     }
-    //porte vérouillée h b
+    //porte vÃ©rouillÃ©e h b
     if ((val==2793 || val==2794 || val==2795 || val==2796
     || val==2993 || val==2994 || val==2995 || val==2996
     || val==3165 || val==3166 || val==3167 || val==3168
@@ -2816,7 +2816,7 @@ void Jeu::ouvrePorteDonjon(int x, int y) {
         gpMonde->passage(x1,y1,0);
         gpJoueur->setCle(zone-46, 3, gpJoueur->getCle(zone-46, 3)-1);
     }
-    //porte vérouillée g d
+    //porte vÃ©rouillÃ©e g d
     if ((val==2801 || val==2808 || val==3001 || val==3008 || val==3173 || val==3180
     || val==3415 || val==3424 || val==3653 || val==3658 || val==5072 || val==5077
     || val==3883 || val==3888 || val==5323 || val==5328 || val==5516 || val==5521
@@ -3071,7 +3071,7 @@ void Jeu::descendWagon() {
 bool Jeu::isDangereux(int x, int y) {
     if (gpJoueur->getInvincible() || !gpJoueur->getVie()) return false;
     
-    //barrière magique
+    //barriÃ¨re magique
     if ((gpMonde->motifAirValue(x+2,y+8-8)>=2001 && gpMonde->motifAirValue(x+2,y+8-8)<=2004) ||
     (gpMonde->motifAirValue(x+10,y+8-8)>=2001 && gpMonde->motifAirValue(x+10,y+8-8)<=2004) ||
     (gpMonde->motifAirValue(x+17,y+8-8)>=2001 && gpMonde->motifAirValue(x+17,y+8-8)<=2004) ||
@@ -3516,7 +3516,7 @@ void Jeu::testTeleporteur(int x, int y) {
             case 111 :
             case 114 :
             case 124 :
-                //todo : ajuster les coordonnées d'arrivée
+                //todo : ajuster les coordonnÃ©es d'arrivÃ©e
                 gpMonde->transitFull(60,69*16+8,145*16-8);
                 break;
             /*case 25 : 
@@ -3578,7 +3578,7 @@ bool Jeu::verifZoneJoueur(int x, int y, int w, int h, int nbdir) {
     //ouvre porte
     ouvrePorteMaison(x+8, y);
     
-    //portes verrouillées
+    //portes verrouillÃ©es
     ouvrePorteDonjon(x/*+8*/, y/*-2*/);
     
     testInterrupteur(x+8, y+4);
@@ -3656,7 +3656,7 @@ bool Jeu::isNotFull(int x, int y, int w, int h) {
     return true;
 }
 
-//cas général
+//cas gÃ©nÃ©ral
 bool Jeu::isNotFull(int x, int y, int w, int h, int vol, int nage, int spectre) {
     for (int i = x; i < x + w; i++)
         for (int j = y; j < y + h; j++) {
@@ -3697,7 +3697,7 @@ bool Jeu::hasVide(int x, int y, int w, int h) {
     return false;
 }
 
-//renvoit vrai présence de glace
+//renvoit vrai prÃ©sence de glace
 bool Jeu::isGlace(int x, int y, int w, int h) {
     for (int i = x; i < x + w; i++)
         for (int j = y; j < y + h; j++) {
@@ -3724,7 +3724,7 @@ bool Jeu::isMarchable(int i, int j, int vol, int nage, int spectre, int caisse) 
     if (i < gpMonde->regionValue(0) || i>= gpMonde->regionValue(2) 
     || j < gpMonde->regionValue(1) || j>= gpMonde->regionValue(3)) return false;
     if (spectre) return true;
-    //vérif caisses
+    //vÃ©rif caisses
     Caisse* gpCaisse2 = gpCaisse->getSuivant();
     while (gpCaisse2!=NULL) {
         if (abs(i-gpCaisse2->getX()<16) || abs(j-gpCaisse2->getY()<16)) {
@@ -3850,7 +3850,7 @@ int Jeu::enleve() {
         case 4403 : obj = 6; new_val = 4404; break;
     }
     
-    //pierres désert
+    //pierres dÃ©sert
     if (zone == 27) {
         int a=((int)(i/16));
         int b=((int)(j/16));
@@ -3923,6 +3923,14 @@ void Jeu::ecrit(int id, bool anim, bool cadre, int x, int y, int w, int h) {
 
 void Jeu::affiche(SDL_Surface* gpScreen, std::string s, int x, int y) {
     gpTexte->affiche(gpScreen, s, x, y);
+}
+
+void Jeu::afficheTexteAvecId(SDL_Surface* gpScreen, int id, int x, int y) {
+    afficheTexteAvecId(gpScreen, id, "", x, y);
+}
+
+void Jeu::afficheTexteAvecId(SDL_Surface* gpScreen, int id, std::string s, int x, int y) {
+    gpTexte->afficheTexteAvecId(gpScreen, id, s, x, y);
 }
 
 Ennemi* Jeu::existEnnemi(int type) {
@@ -4091,7 +4099,7 @@ void Jeu::testAnim() {
                 gpMonde->setValeur(349*16,38*16,3084,0);
                 gpMonde->setValeur(350*16,38*16,3084,0);}
             //donjon
-            //caisses à 0
+            //caisses Ã  0
             if (gpMonde->regionValue(0)==200*16 && gpMonde->regionValue(1)==30*16 
             && gpMonde->motifValue(204*16,34*16)==3084) {
                 Caisse* caisse = gpCaisse->getSuivant();
@@ -4104,7 +4112,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<205*16) gpJoueur->moveX(205*16-gpJoueur->getX());
             }
-            //puzzles caisses à 0
+            //puzzles caisses Ã  0
             if (gpMonde->regionValue(0)==260*16 && gpMonde->regionValue(1)==75*16 
             && gpMonde->motifValue(260*16,81*16)==3023) {
                 Caisse* caisse = gpCaisse->getSuivant();
@@ -4316,7 +4324,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<245*16) gpJoueur->moveX(245*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==200*16 && gpMonde->regionValue(1)==60*16 
              && nbEnnemis()==0 && gpMonde->motifValue(216*16,62*16)==3084) {
                 gpAudio->playSound(9);
@@ -4325,7 +4333,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()>215*16) gpJoueur->moveX(215*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==60*16 && gpMonde->regionValue(1)==60*16 
              && nbEnnemis()==0 && gpMonde->motifValue(69*16,66*16)==3084) {
                 gpAudio->playSound(9);
@@ -4587,7 +4595,7 @@ void Jeu::testAnim() {
             && (gpMonde->regionValue(1)==45*16 || gpMonde->regionValue(1)==60*16)
             && nbEnnemis()==0 && gpMonde->motifValue(309*16,60*16)==3666) {
                 gpAudio->playSound(20); gpMonde->passage(309,60,0);}
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==280*16 && gpMonde->regionValue(1)==30*16 
              && nbEnnemis()==0 && gpMonde->motifValue(290*16,37*16)==3084) {
                 gpAudio->playSound(9);
@@ -4596,7 +4604,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()>289*16) gpJoueur->moveX(289*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==280*16 && gpMonde->regionValue(1)==75*16 
              && nbEnnemis()==0 && gpMonde->motifValue(300*16,90*16)==3084) {
                 gpAudio->playSound(9);
@@ -4650,7 +4658,7 @@ void Jeu::testAnim() {
             if (gpMonde->regionValue(0)==230*16 && gpMonde->regionValue(1)==15*16 
             && gpJoueur->getCoeur(5) && gpMonde->motifValue(249*16,15*16)==5085) {
                 gpAudio->playSound(20); gpMonde->passage(249,15,0);}
-            //porte se ferme salle piégée 1
+            //porte se ferme salle piÃ©gÃ©e 1
             if (gpMonde->regionValue(0)==80*16 && gpMonde->regionValue(1)==30*16 
             && gpMonde->motifValue(89*16,58*16)==5041) {
                 gpAudio->playSound(20); gpJoueur->moveY(-16);
@@ -4662,7 +4670,7 @@ void Jeu::testAnim() {
                 for (int i = 0; i < 4; i++) gpMonde->setMurs(89*2+i,58*2+2,HAUT);
                 for (int i = 0; i < 4; i++) gpMonde->setMurs(89*2+i,58*2+3,SEMI_PLEIN);
             }
-            //porte se ferme salle piégée 2
+            //porte se ferme salle piÃ©gÃ©e 2
             if (gpMonde->regionValue(0)==160*16 && gpMonde->regionValue(1)==30*16 
             && gpMonde->motifValue(169*16,58*16)==5041) {
                 gpAudio->playSound(20); gpJoueur->moveY(-16);
@@ -4766,7 +4774,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()>149*16) gpJoueur->moveX(149*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==80*16 && gpMonde->regionValue(1)==60*16 
              && nbEnnemis()==0 && gpMonde->motifValue(90*16,66*16)==3084) {
                 gpAudio->playSound(9);
@@ -4850,7 +4858,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<90*16) gpJoueur->moveX(90*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==0 && gpMonde->regionValue(1)==30*16 
              && nbEnnemis()==0 && gpMonde->motifValue(9*16,37*16)==3084) {
                 gpAudio->playSound(9);
@@ -4859,7 +4867,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<10*16) gpJoueur->moveX(10*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==140*16 && gpMonde->regionValue(1)==30*16 
              && nbEnnemis()==0 && gpMonde->motifValue(149*16,37*16)==3084) {
                 gpAudio->playSound(9);
@@ -4922,7 +4930,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<72*16) gpJoueur->moveX(72*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==20*16 && gpMonde->regionValue(1)==0 
              && nbEnnemis()==0 && gpMonde->motifValue(29*16,7*16)==3084) {
                 gpAudio->playSound(9);
@@ -4931,7 +4939,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<30*16) gpJoueur->moveX(30*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==140*16 && gpMonde->regionValue(1)==0 
              && nbEnnemis()==0 && gpMonde->motifValue(150*16,6*16)==3084) {
                 gpAudio->playSound(9);
@@ -4944,7 +4952,7 @@ void Jeu::testAnim() {
             if (gpMonde->regionValue(0)==240*16 && gpMonde->regionValue(1)==75*16
             && nbEnnemis()==0 && gpMonde->motifValue(249*16,75*16)==5525) {
                 gpAudio->playSound(20); gpMonde->passage(249,75,0);}
-            //puzzles caisses à 0
+            //puzzles caisses Ã  0
             if (gpMonde->regionValue(0)==80*16 && gpMonde->regionValue(1)==75*16 
             && gpMonde->motifValue(100*16,81*16)==5533) {
                 Caisse* caisse = gpCaisse->getSuivant();
@@ -4963,7 +4971,7 @@ void Jeu::testAnim() {
                     gpJoueur->setCoffre(8,21);
                 }
             }
-            //puzzles caisses à 0
+            //puzzles caisses Ã  0
             if (gpMonde->regionValue(0)==220*16 && gpMonde->regionValue(1)==45*16 
             && gpMonde->motifValue(229*16,60*16)==5525) {
                 Caisse* caisse = gpCaisse->getSuivant();
@@ -4982,7 +4990,7 @@ void Jeu::testAnim() {
                     gpJoueur->setCoffre(8,47);
                 }
             }
-            //éteint torches => coffre clé
+            //Eteint torches => coffre clÃ©
             if (gpMonde->regionValue(0)==20*16 && gpMonde->regionValue(1)==15*16 
              && gpMonde->motifValue(47*16,20*16)==1000 && gpMonde->motifValue(53*16,20*16)==1000
              && gpMonde->motifValue(50*16,20*16)==3084) {
@@ -4992,7 +5000,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()>49*16) gpJoueur->moveX(49*16-gpJoueur->getX());
             }
-            //éteint torches => coffre clé
+            //Eteint torches => coffre clÃ©
             if (gpMonde->regionValue(0)==240*16 && gpMonde->regionValue(1)==0 
              && gpMonde->motifValue(247*16,17*16)==1000 && gpMonde->motifValue(251*16,17*16)==1000
              && gpMonde->motifValue(249*16,17*16)==3084) {
@@ -5002,28 +5010,28 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<250*16) gpJoueur->moveX(250*16-gpJoueur->getX());
             }
-            //éteint torches ouvre porte
+            //Eteint torches ouvre porte
             if (gpMonde->regionValue(0)==180*16 && gpMonde->regionValue(1)==30*16 
              && gpMonde->motifValue(182*16,50*16)==1000 && gpMonde->motifValue(182*16,54*16)==1000
              && gpMonde->motifValue(180*16,51*16)==5533) {
                 gpAudio->playSound(20); gpMonde->passage(180,51,1);
                 gpJoueur->setCoffre(8,41);
             }
-            //éteint torches ouvre porte
+            //Eteint torches ouvre porte
             if (gpMonde->regionValue(0)==240*16 && gpMonde->regionValue(1)==30*16 
              && gpMonde->motifValue(248*16,37*16)==1000 && gpMonde->motifValue(251*16,37*16)==1000
              && gpMonde->motifValue(249*16,30*16)==5525) {
                 gpAudio->playSound(20); gpMonde->passage(249,30,0);
                 gpJoueur->setCoffre(8,51);
             }
-            //éteint torches ouvre porte
+            //Eteint torches ouvre porte
             if (gpMonde->regionValue(0)==60*16 && gpMonde->regionValue(1)==30*16 
              && gpMonde->motifValue(80*16,45*16)==1000
              && gpMonde->motifValue(79*16,30*16)==5525) {
                 gpAudio->playSound(20); gpMonde->passage(79,30,0);
                 gpJoueur->setCoffre(8,24);
             }
-            //éteint torches ouvre porte
+            //Eteint torches ouvre porte
             if (gpMonde->regionValue(0)==80*16 && gpMonde->regionValue(1)==0 
              && gpMonde->motifValue(97*16,2*16)==1000 && gpMonde->motifValue(97*16,12*16)==1000
              && gpMonde->motifValue(100*16,6*16)==5533) {
@@ -5105,7 +5113,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<10*16) gpJoueur->moveX(10*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==40*16 && gpMonde->regionValue(1)==0 
              && nbEnnemis()==0 && gpMonde->motifValue(50*16,6*16)==3084) {
                 gpAudio->playSound(9);
@@ -5114,7 +5122,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()>49*16) gpJoueur->moveX(49*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==60*16 && gpMonde->regionValue(1)==0 
              && nbEnnemis()==0 && gpMonde->motifValue(69*16,6*16)==3084) {
                 gpAudio->playSound(9);
@@ -5123,7 +5131,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<70*16) gpJoueur->moveX(70*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==80*16 && gpMonde->regionValue(1)==0 
              && nbEnnemis()==0 && gpMonde->motifValue(89*16,6*16)==3084) {
                 gpAudio->playSound(9);
@@ -5248,7 +5256,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<150*16) gpJoueur->moveX(150*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==0 && gpMonde->regionValue(1)==15*16 
              && nbEnnemis()==0 && gpMonde->motifValue(30*16,21*16)==3084) {
                 gpAudio->playSound(9);
@@ -5257,7 +5265,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()>29*16) gpJoueur->moveX(29*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==100*16 && gpMonde->regionValue(1)==15*16 
              && nbEnnemis()==0 && gpMonde->motifValue(109*16,21*16)==3084) {
                 gpAudio->playSound(9);
@@ -5266,7 +5274,7 @@ void Jeu::testAnim() {
                 if (!verifZoneJoueur(gpJoueur->getX(), gpJoueur->getY()+8, 16, 16, 2)
                 && gpJoueur->getX()<110*16) gpJoueur->moveX(110*16-gpJoueur->getX());
             }
-            //ennemi vaincu => coffre clé
+            //ennemi vaincu => coffre clÃ©
             if (gpMonde->regionValue(0)==180*16 && gpMonde->regionValue(1)==0 
              && nbEnnemis()==0 && gpMonde->motifValue(190*16,6*16)==3084) {
                 gpAudio->playSound(9);
@@ -5371,7 +5379,7 @@ void Jeu::testAnim() {
             if (gpMonde->regionValue(0)==60*16 && gpMonde->regionValue(1)==30*16 
             && gpJoueur->getCoeur(11) && gpMonde->motifValue(69*16,30*16)==6418) {
                 gpAudio->playSound(20); gpMonde->passage(69,30,0);}
-            //puzzles caisses à 0
+            //puzzles caisses Ã  0
             if (gpMonde->regionValue(0)==120*16 && gpMonde->regionValue(1)==75*16
             && gpJoueur->getCoffre(12,13) == 1) {
                 int nb = 0;
@@ -7169,7 +7177,7 @@ void Jeu::testFin() {
 
 SDL_Surface* Jeu::loadImg(const char* image) {
     char fImage[512];
-#ifdef __PSP2__
+#ifdef __vita__
     snprintf(fImage, sizeof(fImage), "%s%s", "app0:", image);
 #else
     snprintf(fImage, sizeof(fImage), "%s", image);
