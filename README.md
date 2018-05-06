@@ -50,6 +50,10 @@ Note: saves can be found in `ux0:data/z3t/save` directory.
 
 ## Changelog:
 
+1.2.2:
+- Added multilingual support with autodetection
+- Added English translation
+
 1.2.1:
 - Add "Fullscreen" option
 - Add "Auto-hide menu bar" option

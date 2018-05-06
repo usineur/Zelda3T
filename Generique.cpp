@@ -11,6 +11,7 @@
 #include "Generique.h"
 #include "Jeu.h"
 #include "Keyboard.h"
+#include "Lang.h"
 
 Generique::Generique(Jeu* jeu) : gpJeu(jeu), anim(0) {
     imageFin = NULL;
@@ -27,6 +28,7 @@ Generique::Generique(Jeu* jeu) : gpJeu(jeu), anim(0) {
     imageFond1 = NULL;
     imageFond2 = NULL;
     for (int i = 0; i < 5; i++) imageIntro[i]=NULL;
+    imageFlags = gpJeu->loadImg("data/images/logos/flags.png");
 }
 
 Generique::~Generique() {
@@ -260,14 +262,11 @@ void Generique::initOption() {
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
     cadre(16,64,288,32);
-    cadre(16,128,288,32);
+    cadre(16,107,288,32);
+    cadre(16,150,288,32);
     cadre(16,192,136,32);
-    
-    gpJeu->afficheTexteAvecId(image, 206, 40, 16);
-    gpJeu->afficheTexteAvecId(image, 207, 60, 72);
-    gpJeu->afficheTexteAvecId(image, 208, 60, 136);
-    gpJeu->afficheTexteAvecId(image, 209, 63, 200);
-    
+
+    // VOLUME
     src.x = 0; src.y = 96; dst.x = 128; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     for (int i = 144; i < 264; i+=16) {
@@ -277,13 +276,14 @@ void Generique::initOption() {
     src.x = 32; src.y = 96; dst.x = 264; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    src.x = 0; src.y = 96; dst.x = 128; dst.y = 136; 
+    // SOUND
+    src.x = 0; src.y = 96; dst.x = 128; dst.y = 115; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     for (int i = 144; i < 264; i+=16) {
-        src.x = 16; src.y = 96; dst.x = i; dst.y = 136; 
+        src.x = 16; src.y = 96; dst.x = i; dst.y = 115; 
         SDL_BlitSurface(imageCadre, &src, image, &dst);
     }
-    src.x = 32; src.y = 96; dst.x = 264; dst.y = 136; 
+    src.x = 32; src.y = 96; dst.x = 264; dst.y = 115; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
 }
 
@@ -1111,8 +1111,16 @@ void Generique::drawOption(SDL_Surface* gpScreen, int ligne, int opt1, int opt2)
     SDL_Rect src;
     SDL_Rect dst;
     
+    int languageID = getLanguage();
+    gpJeu->afficheTexteAvecId(gpScreen, 206, 40, 16);
+    gpJeu->afficheTexteAvecId(gpScreen, 207, 60, 72);
+    gpJeu->afficheTexteAvecId(gpScreen, 208, 60, 115);
+    gpJeu->afficheTexteAvecId(gpScreen, 449, 60, 158);
+    gpJeu->afficheTexteAvecId(gpScreen, 450, 170, 158);
+    gpJeu->afficheTexteAvecId(gpScreen, 209, 63, 200);
+
     src.h = 21; src.w = 16;src.x = 0;src.y=0;
-    dst.x = 26; dst.y = 69+64*ligne;
+    dst.x = 26; dst.y = 69+43*ligne;
     
     SDL_BlitSurface(imageCurseur, &src, gpScreen, &dst);
     
@@ -1121,8 +1129,9 @@ void Generique::drawOption(SDL_Surface* gpScreen, int ligne, int opt1, int opt2)
     SDL_BlitSurface(imageNiveau, &src, gpScreen, &dst);
                 
     src.h = 16; src.w = 8;src.x = 0;src.y=0;
-    dst.x = 136+16*opt2; dst.y = 56+16+64;
+    dst.x = 136+16*opt2; dst.y = 56+16+43;
     SDL_BlitSurface(imageNiveau, &src, gpScreen, &dst);
+    drawFlag(gpScreen, languageID);
 }
 
 void Generique::drawRecord(SDL_Surface* gpScreen, int ligne, int colonne) {
@@ -1206,4 +1215,10 @@ void Generique::drawDebut(SDL_Surface* gpScreen) {
     SDL_Rect dst; dst.x = 0; dst.y = 0;
     SDL_BlitSurface(image, NULL, gpScreen, &dst);
     gpJeu->getTexte()->draw(gpScreen);
+}
+
+void Generique::drawFlag(SDL_Surface* gpScreen, int flagID){
+    SDL_Rect src; src.x = (flagID-1)*26; src.y = 0;src.h = 16; src.w = 26;
+    SDL_Rect dst; dst.x = 136; dst.y = 158;
+    SDL_BlitSurface(imageFlags, &src, gpScreen, &dst);
 }

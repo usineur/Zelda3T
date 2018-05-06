@@ -15,6 +15,7 @@
 #include "Texte.h"
 #include "Projectile.h"
 #include "Jeu.h"
+#include "Lang.h"
 
 #include <iostream>
 
@@ -245,9 +246,13 @@ void Statut::drawVie(SDL_Surface* gpScreen) {
     Joueur* gpJoueur = gpJeu->getJoueur();
     
     //life
-    src.h = 7+1;src.w = 44;
-    dst.x = 250;dst.y = 10;
-    src.x=158;src.y=0;
+    int langId = getLanguage();
+    src.h = (langId == LANG_FR) ? 8 : 7;
+    src.w = 44;
+    dst.x = 250;
+    dst.y = 10;
+    src.x=158;
+    src.y = (langId == LANG_FR) ? 17 : 0;
     SDL_BlitSurface(imageStatut, &src, gpScreen, &dst);
     
     for(int i=0; i < gpJoueur->getVieMax()/2; i++) {

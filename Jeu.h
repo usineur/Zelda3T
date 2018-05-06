@@ -124,6 +124,7 @@ class Jeu {
         void restoreOldMap();
         void descendWagon();
         SDL_Surface* loadImg(const char* img);
+        void setTextLanguage(int id);
     private :
         void testRamasse(int x, int y, int w, int h);
         bool coupeBuisson(int i, int j, int type);

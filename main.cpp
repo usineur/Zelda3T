@@ -10,6 +10,7 @@
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_rotozoom.h>
+#include "Lang.h"
 
 #include <iostream>
 #include <cstdlib>
@@ -19,6 +20,7 @@
 #include "Generique.h"
 
 #ifdef __vita__
+#include <psp2/apputil.h> 
 #include <psp2/power.h>
 #include <psp2/kernel/processmgr.h>
 #include <psp2/io/fcntl.h>
@@ -42,6 +44,7 @@ uint64_t tick;
 SDL_Shader shader = SDL_SHADER_NONE;
 #endif
 
+uint8_t language = LANG_EN;
 SDL_Surface* init(bool* etire) {             // initialise SDL
     if(SDL_Init(SDL_INIT_VIDEO) == -1) {
         printf("Could not load SDL : %s\n", SDL_GetError());
@@ -83,6 +86,18 @@ SDL_Surface* init(bool* etire) {             // initialise SDL
         return SDL_SetVideoMode(320, 240, 32, SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN);
     }
 #endif
+}
+
+int getLanguage(void)
+{    
+	return language;
+}
+
+void setLanguage(Jeu* gpJeu, int languageID)
+{
+	if (languageID>MAX_LANG || languageID<MIN_LANG) language = DEFAULT_LANG;
+	else language = languageID;
+    gpJeu->setTextLanguage(language);
 }
 
 #ifdef __vita__
@@ -218,10 +233,12 @@ void ImGui_callback() {
 
         if (credits_window) {
             ImGui::Begin("Credits", &credits_window);
-            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Time to Triumph v1.2.1");
+            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Time to Triumph v1.2.2");
             ImGui::Text("Game Creator: Vincent Jouillat");
             ImGui::Text("Port Author: usineur");
-            ImGui::Text("Added french translation: NicolasR");
+            ImGui::Separator();
+            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Multilingual support");
+            ImGui::Text("French translation: NicolasR");
             ImGui::Separator();
             ImGui::TextColored(ImVec4(255, 255, 0, 255), "Special thanks to:");
             ImGui::Text("Rinnegatamante: SDL 1.2 and imgui Vita ports");
@@ -327,7 +344,8 @@ int main(int argc, char** argv) {
     ImGui_ImplVitaGL_UseIndirectFrontTouch(true);
     ImGui::StyleColorsDark();
     ImGui::GetIO().MouseDrawCursor = false;
-
+    ImGui::GetIO().IniFilename = "ux0:data/z3t/imgui.ini";
+    
     SDL_SetVideoCallback(reinterpret_cast<void(*)(...)>(ImGui_callback));
 #endif
     
@@ -344,7 +362,38 @@ int main(int argc, char** argv) {
     gpGenerique->initLogo();
     
     //gpJeu->init(0); //à virer
-    
+
+#ifdef __vita__
+    // Init SceAppUtil
+	SceAppUtilInitParam init_param;
+	SceAppUtilBootParam boot_param;
+	memset(&init_param, 0, sizeof(SceAppUtilInitParam));
+	memset(&boot_param, 0, sizeof(SceAppUtilBootParam));
+	sceAppUtilInit(&init_param, &boot_param);
+
+    // Getting system language
+    int lang = 0;
+    sceAppUtilSystemParamGetInt(SCE_SYSTEM_PARAM_ID_LANG, &lang);
+	switch (lang){
+		case SCE_SYSTEM_PARAM_LANG_FRENCH:
+			language = LANG_FR;
+			break;
+		case SCE_SYSTEM_PARAM_LANG_SPANISH:
+			language = 5;
+			break;
+		case SCE_SYSTEM_PARAM_LANG_ITALIAN:
+			language = 4;
+			break;
+		default:
+			language = LANG_EN;
+			break;
+	}
+
+    setLanguage(gpJeu, language);
+#else
+    setLanguage(gpJeu, DEFAULT_LANG);
+#endif
+
     bool gLoop = true;
     
     Uint32 lastAnimTime = SDL_GetTicks();
