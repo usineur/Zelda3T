@@ -351,18 +351,7 @@ int main(int argc, char** argv) {
     
     Audio* gpAudio = new Audio();
     Jeu* gpJeu = new Jeu(gpAudio);
-    Carte* gpCarte = new Carte(gpJeu);
-    Encyclopedie* gpEncyclopedie = new Encyclopedie(gpJeu);
-    Poissons* gpPoissons = new Poissons(gpJeu);
-    Keyboard* gpKeyboard = new Keyboard(gpJeu, gpCarte, gpEncyclopedie, gpPoissons, 
-        gpScreen, mode, etire);
-    gpJeu->setKeyboard(gpKeyboard);
-    Generique* gpGenerique = new Generique(gpJeu);
-    gpJeu->setGenerique(gpGenerique);
-    gpGenerique->initLogo();
     
-    //gpJeu->init(0); //à virer
-
 #ifdef __vita__
     // Init SceAppUtil
 	SceAppUtilInitParam init_param;
@@ -393,6 +382,18 @@ int main(int argc, char** argv) {
 #else
     setLanguage(gpJeu, DEFAULT_LANG);
 #endif
+
+    Carte* gpCarte = new Carte(gpJeu);
+    Encyclopedie* gpEncyclopedie = new Encyclopedie(gpJeu);
+    Poissons* gpPoissons = new Poissons(gpJeu);
+    Keyboard* gpKeyboard = new Keyboard(gpJeu, gpCarte, gpEncyclopedie, gpPoissons, 
+        gpScreen, mode, etire);
+    gpJeu->setKeyboard(gpKeyboard);
+    Generique* gpGenerique = new Generique(gpJeu);
+    gpJeu->setGenerique(gpGenerique);
+    gpGenerique->initLogo();
+    
+    //gpJeu->init(0); //à virer
 
     bool gLoop = true;
     

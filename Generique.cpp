@@ -54,7 +54,7 @@ void Generique::drawFin(SDL_Surface* gpScreen) {
 
 void Generique::initLogo() {
     SDL_Rect dst;
-    SDL_Surface* logo = gpJeu->loadImg("data/images/logos/logo.png");
+    SDL_Surface* logo = gpJeu->loadImg(getLanguage() == LANG_FR ? "data/images/logos/logo_FR.png" : "data/images/logos/logo.png");    
     dst.x = 0; dst.y = 0; SDL_BlitSurface(logo, NULL, image, &dst);
     SDL_FreeSurface(logo);
 }
