@@ -50,9 +50,12 @@ Note: saves can be found in `ux0:data/z3t/save` directory.
 
 ## Changelog:
 
+1.3:
+- Add Playstation buttons
+- Minor corrections
+
 1.2.2:
-- Added multilingual support with autodetection
-- Added English translation
+- Multilingual support, french translation and language detection (thx to @NicolasR)
 
 1.2.1:
 - Add "Fullscreen" option
@@ -61,9 +64,6 @@ Note: saves can be found in `ux0:data/z3t/save` directory.
 
 1.2:
 - SDL 1.2 (vitaGL) + imgui support (thx to @Rinnegatamante)
-
-1.1b:
-- Added missing translation
 
 1.1:
 - Fix more memory leaks

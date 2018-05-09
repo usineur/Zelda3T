@@ -20,7 +20,7 @@
 #include "Generique.h"
 
 #ifdef __vita__
-#include <psp2/apputil.h> 
+#include <psp2/apputil.h>
 #include <psp2/power.h>
 #include <psp2/kernel/processmgr.h>
 #include <psp2/io/fcntl.h>
@@ -62,7 +62,6 @@ SDL_Surface* init(bool* etire) {             // initialise SDL
 
     SDL_ShowCursor(SDL_DISABLE);
 
-
 #ifdef __vita__
     return SDL_SetVideoMode(320, 240, 16, SDL_HWSURFACE|SDL_DOUBLEBUF);
 #else
@@ -89,14 +88,14 @@ SDL_Surface* init(bool* etire) {             // initialise SDL
 }
 
 int getLanguage(void)
-{    
-	return language;
+{
+    return language;
 }
 
 void setLanguage(Jeu* gpJeu, int languageID)
 {
-	if (languageID>MAX_LANG || languageID<MIN_LANG) language = DEFAULT_LANG;
-	else language = languageID;
+    if (languageID>MAX_LANG || languageID<MIN_LANG) language = DEFAULT_LANG;
+    else language = languageID;
     gpJeu->setTextLanguage(language);
 }
 
@@ -354,29 +353,29 @@ int main(int argc, char** argv) {
     
 #ifdef __vita__
     // Init SceAppUtil
-	SceAppUtilInitParam init_param;
-	SceAppUtilBootParam boot_param;
-	memset(&init_param, 0, sizeof(SceAppUtilInitParam));
-	memset(&boot_param, 0, sizeof(SceAppUtilBootParam));
-	sceAppUtilInit(&init_param, &boot_param);
+    SceAppUtilInitParam init_param;
+    SceAppUtilBootParam boot_param;
+    memset(&init_param, 0, sizeof(SceAppUtilInitParam));
+    memset(&boot_param, 0, sizeof(SceAppUtilBootParam));
+    sceAppUtilInit(&init_param, &boot_param);
 
     // Getting system language
     int lang = 0;
     sceAppUtilSystemParamGetInt(SCE_SYSTEM_PARAM_ID_LANG, &lang);
-	switch (lang){
-		case SCE_SYSTEM_PARAM_LANG_FRENCH:
-			language = LANG_FR;
-			break;
-		case SCE_SYSTEM_PARAM_LANG_SPANISH:
-			language = 5;
-			break;
-		case SCE_SYSTEM_PARAM_LANG_ITALIAN:
-			language = 4;
-			break;
-		default:
-			language = LANG_EN;
-			break;
-	}
+    switch (lang){
+        case SCE_SYSTEM_PARAM_LANG_FRENCH:
+            language = LANG_FR;
+            break;
+        case SCE_SYSTEM_PARAM_LANG_SPANISH:
+            language = 5;
+            break;
+        case SCE_SYSTEM_PARAM_LANG_ITALIAN:
+            language = 4;
+            break;
+        default:
+            language = LANG_EN;
+            break;
+    }
 
     setLanguage(gpJeu, language);
 #else

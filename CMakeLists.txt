@@ -65,8 +65,8 @@ target_link_libraries(${VITA_APPNAME}
   imgui
   z
   SceAppUtil_stub
-  SceCommonDialog_stub
   SceAudio_stub
+  SceCommonDialog_stub
   SceCtrl_stub
   SceDisplay_stub
   SceGxm_stub
