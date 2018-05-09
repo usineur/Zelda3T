@@ -100,7 +100,8 @@ void Generique::initTitre() {
 void Generique::initSelection() {
     SDL_Rect src; src.w = 16; src.h = 16;
     SDL_Rect dst;
-    
+    int languageID = getLanguage();
+
     src.x = 16; src.y = 16;
     for (int j = 0; j < 240; j+=16)
         for (int i = 0; i < 320; i+=16) {
@@ -114,7 +115,11 @@ void Generique::initSelection() {
     src.x = 0; src.y = 32; dst.x = 16; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    for (int i = 0; i < 8; i++) {
+    int titleWidth = 6;
+    if (languageID == LANG_FR){
+        titleWidth = 8;
+    }
+    for (int i = 0; i < titleWidth; i++) {
         src.x = 16; src.y = 0; dst.x = 32+16*i; dst.y = 0; 
         SDL_BlitSurface(imageCadre, &src, image, &dst);
         src.x = 16; src.y = 64; dst.x = 32+16*i; dst.y = 16; 
