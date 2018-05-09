@@ -24,12 +24,19 @@ id(0), idsuiv(0), def(false), cadre(false), texte(""), buffer("") {
     lastAnimTime = SDL_GetTicks();
     imageFont = gpJeu->loadImg("data/images/texte/font.png");
     SDL_SetColorKey(imageFont,SDL_SRCCOLORKEY,SDL_MapRGB(imageFont->format,0,0,255));
+#ifdef __vita__
+    imageButtons = gpJeu->loadImg("data/images/texte/buttons.png");
+    SDL_SetColorKey(imageButtons,SDL_SRCCOLORKEY,SDL_MapRGB(imageButtons->format,0,0,255));
+#endif
     imageCoeur = gpJeu->loadImg("data/images/menu/coeur.png");
     SDL_SetColorKey(imageCoeur,SDL_SRCCOLORKEY,SDL_MapRGB(imageCoeur->format,0,0,255));
     getTextByLangFunc = &Texte::getTexteEN;
 }
 
 Texte::~Texte() {
+#ifdef __vita__
+    SDL_FreeSurface(imageButtons);
+#endif
     SDL_FreeSurface(imageFont);
     SDL_FreeSurface(imageCoeur);
 }
@@ -171,28 +178,28 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 223 :
 #ifdef __vita__
-            texte = "Return to the game: Cross - Next: Right";
+            texte = "Return to the game: ¾3 - Next: ¾5";
 #else
             texte = "Return to the game: Enter - Next: Right";
 #endif
             break;
         case 224 :
 #ifdef __vita__
-            texte = "Read / Open / Speak : Circle";
+            texte = "Read / Open / Speak : ¾2";
 #else
             texte = "Read / Open / Speak : Space";
 #endif
             break;
         case 225 :
 #ifdef __vita__
-            texte = "Confirm / Pass text: Cross";
+            texte = "Confirm / Pass text: ¾3";
 #else
             texte = "Confirm / Pass text: Enter";
 #endif
             break;
         case 226 :
 #ifdef __vita__
-            texte = "Move Link: Left stick";
+            texte = "Move Link: Left ¾9";
 #else
             texte = "Move Link: Arrows";
 #endif
@@ -206,35 +213,35 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 228 :
 #ifdef __vita__
-            texte = "Use sword: Square";
+            texte = "Use sword: ¾4";
 #else
             texte = "Use sword: Z or W";
 #endif
             break;
         case 229 :
 #ifdef __vita__
-            texte = "Spin attack: Hold square then dropped";
+            texte = "Spin attack: Hold ¾4 then dropped";
 #else
             texte = "Spin attack: Z or W hold then dropped";
 #endif
             break;
         case 230 :
 #ifdef __vita__
-            texte = "Item selection: Right D-Pad";
+            texte = "Item selection: ¾5";
 #else
             texte = "Item selection: Enter";
 #endif
             break;
         case 231 :
 #ifdef __vita__
-            texte = "Use selected object: Triangle";
+            texte = "Use selected object: ¾1";
 #else
             texte = "Use selected object: X";
 #endif
             break;
         case 232 :
 #ifdef __vita__
-            texte = "Carry: Cross"; 
+            texte = "Carry: ¾3"; 
 #else
             texte = "Carry: C"; 
 #endif
@@ -255,21 +262,21 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 235 :
 #ifdef __vita__
-        texte = "See defeated monsters: Up D-Pad"; 
+        texte = "See defeated monsters: ¾6"; 
 #else
         texte = "See defeated monsters: M"; 
 #endif
             break;
         case 236 :
 #ifdef __vita__
-        texte = "See fishes : Down D-Pad"; 
+        texte = "See fishes : ¾8"; 
 #else
         texte = "See fishes : L"; 
 #endif
             break;
         case 237 :
 #ifdef __vita__
-        texte = "See barter items : Left D-Pad"; 
+        texte = "See barter items : ¾7"; 
 #else
         texte = "See barter items : I"; 
 #endif
@@ -283,7 +290,7 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 239 :
 #ifdef __vita__
-            texte = "Look around: Right stick";
+            texte = "Look around: Right ¾9";
 #else
             texte = "Look around: Ctrl and direction";
 #endif
@@ -310,14 +317,14 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 244 :
 #ifdef __vita__
-            texte = "Use selected object: Triangle";
+            texte = "Use selected object: ¾1";
 #else
             texte = "Use selected object: X";
 #endif
             break;
         case 245 :
 #ifdef __vita__
-            texte = "Carry: Cross"; 
+            texte = "Carry: ¾3"; 
 #else
             texte = "Carry: C"; 
 #endif
@@ -338,21 +345,21 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 248 :
 #ifdef __vita__
-        texte = "See defeated monsters: Up D-Pad"; 
+        texte = "See defeated monsters: ¾6"; 
 #else
         texte = "See defeated monsters: M"; 
 #endif
             break;
         case 249 :
 #ifdef __vita__
-        texte = "See fishes : Down D-Pad"; 
+        texte = "See fishes : ¾8"; 
 #else
         texte = "See fishes : L"; 
 #endif
             break;
         case 250 :
 #ifdef __vita__
-        texte = "See barter items : Left D-Pad"; 
+        texte = "See barter items : ¾7"; 
 #else
         texte = "See barter items : I"; 
 #endif
@@ -369,14 +376,14 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 253 :
 #ifdef __vita__
-            texte = "Return to the game: Cross - Next: Right";
+            texte = "Return to the game: ¾3 - Next: ¾5";
 #else
             texte = "Return to the game: Enter - Next: Right";
 #endif
             break;
         case 254 :
 #ifdef __vita__
-            texte = "Look around: Right stick";
+            texte = "Look around: Right ¾9";
 #else
             texte = "Look around: Ctrl and direction";
 #endif
@@ -389,7 +396,7 @@ std::string Texte::getTexteEN(int id, std::string s){
             break;
         case 257 :
 #ifdef __vita__
-            texte = "Return to the game: Cross - Previous: Left";
+            texte = "Return to the game: ¾3 - Previous: ¾7";
 #else
             texte = "Return to the game: Enter - Previous: Left";
 #endif
@@ -938,7 +945,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 646: texte = "..."; break;
         case 647: texte = "The castle. To the east, don't tell me you've forgotten?"; break;
         case 648: texte = "Hem Hem..."; break;
-        case 649: texte = "TUTORIAL : Press Circle near someone to talk with him, or near a sign to read it."; break;
+        case 649: texte = "TUTORIAL : Press ¾2 near someone to talk with him, or near a sign to read it."; break;
         case 650: texte = "TUTORIAL : Press Space near someone to talk with him, or near a sign to read it."; break;
         case 651: texte = "You didn't learn any song."; break;
         case 652: texte = "- SONG OF SOARING*- Do not play"; break;
@@ -1232,7 +1239,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 940: texte = "Ho! Ho! Ho!"; break;
         case 941: texte = "That's all very well, but how do I go home?"; break;
         case 942: texte = "TUTORIAL :*A hit on one of these colored sphere switch the stumbling blocks."; break;
-        case 943: texte = "You have found a sword!!!*Use it with Square, or keep Square holded to charge a spin attack!"; break;
+        case 943: texte = "You have found a sword!!!*Use it with ¾4, or keep ¾4 holded to charge a spin attack!"; break;
         case 944: texte = "You have found a sword!!!*Use it with the key Z (or W), or keep Z (or W) holded to charge a spin attack!"; break;
         case 945: texte = "TUTORIAL :*Falling in a hole will bring you at the floor below. However, if there is no floor below like here, a fall will make you lose life and will bring at the entry of the area, so be careful!"; break;
         case 946: texte = "TUTORIAL :*During the game, you might see some spots apparently inaccessible, like the platform underneath. You will then have"; break;
@@ -1321,7 +1328,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1029: texte = "This detector will help you know whether you have all the power gems in the area you are or not. An essential tool for someone looking for all the gems, it's yours for 20 power gems!"; break;
         case 1030: texte = "The detector for 20 power gems, ok?**              YES ?            no  "; break;
         case 1031: texte = "The detector for 20 power gems, ok?**              yes              NO ?"; break;
-        case 1032: texte = "You got the detector!*When you press Cross, the number of gems in you possession is written in green if you have all the gems of the area."; break;
+        case 1032: texte = "You got the detector!*When you press ¾3, the number of gems in you possession is written in green if you have all the gems of the area."; break;
         case 1033: texte = "You got the detector!*When you press enter, the number of gems in you possession is written in green if you have all the gems of the area."; break;
         case 1034: texte = "An empty bottle for 10 power gems?**              YES ?            no  "; break;
         case 1035: texte = "An empty bottle for 10 power gems?**              yes              NO ?"; break;
@@ -1382,7 +1389,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1090: texte = "I could fix the lever, but I need a replacement part, and I can't leave my post..."; break;
         case 1091: texte = "I need a cogwheel, they can be found at the marketplace of Hyrule City."; break;
         case 1092: texte = "You know how it works, don't you? Each stallholder offers some products for others, you've got to gather what they want in order to get what you want."; break;
-        case 1093: texte = "I will give you the merchandises I already have.*If you want to see what you have in you bag, press Left D-Pad."; break;
+        case 1093: texte = "I will give you the merchandises I already have.*If you want to see what you have in you bag, press ¾7."; break;
         case 1094: texte = "I will give you the merchandises I already have.*If you want to see what you have in you bag, press I."; break;
         case 1095: texte = "I need a cogwheel to fix that lever.*Go find one at the marketplace of Hyrule city if you want to cross the bridge."; break;
         case 1096: texte = "You brought me a cogwheel?*Very well, now it should work."; break;
@@ -1419,7 +1426,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1127: texte = "Don't tell me you want to participate for free???*               yeah            NO ?"; break;
         case 1128: texte = "...*Here is a fishing rod, come back when you've caught 5 different types of fish."; break;
         case 1129: texte = "Go away, enemy of fishermen!"; break;
-        case 1130: texte = "You got a fishing rod!*Use it on a pontoon, then bring the fish up pressing Triangle when the line is moving."; break;
+        case 1130: texte = "You got a fishing rod!*Use it on a pontoon, then bring the fish up pressing ¾1 when the line is moving."; break;
         case 1131: texte = "You got a fishing rod!*Use it on a pontoon, then bring the fish up pressing X when the line is moving."; break;
         case 1132: texte = "Still "; break;
         case 1133: texte = " different fish to find, good luck!"; break;
@@ -1429,7 +1436,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1137: texte = "I guess you want your price now...*Well, as a reward for your victory in the fishing contest: *... ... ..."; break;
         case 1138: texte = "I hire you!"; break;
         case 1139: texte = "There are a lot of other types of fish in Hyrule, I want to list them all by area."; break;
-        case 1140: texte = "I will reward you each time you bring me 5 new types of fish.*From now on you can consult the list pressing Down D-Pad."; break;
+        case 1140: texte = "I will reward you each time you bring me 5 new types of fish.*From now on you can consult the list pressing ¾8."; break;
         case 1141: texte = "I will reward you each time you bring me 5 new types of fish.*From now on you can consult the list pressing L."; break;
         case 1142: texte = "With your current fishing rod, you will unfortunately be able to catch only little fish..."; break;
         case 1143: texte = "Be sure to go fishing every where!*Each fish caught give you some energy, did you notice?"; break;
@@ -1554,7 +1561,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1262: texte = "Thank you, I give you that in return:"; break;
         case 1263: texte = "Hello Link, do you remember me?"; break;
         case 1264: texte = "Monsters appeared in Hyrule today, so once again I'll try to list them all, and once again I count on your help."; break;
-        case 1265: texte = "Pressing Up D-Pad, you can see the monsters already listed. You just have to kill a monster to add it."; break;
+        case 1265: texte = "Pressing ¾6, you can see the monsters already listed. You just have to kill a monster to add it."; break;
         case 1266: texte = "Pressing M, you can see the monsters already listed. You just have to kill a monster to add it."; break;
         case 1267: texte = "10 Gold Coins"; break;
         case 1268: texte = "40 Rupees"; break;
@@ -1949,7 +1956,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1657: texte = "You found the Boss Key!!!**Use it to open his haunt."; break;
         case 1658: texte = "You found a little key.**Use it to unlock a door."; break;
         case 1659: texte = "You found a new heart!!! **Your amount of life increases by one heart!!!"; break;
-        case 1660: texte = "You found a bow!!!**Equip it by pressing entry then use it with Triangle to attack from a distance!"; break;
+        case 1660: texte = "You found a bow!!!**Equip it by pressing entry then use it with ¾1 to attack from a distance!"; break;
         case 1661: texte = "You found a bow!!!**Equip it by pressing entry then use it with X to attack from a distance!"; break;
         case 1662: texte = "You found the Pendant of Courage!!!"; break;
         case 1663: texte = "You found the Pendant of Wisdom!!!"; break;
@@ -2028,7 +2035,7 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1736: texte = "The Princess instructed you with investigating the Ocarina theft? *In that case you can go. There is nothing left to steal anyway..."; break;
         case 1737: texte = "I was guarding this door last night. I am absolutely sure no one came through it..."; break;
         case 1738: texte = "That's where the Ocarina was kept. The guard heard a big noise. But before he realized it was coming from inside the room, the safe had been cleared out."; break;
-        case 1739: texte = "If you see anything suspicious, go in front of it and press Circle to point it out to me."; break;
+        case 1739: texte = "If you see anything suspicious, go in front of it and press ¾2 to point it out to me."; break;
         case 1740: texte = "If you see anything suspicious, go in front of it and press SPACE to point it out to me."; break;
         case 1741: texte = "It's a torch... What were you expecting for? A ceiling chandelier?"; break;
         case 1742: texte = "This safe is the one in which the Ocarina was kept. Until last night..."; break;
@@ -2038,8 +2045,8 @@ std::string Texte::getTexteEN(int id, std::string s){
         case 1746: texte = "So that's where the thief came from! *What are you waiting for? Go after him!"; break;
         case 1747: texte = "I feel forgotten... *Here I am, guarding a safety vault empty and wide open..."; break;
         case 1748: texte = "The thief is probably in this forest, you can't give up now!"; break;
-        case 1749: texte = "TUTORIAL : Press Cross in front of a light object like a jar in order to lift it up. Press a second time to throw it."; break;
-        case 1750: texte = "TUTORIAL : Press Circle in front of a chest to open it. You can open a chest only if you are down it."; break;
+        case 1749: texte = "TUTORIAL : Press ¾3 in front of a light object like a jar in order to lift it up. Press a second time to throw it."; break;
+        case 1750: texte = "TUTORIAL : Press ¾2 in front of a chest to open it. You can open a chest only if you are down it."; break;
         case 1751: texte = "TUTORIAL : Press C in front of a light object like a jar in order to lift it up. Press a second time to throw it."; break;
         case 1752: texte = "TUTORIAL : Press SPACE in front of a chest to open it. You can open a chest only if you are down it."; break;
         case 1753: texte = "                 Hyrule Castle"; break;
@@ -2536,28 +2543,28 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 223 :
 #ifdef __vita__
-            texte = "Retour au jeu : Croix - Suite : Droite";
+            texte = "Retour au jeu : ¾3 - Suite : ¾5";
 #else
             texte = "Retour au jeu : Entrée - Suite : Droite";
 #endif
             break;
         case 224 :
 #ifdef __vita__
-            texte = "Lire / Ouvrir / Parler : Rond";
+            texte = "Lire / Ouvrir / Parler : ¾2";
 #else
             texte = "Lire / Ouvrir / Parler : Espace";
 #endif
             break;
         case 225 :
 #ifdef __vita__
-            texte = "Valider / Passer texte : Croix";
+            texte = "Valider / Passer texte : ¾3";
 #else
             texte = "Valider / Passer texte : Entrée";
 #endif
             break;
         case 226 :
 #ifdef __vita__
-            texte = "Déplacer Link : Stick Gauche";
+            texte = "Déplacer Link : ¾9 Gauche";
 #else
             texte = "Déplacer Link : Flèches de direction";
 #endif
@@ -2571,35 +2578,35 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 228 :
 #ifdef __vita__
-            texte = "Coup d'épée : Croix";
+            texte = "Coup d'épée : ¾4";
 #else
             texte = "Coup d'épée : W ou Z";
 #endif
             break;
         case 229 :
 #ifdef __vita__
-            texte = "Attaque Tornade : Croix maintenu puis lâché";
+            texte = "Attaque Tornade : ¾4 maintenu puis lâché";
 #else
             texte = "Attaque Tornade : W ou Z maintenu puis lâché";
 #endif
             break;
         case 230 :
 #ifdef __vita__
-            texte = "Menu de sélection d'objet : D-Pad Droit";
+            texte = "Menu de sélection d'objet : ¾5";
 #else
             texte = "Menu de sélection d'objet : Entrée";
 #endif
             break;
         case 231 :
 #ifdef __vita__
-            texte = "Utiliser l'objet sélectionné : Triangle";
+            texte = "Utiliser l'objet sélectionné : ¾1";
 #else
             texte = "Utiliser l'objet sélectionné : X";
 #endif
             break;
         case 232 :
 #ifdef __vita__
-            texte = "Porter : Croix"; 
+            texte = "Porter : ¾3"; 
 #else
             texte = "Porter : C"; 
 #endif
@@ -2620,21 +2627,21 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 235 :
 #ifdef __vita__
-        texte = "Afficher les monstres vaincus : D-Pad Haut"; 
+        texte = "Afficher les monstres vaincus : ¾6"; 
 #else
         texte = "Afficher les monstres vaincus : M"; 
 #endif
             break;
         case 236 :
 #ifdef __vita__
-        texte = "Afficher la liste des poissons péchés : D-Pad Bas"; 
+        texte = "Afficher la liste des poissons péchés : ¾8"; 
 #else
         texte = "Afficher la liste des poissons péchés : L"; 
 #endif
             break;
         case 237 :
 #ifdef __vita__
-        texte = "Afficher les items de troc : D-Pad Gauche"; 
+        texte = "Afficher les items de troc : ¾7"; 
 #else
         texte = "Afficher les items de troc : I"; 
 #endif
@@ -2648,7 +2655,7 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 239 :
 #ifdef __vita__
-            texte = "Regarder autour : Stick Droite";
+            texte = "Regarder autour : ¾9 Droite";
 #else
             texte = "Regarder autour : Ctrl et direction";
 #endif
@@ -2675,14 +2682,14 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 244 :
 #ifdef __vita__
-            texte = "Utiliser l'objet sélectionné : Triangle";
+            texte = "Utiliser l'objet sélectionné : ¾1";
 #else
             texte = "Utiliser l'objet sélectionné : X";
 #endif
             break;
         case 245 :
 #ifdef __vita__
-            texte = "Porter : Croix"; 
+            texte = "Porter : ¾3"; 
 #else
             texte = "Porter : C"; 
 #endif
@@ -2703,21 +2710,21 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 248 :
 #ifdef __vita__
-        texte = "Afficher les monstres vaincus : D-Pad Haut"; 
+        texte = "Afficher les monstres vaincus : ¾6"; 
 #else
         texte = "Afficher les monstres vaincus : M"; 
 #endif
             break;
         case 249 :
 #ifdef __vita__
-        texte = "Afficher la liste des poissons péchés : D-Pad Bas"; 
+        texte = "Afficher la liste des poissons péchés : ¾8"; 
 #else
         texte = "Afficher la liste des poissons péchés : L"; 
 #endif
             break;
         case 250 :
 #ifdef __vita__
-        texte = "Afficher les items de troc : D-Pad Gauche"; 
+        texte = "Afficher les items de troc : ¾7"; 
 #else
         texte = "Afficher les items de troc : I"; 
 #endif
@@ -2734,14 +2741,14 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 253 :
 #ifdef __vita__
-            texte = "Retour au jeu : Croix - Suite : Droite";
+            texte = "Retour au jeu : ¾3 - Suite : ¾5";
 #else
             texte = "Retour au jeu : Entrée - Suite : Droite";
 #endif
             break;
         case 254 :
 #ifdef __vita__
-            texte = "Regarder autour : Stick Droite";
+            texte = "Regarder autour : ¾9 Droite";
 #else
             texte = "Regarder autour : Ctrl et direction";
 #endif
@@ -2754,7 +2761,7 @@ std::string Texte::getTexteFR(int id, std::string s){
             break;
         case 257 :
 #ifdef __vita__
-            texte = "Retour au jeu : Croix - Précédent : Gauche";
+            texte = "Retour au jeu : ¾3 - Précédent : ¾7";
 #else
             texte = "Retour au jeu : Entrée - Précédent : Gauche";
 #endif
@@ -3302,7 +3309,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 646: texte = "..."; break;
         case 647: texte = "Le château. A l'est d'ici, tu n'as tout de même pas oublié ?"; break;
         case 648: texte = "Hum Hum..."; break;
-        case 649: texte = "TUTORIEL : Appuyez sur Rond près de quelqu'un pour lui parler, ou près d'une pancarte pour la lire."; break;
+        case 649: texte = "TUTORIEL : Appuyez sur ¾2 près de quelqu'un pour lui parler, ou près d'une pancarte pour la lire."; break;
         case 650: texte = "TUTORIEL : Appuyez sur Espace près de quelqu'un pour lui parler, ou près d'une pancarte pour la lire."; break;
         case 651: texte = "Tu n'as appris aucun thème."; break;
         case 652: texte = "- CHANT DE L'ENVOL*- Ne rien jouer"; break;
@@ -3596,7 +3603,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 940: texte = "Ho! Ho! Ho!"; break;
         case 941: texte = "C'est bien gentil, mais comment je rentre moi ?"; break;
         case 942: texte = "TUTORIEL :*Un choc sur une de ces sphères de couleur permute les obstacles levés."; break;
-        case 943: texte = "Tu as trouvé une épée !!!*Sert-en avec Carré, ou maintiens Carré enfoncé pour charger une attaque tornade!"; break;
+        case 943: texte = "Tu as trouvé une épée !!!*Sert-en avec ¾4, ou maintiens ¾4 enfoncé pour charger une attaque tornade!"; break;
         case 944: texte = "Tu as trouvé une épée !!!*Sert-en avec la touche W (ou Z), ou maintiens W (ou Z) enfoncé pour charger une attaque tornade!"; break;
         case 945: texte = "TUTORIEL :*Tomber dans un trou permet de descendre au niveau inférieur, cependant, s'il n'y a pas de niveau inférieur tel que c'est le cas ici, une chute fait perdre de la vie et renvoie à l'entrée de la zone. Prudence donc!"; break;
         case 946: texte = "TUTORIEL :*Au cours du jeu, vous pourriez être amené à rencontrer des zones apparemment inaccessibles comme la plate-forme en bas. Vous aurez alors"; break;
@@ -3685,7 +3692,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1029: texte = "Ce détecteur permet de voir si tu as trouvé toutes les gemmes de force de ta zone actuelle. Un outil indispensable pour trouver toutes les gemmes, il est à toi contre 20 gemmes de force!"; break;
         case 1030: texte = "Le détecteur pour 20 gemmes de force, ok ?**              OUI ?            non  "; break;
         case 1031: texte = "Le détecteur pour 20 gemmes de force, ok ?**              oui              NON ?"; break;
-        case 1032: texte = "Tu as obtenu le détecteur !*Lorsque tu appuies sur Croix, le nombre de gemmes en ta possession sera écrit en vert si tu les as toutes dans la zone."; break;
+        case 1032: texte = "Tu as obtenu le détecteur !*Lorsque tu appuies sur ¾3, le nombre de gemmes en ta possession sera écrit en vert si tu les as toutes dans la zone."; break;
         case 1033: texte = "Tu as obtenu le détecteur !*Lorsque tu appuies sur Entrée, le nombre de gemmes en ta possession sera écrit en vert si tu les as toutes dans la zone."; break;
         case 1034: texte = "Une bouteille vide pour 10 gemmes de force ?**              OUI ?            non  "; break;
         case 1035: texte = "Une bouteille vide pour 10 gemmes de force ?**              oui              NON ?"; break;
@@ -3746,7 +3753,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1090: texte = "Je pourrais toujours réparer le levier, mais j'ai besoin d'une pièce de rechange, et je ne peux pas quitter mon poste..."; break;
         case 1091: texte = "J'ai besoin d'un rouage, on en trouve sur la place du marché de la cité d'Hyrule."; break;
         case 1092: texte = "Tu connais le principe, non ? Chaque marchand te propose des marchandises contre d'autres, tu dois réunir ce qu'ils veulent pour obtenir ce que tu veux."; break;
-        case 1093: texte = "Je vais te donner les marchandises que j'ai.*Si tu veux consulter ce que tu as déjà, appuie sur D-Pad Gauche."; break;
+        case 1093: texte = "Je vais te donner les marchandises que j'ai.*Si tu veux consulter ce que tu as déjà, appuie sur ¾7."; break;
         case 1094: texte = "Je vais te donner les marchandises que j'ai.*Si tu veux consulter ce que tu as déjà, appuie sur I."; break;
         case 1095: texte = "Il me faut un rouage pour réparer le levier.*Va en chercher sur la place du marché de la cité d'Hyrule si tu veux franchir le pont."; break;
         case 1096: texte = "Tu as un rouage ?*Bien, ça devrait marcher maintenant."; break;
@@ -3783,7 +3790,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1127: texte = "Tu ne veux tout de même pas participer gratuitement ???*               si              NON ?"; break;
         case 1128: texte = "...*Voici une canne à pêche, reviens lorsque tu auras pêché 5 poissons différents."; break;
         case 1129: texte = "Va-t-en, ennemi de la pêche!"; break;
-        case 1130: texte = "Tu as obtenu une canne à pêche!*Utilise-la à un ponton, puis remonte la ligne en appuyant à nouveau sur Triangle lorsque la ligne bouge."; break;
+        case 1130: texte = "Tu as obtenu une canne à pêche!*Utilise-la à un ponton, puis remonte la ligne en appuyant à nouveau sur ¾1 lorsque la ligne bouge."; break;
         case 1131: texte = "Tu as obtenu une canne à pêche!*Utilise-la à un ponton, puis remonte la ligne en appuyant à nouveau sur X lorsque la ligne bouge."; break;
         case 1132: texte = "Encore "; break;
         case 1133: texte = " poissons différents à trouver, bonne chance!"; break;
@@ -3793,7 +3800,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1137: texte = "J'imagine que tu vas vouloir ton prix...*Pour te récompenser d'avoir remporter le concours de pêche : *... ... ..."; break;
         case 1138: texte = "Je t'engage!"; break;
         case 1139: texte = "Il y a beaucoup d'autres espèces de poissons à Hyrule, je veux tous les répertorier par région."; break;
-        case 1140: texte = "Je te récompenserai tous les 5 nouveaux poissons pêchés.*Tu peux désormais consulter la liste des poissons pêchés en appuyant sur D-Pad Bas"; break;
+        case 1140: texte = "Je te récompenserai tous les 5 nouveaux poissons pêchés.*Tu peux désormais consulter la liste des poissons pêchés en appuyant sur ¾8"; break;
         case 1141: texte = "Je te récompenserai tous les 5 nouveaux poissons pêchés.*Tu peux désormais consulter la liste des poissons pêchés en appuyant sur L"; break;
         case 1142: texte = "Avec ta canne à pêche actuelle, tu ne pourras hélas pêcher que des petits poissons..."; break;
         case 1143: texte = "N'hésite pas à pêcher partout!*Chaque poisson pêché te redonne de la vie, l'avais-tu remarqué ?"; break;
@@ -3918,7 +3925,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1262: texte = "Merci, prends donc ça en échange :"; break;
         case 1263: texte = "Bonjour Link, tu te souviens de moi ?"; break;
         case 1264: texte = "Des monstres sont apparus sur Hyrule aujourd'hui, alors une fois de plus je vais tâcher de tous les répertorier, et une fois de plus je compte sur ton aide."; break;
-        case 1265: texte = "En appuyant sur D-Pad Haut, tu peux voir les monstres déjà répertorier. Tu n'as qu'à vaincre un monstre pour qu'il soit ajouté."; break;
+        case 1265: texte = "En appuyant sur ¾6, tu peux voir les monstres déjà répertorier. Tu n'as qu'à vaincre un monstre pour qu'il soit ajouté."; break;
         case 1266: texte = "En appuyant sur M, tu peux voir les monstres déjà répertorier. Tu n'as qu'à vaincre un monstre pour qu'il soit ajouté."; break;
         case 1267: texte = "10 pièces d'or"; break;
         case 1268: texte = "40 Rubis"; break;
@@ -4313,7 +4320,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1657: texte = "Tu as trouvé la clé du boss !!!**Sers-t'en pour accéder à son repère."; break;
         case 1658: texte = "Tu as trouvé une petite clé.**Sers-t'en pour déverrouiller une porte."; break;
         case 1659: texte = "Tu as trouvé un nouveau coeur !!!**Ta vie maximale augmente d'un coeur !!!"; break;
-        case 1660: texte = "Tu as trouvé un arc !!!**Equipe-le en appuyant sur Croix puis sert-en avec Triangle pour attaquer à distance !"; break;
+        case 1660: texte = "Tu as trouvé un arc !!!**Equipe-le en appuyant sur ¾3 puis sert-en avec ¾1 pour attaquer à distance !"; break;
         case 1661: texte = "Tu as trouvé un arc !!!**Equipe-le en appuyant sur Entrée puis sert-en avec X pour attaquer à distance !"; break;
         case 1662: texte = "Tu as trouvé le Médaillon du Courage !!!"; break;
         case 1663: texte = "Tu as trouvé le Médaillon de la Sagesse !!!"; break;
@@ -4392,7 +4399,7 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1736: texte = "La Princesse vous a chargé d'enquêter sur le vol de l'Ocarina ? *Dans ce cas vous pouvez entrer, il n'y a de toute façon plus rien à garder ici..."; break;
         case 1737: texte = "Je suis resté à garder cette porte toute la nuit. Je suis certain que personne n'a franchi cette porte..."; break;
         case 1738: texte = "C'est ici qu'était gardé l'Ocarina. Le garde a entendu un grand bruit. Le temps qu'il réalise que cela venait de la chambre forte, le coffre avait été vidé."; break;
-        case 1739: texte = "Si tu vois quelque chose de louche, mets-toi devant et appuie sur Rond pour me le signaler."; break;
+        case 1739: texte = "Si tu vois quelque chose de louche, mets-toi devant et appuie sur ¾2 pour me le signaler."; break;
         case 1740: texte = "Si tu vois quelque chose de louche, mets-toi devant et appuie sur ESPACE pour me le signaler."; break;
         case 1741: texte = "C'est une torche... Tu aurais préféré un lustre au plafond ?"; break;
         case 1742: texte = "Ce coffre contenait l'Ocarina du Temps hier soir encore..."; break;
@@ -4402,8 +4409,8 @@ std::string Texte::getTexteFR(int id, std::string s){
         case 1746: texte = "Voilà par où a dû passer le voleur! *Qu'attends-tu ? Pars à sa poursuite!"; break;
         case 1747: texte = "J'ai l'impression qu'on m'a oublié... *Voilà que je garde une chambre forte vide et grande ouverte..."; break;
         case 1748: texte = "Le voleur doit être dans cette forêt, tu ne peux pas abandonner maintenant!"; break;
-        case 1749: texte = "TUTORIEL : Appuyez sur Croix près d'un objet léger tel qu'un pot pour le soulever. Appuyez une seconde fois pour le lancer."; break;
-        case 1750: texte = "TUTORIEL : Appuyez sur Rond près d'un coffre pour l'ouvrir. Un coffre ne s'ouvre que par le bas."; break;
+        case 1749: texte = "TUTORIEL : Appuyez sur ¾3 près d'un objet léger tel qu'un pot pour le soulever. Appuyez une seconde fois pour le lancer."; break;
+        case 1750: texte = "TUTORIEL : Appuyez sur ¾2 près d'un coffre pour l'ouvrir. Un coffre ne s'ouvre que par le bas."; break;
         case 1751: texte = "TUTORIEL : Appuyez sur C près d'un objet léger tel qu'un pot pour le soulever. Appuyez une seconde fois pour le lancer."; break;
         case 1752: texte = "TUTORIEL : Appuyez sur Espace près d'un coffre pour l'ouvrir. Un coffre ne s'ouvre que par le bas."; break;
         case 1753: texte = "                Château d'Hyrule"; break;
@@ -7263,10 +7270,51 @@ void Texte::chercheText() {
     }
 }
 
+int Texte::afficheCaractere(SDL_Surface* gpScreen, char character, int &i, std::string s, int a, int b) {
+    int stringLength = (int)s.length();
+    int valCharacter = (int)character;
+        
+#ifdef __vita__
+    // Playstation button
+    // ¾1 => Triangle
+    // ¾2 => Rond
+    // ¾3 => Croix
+    // ¾4 => Carré
+    // ¾5 => Pad Droite
+    // ¾6 => Pad Haut
+    // ¾7 => Pad Gauche
+    // ¾8 => Pad Bas
+    // ¾9 => Stick analogique
+    if (valCharacter == 190){
+        int buttonIndex = 0;
+        char nextCharacter;
+        int nextCharacterValue;
+        while(i+1 < stringLength) {
+            i++;
+            nextCharacter = s.at(i);
+            nextCharacterValue = (int)nextCharacter;
+            if (nextCharacterValue <48 || nextCharacterValue>57){
+                i--;
+                break;
+            }
+
+            buttonIndex+= nextCharacterValue - 48;
+        }
+        affichePSBouton(gpScreen, buttonIndex, a, b);
+        return 14;
+    }
+    else {
+#endif
+        afficheLettre(gpScreen, character,a,b);
+        return 6;
+#ifdef __vita__
+    }
+#endif
+}
+
 void Texte::affiche(SDL_Surface* gpScreen, std::string s, int a, int b) {
     for (int i = 0; i < (int)s.length(); i++) {
-        afficheLettre(gpScreen, s.at(i),a,b);
-        a+=6;
+        a+=afficheCaractere(gpScreen, s.at(i), i, s, a, b);
     }
 }
 
@@ -7289,8 +7337,7 @@ void Texte::draw(SDL_Surface* gpScreen) {
     
     int a = x+8; int b = y+8;
     for (int i = 0; i < av; i++) {
-        afficheLettre(gpScreen, texte.at(i),a,b);
-        a+=6;
+        a+=afficheCaractere(gpScreen, texte.at(i), i, texte, a, b);;
         if (a > x+w-16) {a=x+8; b+=16;}
     }
     
@@ -7535,6 +7582,87 @@ void Texte::afficheLettre(SDL_Surface* gpScreen, char c, int vx, int vy) {
 	}
     
     SDL_BlitSurface(imageFont, &src, gpScreen, &dst);
+}
+
+void Texte::affichePSBouton(SDL_Surface* gpScreen, int index, int vx, int vy) {
+    SDL_Surface* img = imageButtons;
+    SDL_Rect src;
+    SDL_Rect dst;
+    
+    dst.x=vx; dst.y=vy;
+    
+    // Playstation button
+    // 1 => Triangle
+    // 2 => Rond
+    // 3 => Croix
+    // 4 => Carré
+    // 5 => Pad Droite
+    // 6 => Pad Haut
+    // 7 => Pad Gauche
+    // 8 => Pad Bas
+    // 9 => Stick analogique
+	switch(index){
+        case 1: 
+            src.x=2;
+            src.y=2;
+            src.h=16;
+            src.w=16;
+            break;
+        case 2: 
+            src.x=22;
+            src.y=2;
+            src.h=16;
+            src.w=16;
+            break;
+        case 3: 
+            src.x=42;
+            src.y=2;
+            src.h=16;
+            src.w=16;
+            break;
+        case 4: 
+            src.x=62;
+            src.y=2;
+            src.h=16;
+            src.w=16;
+            break;
+        case 5:
+            src.x=2;
+            src.y=24;
+            src.h=12;
+            src.w=16;
+            dst.y+=2;
+            break;
+        case 6:
+            src.x=24;
+            src.y=22;
+            src.h=16;
+            src.w=12;
+            dst.y+=2;
+            break;
+        case 7:
+            src.x=42;
+            src.y=24;
+            src.h=12;
+            src.w=16;
+            dst.y+=2;
+            break;
+        case 8:
+            src.x=64;
+            src.y=22;
+            src.h=16;
+            src.w=12;
+            dst.y+=2;
+            break;
+        case 9:
+            src.x=2;
+            src.y=42;
+            src.h=16;
+            src.w=16;
+            break;
+	}
+    
+    SDL_BlitSurface(img, &src, gpScreen, &dst);
 }
 
 bool Texte::hasNext() {
