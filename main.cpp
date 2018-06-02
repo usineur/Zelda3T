@@ -293,7 +293,7 @@ int main(int argc, char** argv) {
     sceIoMkdir("ux0:data/z3t", 0777);
     sceIoMkdir("ux0:data/z3t/save", 0777);
 #endif
-    if (argc && argv); //pour Ã©viter un warning.....
+    if (argc && argv); //pour éviter un warning.....
     
     std::srand(std::time(NULL));
     
@@ -392,8 +392,8 @@ int main(int argc, char** argv) {
     gpJeu->setGenerique(gpGenerique);
     gpGenerique->initLogo();
     
-    //gpJeu->init(0); //Ã  virer
-
+    //gpJeu->init(0); //à virer
+    
     bool gLoop = true;
     
     Uint32 lastAnimTime = SDL_GetTicks();
@@ -408,7 +408,7 @@ int main(int argc, char** argv) {
             case 1 : //disclamer
             case 2 : //logo
             case 3 : //titre
-            case 14 : //gÃ©nÃ©rique score
+            case 14 : //générique score
             case 17 : //menu d'aide 1
             case 18 : //menu d'aide 2
             case 24 : //menu d'aide 3
@@ -424,32 +424,32 @@ int main(int argc, char** argv) {
             case 7 : //charger partie
                 gpGenerique->drawCharger(gpScreen2, gpKeyboard->getLigne(), 
                     gpKeyboard->getLigneVal()); break;
-            case 8 : //gÃ©nÃ©rique intro
+            case 8 : //générique intro
                 gpGenerique->drawIntro(gpScreen2, gpKeyboard->getIntro()); break;
             case 9 : //effacer partie
                 gpGenerique->drawEffacerSave(gpScreen2, gpKeyboard->getLigne(), 
                     gpKeyboard->getLigneVal()); break;
-            case 10 : //gÃ©nÃ©rique dÃ©but chez link
+            case 10 : //générique début chez link
                 gpGenerique->drawDebut(gpScreen2); break;
-            case 11 : //gÃ©nÃ©rique fin
+            case 11 : //générique fin
                 gpGenerique->drawFin(gpScreen2); break;
             case 12 : //carte
-            case 22 : //carte tÃ©lÃ©portation
+            case 22 : //carte téléportation
                 gpCarte->draw(gpScreen2); break;
-            case 13 : //encyclopÃ©die des monstres
+            case 13 : //encyclopédie des monstres
                 gpEncyclopedie->draw(gpScreen2); break;
             case 15 : //records
             case 19 : //rang 100%
             case 20 : //rang ultime
-            case 21 : //rang de rapiditÃ©
+            case 21 : //rang de rapidité
                 gpGenerique->drawRecord(gpScreen2, gpKeyboard->getLigneRecord(),
                     gpKeyboard->getColonneRecord()); break;
             case 16 : //effacer record
                 gpGenerique->drawEffacer(gpScreen2, gpKeyboard->getLigneVal()); break;
-            case 23 : //encyclopÃ©die des poissons
+            case 23 : //encyclopédie des poissons
                 gpPoissons->draw(gpScreen2); break;
-            case 26 : //gÃ©nÃ©rique vers prÃ©sent
-            case 27 : //gÃ©nÃ©rique vers passÃ©
+            case 26 : //générique vers présent
+            case 27 : //générique vers passé
                 gpGenerique->drawToPresent(gpScreen2); break;
             default : break;
         }

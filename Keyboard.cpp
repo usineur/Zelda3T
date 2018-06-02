@@ -507,7 +507,7 @@ void Keyboard::pollKeys(Uint8* keys) {
             }
             
             
-            //EpÃ©e
+            //épée
             if ((gpJoueur->getTypeAnim()==AUCUNE || gpJoueur->getTypeAnim()==MARCHE) 
             && !gpJoueur->getCharge() && gpJoueur->getEpee() && !gpJeu->getStop()
             && !gpJoueur->isLapin() && !gpJoueur->getImmo()) {
@@ -579,7 +579,7 @@ void Keyboard::pollKeys(Uint8* keys) {
                         if (gpJoueur->hasObjet(O_SAC_BOMBES) && gpJoueur->getBombe()) 
                             gpJoueur->setTypeAnim(BOMBE);
                         break;
-                    case 3 : //flÃ¨che feu ou troc 1
+                    case 3 : //flèche feu ou troc 1
                         if (gpJoueur->hasObjet(O_FFEU)) {
                             if (gpJoueur->hasObjet(O_ARC)) gpJoueur->setTypeAnim(ARC);
                         }
@@ -611,7 +611,7 @@ void Keyboard::pollKeys(Uint8* keys) {
                             gpJoueur->setTypeAnim(JOUE);
                             gpJeu->ecrit(47);}
                         break;
-                    case 10 : //canne Ã  pÃªche
+                    case 10 : //canne à pêche
                         if (gpJoueur->getTypeAnim()==PECHE) gpJoueur->finPeche();
                         else gpJoueur->peche();
                         break;
