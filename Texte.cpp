@@ -6145,7 +6145,35 @@ void Texte::chercheText() {
         case 633 : texte = (this->*getTextByLangFunc)(1325, os.str()); break;
         case 634 : texte = (this->*getTextByLangFunc)(1326, os.str()); break;
         case 635 : 
-            if (gpJeu->getJoueur()->getCoffre(3,29)) {id=636; chercheText();break;}
+            if (gpJeu->getJoueur()->getCoffre(3,29)) {
+                id=636; 
+                if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {
+                    id=637; 
+                    if (gpJeu->getJoueur()->hasObjet(O_CLE_TEMPS)) {
+                        id=638; 
+                        if (gpJeu->getJoueur()->getAvancement()>SAGES_GROTTE) {
+                            id=639; 
+                            if (gpJeu->getJoueur()->hasMelodie(1)) {
+                                id=640; 
+                                texte = (this->*getTextByLangFunc)(1332, os.str());
+                                break;
+                            }
+                            texte = (this->*getTextByLangFunc)(1331, os.str());
+                            break;
+                        }
+                        
+                        texte = (this->*getTextByLangFunc)(1330, os.str());
+                        break;
+                    }
+                    
+                    texte = (this->*getTextByLangFunc)(1329, os.str()); 
+                    break;
+                }
+
+                texte = (this->*getTextByLangFunc)(1328, os.str());
+                break;
+            }
+
             texte = (this->*getTextByLangFunc)(1327, os.str()); break;
         case 636 : 
             if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {id=637; chercheText();break;}
@@ -6183,16 +6211,59 @@ void Texte::chercheText() {
             else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<16) idsuiv=75; break;
         case 650 : texte = (this->*getTextByLangFunc)(1342, os.str()); break;
         case 651 : 
-            if (gpJeu->getJoueur()->getGanonMax()>0) {id=652; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1343, os.str()); break;
+            if (gpJeu->getJoueur()->getGanonMax()>0) {
+                if (gpJeu->getJoueur()->getCafe()>-1) {
+                    id=653; 
+                    chercheText(); 
+                    break;
+                }
+                
+                texte = (this->*getTextByLangFunc)(1344, os.str()); 
+                idsuiv=653;
+                break;
+            }
+            
+            texte = (this->*getTextByLangFunc)(1343, os.str()); 
+            break;
         case 652 :
-            if (gpJeu->getJoueur()->getCafe()>-1) {id=653; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1344, os.str()); idsuiv=653; break;
+            if (gpJeu->getJoueur()->getCafe()>-1) {
+                id=653; 
+                chercheText(); 
+                break;
+            }
+            
+            texte = (this->*getTextByLangFunc)(1344, os.str()); 
+            idsuiv=653; 
+            break;
         case 653 : 
             if (gpJeu->getJoueur()->getChargeCafe()==-1 
-            && gpJeu->getMonde()->motifValue(6*16,8*16)==1005) {id=655; chercheText(); break;}
-            if (gpJeu->getJoueur()->getCafe()>=17) {id=672; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1345, os.str()); idsuiv=654; break;
+            && gpJeu->getMonde()->motifValue(6*16,8*16)==1005) {
+                if (gpJeu->getJoueur()->getCafe()>1) {
+                    id=654+gpJeu->getJoueur()->getCafe(); 
+                    chercheText(); 
+                    break;
+                }
+
+                id = 655;
+                texte = (this->*getTextByLangFunc)(1347, os.str());
+                break;
+            }
+
+            if (gpJeu->getJoueur()->getCafe()>=17) {
+                id=672; 
+                if (gpJeu->getJoueur()->getGemme(173)) {
+                    id=673; 
+                    texte = (this->*getTextByLangFunc)(1365, os.str()); 
+                    break;
+                }
+                
+                texte = (this->*getTextByLangFunc)(1364, os.str()); break;
+                break;
+            }
+
+            texte = (this->*getTextByLangFunc)(1345, os.str()); 
+            idsuiv=654; 
+            break;
         case 654 : texte = (this->*getTextByLangFunc)(1346, os.str()); break;
         case 655 : 
             if (gpJeu->getJoueur()->getCafe()>1) {
