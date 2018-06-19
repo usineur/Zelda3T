@@ -115,9 +115,10 @@ void Generique::initSelection() {
     src.x = 0; src.y = 32; dst.x = 16; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    int titleWidth = 6;
+    int titleWidth = 6, paddingX = 32;
     if (languageID == LANG_FR){
         titleWidth = 8;
+        paddingX = 0;
     }
     for (int i = 0; i < titleWidth; i++) {
         src.x = 16; src.y = 0; dst.x = 32+16*i; dst.y = 0; 
@@ -128,11 +129,11 @@ void Generique::initSelection() {
         SDL_BlitSurface(imageCadre, &src, image, &dst);
     }
     
-    src.x = 32; src.y = 0; dst.x = 160; dst.y = 0; 
+    src.x = 32; src.y = 0; dst.x = 160-paddingX; dst.y = 0; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
-    src.x = 32; src.y = 16; dst.x = 160; dst.y = 16; 
+    src.x = 32; src.y = 16; dst.x = 160-paddingX; dst.y = 16; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
-    src.x = 32; src.y = 32; dst.x = 160; dst.y = 32; 
+    src.x = 32; src.y = 32; dst.x = 160-paddingX; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
     cadre(16,48,288,32);
@@ -177,8 +178,8 @@ void Generique::initSelection() {
                     SDL_BlitSurface(inventaire, &src, image, &dst);
                     dst.x+=16;
                 }
-            } else if (gpJoueur->hasObjet(O_CARTE)) { //stêle lue
-                //médaillons
+            } else if (gpJoueur->hasObjet(O_CARTE)) { //st�le lue
+                //m�daillons
                 src.y=32; src.w=16; src.h=16;
                 for (int i = 0; i < 3; i++) {
                     if (gpJoueur->hasMedaillon(i)) src.x=16*i;
@@ -186,7 +187,7 @@ void Generique::initSelection() {
                     SDL_BlitSurface(objets, &src, image, &dst);
                     dst.x+=16;
                 }dst.x+=8;
-                //clé du temps
+                //cl� du temps
                 if (gpJoueur->hasObjet(O_CLE_TEMPS)) {
                     src.x=80;
                     SDL_BlitSurface(objets, &src, image, &dst);
@@ -207,7 +208,7 @@ void Generique::initSelection() {
                 dst.x+=16+2;
             }
             
-            //Epée
+            //�p�e
             dst.x=280-48+8; dst.y=56+i*48;
             src.x=16*(gpJoueur->getEpee()-1); src.y=0; src.w=16; src.h=16;
             if (gpJoueur->getEpee()) SDL_BlitSurface(objets, &src, image, &dst);
@@ -361,7 +362,7 @@ void Generique::initRecord() {
         gpJeu->getKeyboard()->getRang(i) ? src.x=128 : src.x=145; 
         SDL_BlitSurface(objets, &src, image, &dst);}
     
-    //graâl
+    //gra�l
     src.y=16; //src.w=17; src.h=16;
     
     for (int i = 0; i < 3; i++) {

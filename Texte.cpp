@@ -5676,7 +5676,106 @@ void Texte::chercheText() {
         case 457 : texte = (this->*getTextByLangFunc)(1109, os.str()); 
             buffer = (this->*getTextByLangFunc)(1110, os.str()); break;
         case 458 :
-            if (gpJeu->getJoueur()->hasObjet(O_CANNE)) {id=478; chercheText();break;}
+            // Concours de pêche
+
+            // Possède la canne à pêche
+            if (gpJeu->getJoueur()->hasObjet(O_CANNE)) {
+
+                // A attrapé des poissons
+                if (gpJeu->getJoueur()->hasObjet(O_POISSONS)) {
+
+                    // Possède la canne à pêche niveau 2
+                    if (gpJeu->getJoueur()->hasObjet(O_CANNE)>1) {
+
+                        // Possède bouteille
+                        if (gpJeu->getJoueur()->hasBouteille(2)) {
+
+                            // Possède la canne à pêche niveau 3
+                            if (gpJeu->getJoueur()->hasObjet(O_CANNE)>2) {
+
+                                // Possède coeur
+                                if (gpJeu->getJoueur()->getCoeur(27)) {
+                                    if (gpJeu->getJoueur()->hasObjet(O_POISSONS)>1) {
+                                        id=500; 
+                                        chercheText();
+                                        break;
+                                    }
+
+                                    // A attrapé plus de 30 poissons
+                                    if (gpJeu->getJoueur()->nbPoissons()>=30) {
+                                        id=498; 
+                                        chercheText();
+                                        break;
+                                    }
+
+                                    tmp = 30-gpJeu->getJoueur()->nbPoissons(); os << tmp;
+                                    texte = (this->*getTextByLangFunc)(1158, os.str())+os.str()+(this->*getTextByLangFunc)(1159, os.str());
+                                    break;
+                                }
+
+                                // A attrapé plus de 25 poissons
+                                if (gpJeu->getJoueur()->nbPoissons()>=25) {
+                                    id=496; 
+                                    chercheText();
+                                    break;
+                                }
+
+                                tmp = 25-gpJeu->getJoueur()->nbPoissons(); os << tmp;
+                                texte = (this->*getTextByLangFunc)(1155, os.str())+os.str()+(this->*getTextByLangFunc)(1156, os.str());
+                                break;
+                            }
+
+                            // A attrapé plus de 20 poissons
+                            if (gpJeu->getJoueur()->nbPoissons()>=20) {
+                                id=493; 
+                                chercheText();
+                                break;
+                            }
+
+                            tmp = 20-gpJeu->getJoueur()->nbPoissons(); os << tmp;
+                            texte = (this->*getTextByLangFunc)(1151, os.str())+os.str()+(this->*getTextByLangFunc)(1152, os.str());
+                            break;
+                        }
+                        
+                        // A attrapé plus de 15 poissons
+                        if (gpJeu->getJoueur()->nbPoissons()>=15) {
+                            id=491; 
+                            chercheText();
+                            break;
+                        }
+
+                        tmp = 15-gpJeu->getJoueur()->nbPoissons(); os << tmp;
+                        texte = (this->*getTextByLangFunc)(1148, os.str())+os.str()+(this->*getTextByLangFunc)(1149, os.str());
+                        break;
+                    }
+
+                    // A attrapé plus de 10 poissons
+                    if (gpJeu->getJoueur()->nbPoissons()>=10) {
+                        id=488; 
+                        chercheText();
+                        break;
+                    }
+
+                    // A attrapé moins de 10 poissons
+                    tmp = 10-gpJeu->getJoueur()->nbPoissons(); os << tmp;
+                    texte = (this->*getTextByLangFunc)(1144, os.str())+os.str()+(this->*getTextByLangFunc)(1145, os.str());
+                    break;
+                }
+                
+                // A attrapé plus de 5 poissons
+                if (gpJeu->getJoueur()->nbPoissons()>=5) {
+                    id=479; chercheText();
+                    break;
+                }
+
+                // A attrapé moins de 5 poissons
+                tmp = 5-gpJeu->getJoueur()->nbPoissons();
+                os << tmp;
+                if (tmp > 1) texte = (this->*getTextByLangFunc)(1132, os.str())+os.str()+(this->*getTextByLangFunc)(1133, os.str());
+                else texte = (this->*getTextByLangFunc)(1134, os.str()); break;    
+                break;
+            }
+            
             if (gpJeu->getJoueur()->getAvancement() == PARLE_PECHE) {id=460; chercheText();break;}
             gpJeu->getJoueur()->setAvancement(PARLE_PECHE);
             texte = (this->*getTextByLangFunc)(1111, os.str()); idsuiv = 459; break;
@@ -6046,7 +6145,35 @@ void Texte::chercheText() {
         case 633 : texte = (this->*getTextByLangFunc)(1325, os.str()); break;
         case 634 : texte = (this->*getTextByLangFunc)(1326, os.str()); break;
         case 635 : 
-            if (gpJeu->getJoueur()->getCoffre(3,29)) {id=636; chercheText();break;}
+            if (gpJeu->getJoueur()->getCoffre(3,29)) {
+                id=636; 
+                if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {
+                    id=637; 
+                    if (gpJeu->getJoueur()->hasObjet(O_CLE_TEMPS)) {
+                        id=638; 
+                        if (gpJeu->getJoueur()->getAvancement()>SAGES_GROTTE) {
+                            id=639; 
+                            if (gpJeu->getJoueur()->hasMelodie(1)) {
+                                id=640; 
+                                texte = (this->*getTextByLangFunc)(1332, os.str());
+                                break;
+                            }
+                            texte = (this->*getTextByLangFunc)(1331, os.str());
+                            break;
+                        }
+                        
+                        texte = (this->*getTextByLangFunc)(1330, os.str());
+                        break;
+                    }
+                    
+                    texte = (this->*getTextByLangFunc)(1329, os.str()); 
+                    break;
+                }
+
+                texte = (this->*getTextByLangFunc)(1328, os.str());
+                break;
+            }
+
             texte = (this->*getTextByLangFunc)(1327, os.str()); break;
         case 636 : 
             if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {id=637; chercheText();break;}
@@ -6084,16 +6211,59 @@ void Texte::chercheText() {
             else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<16) idsuiv=75; break;
         case 650 : texte = (this->*getTextByLangFunc)(1342, os.str()); break;
         case 651 : 
-            if (gpJeu->getJoueur()->getGanonMax()>0) {id=652; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1343, os.str()); break;
+            if (gpJeu->getJoueur()->getGanonMax()>0) {
+                if (gpJeu->getJoueur()->getCafe()>-1) {
+                    id=653; 
+                    chercheText(); 
+                    break;
+                }
+                
+                texte = (this->*getTextByLangFunc)(1344, os.str()); 
+                idsuiv=653;
+                break;
+            }
+            
+            texte = (this->*getTextByLangFunc)(1343, os.str()); 
+            break;
         case 652 :
-            if (gpJeu->getJoueur()->getCafe()>-1) {id=653; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1344, os.str()); idsuiv=653; break;
+            if (gpJeu->getJoueur()->getCafe()>-1) {
+                id=653; 
+                chercheText(); 
+                break;
+            }
+            
+            texte = (this->*getTextByLangFunc)(1344, os.str()); 
+            idsuiv=653; 
+            break;
         case 653 : 
             if (gpJeu->getJoueur()->getChargeCafe()==-1 
-            && gpJeu->getMonde()->motifValue(6*16,8*16)==1005) {id=655; chercheText(); break;}
-            if (gpJeu->getJoueur()->getCafe()>=17) {id=672; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1345, os.str()); idsuiv=654; break;
+            && gpJeu->getMonde()->motifValue(6*16,8*16)==1005) {
+                if (gpJeu->getJoueur()->getCafe()>1) {
+                    id=654+gpJeu->getJoueur()->getCafe(); 
+                    chercheText(); 
+                    break;
+                }
+
+                id = 655;
+                texte = (this->*getTextByLangFunc)(1347, os.str());
+                break;
+            }
+
+            if (gpJeu->getJoueur()->getCafe()>=17) {
+                id=672; 
+                if (gpJeu->getJoueur()->getGemme(173)) {
+                    id=673; 
+                    texte = (this->*getTextByLangFunc)(1365, os.str()); 
+                    break;
+                }
+                
+                texte = (this->*getTextByLangFunc)(1364, os.str()); break;
+                break;
+            }
+
+            texte = (this->*getTextByLangFunc)(1345, os.str()); 
+            idsuiv=654; 
+            break;
         case 654 : texte = (this->*getTextByLangFunc)(1346, os.str()); break;
         case 655 : 
             if (gpJeu->getJoueur()->getCafe()>1) {
@@ -6391,9 +6561,42 @@ void Texte::chercheText() {
             if (gpJeu->getJoueur()->getGemme(178)) {id=816; chercheText(); break;}
             texte = (this->*getTextByLangFunc)(1509, os.str()); idsuiv=808; break;
         case 808 : 
+
+            // Quête des loups
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>=1) {id=809; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1510, os.str()); break;
+            if (g>=1) {
+                if (g>=2) {
+                    if (g>=50) {
+                        if (g>=80) {
+                            if (g>=100) {
+                                if (g>100) {
+                                    texte = (this->*getTextByLangFunc)(1519, os.str()); 
+                                    idsuiv=815; 
+                                    break;
+                                }
+
+                                texte = (this->*getTextByLangFunc)(1518, os.str()); 
+                                break;
+                            }
+                            os << g;
+                            texte = (this->*getTextByLangFunc)(1516, os.str())+os.str()+(this->*getTextByLangFunc)(1517, os.str()); 
+                            break;
+                        }
+                        os << g;
+                        texte = (this->*getTextByLangFunc)(1514, os.str())+os.str()+(this->*getTextByLangFunc)(1515, os.str());
+                        break;
+                    }
+                    os << g;
+                    texte = (this->*getTextByLangFunc)(1512, os.str())+os.str()+(this->*getTextByLangFunc)(1513, os.str()); 
+                    break;
+                }
+
+                texte = (this->*getTextByLangFunc)(1511, os.str());
+                break;
+            }
+
+            texte = (this->*getTextByLangFunc)(1510, os.str()); 
+            break;
         case 809 : 
             g=gpJeu->getJoueur()->nbLoups();
             if (g>=2) {id=810; chercheText(); break;}

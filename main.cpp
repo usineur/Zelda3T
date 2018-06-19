@@ -45,7 +45,6 @@ SDL_Shader shader = SDL_SHADER_NONE;
 #endif
 
 uint8_t language = LANG_EN;
-
 SDL_Surface* init(bool* etire) {             // initialise SDL
     if(SDL_Init(SDL_INIT_VIDEO) == -1) {
         printf("Could not load SDL : %s\n", SDL_GetError());
@@ -233,7 +232,7 @@ void ImGui_callback() {
 
         if (credits_window) {
             ImGui::Begin("Credits", &credits_window);
-            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Time to Triumph v1.3");
+            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Time to Triumph v1.4");
             ImGui::Text("Game Creator: Vincent Jouillat");
             ImGui::Text("Port Author: usineur");
             ImGui::Separator();
@@ -394,7 +393,7 @@ int main(int argc, char** argv) {
     gpGenerique->initLogo();
     
     //gpJeu->init(0); //à virer
-
+    
     bool gLoop = true;
     
     Uint32 lastAnimTime = SDL_GetTicks();

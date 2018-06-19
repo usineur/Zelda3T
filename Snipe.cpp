@@ -137,7 +137,7 @@ Snipe::~Snipe() {
 void Snipe::draw(SDL_Surface* gpScreen) {
     if (id > 0 && vie) {
     
-        // dÃ©placement
+        // déplacement
         if (vie && !gpJeu->getStop()) depl();
     
         //dessin

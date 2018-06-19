@@ -497,7 +497,7 @@ void Menu::drawInventaire(SDL_Surface* gpScreen) {
         }
     }
     
-    //troc 1 ou flÃ¨che feu
+    //troc 1 ou flèche feu
     if (gpJoueur->hasObjet(O_FFEU)) {
         src.x=0; src.y=136; dst.x=128-dec; dst.y=32;
         if (dst.x > -15) {
@@ -554,7 +554,7 @@ void Menu::drawInventaire(SDL_Surface* gpScreen) {
         }
     }
     
-    //troc 2 ou flÃ¨che glace
+    //troc 2 ou flèche glace
     if (gpJoueur->hasObjet(O_FGLACE)) {
         src.x=16; src.y=136; dst.x=128-dec; dst.y=64;
         if (dst.x > -15) {
@@ -599,7 +599,7 @@ void Menu::drawInventaire(SDL_Surface* gpScreen) {
         }
     }
     
-    //canne Ã  pÃªche
+    //canne à pêche
     if (gpJoueur->hasObjet(O_CANNE)) {
         src.y=119; dst.x=96-dec; dst.y=96;
         src.x=(gpJoueur->hasObjet(O_CANNE)-1)*16;
@@ -610,7 +610,7 @@ void Menu::drawInventaire(SDL_Surface* gpScreen) {
         }
     }
     
-    //troc 3 ou flÃ¨che lumiÃ¨re
+    //troc 3 ou flèche lumière
     if (gpJoueur->hasObjet(O_FLUM)) {
         src.x=32; src.y=136; dst.x=128-dec; dst.y=96;
         if (dst.x > -15) {
@@ -693,7 +693,7 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
             gpJoueur->getForce(), 10, 191, 72-3+3-dec, nb_chiffres);
     }
     
-    //dÃ©fense
+    //défense
     if (gpJoueur->getDefense() > 9) nb_chiffres=2; else nb_chiffres=1;
     src.w=12; src.h=12; src.x=136; src.y=32; dst.x=207; dst.y=72-3-dec;
     if (dst.y > -15) {
@@ -764,7 +764,7 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
             gpJoueur->getGanon() + gpJoueur->getBoostGanon()
             , gpJoueur->getGanonMax(), 200+32+4+decx, 88-4+5-dec, nb_chiffres);
             
-    //bourse piÃ¨ces d'or
+    //bourse pièces d'or
     src.w=16; src.h=16; src.y=48; dst.x=184+64+8+4; dst.y=88-4-dec;
     nb_chiffres=3;
     switch(gpJoueur->getPieceMax()) {
@@ -826,7 +826,7 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
     int haut=120-dec;
     if (gpJoueur->nbCristaux()==0) haut=136+2-dec;
     
-    if (gpJoueur->getAvancement() >= STELE_LUE) { //stÃªle lue
+    if (gpJoueur->getAvancement() >= STELE_LUE) { //stèle lue
     for (int i = 0; i < 3; i++) {
         dst.y=haut;
         if (gpJoueur->hasMedaillon(i)) src.x=16*i;
@@ -835,7 +835,7 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
         dst.x+=17;
     }}
     
-    //clÃ© du temps
+    //clé du temps
     if (gpJoueur->hasObjet(O_CLE_TEMPS)) {
         dst.y=haut; src.x=80;
         if (dst.y > -15) SDL_BlitSurface(imageObjets, &src, gpScreen, &dst);
@@ -849,7 +849,7 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
     }
     dst.x+=17;
     
-    //dÃ©tecteur gemmes force
+    //détecteur gemmes force
     if (gpJoueur->hasObjet(O_DETECTEUR)) {
         dst.y=haut; src.x=160; src.y=32;
         if (dst.y > -15) SDL_BlitSurface(imageObjets, &src, gpScreen, &dst);
@@ -889,7 +889,7 @@ void Menu::drawCristaux(SDL_Surface* gpScreen) {
     
     src.y=0; src.w=16; src.h=16; dst.y=198+dec;
     
-    //EpÃ©e
+    //épée
     if (gpJoueur->getEpee()) {
         src.x = 16 * (gpJoueur->getEpee()-1); dst.x=86;
         if (gpJoueur->getOni()) src.x=112;

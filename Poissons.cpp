@@ -8,6 +8,7 @@
 
 */
 
+#include "Lang.h"
 #include "Poissons.h"
 
 Poissons::Poissons(Jeu* jeu) : gpJeu(jeu), page(0) {
@@ -46,7 +47,15 @@ void Poissons::fond() {
     src.x = 0; src.y = 32; dst.x = 16; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    for (int i = 0; i < 4; i++) {
+    int languageId = getLanguage();
+    int length = 4;
+    int padding = 16;
+    if (languageId == LANG_FR){
+        length = 5;
+        padding = 0;
+    }
+
+    for (int i = 0; i < length; i++) {
         src.x = 16; src.y = 0; dst.x = 32+16*i; dst.y = 0; 
         SDL_BlitSurface(imageCadre, &src, image, &dst);
         src.x = 16; src.y = 64; dst.x = 32+16*i; dst.y = 16; 
@@ -55,11 +64,11 @@ void Poissons::fond() {
         SDL_BlitSurface(imageCadre, &src, image, &dst);
     }
     
-    src.x = 32; src.y = 0; dst.x = 112-16; dst.y = 0; 
+    src.x = 32; src.y = 0; dst.x = 112-padding; dst.y = 0; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
-    src.x = 32; src.y = 16; dst.x = 112-16; dst.y = 16; 
+    src.x = 32; src.y = 16; dst.x = 112-padding; dst.y = 16; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
-    src.x = 32; src.y = 32; dst.x = 112-16; dst.y = 32; 
+    src.x = 32; src.y = 32; dst.x = 112-padding; dst.y = 32; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
     
@@ -77,17 +86,30 @@ void Poissons::fond() {
 }
 
 void Poissons::placeCadres() {
+    int languageId = getLanguage();
     switch (page) {
         case 0 :
             cadre(16,48,0); cadre(64,48,88,32,0);
-            cadre(168,48,2); cadre(216,48,88,32,2);
+            if (languageId == LANG_FR){
+                cadre(168,48,2); cadre(216,48,96,32,2);
+            }
+            else {
+                cadre(168,48,2); cadre(216,48,88,32,2);
+            }
+            
             cadre(16,96,14); cadre(64,96,88,32,14);
             cadre(16,144,22); cadre(64,144,88,32,22);
             cadre(168,144,24); cadre(216,144,88,32,24);
             break;
         case 1 :
             cadre(16,48,11); cadre(64,48,88,32,11);
-            cadre(168,48,7); cadre(216,48,88,32,7);
+            if (languageId == LANG_FR){
+                cadre(168,48,7); cadre(216,48,96,32,7);
+            }
+            else {
+                cadre(168,48,7); cadre(216,48,88,32,7);
+            }
+            
             cadre(16,144,16); cadre(64,144,88,32,16);
             cadre(168,144,19); cadre(216,144,88,32,19);
             cadre(16,192,28); cadre(64+8,192,88,32,28);
@@ -105,7 +127,13 @@ void Poissons::placeCadres() {
             cadre(168,48,12); cadre(216,48,88,32,12);
             cadre(16,144,20); cadre(64,144,88,32,20);
             cadre(168,144,23); cadre(216,144,88,32,23);
-            cadre(16,192,29); cadre(64+8,192,88+16,32,29);
+            if (languageId == LANG_FR){
+                cadre(16,192,29); cadre(64+8,192,88,32,29);
+            }
+            else {
+                cadre(16,192,29); cadre(64+8,192,88+16,32,29);
+            }
+            
             break;
         case 4 :
             cadre(16,48,5); cadre(64,48,88,32,5);
@@ -118,7 +146,13 @@ void Poissons::placeCadres() {
             cadre(16,48,1); cadre(64,48,88,32,1);
             cadre(168,48,6); cadre(216,48,88,32,6);
             cadre(16,144,18); cadre(64,144,88,32,18);
-            cadre(16,192,27); cadre(64+8,192,88,32,27);
+            
+            if (languageId == LANG_FR){
+                cadre(16,192,27); cadre(64+8,192,104,32,27);
+            }
+            else {
+                cadre(16,192,27); cadre(64+8,192,88,32,27);
+            }
             break;
     }
 }

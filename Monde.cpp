@@ -89,7 +89,7 @@ Monde::~Monde() {
 
 void Monde::changeZone(int newZone) {
     
-    //A virer
+    //à virer
     //if (gpJeu->getZone()==60) {mapper(gpJeu->getZone()); corrigeMap(gpJeu->getZone());}
 
     //else 
@@ -400,7 +400,7 @@ void Monde::corrigeMap(int zone) {
             && gpJoueur->getCoffre(2,56)) passage(209,15,0);
             if (gpJoueur->getCoffre(2,57) && gpJoueur->getCoffre(2,58)) passage(240,51,1);
             if (gpJoueur->getCoffre(2,59) && gpJoueur->getCoffre(2,60)) passage(249,60,0);
-            //torches allumÃ©es
+            //torches allumées
             if (gpJoueur->getCoffre(2,31)) map[37][50]=1001;
             if (gpJoueur->getCoffre(2,32)) map[37][54]=1001;
             if (gpJoueur->getCoffre(2,33)) map[68][27]=1001;
@@ -491,7 +491,7 @@ void Monde::corrigeMap(int zone) {
             && gpJoueur->getCoffre(3,23) && gpJoueur->getCoffre(3,24)
             && gpJoueur->getCoffre(3,25) && gpJoueur->getCoffre(3,26)) passage(240,6,1);
             if (gpJoueur->getCoffre(3,27)) passage(89,15,0);
-            //torches allumÃ©es
+            //torches allumées
             if (gpJoueur->getCoffre(3,11)) map[117][35]=1001;
             if (gpJoueur->getCoffre(3,12)) map[117][39]=1001;
             if (gpJoueur->getCoffre(3,19)) map[228][27]=1001;
@@ -1210,7 +1210,7 @@ void Monde::corrigeMap(int zone) {
         case 104 :
             if (!gpJoueur->getCoffre(15,21)) setValeur(13*16,9*16,303,-1,PLEIN,C_EPICES);
             else setValeur(13*16,9*16,304,-1,PLEIN,C_RIEN);
-            break; //15,22 = parler au sage chez link passÃ©
+            break; //15,22 = parler au sage chez link passé
         case 111 :
         case 114 :
         case 124 :
@@ -1229,7 +1229,7 @@ void Monde::corrigeMap(int zone) {
         case 134 :
             if(!gpJoueur->hasObjet(O_LIVRE)) setValeur(11*16,5*16,303,-1,PLEIN,C_LIVRE);
             else setValeur(11*16,5*16,304,-1,PLEIN,C_RIEN);
-            break; //15,23 = infos achettÃ©es au bar
+            break; //15,23 = infos achettées au bar
         case 137 :
             //cristal 4
             if(!gpJoueur->hasCristal(3)) setValeur(10*16,7*16,303,-1,PLEIN,C_CRISTAL);
@@ -1255,7 +1255,7 @@ void Monde::corrigeMap(int zone) {
             else setValeur(26*16,8*16,304,-1,PLEIN,C_RIEN);
             if (!gpJoueur->getCoffre(15,25)) setValeur(26*16,11*16,303,-1,PLEIN,C_RIZ);
             else setValeur(26*16,11*16,304,-1,PLEIN,C_RIEN);
-            break; //15,26 si troc avancÃ©  -  15,27 pour opÃ©ra
+            break; //15,26 si troc avancé  -  15,27 pour opéra
         case 150 :
             if (gpJoueur->getCoffre(15,27)>=1) passage(20,36,1);
             if (gpJoueur->getCoffre(15,27)>=2) passage(100,21,1);
@@ -1284,18 +1284,18 @@ void Monde::corrigeMap(int zone) {
             }
             break;
         case 155 :
-            //clÃ©
+            //clé
             if(gpJeu->getJoueur()->getAvancement() < CLE_PRISON_F_TROUVEE) 
                 setValeur(11*16,2*16,303,-1,PLEIN,C_CLE);
             else setValeur(11*16,2*16,304,-1,PLEIN,C_RIEN);
             //porte prison
             if(gpJeu->getJoueur()->getAvancement() >= BOWSER_AIDE) 
                 setValeur(89*16,94*16,4680,0);
-            //source d'Ã©nergie
+            //source d'énergie
             if (gpJoueur->getTroc(M_SOURCE_ENERGIE)==-1)
                 setValeur(109*16,21*16,303,-1,PLEIN,C_SOURCE_ENERGIE);
             else setValeur(109*16,21*16,304,-1,PLEIN,C_RIEN);
-            //murs dÃ©truits
+            //murs détruits
             if (gpJoueur->getCoffre(15,31)) passage(9,60,4);
             if (gpJoueur->getCoffre(15,32)) passage(9,90,4);
             break;
@@ -1449,7 +1449,7 @@ void Monde::initMatrice(int zone) {
             contenu[49][50]=234; contenu[50][50]=234;
             if (!gpJoueur->getGemme(89)) gpJeu->ajouteObjet(I_GEMME,16*49,16*55,89);
             if (!gpJoueur->getGemme(90)) gpJeu->ajouteObjet(I_GEMME,16*66,16*28,90);
-            // gemmes 91 Ã  93 via le troc
+            // gemmes 91 à 93 via le troc
             break;
         case 11 :
             gpJeu->ajouteEnnemi(41,59*16,63*16); gpJeu->ajouteEnnemi(41,78*16,60*16);
@@ -1638,7 +1638,7 @@ void Monde::initMatrice(int zone) {
             break;
         case 21 :
             if (!gpJoueur->getCoeur(20)) gpJeu->ajouteObjet(I_QUART_COEUR,77*16,76*16,20);
-            // stÃªle lue ou prÃ©-prÃ©sent
+            // stèle lue ou pré-présent
             if (gpJoueur->getAvancement() >= STELE_LUE &&
             (gpJoueur->getAvancement()<PORTAIL_PRE_PRESENT_UTILISE
             || gpJoueur->getAvancement()>=PORTAIL_PRE_PRESENT_FERME)) {
@@ -2083,7 +2083,7 @@ void Monde::initMatrice(int zone) {
             gpJeu->ajouteEnnemi(53,205*16,20*16); gpJeu->ajouteEnnemi(53,197*16,24*16);
             gpJeu->ajouteEnnemi(53,306*16,23*16); gpJeu->ajouteEnnemi(53,313*16,23*16);
             gpJeu->ajouteEnnemi(53,293*16,26*16);
-            //piÃ¨ges
+            //pièges
             gpJeu->ajouteEnnemi(17,34*16,49*16); gpJeu->ajouteEnnemi(17,38*16,49*16);
             gpJeu->ajouteEnnemi(17,42*16,49*16); gpJeu->ajouteEnnemi(17,46*16,49*16);
             gpJeu->ajouteEnnemi(17,189*16,54*16); gpJeu->ajouteEnnemi(17,190*16,53*16);
@@ -2100,7 +2100,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getCoffre(0,22)) gpJeu->ajouteEnnemi(91,9*16+5,38*16);
             //boss
             if(gpJoueur->getCoeur(0)==0) gpJeu->ajouteEnnemi(92,349*16-52,2*16-8);
-            //mÃ©daillon
+            //médaillon
             if(!gpJoueur->hasMedaillon(0))gpJeu->ajouteObjet(I_PENDENTIF_V,16*249+8,16*5,0,1);
             //objets
             gpJeu->ajouteObjet(4,16*4,16*32-4,0,1); gpJeu->ajouteObjet(4,16*15,16*32-4,0,1);
@@ -2176,7 +2176,7 @@ void Monde::initMatrice(int zone) {
             if (gpJoueur->getCoffre(1,15)) gpJeu->ajoutePnj(71,326*16,54*16+8,952);
             //boss
             if(gpJoueur->getCoeur(1)==0) gpJeu->ajouteEnnemi(94,349*16,34*16);
-            //mÃ©daillon
+            //médaillon
             if(!gpJoueur->hasMedaillon(1))gpJeu->ajouteObjet(I_PENDENTIF_B,16*349+8,16*20,0,1);
             //objets
             gpJeu->ajouteObjet(1,16*288,16*4,0,1); gpJeu->ajouteObjet(1,16*301,16*55,0,1);
@@ -2191,7 +2191,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getGemme(186)) gpJeu->ajouteObjet(I_GEMME,16*296,16*55,186,1);
             break;
         case 48 :
-            //piÃ¨ges
+            //pièges
             gpJeu->ajouteEnnemi(36,275*16,49*16); setValeur(275*16,49*16,3254,2);
             gpJeu->ajouteEnnemi(36,275*16,55*16); setValeur(275*16,55*16,3254,2);
             gpJeu->ajouteEnnemi(36,164*16,70*16); setValeur(164*16,70*16,3254,2);
@@ -2247,7 +2247,7 @@ void Monde::initMatrice(int zone) {
             }
             //boss
             if(gpJoueur->getCoeur(2)==0) gpJeu->ajouteEnnemi(97,8*16+6,32*16);
-            //mÃ©daillon
+            //médaillon
             if(!gpJoueur->hasMedaillon(2))gpJeu->ajouteObjet(I_PENDENTIF_R,16*289+8,16*21,0,1);
             //objets
             gpJeu->ajouteObjet(1,16*15,16*72,0,1); gpJeu->ajouteObjet(1,16*124,16*27,0,1);
@@ -2338,7 +2338,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getGemme(188)) gpJeu->ajouteObjet(I_GEMME,16*106,16*74,188,1);
             break;
         case 50 :
-            //piÃ¨ges
+            //pièges
             gpJeu->ajoutePiege(51,242*16,47*16); gpJeu->ajoutePiege(51,182*16,77*16);
             gpJeu->ajoutePiege(51,182*16,2*16); gpJeu->ajoutePiege(51,282*16,77*16);
             gpJeu->ajoutePiege(51,282*16,2*16); gpJeu->ajoutePiege(51,62*16,62*16);
@@ -2415,7 +2415,7 @@ void Monde::initMatrice(int zone) {
             if(gpJoueur->getCoeur(4)==0) {
                 gpJeu->ajouteEnnemi(103,247*16+6,17*16);
             }
-            //clÃ© du temps
+            //clé du temps
             if(!gpJoueur->hasObjet(O_CLE_TEMPS)) gpJeu->ajouteObjet(I_CLE_TEMPS,16*249+8,16*5,0,1);
             //objets
             gpJeu->ajouteObjet(3,16*195,16*81,0,1);
@@ -2436,7 +2436,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getGemme(189)) gpJeu->ajouteObjet(I_GEMME,16*194,16*81,189,1);
             break;
         case 51 :
-            //piÃ¨ges
+            //pièges
             gpJeu->ajouteEnnemi(70,80*16,41*16); gpJeu->ajouteEnnemi(70,160*16,41*16);
             //ennemis
             gpJeu->ajouteEnnemi(7,146*16,70*16); gpJeu->ajouteEnnemi(7,154*16,63*16);
@@ -2986,7 +2986,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getGemme(195)) gpJeu->ajouteObjet(I_GEMME,16*5,16*83,195,1);
             break;
         case 57 :
-            //gÃ©nÃ©rique fin
+            //générique fin
             if (gpJeu->getAudio()->isSpecial()) {
                 gpJeu->ajoutePnj(15,69*16+8,21*16+8,1352);
                 gpJeu->ajoutePnj(90,75*16+8,22*16+8,1352);
@@ -3000,7 +3000,7 @@ void Monde::initMatrice(int zone) {
                 gpJeu->ajoutePnj(58,162*16+5-8,36*16+8,1090,E);
                 gpJeu->ajoutePnj(58,177*16+5-8,36*16+8,1090,O);
                 
-                // propre au dÃ©but de jeu
+                // propre au début de jeu
                 if (!gpJoueur->getEpee() && !gpJoueur->hasObjet(O_OCARINA)) {
                     if (gpJoueur->getAvancement() < ZELDA_SOUS_SOL) 
                         gpJeu->ajoutePnj(15,69*16+8,23*16-7,1016);
@@ -3320,7 +3320,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getGemme(146)) gpJeu->ajouteObjet(I_GEMME,16*35,16*12,146,1);
             break;
         case 64 :
-            //si pas encore Ã©tÃ© dans futur
+            //si pas encore été dans futur
             if (gpJoueur->getAvancement() < PORTAIL_F_UTILISE) {
                 if (gpJoueur->getEpee()==2) gpJeu->ajoutePnj(15,12*16,8*16-8,329);
                 else if (gpJoueur->hasObjet(O_CARTE)) gpJeu->ajoutePnj(15,9*16+8,8*16-8,326);
@@ -3758,7 +3758,7 @@ void Monde::initMatrice(int zone) {
         case 145 :
             gpJeu->ajoutePnj(24,11*16,5*16,853);
             gpJeu->ajouteObjet(1,16*14,16*12,0,1); gpJeu->ajouteObjet(4,16*15,16*12-4,0,1);
-            break; //gemme 182 si donjon montagne passÃ© fini
+            break; //gemme 182 si donjon montagne passé fini
         case 146 :
             if (!gpJoueur->getCoffre(15,26)) gpJeu->ajoutePnj(45,11*16,4*16,857);
             break;
@@ -3838,7 +3838,7 @@ void Monde::initMatrice(int zone) {
             if (!gpJoueur->getCoeur(22)) gpJeu->ajouteObjet(I_QUART_COEUR,65*16+8,30*16,22);
             if (!gpJoueur->getCoeur(23)) gpJeu->ajouteObjet(I_QUART_COEUR,44*16,80*16,23);
             if (!gpJoueur->getCoeur(24)) gpJeu->ajouteObjet(I_QUART_COEUR,18*16,115*16,24);
-            //armÃ©e de ganon
+            //armée de ganon
             if (gpJoueur->getAvancement()==67) {
                 gpJeu->getAudio()->playSpecial(1);
                 gpJeu->getStatut()->setJauge(true);
@@ -3887,7 +3887,7 @@ void Monde::initMatrice(int zone) {
         case 27 :
             //boss
             if(!gpJoueur->getCoeur(12)) gpJeu->ajouteEnnemi(76,28*16+2,47*16);
-            //piÃ¨ges
+            //pièges
             gpJeu->ajouteEnnemi(49,22*16,47*16); setValeur(22*16,47*16,3728,2);
             gpJeu->ajouteEnnemi(49,37*16,47*16); setValeur(37*16,47*16,3728,2);
             //ennemi
@@ -4501,7 +4501,7 @@ void Monde::detRegion(int newZone) {
     && gpJoueur->getAvancement() < TELE_ZELDA) gpJeu->ecrit(1002);
 }
 
-//replace crÃ¢nes
+//replace crânes
 void Monde::replace() {
     switch (gpJeu->getZone()) {
         case 46 :
@@ -5634,7 +5634,7 @@ void Monde::transitSalle(Direction dir) {
         case E : animtransX=328; gpJoueur->setX(gpJoueur->getX()+20); break;
     }
     
-    //changement de sous zone par dÃ©faut
+    //changement de sous zone par défaut
     switch (dir) {
         case N : region[0]=((int)(gpJoueur->getX()/320))*320; region[1]-=15*16; break;
         case S : region[0]=((int)(gpJoueur->getX()/320))*320; region[1]=region[3]; break;
@@ -5884,7 +5884,7 @@ void Monde::defilTransit(SDL_Surface* gpScreen) {
             animtransT=0;
             gpJeu->testFin();
             
-            //si arrivÃ©e non libre
+            //si arrivée non libre
             if (gpJeu->getZone()<1) {
                 transitTempsRetour();
                 SDL_FreeSurface(imageSpe[8]);
