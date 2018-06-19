@@ -6561,9 +6561,42 @@ void Texte::chercheText() {
             if (gpJeu->getJoueur()->getGemme(178)) {id=816; chercheText(); break;}
             texte = (this->*getTextByLangFunc)(1509, os.str()); idsuiv=808; break;
         case 808 : 
+
+            // Quête des loups
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>=1) {id=809; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1510, os.str()); break;
+            if (g>=1) {
+                if (g>=2) {
+                    if (g>=50) {
+                        if (g>=80) {
+                            if (g>=100) {
+                                if (g>100) {
+                                    texte = (this->*getTextByLangFunc)(1519, os.str()); 
+                                    idsuiv=815; 
+                                    break;
+                                }
+
+                                texte = (this->*getTextByLangFunc)(1518, os.str()); 
+                                break;
+                            }
+                            os << g;
+                            texte = (this->*getTextByLangFunc)(1516, os.str())+os.str()+(this->*getTextByLangFunc)(1517, os.str()); 
+                            break;
+                        }
+                        os << g;
+                        texte = (this->*getTextByLangFunc)(1514, os.str())+os.str()+(this->*getTextByLangFunc)(1515, os.str());
+                        break;
+                    }
+                    os << g;
+                    texte = (this->*getTextByLangFunc)(1512, os.str())+os.str()+(this->*getTextByLangFunc)(1513, os.str()); 
+                    break;
+                }
+
+                texte = (this->*getTextByLangFunc)(1511, os.str());
+                break;
+            }
+
+            texte = (this->*getTextByLangFunc)(1510, os.str()); 
+            break;
         case 809 : 
             g=gpJeu->getJoueur()->nbLoups();
             if (g>=2) {id=810; chercheText(); break;}
