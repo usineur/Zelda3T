@@ -49,10 +49,18 @@ Note: saves can be found in `ux0:data/z3t/save` directory.
 - littlebalup, for key mapping inspiration
 
 ## Changelog:
+1.3.2:
+- Updated Vita stick mapping to allow all moves (like PC version)
+
+1.3.1:
+- Fix more random crashes (thx @NicolasR)
 
 1.3:
-- Add Playstation buttons
-- Minor corrections
+- Many thanks to @NicolasR for:
+    - Multilingual support
+    - Language detection
+    - French translation
+    - More intuitive "Help" screens
 
 1.2.2:
 - Multilingual support, french translation and language detection (thx to @NicolasR)

@@ -4784,897 +4784,2066 @@ void Texte::chercheText() {
     ostringstream os;
     ostringstream os2;
     int tmp;
-    switch (id) {
-        case 1 : texte = (this->*getTextByLangFunc)(600, os.str()); break;
-        case 2 : texte = (this->*getTextByLangFunc)(601, os.str()); break;
-        case 3 : 
+    std:string texteTmp = "";
+    while (texteTmp == "") {
+        switch (id) {
+        case 1 :
+            texteTmp = (this->*getTextByLangFunc)(600, os.str());
+            break;
+        case 2 :
+            texteTmp = (this->*getTextByLangFunc)(601, os.str());
+            break;
+        case 3 :
             tmp = 4-(gpJeu->getJoueur()->nbQuarts()%4);
             os << tmp;
-            texte = (this->*getTextByLangFunc)(602, os.str());
+            texteTmp = (this->*getTextByLangFunc)(602, os.str());
             if (tmp<4) buffer = (this->*getTextByLangFunc)(603, os.str())+os.str()+(this->*getTextByLangFunc)(604, os.str());
             else buffer = (this->*getTextByLangFunc)(605, os.str());
             break;
-        case 4 : texte = (this->*getTextByLangFunc)(606, os.str()); break;
-        case 5 : texte = (this->*getTextByLangFunc)(607, os.str()); break;
-        case 6 : texte = (this->*getTextByLangFunc)(608, os.str()); break;
-        case 7 : texte = (this->*getTextByLangFunc)(609, os.str()); break;
-        case 8 : texte = (this->*getTextByLangFunc)(610, os.str()); break;
-        case 9 : texte = (this->*getTextByLangFunc)(611, os.str()); break;
-        case 10 : texte = (this->*getTextByLangFunc)(612, os.str()); break;
-        case 11 : texte = (this->*getTextByLangFunc)(613, os.str()); break;
-        case 12 : texte = (this->*getTextByLangFunc)(614, os.str()); break;
-        case 13 : texte = (this->*getTextByLangFunc)(615, os.str()); break;
-        case 14 : texte = (this->*getTextByLangFunc)(616, os.str()); break;
-        case 15 : texte = (this->*getTextByLangFunc)(617, os.str()); break;
-        case 16 : texte = (this->*getTextByLangFunc)(618, os.str()); break;
-        case 17 : texte = (this->*getTextByLangFunc)(619, os.str()); break;
-        case 18 : texte = (this->*getTextByLangFunc)(620, os.str()); break;
-        case 19 : texte = (this->*getTextByLangFunc)(621, os.str()); break;
-        case 20 : texte = (this->*getTextByLangFunc)(622, os.str()); break;
-        case 21 : texte = (this->*getTextByLangFunc)(623, os.str()); break;
-        case 22 : texte = (this->*getTextByLangFunc)(624, os.str()); break;
-        case 23 : texte = (this->*getTextByLangFunc)(625, os.str()); buffer=(this->*getTextByLangFunc)(626, os.str()); break;
-        case 24 : texte = (this->*getTextByLangFunc)(627, os.str()); break;
-        case 25 : texte = (this->*getTextByLangFunc)(628, os.str()); break;
-        case 26 : texte = (this->*getTextByLangFunc)(629, os.str()); break;
-        case 27 : texte = (this->*getTextByLangFunc)(630, os.str()); break;
-        case 28 : texte = (this->*getTextByLangFunc)(631, os.str()); break;
-        case 29 : texte = (this->*getTextByLangFunc)(632, os.str()); break;
-        case 30 : texte = (this->*getTextByLangFunc)(633, os.str()); break;
-        case 31 : texte = (this->*getTextByLangFunc)(634, os.str()); break;
-        case 32 : texte = (this->*getTextByLangFunc)(635, os.str()); break;
-        case 33 : texte = (this->*getTextByLangFunc)(636, os.str()); break;
-        case 34 : texte = (this->*getTextByLangFunc)(637, os.str()); break;
-        case 35 : texte = (this->*getTextByLangFunc)(638, os.str()); break;
-        case 36 : texte = (this->*getTextByLangFunc)(639, os.str()); break;
-        case 37 : texte = (this->*getTextByLangFunc)(640, os.str()); break;
-        case 38 : texte = (this->*getTextByLangFunc)(641, os.str()); break;
-        case 39 : texte = (this->*getTextByLangFunc)(642, os.str()); break;
-        case 40 : 
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_DEVANT_CHEZ_LINK) {id=44; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(643, os.str()); idsuiv=41; break;
-        case 41 : texte = (this->*getTextByLangFunc)(644, os.str()); idsuiv=42; break;
-        case 42 : texte = (this->*getTextByLangFunc)(645, os.str()); idsuiv=43; break;
-        case 43 : texte = (this->*getTextByLangFunc)(646, os.str()); idsuiv=44; break;
-        case 44 : texte = (this->*getTextByLangFunc)(647, os.str()); break;
-        case 45 : texte = (this->*getTextByLangFunc)(648, os.str()); idsuiv=46; break;
+        case 4 :
+            texteTmp = (this->*getTextByLangFunc)(606, os.str());
+            break;
+        case 5 :
+            texteTmp = (this->*getTextByLangFunc)(607, os.str());
+            break;
+        case 6 :
+            texteTmp = (this->*getTextByLangFunc)(608, os.str());
+            break;
+        case 7 :
+            texteTmp = (this->*getTextByLangFunc)(609, os.str());
+            break;
+        case 8 :
+            texteTmp = (this->*getTextByLangFunc)(610, os.str());
+            break;
+        case 9 :
+            texteTmp = (this->*getTextByLangFunc)(611, os.str());
+            break;
+        case 10 :
+            texteTmp = (this->*getTextByLangFunc)(612, os.str());
+            break;
+        case 11 :
+            texteTmp = (this->*getTextByLangFunc)(613, os.str());
+            break;
+        case 12 :
+            texteTmp = (this->*getTextByLangFunc)(614, os.str());
+            break;
+        case 13 :
+            texteTmp = (this->*getTextByLangFunc)(615, os.str());
+            break;
+        case 14 :
+            texteTmp = (this->*getTextByLangFunc)(616, os.str());
+            break;
+        case 15 :
+            texteTmp = (this->*getTextByLangFunc)(617, os.str());
+            break;
+        case 16 :
+            texteTmp = (this->*getTextByLangFunc)(618, os.str());
+            break;
+        case 17 :
+            texteTmp = (this->*getTextByLangFunc)(619, os.str());
+            break;
+        case 18 :
+            texteTmp = (this->*getTextByLangFunc)(620, os.str());
+            break;
+        case 19 :
+            texteTmp = (this->*getTextByLangFunc)(621, os.str());
+            break;
+        case 20 :
+            texteTmp = (this->*getTextByLangFunc)(622, os.str());
+            break;
+        case 21 :
+            texteTmp = (this->*getTextByLangFunc)(623, os.str());
+            break;
+        case 22 :
+            texteTmp = (this->*getTextByLangFunc)(624, os.str());
+            break;
+        case 23 :
+            texteTmp = (this->*getTextByLangFunc)(625, os.str());
+            buffer=(this->*getTextByLangFunc)(626, os.str());
+            break;
+        case 24 :
+            texteTmp = (this->*getTextByLangFunc)(627, os.str());
+            break;
+        case 25 :
+            texteTmp = (this->*getTextByLangFunc)(628, os.str());
+            break;
+        case 26 :
+            texteTmp = (this->*getTextByLangFunc)(629, os.str());
+            break;
+        case 27 :
+            texteTmp = (this->*getTextByLangFunc)(630, os.str());
+            break;
+        case 28 :
+            texteTmp = (this->*getTextByLangFunc)(631, os.str());
+            break;
+        case 29 :
+            texteTmp = (this->*getTextByLangFunc)(632, os.str());
+            break;
+        case 30 :
+            texteTmp = (this->*getTextByLangFunc)(633, os.str());
+            break;
+        case 31 :
+            texteTmp = (this->*getTextByLangFunc)(634, os.str());
+            break;
+        case 32 :
+            texteTmp = (this->*getTextByLangFunc)(635, os.str());
+            break;
+        case 33 :
+            texteTmp = (this->*getTextByLangFunc)(636, os.str());
+            break;
+        case 34 :
+            texteTmp = (this->*getTextByLangFunc)(637, os.str());
+            break;
+        case 35 :
+            texteTmp = (this->*getTextByLangFunc)(638, os.str());
+            break;
+        case 36 :
+            texteTmp = (this->*getTextByLangFunc)(639, os.str());
+            break;
+        case 37 :
+            texteTmp = (this->*getTextByLangFunc)(640, os.str());
+            break;
+        case 38 :
+            texteTmp = (this->*getTextByLangFunc)(641, os.str());
+            break;
+        case 39 :
+            texteTmp = (this->*getTextByLangFunc)(642, os.str());
+            break;
+        case 40 :
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_DEVANT_CHEZ_LINK) {
+                id=44;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(643, os.str());
+            idsuiv=41;
+            break;
+        case 41 :
+            texteTmp = (this->*getTextByLangFunc)(644, os.str());
+            idsuiv=42;
+            break;
+        case 42 :
+            texteTmp = (this->*getTextByLangFunc)(645, os.str());
+            idsuiv=43;
+            break;
+        case 43 :
+            texteTmp = (this->*getTextByLangFunc)(646, os.str());
+            idsuiv=44;
+            break;
+        case 44 :
+            texteTmp = (this->*getTextByLangFunc)(647, os.str());
+            break;
+        case 45 :
+            texteTmp = (this->*getTextByLangFunc)(648, os.str());
+            idsuiv=46;
+            break;
 #ifdef __vita__
-        case 46 : texte = (this->*getTextByLangFunc)(649, os.str()); break;
+        case 46 :
+            texteTmp = (this->*getTextByLangFunc)(649, os.str());
+            break;
 #else
-        case 46 : texte = (this->*getTextByLangFunc)(650, os.str()); break;
+        case 46 :
+            texteTmp = (this->*getTextByLangFunc)(650, os.str());
+            break;
 #endif
-        case 47 : texte = (this->*getTextByLangFunc)(651, os.str());
-            if (gpJeu->getJoueur()->hasMelodie(0)) {id=48; chercheText();break;}
-            if (gpJeu->getJoueur()->hasMelodie(1)) {id=57; chercheText();break;}
-            if (gpJeu->getJoueur()->hasMelodie(2)) {id=59; chercheText();break;}
+        case 47 :
+            if (gpJeu->getJoueur()->hasMelodie(0)) {
+                id=48;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasMelodie(1)) {
+                id=57;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasMelodie(2)) {
+                id=59;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(651, os.str());
             break;
-        case 48 : texte = (this->*getTextByLangFunc)(652, os.str());
-            if (gpJeu->getJoueur()->hasMelodie(1)) {id=50; chercheText();break;}
-            if (gpJeu->getJoueur()->hasMelodie(2)) {id=61; chercheText();break;}
+        case 48 :
+            if (gpJeu->getJoueur()->hasMelodie(1)) {
+                id=50;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasMelodie(2)) {
+                id=61;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(652, os.str());
             break;
-        case 49 : texte = (this->*getTextByLangFunc)(653, os.str()); break;
-        case 50 : texte = (this->*getTextByLangFunc)(654, os.str());
-            if (gpJeu->getJoueur()->hasMelodie(2)) {id=53; chercheText();break;}
+        case 49 :
+            texteTmp = (this->*getTextByLangFunc)(653, os.str());
             break;
-        case 51 : texte = (this->*getTextByLangFunc)(655, os.str()); break;
-        case 52 : texte = (this->*getTextByLangFunc)(656, os.str()); break;
-        case 53 : texte = (this->*getTextByLangFunc)(657, os.str()); break;
-        case 54 : texte = (this->*getTextByLangFunc)(658, os.str()); break;
-        case 55 : texte = (this->*getTextByLangFunc)(659, os.str()); break;
-        case 56 : texte = (this->*getTextByLangFunc)(660, os.str()); break;
-        case 57 : texte = (this->*getTextByLangFunc)(661, os.str());
-            if (gpJeu->getJoueur()->hasMelodie(2)) {id=64; chercheText();break;}
+        case 50 :
+            if (gpJeu->getJoueur()->hasMelodie(2)) {
+                id=53;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(654, os.str());
             break;
-        case 58 : texte = (this->*getTextByLangFunc)(662, os.str()); break;
-        case 59 : texte = (this->*getTextByLangFunc)(663, os.str()); break;
-        case 60 : texte = (this->*getTextByLangFunc)(664, os.str()); break;
-        case 61 : texte = (this->*getTextByLangFunc)(665, os.str()); break;
-        case 62 : texte = (this->*getTextByLangFunc)(666, os.str()); break;
-        case 63 : texte = (this->*getTextByLangFunc)(667, os.str()); break;
-        case 64 : texte = (this->*getTextByLangFunc)(668, os.str()); break;
-        case 65 : texte = (this->*getTextByLangFunc)(669, os.str()); break;
-        case 66 : texte = (this->*getTextByLangFunc)(670, os.str()); break;
-        case 67 : texte = (this->*getTextByLangFunc)(671, os.str()); break;
-        case 68 : texte = (this->*getTextByLangFunc)(672, os.str()); break;
-        case 69 : texte = (this->*getTextByLangFunc)(673, os.str()); break;
-        case 70 : texte = (this->*getTextByLangFunc)(674, os.str()); break;
-        case 71 : texte = (this->*getTextByLangFunc)(675, os.str()); break;
-        case 72 : texte = (this->*getTextByLangFunc)(676, os.str()); break;
-        case 73 : texte = (this->*getTextByLangFunc)(677, os.str()); break;
-        case 74 : texte = (this->*getTextByLangFunc)(678, os.str()); break;
-        case 75 : texte = (this->*getTextByLangFunc)(679, os.str()); break;
-        case 76 : texte = (this->*getTextByLangFunc)(680, os.str()); break;
-        case 77 : 
-            if (gpJeu->getJoueur()->getTroc(M_ROUAGE)>-1) {id=80; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(681, os.str()); 
+        case 51 :
+            texteTmp = (this->*getTextByLangFunc)(655, os.str());
+            break;
+        case 52 :
+            texteTmp = (this->*getTextByLangFunc)(656, os.str());
+            break;
+        case 53 :
+            texteTmp = (this->*getTextByLangFunc)(657, os.str());
+            break;
+        case 54 :
+            texteTmp = (this->*getTextByLangFunc)(658, os.str());
+            break;
+        case 55 :
+            texteTmp = (this->*getTextByLangFunc)(659, os.str());
+            break;
+        case 56 :
+            texteTmp = (this->*getTextByLangFunc)(660, os.str());
+            break;
+        case 57 :
+            if (gpJeu->getJoueur()->hasMelodie(2)) {
+                id=64;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(661, os.str());
+            break;
+        case 58 :
+            texteTmp = (this->*getTextByLangFunc)(662, os.str());
+            break;
+        case 59 :
+            texteTmp = (this->*getTextByLangFunc)(663, os.str());
+            break;
+        case 60 :
+            texteTmp = (this->*getTextByLangFunc)(664, os.str());
+            break;
+        case 61 :
+            texteTmp = (this->*getTextByLangFunc)(665, os.str());
+            break;
+        case 62 :
+            texteTmp = (this->*getTextByLangFunc)(666, os.str());
+            break;
+        case 63 :
+            texteTmp = (this->*getTextByLangFunc)(667, os.str());
+            break;
+        case 64 :
+            texteTmp = (this->*getTextByLangFunc)(668, os.str());
+            break;
+        case 65 :
+            texteTmp = (this->*getTextByLangFunc)(669, os.str());
+            break;
+        case 66 :
+            texteTmp = (this->*getTextByLangFunc)(670, os.str());
+            break;
+        case 67 :
+            texteTmp = (this->*getTextByLangFunc)(671, os.str());
+            break;
+        case 68 :
+            texteTmp = (this->*getTextByLangFunc)(672, os.str());
+            break;
+        case 69 :
+            texteTmp = (this->*getTextByLangFunc)(673, os.str());
+            break;
+        case 70 :
+            texteTmp = (this->*getTextByLangFunc)(674, os.str());
+            break;
+        case 71 :
+            texteTmp = (this->*getTextByLangFunc)(675, os.str());
+            break;
+        case 72 :
+            texteTmp = (this->*getTextByLangFunc)(676, os.str());
+            break;
+        case 73 :
+            texteTmp = (this->*getTextByLangFunc)(677, os.str());
+            break;
+        case 74 :
+            texteTmp = (this->*getTextByLangFunc)(678, os.str());
+            break;
+        case 75 :
+            texteTmp = (this->*getTextByLangFunc)(679, os.str());
+            break;
+        case 76 :
+            texteTmp = (this->*getTextByLangFunc)(680, os.str());
+            break;
+        case 77 :
+            if (gpJeu->getJoueur()->getTroc(M_ROUAGE)>-1) {
+                id=80;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(681, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<100
-            || gpJeu->getJoueur()->getTroc(M_POULET)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_POULET)<1) idsuiv=75;
             break;
-        case 78 : texte = (this->*getTextByLangFunc)(682, os.str()); idsuiv=76; break;
-        case 79 : texte = (this->*getTextByLangFunc)(683, os.str()); break;
-        case 80 : 
+        case 78 :
+            texteTmp = (this->*getTextByLangFunc)(682, os.str());
+            idsuiv=76;
+            break;
+        case 79 :
+            texteTmp = (this->*getTextByLangFunc)(683, os.str());
+            break;
+        case 80 :
             if ((gpJeu->getJoueur()->getCoeur(14) && gpJeu->getZone()==18)
-            || (gpJeu->getJoueur()->getCoeur(15) && gpJeu->getZone()==3)) {
-                id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(684, os.str()); 
+                || (gpJeu->getJoueur()->getCoeur(15) && gpJeu->getZone()==3)) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(684, os.str());
             if (gpJeu->getJoueur()->getTroc(M_ROC_MAGMA)<1
-            || gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)<1) idsuiv=75;
             break;
-        case 81 : texte = (this->*getTextByLangFunc)(685, os.str()); idsuiv=76; break;
-        case 82 : texte = (this->*getTextByLangFunc)(686, os.str()); break;
-        case 83 : 
-            if (gpJeu->getJoueur()->getRubisMax()>=200) {id=86; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(687, os.str()); 
+        case 81 :
+            texteTmp = (this->*getTextByLangFunc)(685, os.str());
+            idsuiv=76;
+            break;
+        case 82 :
+            texteTmp = (this->*getTextByLangFunc)(686, os.str());
+            break;
+        case 83 :
+            if (gpJeu->getJoueur()->getRubisMax()>=200) {
+                id=86;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(687, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<10
-            || gpJeu->getJoueur()->getTroc(M_PLUME)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_PLUME)<1) idsuiv=75;
             break;
-        case 84 : texte = (this->*getTextByLangFunc)(688, os.str()); idsuiv=76; break;
-        case 85 : texte = (this->*getTextByLangFunc)(689, os.str()); break;
-        case 86 : 
-            if (gpJeu->getJoueur()->getRubisMax()>=500) {id=89; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(690, os.str()); 
+        case 84 :
+            texteTmp = (this->*getTextByLangFunc)(688, os.str());
+            idsuiv=76;
+            break;
+        case 85 :
+            texteTmp = (this->*getTextByLangFunc)(689, os.str());
+            break;
+        case 86 :
+            if (gpJeu->getJoueur()->getRubisMax()>=500) {
+                id=89;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(690, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<100
-            || gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1) idsuiv=75;
             break;
-        case 87 : texte = (this->*getTextByLangFunc)(691, os.str()); idsuiv=76; break;
-        case 88 : texte = (this->*getTextByLangFunc)(692, os.str()); break;
-        case 89 : 
-            if (gpJeu->getJoueur()->getRubisMax()==999) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(693, os.str()); 
+        case 87 :
+            texteTmp = (this->*getTextByLangFunc)(691, os.str());
+            idsuiv=76;
+            break;
+        case 88 :
+            texteTmp = (this->*getTextByLangFunc)(692, os.str());
+            break;
+        case 89 :
+            if (gpJeu->getJoueur()->getRubisMax()==999) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(693, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<250
-            || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1
-            || gpJeu->getJoueur()->getTroc(M_ROC_MAGMA)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1
+                || gpJeu->getJoueur()->getTroc(M_ROC_MAGMA)<1) idsuiv=75;
             break;
-        case 90 : texte = (this->*getTextByLangFunc)(694, os.str()); idsuiv=76; break;
-        case 91 : texte = (this->*getTextByLangFunc)(695, os.str()); break;
-        case 92 : 
-            texte = (this->*getTextByLangFunc)(696, os.str()); 
+        case 90 :
+            texteTmp = (this->*getTextByLangFunc)(694, os.str());
+            idsuiv=76;
+            break;
+        case 91 :
+            texteTmp = (this->*getTextByLangFunc)(695, os.str());
+            break;
+        case 92 :
+            texteTmp = (this->*getTextByLangFunc)(696, os.str());
             if (gpJeu->getJoueur()->getTroc(M_RIZ)<2
-            || gpJeu->getJoueur()->getTroc(M_OLIVES)<3) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_OLIVES)<3) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_POULET)>=99) idsuiv=95;
             break;
-        case 93 : texte = (this->*getTextByLangFunc)(697, os.str()); idsuiv=76; break;
-        case 94 : texte = (this->*getTextByLangFunc)(698, os.str()); break;
-        case 95 : texte = (this->*getTextByLangFunc)(699, os.str()); break;
-        case 96 : 
-            texte = (this->*getTextByLangFunc)(700, os.str()); 
+        case 93 :
+            texteTmp = (this->*getTextByLangFunc)(697, os.str());
+            idsuiv=76;
+            break;
+        case 94 :
+            texteTmp = (this->*getTextByLangFunc)(698, os.str());
+            break;
+        case 95 :
+            texteTmp = (this->*getTextByLangFunc)(699, os.str());
+            break;
+        case 96 :
+            texteTmp = (this->*getTextByLangFunc)(700, os.str());
             if (gpJeu->getJoueur()->getTroc(M_EPICES)<2
-            || gpJeu->getJoueur()->getTroc(M_OLIVES)<2) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_OLIVES)<2) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_PLUME)>=99) idsuiv=95;
             break;
-        case 97 : texte = (this->*getTextByLangFunc)(701, os.str()); idsuiv=76; break;
-        case 98 : texte = (this->*getTextByLangFunc)(702, os.str()); break;
-        case 99 : 
-            texte = (this->*getTextByLangFunc)(703, os.str()); 
+        case 97 :
+            texteTmp = (this->*getTextByLangFunc)(701, os.str());
+            idsuiv=76;
+            break;
+        case 98 :
+            texteTmp = (this->*getTextByLangFunc)(702, os.str());
+            break;
+        case 99 :
+            texteTmp = (this->*getTextByLangFunc)(703, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<15) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_RIZ)>=99) idsuiv=95;
             break;
-        case 100 : texte = (this->*getTextByLangFunc)(704, os.str()); idsuiv=76; break;
-        case 101 : texte = (this->*getTextByLangFunc)(705, os.str()); break;
-        case 102 : 
-            texte = (this->*getTextByLangFunc)(706, os.str()); 
+        case 100 :
+            texteTmp = (this->*getTextByLangFunc)(704, os.str());
+            idsuiv=76;
+            break;
+        case 101 :
+            texteTmp = (this->*getTextByLangFunc)(705, os.str());
+            break;
+        case 102 :
+            texteTmp = (this->*getTextByLangFunc)(706, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<10) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_OLIVES)>=99) idsuiv=95;
             break;
-        case 103 : texte = (this->*getTextByLangFunc)(707, os.str()); idsuiv=76; break;
-        case 104 : texte = (this->*getTextByLangFunc)(708, os.str()); break;
-        case 105 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>2) {id=112; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==2 
-            && gpJeu->getJoueur()->getObjet()==15) {id=106; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(709, os.str()); break;
-        case 106 : texte = (this->*getTextByLangFunc)(710, os.str()); idsuiv=107; break;
-        case 107 : texte = (this->*getTextByLangFunc)(711, os.str()); idsuiv=109; break;
-        case 108 : texte = (this->*getTextByLangFunc)(712, os.str()); idsuiv=110; break;
-        case 109 : texte = (this->*getTextByLangFunc)(713, os.str()); break;
-        case 110 : texte = (this->*getTextByLangFunc)(714, os.str()); break;
-        case 111 : texte = (this->*getTextByLangFunc)(715, os.str()); break;
-        case 112 : texte = (this->*getTextByLangFunc)(716, os.str()); break;
-        case 113 : texte = (this->*getTextByLangFunc)(717, os.str()); break;
-        case 114 : texte = (this->*getTextByLangFunc)(718, os.str()); break;
-        case 115 : texte = (this->*getTextByLangFunc)(719, os.str()); break;
-        case 116 : texte = (this->*getTextByLangFunc)(720, os.str()); break;
-        case 117 : texte = (this->*getTextByLangFunc)(721, os.str()); break;
-        case 118 : texte = (this->*getTextByLangFunc)(722, os.str()); break;
-        case 119 : texte = (this->*getTextByLangFunc)(723, os.str()); break;
-        case 120 : texte = (this->*getTextByLangFunc)(724, os.str()); break;
-        case 121 : texte = (this->*getTextByLangFunc)(725, os.str()); break;
-        case 122 : texte = (this->*getTextByLangFunc)(726, os.str()); break;
-        case 123 : texte = (this->*getTextByLangFunc)(727, os.str());
-            buffer=(this->*getTextByLangFunc)(728, os.str()); break;
-        case 124 : texte = (this->*getTextByLangFunc)(729, os.str()); break;
-        case 125 : texte = (this->*getTextByLangFunc)(730, os.str()); break;
-        case 126 : 
-            if (gpJeu->getJoueur()->hasObjet(O_PERLE)) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(731, os.str()); 
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<100
-            || gpJeu->getJoueur()->getTroc(M_ROUE)<1
-            || gpJeu->getJoueur()->getTroc(M_JAUGE)<1
-            || gpJeu->getJoueur()->getTroc(M_SOURCE_ENERGIE)<1) idsuiv=75;
+        case 103 :
+            texteTmp = (this->*getTextByLangFunc)(707, os.str());
+            idsuiv=76;
             break;
-        case 127 : texte = (this->*getTextByLangFunc)(732, os.str()); idsuiv=76; break;
-        case 128 : texte = (this->*getTextByLangFunc)(733, os.str()); break;
-        case 129 : 
-            if (gpJeu->getJoueur()->getGanonMax()>=200) {id=132; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(734, os.str()); 
+        case 104 :
+            texteTmp = (this->*getTextByLangFunc)(708, os.str());
+            break;
+        case 105 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>2) {
+                id=112;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==2
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=106;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(709, os.str());
+            break;
+        case 106 :
+            texteTmp = (this->*getTextByLangFunc)(710, os.str());
+            idsuiv=107;
+            break;
+        case 107 :
+            texteTmp = (this->*getTextByLangFunc)(711, os.str());
+            idsuiv=109;
+            break;
+        case 108 :
+            texteTmp = (this->*getTextByLangFunc)(712, os.str());
+            idsuiv=110;
+            break;
+        case 109 :
+            texteTmp = (this->*getTextByLangFunc)(713, os.str());
+            break;
+        case 110 :
+            texteTmp = (this->*getTextByLangFunc)(714, os.str());
+            break;
+        case 111 :
+            texteTmp = (this->*getTextByLangFunc)(715, os.str());
+            break;
+        case 112 :
+            texteTmp = (this->*getTextByLangFunc)(716, os.str());
+            break;
+        case 113 :
+            texteTmp = (this->*getTextByLangFunc)(717, os.str());
+            break;
+        case 114 :
+            texteTmp = (this->*getTextByLangFunc)(718, os.str());
+            break;
+        case 115 :
+            texteTmp = (this->*getTextByLangFunc)(719, os.str());
+            break;
+        case 116 :
+            texteTmp = (this->*getTextByLangFunc)(720, os.str());
+            break;
+        case 117 :
+            texteTmp = (this->*getTextByLangFunc)(721, os.str());
+            break;
+        case 118 :
+            texteTmp = (this->*getTextByLangFunc)(722, os.str());
+            break;
+        case 119 :
+            texteTmp = (this->*getTextByLangFunc)(723, os.str());
+            break;
+        case 120 :
+            texteTmp = (this->*getTextByLangFunc)(724, os.str());
+            break;
+        case 121 :
+            texteTmp = (this->*getTextByLangFunc)(725, os.str());
+            break;
+        case 122 :
+            texteTmp = (this->*getTextByLangFunc)(726, os.str());
+            break;
+        case 123 :
+            texteTmp = (this->*getTextByLangFunc)(727, os.str());
+            buffer=(this->*getTextByLangFunc)(728, os.str());
+            break;
+        case 124 :
+            texteTmp = (this->*getTextByLangFunc)(729, os.str());
+            break;
+        case 125 :
+            texteTmp = (this->*getTextByLangFunc)(730, os.str());
+            break;
+        case 126 :
+            if (gpJeu->getJoueur()->hasObjet(O_PERLE)) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(731, os.str());
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<100
+                || gpJeu->getJoueur()->getTroc(M_ROUE)<1
+                || gpJeu->getJoueur()->getTroc(M_JAUGE)<1
+                || gpJeu->getJoueur()->getTroc(M_SOURCE_ENERGIE)<1) idsuiv=75;
+            break;
+        case 127 :
+            texteTmp = (this->*getTextByLangFunc)(732, os.str());
+            idsuiv=76;
+            break;
+        case 128 :
+            texteTmp = (this->*getTextByLangFunc)(733, os.str());
+            break;
+        case 129 :
+            if (gpJeu->getJoueur()->getGanonMax()>=200) {
+                id=132;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(734, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<10
-            || gpJeu->getJoueur()->getTroc(M_PERLES)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_PERLES)<1) idsuiv=75;
             break;
-        case 130 : texte = (this->*getTextByLangFunc)(735, os.str()); idsuiv=76; break;
-        case 131 : texte = (this->*getTextByLangFunc)(736, os.str()); break;
-        case 132 : 
-            if (gpJeu->getJoueur()->getGanonMax()>=500) {id=135; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(737, os.str()); 
+        case 130 :
+            texteTmp = (this->*getTextByLangFunc)(735, os.str());
+            idsuiv=76;
+            break;
+        case 131 :
+            texteTmp = (this->*getTextByLangFunc)(736, os.str());
+            break;
+        case 132 :
+            if (gpJeu->getJoueur()->getGanonMax()>=500) {
+                id=135;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(737, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<100
-            || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1) idsuiv=75;
             break;
-        case 133 : texte = (this->*getTextByLangFunc)(738, os.str()); idsuiv=76; break;
-        case 134 : texte = (this->*getTextByLangFunc)(739, os.str()); break;
-        case 135 : 
-            if (gpJeu->getJoueur()->getGanonMax()==999) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(740, os.str()); 
+        case 133 :
+            texteTmp = (this->*getTextByLangFunc)(738, os.str());
+            idsuiv=76;
+            break;
+        case 134 :
+            texteTmp = (this->*getTextByLangFunc)(739, os.str());
+            break;
+        case 135 :
+            if (gpJeu->getJoueur()->getGanonMax()==999) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(740, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<250
-            || gpJeu->getJoueur()->getTroc(M_PARFUM)<1
-            || gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_PARFUM)<1
+                || gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)<1) idsuiv=75;
             break;
-        case 136 : texte = (this->*getTextByLangFunc)(741, os.str()); idsuiv=76; break;
-        case 137 : texte = (this->*getTextByLangFunc)(742, os.str()); break;
-        case 138 : 
-            if (gpJeu->getJoueur()->getTroc(M_ROUE)>-1) {id=141; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(743, os.str()); 
+        case 136 :
+            texteTmp = (this->*getTextByLangFunc)(741, os.str());
+            idsuiv=76;
+            break;
+        case 137 :
+            texteTmp = (this->*getTextByLangFunc)(742, os.str());
+            break;
+        case 138 :
+            if (gpJeu->getJoueur()->getTroc(M_ROUE)>-1) {
+                id=141;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(743, os.str());
             if (gpJeu->getJoueur()->getTroc(M_EPICES)<3) idsuiv=75;
             break;
-        case 139 : texte = (this->*getTextByLangFunc)(744, os.str()); idsuiv=76; break;
-        case 140 : texte = (this->*getTextByLangFunc)(745, os.str()); break;
-        case 141 : 
-            if (gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(746, os.str()); 
-            if (gpJeu->getJoueur()->getTroc(M_POIVRON)<1
-            || gpJeu->getJoueur()->getTroc(M_EPICES)<3) idsuiv=75;
+        case 139 :
+            texteTmp = (this->*getTextByLangFunc)(744, os.str());
+            idsuiv=76;
             break;
-        case 142 : texte = (this->*getTextByLangFunc)(747, os.str()); idsuiv=76; break;
-        case 143 : texte = (this->*getTextByLangFunc)(748, os.str()); break;
-        case 144 : 
-            texte = (this->*getTextByLangFunc)(749, os.str()); 
+        case 140 :
+            texteTmp = (this->*getTextByLangFunc)(745, os.str());
+            break;
+        case 141 :
+            if (gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(746, os.str());
+            if (gpJeu->getJoueur()->getTroc(M_POIVRON)<1
+                || gpJeu->getJoueur()->getTroc(M_EPICES)<3) idsuiv=75;
+            break;
+        case 142 :
+            texteTmp = (this->*getTextByLangFunc)(747, os.str());
+            idsuiv=76;
+            break;
+        case 143 :
+            texteTmp = (this->*getTextByLangFunc)(748, os.str());
+            break;
+        case 144 :
+            texteTmp = (this->*getTextByLangFunc)(749, os.str());
             if (gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1
-            || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1
-            || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1
+                || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_ROC_MAGMA)>=99) idsuiv=95;
             break;
-        case 145 : texte = (this->*getTextByLangFunc)(750, os.str()); idsuiv=76; break;
-        case 146 : texte = (this->*getTextByLangFunc)(751, os.str()); break;
-        case 147 : 
-            texte = (this->*getTextByLangFunc)(752, os.str()); 
+        case 145 :
+            texteTmp = (this->*getTextByLangFunc)(750, os.str());
+            idsuiv=76;
+            break;
+        case 146 :
+            texteTmp = (this->*getTextByLangFunc)(751, os.str());
+            break;
+        case 147 :
+            texteTmp = (this->*getTextByLangFunc)(752, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<5
-            || gpJeu->getJoueur()->getTroc(M_EPICES)<5) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_EPICES)<5) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_PERLES)>=99) idsuiv=95;
             break;
-        case 148 : texte = (this->*getTextByLangFunc)(753, os.str()); idsuiv=76; break;
-        case 149 : texte = (this->*getTextByLangFunc)(754, os.str()); break;
-        case 150 : 
-            texte = (this->*getTextByLangFunc)(755, os.str()); 
+        case 148 :
+            texteTmp = (this->*getTextByLangFunc)(753, os.str());
+            idsuiv=76;
+            break;
+        case 149 :
+            texteTmp = (this->*getTextByLangFunc)(754, os.str());
+            break;
+        case 150 :
+            texteTmp = (this->*getTextByLangFunc)(755, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<10) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_EPICES)>=99) idsuiv=95;
             break;
-        case 151 : texte = (this->*getTextByLangFunc)(756, os.str()); idsuiv=76; break;
-        case 152 : texte = (this->*getTextByLangFunc)(757, os.str()); break;
-        case 153 : texte = (this->*getTextByLangFunc)(758, os.str()); break;
-        case 154 : texte = (this->*getTextByLangFunc)(759, os.str()); break;
-        case 155 : texte = (this->*getTextByLangFunc)(760, os.str()); 
-            buffer=(this->*getTextByLangFunc)(761, os.str()); break;
-        case 156 : texte = (this->*getTextByLangFunc)(762, os.str()); break;
-        case 157 : 
-            if (gpJeu->getJoueur()->hasObjet(O_PERLE)) texte = (this->*getTextByLangFunc)(763, os.str());
-            else texte = (this->*getTextByLangFunc)(764, os.str()); break;
-        case 158 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(765, os.str()); break;
-        case 159 : 
-            if (gpJeu->getJoueur()->getPieceMax()>=200) {id=162; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(766, os.str()); 
+        case 151 :
+            texteTmp = (this->*getTextByLangFunc)(756, os.str());
+            idsuiv=76;
+            break;
+        case 152 :
+            texteTmp = (this->*getTextByLangFunc)(757, os.str());
+            break;
+        case 153 :
+            texteTmp = (this->*getTextByLangFunc)(758, os.str());
+            break;
+        case 154 :
+            texteTmp = (this->*getTextByLangFunc)(759, os.str());
+            break;
+        case 155 :
+            texteTmp = (this->*getTextByLangFunc)(760, os.str());
+            buffer=(this->*getTextByLangFunc)(761, os.str());
+            break;
+        case 156 :
+            texteTmp = (this->*getTextByLangFunc)(762, os.str());
+            break;
+        case 157 :
+            if (gpJeu->getJoueur()->hasObjet(O_PERLE)) texteTmp = (this->*getTextByLangFunc)(763, os.str());
+            else  texteTmp = (this->*getTextByLangFunc)(764, os.str());
+            break;
+        case 158 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(765, os.str());
+            break;
+        case 159 :
+            if (gpJeu->getJoueur()->getPieceMax()>=200) {
+                id=162;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(766, os.str());
             if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<10
-            || gpJeu->getJoueur()->getTroc(M_POULET)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_POULET)<1) idsuiv=75;
             break;
-        case 160 : texte = (this->*getTextByLangFunc)(767, os.str()); idsuiv=76; break;
-        case 161 : texte = (this->*getTextByLangFunc)(768, os.str()); break;
-        case 162 : 
-            if (gpJeu->getJoueur()->getPieceMax()>=500) {id=165; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(769, os.str()); 
+        case 160 :
+            texteTmp = (this->*getTextByLangFunc)(767, os.str());
+            idsuiv=76;
+            break;
+        case 161 :
+            texteTmp = (this->*getTextByLangFunc)(768, os.str());
+            break;
+        case 162 :
+            if (gpJeu->getJoueur()->getPieceMax()>=500) {
+                id=165;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(769, os.str());
             if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<100
-            || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
             break;
-        case 163 : texte = (this->*getTextByLangFunc)(770, os.str()); idsuiv=76; break;
-        case 164 : texte = (this->*getTextByLangFunc)(771, os.str()); break;
-        case 165 : 
-            if (gpJeu->getJoueur()->getPieceMax()==999) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(772, os.str()); 
+        case 163 :
+            texteTmp = (this->*getTextByLangFunc)(770, os.str());
+            idsuiv=76;
+            break;
+        case 164 :
+            texteTmp = (this->*getTextByLangFunc)(771, os.str());
+            break;
+        case 165 :
+            if (gpJeu->getJoueur()->getPieceMax()==999) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(772, os.str());
             if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<250
-            || gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1
-            || gpJeu->getJoueur()->getTroc(M_ROC_MAGMA)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1
+                || gpJeu->getJoueur()->getTroc(M_ROC_MAGMA)<1) idsuiv=75;
             break;
-        case 166 : texte = (this->*getTextByLangFunc)(773, os.str()); idsuiv=76; break;
-        case 167 : texte = (this->*getTextByLangFunc)(774, os.str()); break;
-        case 168 : 
-            texte = (this->*getTextByLangFunc)(775, os.str()); 
+        case 166 :
+            texteTmp = (this->*getTextByLangFunc)(773, os.str());
+            idsuiv=76;
+            break;
+        case 167 :
+            texteTmp = (this->*getTextByLangFunc)(774, os.str());
+            break;
+        case 168 :
+            texteTmp = (this->*getTextByLangFunc)(775, os.str());
             if (gpJeu->getJoueur()->getTroc(M_POULET)<1
-            || gpJeu->getJoueur()->getTroc(M_OLIVES)<2) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_OLIVES)<2) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_AMULETTE)>=99) idsuiv=95;
             break;
-        case 169 : texte = (this->*getTextByLangFunc)(776, os.str()); idsuiv=76; break;
-        case 170 : texte = (this->*getTextByLangFunc)(777, os.str()); break;
-        case 171 : 
-            texte = (this->*getTextByLangFunc)(778, os.str()); 
+        case 169 :
+            texteTmp = (this->*getTextByLangFunc)(776, os.str());
+            idsuiv=76;
+            break;
+        case 170 :
+            texteTmp = (this->*getTextByLangFunc)(777, os.str());
+            break;
+        case 171 :
+            texteTmp = (this->*getTextByLangFunc)(778, os.str());
             if (gpJeu->getJoueur()->getTroc(M_EPICES)<1
-            || gpJeu->getJoueur()->getTroc(M_OLIVES)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_OLIVES)<1) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_PLUME)>=99) idsuiv=95;
             break;
-        case 172 : texte = (this->*getTextByLangFunc)(779, os.str()); idsuiv=76; break;
-        case 173 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(780, os.str()); break;
-        case 174 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(781, os.str()); break;
-        case 175 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(782, os.str()); break;
-        case 176 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(783, os.str()); break;
-        case 177 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(784, os.str()); break;
-        case 178 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            if (!gpJeu->getJoueur()->getPieceMax()) {id=771; chercheText(); break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>3) {id=185; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==3 
-            && gpJeu->getJoueur()->getObjet()==15) {id=179; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(785, os.str()); break;
-        case 179 : texte = (this->*getTextByLangFunc)(786, os.str()); idsuiv=180; break;
-        case 180 : texte = (this->*getTextByLangFunc)(787, os.str()); idsuiv=182; break;
-        case 181 : texte = (this->*getTextByLangFunc)(788, os.str()); idsuiv=183; break;
-        case 182 : texte = (this->*getTextByLangFunc)(789, os.str()); break;
-        case 183 : texte = (this->*getTextByLangFunc)(790, os.str()); break;
-        case 184 : texte = (this->*getTextByLangFunc)(791, os.str()); break;
-        case 185 : texte = (this->*getTextByLangFunc)(792, os.str()); break;
-        case 186 : texte = (this->*getTextByLangFunc)(793, os.str()); break;
-        case 187 : texte = (this->*getTextByLangFunc)(794, os.str()); break;
-        case 188 : texte = (this->*getTextByLangFunc)(795, os.str()); break;
-        case 189 : texte = (this->*getTextByLangFunc)(796, os.str()); break;
-        case 190 : texte = (this->*getTextByLangFunc)(797, os.str()); break;
-        case 191 : 
-            texte = (this->*getTextByLangFunc)(798, os.str()); 
+        case 172 :
+            texteTmp = (this->*getTextByLangFunc)(779, os.str());
+            idsuiv=76;
+            break;
+        case 173 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(780, os.str());
+            break;
+        case 174 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(781, os.str());
+            break;
+        case 175 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(782, os.str());
+            break;
+        case 176 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(783, os.str());
+            break;
+        case 177 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(784, os.str());
+            break;
+        case 178 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (!gpJeu->getJoueur()->getPieceMax()) {
+                id=771;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>3) {
+                id=185;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==3
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=179;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(785, os.str());
+            break;
+        case 179 :
+            texteTmp = (this->*getTextByLangFunc)(786, os.str());
+            idsuiv=180;
+            break;
+        case 180 :
+            texteTmp = (this->*getTextByLangFunc)(787, os.str());
+            idsuiv=182;
+            break;
+        case 181 :
+            texteTmp = (this->*getTextByLangFunc)(788, os.str());
+            idsuiv=183;
+            break;
+        case 182 :
+            texteTmp = (this->*getTextByLangFunc)(789, os.str());
+            break;
+        case 183 :
+            texteTmp = (this->*getTextByLangFunc)(790, os.str());
+            break;
+        case 184 :
+            texteTmp = (this->*getTextByLangFunc)(791, os.str());
+            break;
+        case 185 :
+            texteTmp = (this->*getTextByLangFunc)(792, os.str());
+            break;
+        case 186 :
+            texteTmp = (this->*getTextByLangFunc)(793, os.str());
+            break;
+        case 187 :
+            texteTmp = (this->*getTextByLangFunc)(794, os.str());
+            break;
+        case 188 :
+            texteTmp = (this->*getTextByLangFunc)(795, os.str());
+            break;
+        case 189 :
+            texteTmp = (this->*getTextByLangFunc)(796, os.str());
+            break;
+        case 190 :
+            texteTmp = (this->*getTextByLangFunc)(797, os.str());
+            break;
+        case 191 :
+            texteTmp = (this->*getTextByLangFunc)(798, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<5) idsuiv=75;
             break;
-        case 192 : texte = (this->*getTextByLangFunc)(799, os.str()); idsuiv=76; break;
-        case 193 : texte = (this->*getTextByLangFunc)(800, os.str()); break;
-        case 194 : texte = (this->*getTextByLangFunc)(801, os.str()); break;
-        case 195 : texte = (this->*getTextByLangFunc)(802, os.str()); break;
-        case 196 : texte = (this->*getTextByLangFunc)(803, os.str()); break;
-        case 197 : texte = (this->*getTextByLangFunc)(804, os.str()); break;
-        case 198 : 
+        case 192 :
+            texteTmp = (this->*getTextByLangFunc)(799, os.str());
+            idsuiv=76;
+            break;
+        case 193 :
+            texteTmp = (this->*getTextByLangFunc)(800, os.str());
+            break;
+        case 194 :
+            texteTmp = (this->*getTextByLangFunc)(801, os.str());
+            break;
+        case 195 :
+            texteTmp = (this->*getTextByLangFunc)(802, os.str());
+            break;
+        case 196 :
+            texteTmp = (this->*getTextByLangFunc)(803, os.str());
+            break;
+        case 197 :
+            texteTmp = (this->*getTextByLangFunc)(804, os.str());
+            break;
+        case 198 :
             tmp = 6-(gpJeu->getJoueur()->nbCristaux());
             os << tmp;
-            texte = (this->*getTextByLangFunc)(805, os.str());
+            texteTmp = (this->*getTextByLangFunc)(805, os.str());
             if (tmp>0) buffer = (this->*getTextByLangFunc)(806, os.str())+os.str()+(this->*getTextByLangFunc)(807, os.str());
             else buffer = (this->*getTextByLangFunc)(808, os.str());
             break;
-        case 199 : texte = (this->*getTextByLangFunc)(809, os.str()); break;
-        case 200 : texte = (this->*getTextByLangFunc)(810, os.str()); break;
-        case 201 : texte = (this->*getTextByLangFunc)(811, os.str()); break;
-        
-        case 202 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>6) {id=209; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==6 
-            && gpJeu->getJoueur()->getObjet()==11) {id=203; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(812, os.str()); 
-            buffer=(this->*getTextByLangFunc)(813, os.str()); break;
-        case 203 : texte = (this->*getTextByLangFunc)(814, os.str()); idsuiv=204; break;
-        case 204 : texte = (this->*getTextByLangFunc)(815, os.str()); idsuiv=206; break;
-        case 205 : texte = (this->*getTextByLangFunc)(816, os.str()); idsuiv=207; break;
-        case 206 : texte = (this->*getTextByLangFunc)(817, os.str()); buffer=(this->*getTextByLangFunc)(818, os.str()); break;
-        case 207 : texte = (this->*getTextByLangFunc)(819, os.str()); break;
-        case 208 : texte = (this->*getTextByLangFunc)(820, os.str()); break;
-        case 209 : texte = (this->*getTextByLangFunc)(821, os.str()); buffer=(this->*getTextByLangFunc)(822, os.str()); break;
-        case 210 : texte = (this->*getTextByLangFunc)(823, os.str()); break;
-        case 211 : texte = (this->*getTextByLangFunc)(824, os.str()); break;
-        case 212 : texte = (this->*getTextByLangFunc)(825, os.str()); break;
-        case 213 : texte = (this->*getTextByLangFunc)(826, os.str()); break;
-        case 214 : texte = (this->*getTextByLangFunc)(827, os.str()); break;
-        case 215 : 
-            texte = (this->*getTextByLangFunc)(828, os.str()); 
+        case 199 :
+            texteTmp = (this->*getTextByLangFunc)(809, os.str());
+            break;
+        case 200 :
+            texteTmp = (this->*getTextByLangFunc)(810, os.str());
+            break;
+        case 201 :
+            texteTmp = (this->*getTextByLangFunc)(811, os.str());
+            break;
+
+        case 202 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>6) {
+                id=209;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==6
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=203;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(812, os.str());
+            buffer=(this->*getTextByLangFunc)(813, os.str());
+            break;
+        case 203 :
+            texteTmp = (this->*getTextByLangFunc)(814, os.str());
+            idsuiv=204;
+            break;
+        case 204 :
+            texteTmp = (this->*getTextByLangFunc)(815, os.str());
+            idsuiv=206;
+            break;
+        case 205 :
+            texteTmp = (this->*getTextByLangFunc)(816, os.str());
+            idsuiv=207;
+            break;
+        case 206 :
+            texteTmp = (this->*getTextByLangFunc)(817, os.str());
+            buffer=(this->*getTextByLangFunc)(818, os.str());
+            break;
+        case 207 :
+            texteTmp = (this->*getTextByLangFunc)(819, os.str());
+            break;
+        case 208 :
+            texteTmp = (this->*getTextByLangFunc)(820, os.str());
+            break;
+        case 209 :
+            texteTmp = (this->*getTextByLangFunc)(821, os.str());
+            buffer=(this->*getTextByLangFunc)(822, os.str());
+            break;
+        case 210 :
+            texteTmp = (this->*getTextByLangFunc)(823, os.str());
+            break;
+        case 211 :
+            texteTmp = (this->*getTextByLangFunc)(824, os.str());
+            break;
+        case 212 :
+            texteTmp = (this->*getTextByLangFunc)(825, os.str());
+            break;
+        case 213 :
+            texteTmp = (this->*getTextByLangFunc)(826, os.str());
+            break;
+        case 214 :
+            texteTmp = (this->*getTextByLangFunc)(827, os.str());
+            break;
+        case 215 :
+            texteTmp = (this->*getTextByLangFunc)(828, os.str());
             if (gpJeu->getJoueur()->getTroc(M_PERLES)<2
-            || gpJeu->getJoueur()->getTroc(M_EPICES)<5) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_EPICES)<5) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_TAPISSERIE)>=99) idsuiv=95;
             break;
-        case 216 : texte = (this->*getTextByLangFunc)(829, os.str()); idsuiv=76; break;
-        case 217 : texte = (this->*getTextByLangFunc)(830, os.str()); break;
-        case 218 : 
-            texte = (this->*getTextByLangFunc)(831, os.str()); 
+        case 216 :
+            texteTmp = (this->*getTextByLangFunc)(829, os.str());
+            idsuiv=76;
+            break;
+        case 217 :
+            texteTmp = (this->*getTextByLangFunc)(830, os.str());
+            break;
+        case 218 :
+            texteTmp = (this->*getTextByLangFunc)(831, os.str());
             if (gpJeu->getJoueur()->getTroc(M_POULET)<5
-            || gpJeu->getJoueur()->getTroc(M_OLIVES)<5) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_OLIVES)<5) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_AMULETTE)>=99) idsuiv=95;
             break;
-        case 219 : texte = (this->*getTextByLangFunc)(832, os.str()); idsuiv=76; break;
-        case 220 : 
-            texte = (this->*getTextByLangFunc)(833, os.str()); 
+        case 219 :
+            texteTmp = (this->*getTextByLangFunc)(832, os.str());
+            idsuiv=76;
+            break;
+        case 220 :
+            texteTmp = (this->*getTextByLangFunc)(833, os.str());
             if (gpJeu->getJoueur()->getTroc(M_EPICES)<2
-            || gpJeu->getJoueur()->getTroc(M_RIZ)<2) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_RIZ)<2) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_PERLES)>=99) idsuiv=95;
             break;
-        case 221 : texte = (this->*getTextByLangFunc)(834, os.str()); idsuiv=76; break;
-        case 222 : 
-            texte = (this->*getTextByLangFunc)(835, os.str()); 
+        case 221 :
+            texteTmp = (this->*getTextByLangFunc)(834, os.str());
+            idsuiv=76;
+            break;
+        case 222 :
+            texteTmp = (this->*getTextByLangFunc)(835, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<2
-            || gpJeu->getJoueur()->getTroc(M_OLIVES)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_OLIVES)<1) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_RIZ)>=99) idsuiv=95;
             break;
-        case 223 : texte = (this->*getTextByLangFunc)(836, os.str()); idsuiv=76; break;
-        case 224 : 
-            if (gpJeu->getJoueur()->hasObjet(O_CANNE)==0) 
-                texte = (this->*getTextByLangFunc)(837, os.str()); 
-            else if (gpJeu->getJoueur()->hasObjet(O_POISSONS)==0)
-                {texte = (this->*getTextByLangFunc)(838, os.str()); buffer=(this->*getTextByLangFunc)(839, os.str());} 
-            else {texte = (this->*getTextByLangFunc)(840, os.str()); buffer=(this->*getTextByLangFunc)(841, os.str());}
+        case 223 :
+            texteTmp = (this->*getTextByLangFunc)(836, os.str());
+            idsuiv=76;
             break;
-        case 225 : 
-            if (gpJeu->getJoueur()->hasObjet(O_CANNE)==0) 
-                texte = (this->*getTextByLangFunc)(842, os.str()); 
+        case 224 :
+            if (gpJeu->getJoueur()->hasObjet(O_CANNE)==0)
+                 texteTmp = (this->*getTextByLangFunc)(837, os.str());
             else if (gpJeu->getJoueur()->hasObjet(O_POISSONS)==0)
-                {texte = (this->*getTextByLangFunc)(843, os.str());} 
-            else {texte = (this->*getTextByLangFunc)(844, os.str());}
+            {
+                texteTmp = (this->*getTextByLangFunc)(838, os.str());
+                buffer=(this->*getTextByLangFunc)(839, os.str());
+            } else {
+                texteTmp = (this->*getTextByLangFunc)(840, os.str());
+                buffer=(this->*getTextByLangFunc)(841, os.str());
+            }
             break;
-        case 226 : texte = (this->*getTextByLangFunc)(845, os.str()); break;
-        case 227 : 
-            texte = (this->*getTextByLangFunc)(846, os.str());
+        case 225 :
+            if (gpJeu->getJoueur()->hasObjet(O_CANNE)==0)
+                 texteTmp = (this->*getTextByLangFunc)(842, os.str());
+            else if (gpJeu->getJoueur()->hasObjet(O_POISSONS)==0)
+            {
+                texteTmp = (this->*getTextByLangFunc)(843, os.str());
+            }
+            else {
+                texteTmp = (this->*getTextByLangFunc)(844, os.str());
+            }
+            break;
+        case 226 :
+            texteTmp = (this->*getTextByLangFunc)(845, os.str());
+            break;
+        case 227 :
+            texteTmp = (this->*getTextByLangFunc)(846, os.str());
             if (gpJeu->getJoueur()->getAvancement()<GANON_CAPTURE)
-            texte += (this->*getTextByLangFunc)(847, os.str()); break;
+                texte += (this->*getTextByLangFunc)(847, os.str());
+            break;
         case 228 :
-            if (gpJeu->getJoueur()->getGemme(91)) {id=230; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(848, os.str()); 
+            if (gpJeu->getJoueur()->getGemme(91)) {
+                id=230;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(848, os.str());
             if (gpJeu->getJoueur()->getTroc(M_PERLES)<2) idsuiv=75;
             break;
-        case 229 : texte = (this->*getTextByLangFunc)(849, os.str()); idsuiv=76; break;
-        case 230 : 
-            if (gpJeu->getJoueur()->getGemme(92)) {id=232; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(850, os.str()); 
+        case 229 :
+            texteTmp = (this->*getTextByLangFunc)(849, os.str());
+            idsuiv=76;
+            break;
+        case 230 :
+            if (gpJeu->getJoueur()->getGemme(92)) {
+                id=232;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(850, os.str());
             if (gpJeu->getJoueur()->getTroc(M_PLUME)<2) idsuiv=75;
             break;
-        case 231 : texte = (this->*getTextByLangFunc)(851, os.str()); idsuiv=76; break;
-        case 232 : 
-            if (gpJeu->getJoueur()->getGemme(93)) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(852, os.str()); 
+        case 231 :
+            texteTmp = (this->*getTextByLangFunc)(851, os.str());
+            idsuiv=76;
+            break;
+        case 232 :
+            if (gpJeu->getJoueur()->getGemme(93)) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(852, os.str());
             if (gpJeu->getJoueur()->getTroc(M_POULET)<2) idsuiv=75;
             break;
-        case 233 : texte = (this->*getTextByLangFunc)(853, os.str()); idsuiv=76; break;
-        case 234 : 
-            texte = (this->*getTextByLangFunc)(854, os.str()); 
+        case 233 :
+            texteTmp = (this->*getTextByLangFunc)(853, os.str());
+            idsuiv=76;
+            break;
+        case 234 :
+            texteTmp = (this->*getTextByLangFunc)(854, os.str());
             if (gpJeu->getJoueur()->getTroc(M_OLIVES)<2
-            || gpJeu->getJoueur()->getTroc(M_RIZ)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_RIZ)<1) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_POULET)>=99) idsuiv=95;
             break;
-        case 235 : texte = (this->*getTextByLangFunc)(855, os.str()); idsuiv=76; break;
-        case 236 : texte = (this->*getTextByLangFunc)(856, os.str()); buffer=(this->*getTextByLangFunc)(857, os.str()); break;
-        case 237 : texte = (this->*getTextByLangFunc)(858, os.str()); 
-            if (gpJeu->getJoueur()->getAvancement()<GANON_CAPTURE) 
-            buffer=(this->*getTextByLangFunc)(859, os.str()); break;
-        case 238 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>2) {id=245; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==2 
-            && gpJeu->getJoueur()->getObjet()==7) {id=239; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(860, os.str()); break;
-        case 239 : texte = (this->*getTextByLangFunc)(861, os.str()); idsuiv=240; break;
-        case 240 : texte = (this->*getTextByLangFunc)(862, os.str()); idsuiv=242; break;
-        case 241 : texte = (this->*getTextByLangFunc)(863, os.str()); idsuiv=243; break;
-        case 242 : texte = (this->*getTextByLangFunc)(864, os.str()); break;
-        case 243 : texte = (this->*getTextByLangFunc)(865, os.str()); break;
-        case 244 : texte = (this->*getTextByLangFunc)(866, os.str()); break;
-        case 245 : texte = (this->*getTextByLangFunc)(867, os.str()); idsuiv=247; break;
-        case 246 : texte = (this->*getTextByLangFunc)(868, os.str()); idsuiv=243; break;
-        case 247 : texte = (this->*getTextByLangFunc)(869, os.str()); break;
-        case 248 : texte = (this->*getTextByLangFunc)(870, os.str()); break;
-        case 249 : texte = (this->*getTextByLangFunc)(871, os.str()); break;
-        case 250 : texte = (this->*getTextByLangFunc)(872, os.str()); break;
-        case 251 : 
-            if (gpJeu->getJoueur()->hasObjet(O_PALMES)) {id=1378; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_BARQUE)) {id=253; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(873, os.str()); idsuiv=253;
+        case 235 :
+            texteTmp = (this->*getTextByLangFunc)(855, os.str());
+            idsuiv=76;
+            break;
+        case 236 :
+            texteTmp = (this->*getTextByLangFunc)(856, os.str());
+            buffer=(this->*getTextByLangFunc)(857, os.str());
+            break;
+        case 237 :
+            texteTmp = (this->*getTextByLangFunc)(858, os.str());
+            if (gpJeu->getJoueur()->getAvancement()<GANON_CAPTURE)
+                buffer=(this->*getTextByLangFunc)(859, os.str());
+            break;
+        case 238 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>2) {
+                id=245;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==2
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=239;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(860, os.str());
+            break;
+        case 239 :
+            texteTmp = (this->*getTextByLangFunc)(861, os.str());
+            idsuiv=240;
+            break;
+        case 240 :
+            texteTmp = (this->*getTextByLangFunc)(862, os.str());
+            idsuiv=242;
+            break;
+        case 241 :
+            texteTmp = (this->*getTextByLangFunc)(863, os.str());
+            idsuiv=243;
+            break;
+        case 242 :
+            texteTmp = (this->*getTextByLangFunc)(864, os.str());
+            break;
+        case 243 :
+            texteTmp = (this->*getTextByLangFunc)(865, os.str());
+            break;
+        case 244 :
+            texteTmp = (this->*getTextByLangFunc)(866, os.str());
+            break;
+        case 245 :
+            texteTmp = (this->*getTextByLangFunc)(867, os.str());
+            idsuiv=247;
+            break;
+        case 246 :
+            texteTmp = (this->*getTextByLangFunc)(868, os.str());
+            idsuiv=243;
+            break;
+        case 247 :
+            texteTmp = (this->*getTextByLangFunc)(869, os.str());
+            break;
+        case 248 :
+            texteTmp = (this->*getTextByLangFunc)(870, os.str());
+            break;
+        case 249 :
+            texteTmp = (this->*getTextByLangFunc)(871, os.str());
+            break;
+        case 250 :
+            texteTmp = (this->*getTextByLangFunc)(872, os.str());
+            break;
+        case 251 :
+            if (gpJeu->getJoueur()->hasObjet(O_PALMES)) {
+                id=1378;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_BARQUE)) {
+                id=253;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(873, os.str());
+            idsuiv=253;
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<15) idsuiv=75;
             break;
-        case 252 : texte = (this->*getTextByLangFunc)(874, os.str()); idsuiv=76; break;
-        case 253 : texte = (this->*getTextByLangFunc)(875, os.str()); break;
-        case 254 : texte = (this->*getTextByLangFunc)(876, os.str()); break;
-        case 255 : texte = (this->*getTextByLangFunc)(877, os.str()); break;
-        case 256 : texte = (this->*getTextByLangFunc)(878, os.str()); break;
-        case 257 : texte = (this->*getTextByLangFunc)(879, os.str()); break;
-        case 258 : texte = (this->*getTextByLangFunc)(880, os.str()); break;
-        case 259 : texte = (this->*getTextByLangFunc)(881, os.str()); break;
-        case 260 : texte = (this->*getTextByLangFunc)(882, os.str()); break;
-        case 261 : texte = (this->*getTextByLangFunc)(883, os.str()); break;
-        case 262 : texte = (this->*getTextByLangFunc)(884, os.str()); break;
-        case 263 : texte = (this->*getTextByLangFunc)(885, os.str()); break;
-        case 264 : texte = (this->*getTextByLangFunc)(886, os.str()); break;
-        case 265 : 
-            if (gpJeu->getJoueur()->hasObjet(O_BOTTES)) {id=82; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(887, os.str()); 
-            if (gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1
-            || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
+        case 252 :
+            texteTmp = (this->*getTextByLangFunc)(874, os.str());
+            idsuiv=76;
             break;
-        case 266 : texte = (this->*getTextByLangFunc)(888, os.str()); idsuiv=76; break;
+        case 253 :
+            texteTmp = (this->*getTextByLangFunc)(875, os.str());
+            break;
+        case 254 :
+            texteTmp = (this->*getTextByLangFunc)(876, os.str());
+            break;
+        case 255 :
+            texteTmp = (this->*getTextByLangFunc)(877, os.str());
+            break;
+        case 256 :
+            texteTmp = (this->*getTextByLangFunc)(878, os.str());
+            break;
+        case 257 :
+            texteTmp = (this->*getTextByLangFunc)(879, os.str());
+            break;
+        case 258 :
+            texteTmp = (this->*getTextByLangFunc)(880, os.str());
+            break;
+        case 259 :
+            texteTmp = (this->*getTextByLangFunc)(881, os.str());
+            break;
+        case 260 :
+            texteTmp = (this->*getTextByLangFunc)(882, os.str());
+            break;
+        case 261 :
+            texteTmp = (this->*getTextByLangFunc)(883, os.str());
+            break;
+        case 262 :
+            texteTmp = (this->*getTextByLangFunc)(884, os.str());
+            break;
+        case 263 :
+            texteTmp = (this->*getTextByLangFunc)(885, os.str());
+            break;
+        case 264 :
+            texteTmp = (this->*getTextByLangFunc)(886, os.str());
+            break;
+        case 265 :
+            if (gpJeu->getJoueur()->hasObjet(O_BOTTES)) {
+                id=82;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(887, os.str());
+            if (gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1
+                || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
+            break;
+        case 266 :
+            texteTmp = (this->*getTextByLangFunc)(888, os.str());
+            idsuiv=76;
+            break;
 #ifdef __vita__
-        case 267 : texte = (this->*getTextByLangFunc)(889, os.str()); break;
+        case 267 :
+            texteTmp = (this->*getTextByLangFunc)(889, os.str());
+            break;
 #else
-        case 267 : texte = (this->*getTextByLangFunc)(890, os.str()); break;
+        case 267 :
+            texteTmp = (this->*getTextByLangFunc)(890, os.str());
+            break;
 #endif
-        case 268 : 
-            texte = (this->*getTextByLangFunc)(891, os.str()); 
+        case 268 :
+            texteTmp = (this->*getTextByLangFunc)(891, os.str());
             if (gpJeu->getJoueur()->getTroc(M_PLUME)<3
-            || gpJeu->getJoueur()->getTroc(M_RIZ)<4) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_RIZ)<4) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_PARFUM)>=99) idsuiv=95;
             break;
-        case 269 : texte = (this->*getTextByLangFunc)(892, os.str()); idsuiv=76; break;
-        case 270 : texte = (this->*getTextByLangFunc)(893, os.str()); break;
-        case 271 : 
-            texte = (this->*getTextByLangFunc)(894, os.str()); 
+        case 269 :
+            texteTmp = (this->*getTextByLangFunc)(892, os.str());
+            idsuiv=76;
+            break;
+        case 270 :
+            texteTmp = (this->*getTextByLangFunc)(893, os.str());
+            break;
+        case 271 :
+            texteTmp = (this->*getTextByLangFunc)(894, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<15) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_OLIVES)>=99) idsuiv=95;
             break;
-        case 272 : texte = (this->*getTextByLangFunc)(895, os.str()); idsuiv=76; break;
-        case 273 : 
-            texte = (this->*getTextByLangFunc)(896, os.str()); 
+        case 272 :
+            texteTmp = (this->*getTextByLangFunc)(895, os.str());
+            idsuiv=76;
+            break;
+        case 273 :
+            texteTmp = (this->*getTextByLangFunc)(896, os.str());
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<20) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_EPICES)>=99) idsuiv=95;
             break;
-        case 274 : texte = (this->*getTextByLangFunc)(897, os.str()); idsuiv=76; break;
-        case 275 : texte = (this->*getTextByLangFunc)(898, os.str()); break;
-        case 276 : texte = (this->*getTextByLangFunc)(899, os.str()); break;
-        case 277 : texte = (this->*getTextByLangFunc)(900, os.str()); 
-            if (gpJeu->getJoueur()->hasObjet(O_BOTTES)) buffer=(this->*getTextByLangFunc)(901, os.str()); break;
-        case 278 : 
-            texte = (this->*getTextByLangFunc)(902, os.str()); 
+        case 274 :
+            texteTmp = (this->*getTextByLangFunc)(897, os.str());
+            idsuiv=76;
+            break;
+        case 275 :
+            texteTmp = (this->*getTextByLangFunc)(898, os.str());
+            break;
+        case 276 :
+            texteTmp = (this->*getTextByLangFunc)(899, os.str());
+            break;
+        case 277 :
+            texteTmp = (this->*getTextByLangFunc)(900, os.str());
+            if (gpJeu->getJoueur()->hasObjet(O_BOTTES)) buffer=(this->*getTextByLangFunc)(901, os.str());
+            break;
+        case 278 :
+            texteTmp = (this->*getTextByLangFunc)(902, os.str());
             if (gpJeu->getJoueur()->getTroc(M_TAPISSERIE)<1
-            || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1
-            || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_AMULETTE)<1
+                || gpJeu->getJoueur()->getTroc(M_PARFUM)<1) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)>=99) idsuiv=95;
             break;
-        case 279 : texte = (this->*getTextByLangFunc)(903, os.str()); idsuiv=76; break;
-        case 280 : texte = (this->*getTextByLangFunc)(904, os.str()); break;
-        case 281 : 
-            texte = (this->*getTextByLangFunc)(905, os.str()); 
+        case 279 :
+            texteTmp = (this->*getTextByLangFunc)(903, os.str());
+            idsuiv=76;
+            break;
+        case 280 :
+            texteTmp = (this->*getTextByLangFunc)(904, os.str());
+            break;
+        case 281 :
+            texteTmp = (this->*getTextByLangFunc)(905, os.str());
             if (gpJeu->getJoueur()->getTroc(M_EPICES)<1
-            || gpJeu->getJoueur()->getTroc(M_RIZ)<1) idsuiv=75;
+                || gpJeu->getJoueur()->getTroc(M_RIZ)<1) idsuiv=75;
             else if (gpJeu->getJoueur()->getTroc(M_PERLES)>=99) idsuiv=95;
             break;
-        case 282 : texte = (this->*getTextByLangFunc)(906, os.str()); idsuiv=76; break;
-        case 283 : texte = (this->*getTextByLangFunc)(907, os.str()); break;
-        case 284 : texte = (this->*getTextByLangFunc)(908, os.str()); break;
-        case 285 : texte = (this->*getTextByLangFunc)(909, os.str()); break;
-        case 286 : texte = (this->*getTextByLangFunc)(910, os.str()); break;
-        case 287 : texte = (this->*getTextByLangFunc)(911, os.str()); break;
-        case 288 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>2) {id=295; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==2 
-            && gpJeu->getJoueur()->getObjet()==11) {id=289; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(912, os.str()); buffer=(this->*getTextByLangFunc)(913, os.str()); break;
-        case 289 : texte = (this->*getTextByLangFunc)(914, os.str()); idsuiv=290; break;
-        case 290 : texte = (this->*getTextByLangFunc)(915, os.str()); idsuiv=292; break;
-        case 291 : texte = (this->*getTextByLangFunc)(916, os.str()); idsuiv=293; break;
-        case 292 : texte = (this->*getTextByLangFunc)(917, os.str()); break;
-        case 293 : texte = (this->*getTextByLangFunc)(918, os.str()); break;
-        case 294 : texte = (this->*getTextByLangFunc)(919, os.str()); break;
-        case 295 : texte = (this->*getTextByLangFunc)(920, os.str()); break;
-        case 296 : texte = (this->*getTextByLangFunc)(921, os.str()); break;
-        case 297 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>1) {id=304; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==1 
-            && gpJeu->getJoueur()->getObjet()==3) {id=298; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(922, os.str()); break;
-        case 298 : texte = (this->*getTextByLangFunc)(923, os.str()); idsuiv=299; break;
-        case 299 : texte = (this->*getTextByLangFunc)(924, os.str()); idsuiv=301; break;
-        case 300 : texte = (this->*getTextByLangFunc)(925, os.str()); idsuiv=302; break;
-        case 301 : texte = (this->*getTextByLangFunc)(926, os.str()); break;
-        case 302 : texte = (this->*getTextByLangFunc)(927, os.str()); break;
-        case 303 : texte = (this->*getTextByLangFunc)(928, os.str()); break;
-        case 304 : texte = (this->*getTextByLangFunc)(929, os.str()); break;
-        case 305 : texte = (this->*getTextByLangFunc)(930, os.str()); break;
-        case 306 : texte = (this->*getTextByLangFunc)(931, os.str()); break;
-        case 307 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>4) {id=314; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==4 
-            && gpJeu->getJoueur()->getObjet()==7) {id=308; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(932, os.str()); 
-            buffer = (this->*getTextByLangFunc)(933, os.str()); break;
-        case 308 : texte = (this->*getTextByLangFunc)(934, os.str()); idsuiv=309; break;
-        case 309 : texte = (this->*getTextByLangFunc)(935, os.str()); idsuiv=311; break;
-        case 310 : texte = (this->*getTextByLangFunc)(936, os.str()); idsuiv=312; break;
-        case 311 : texte = (this->*getTextByLangFunc)(937, os.str()); break;
-        case 312 : texte = (this->*getTextByLangFunc)(938, os.str()); break;
-        case 313 : texte = (this->*getTextByLangFunc)(939, os.str()); break;
-        case 314 : texte = (this->*getTextByLangFunc)(940, os.str()); buffer=(this->*getTextByLangFunc)(941, os.str()); break;
-        case 315 : texte = (this->*getTextByLangFunc)(942, os.str()); break;
-#ifdef __vita__   
-        case 316 : texte = (this->*getTextByLangFunc)(943, os.str()); break;
-#else     
-        case 316 : texte = (this->*getTextByLangFunc)(944, os.str()); break;
-#endif
-        case 317 : texte = (this->*getTextByLangFunc)(945, os.str()); break;
-        case 318 : texte = (this->*getTextByLangFunc)(946, os.str()); buffer=(this->*getTextByLangFunc)(947, os.str()); break;
-        case 319 : texte = (this->*getTextByLangFunc)(948, os.str()); break;
-        case 320 : texte = (this->*getTextByLangFunc)(949, os.str()); break;
-        case 321 : texte = (this->*getTextByLangFunc)(950, os.str()); idsuiv=322; break;
-        case 322 : texte = (this->*getTextByLangFunc)(951, os.str()); break;
-        case 323 : texte = (this->*getTextByLangFunc)(952, os.str()); buffer=(this->*getTextByLangFunc)(953, os.str()); idsuiv=324; break;
-        case 324 : texte = (this->*getTextByLangFunc)(954, os.str()); break;
+        case 282 :
+            texteTmp = (this->*getTextByLangFunc)(906, os.str());
+            idsuiv=76;
+            break;
+        case 283 :
+            texteTmp = (this->*getTextByLangFunc)(907, os.str());
+            break;
+        case 284 :
+            texteTmp = (this->*getTextByLangFunc)(908, os.str());
+            break;
+        case 285 :
+            texteTmp = (this->*getTextByLangFunc)(909, os.str());
+            break;
+        case 286 :
+            texteTmp = (this->*getTextByLangFunc)(910, os.str());
+            break;
+        case 287 :
+            texteTmp = (this->*getTextByLangFunc)(911, os.str());
+            break;
+        case 288 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>2) {
+                id=295;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==2
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=289;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(912, os.str());
+            buffer=(this->*getTextByLangFunc)(913, os.str());
+            break;
+        case 289 :
+            texteTmp = (this->*getTextByLangFunc)(914, os.str());
+            idsuiv=290;
+            break;
+        case 290 :
+            texteTmp = (this->*getTextByLangFunc)(915, os.str());
+            idsuiv=292;
+            break;
+        case 291 :
+            texteTmp = (this->*getTextByLangFunc)(916, os.str());
+            idsuiv=293;
+            break;
+        case 292 :
+            texteTmp = (this->*getTextByLangFunc)(917, os.str());
+            break;
+        case 293 :
+            texteTmp = (this->*getTextByLangFunc)(918, os.str());
+            break;
+        case 294 :
+            texteTmp = (this->*getTextByLangFunc)(919, os.str());
+            break;
+        case 295 :
+            texteTmp = (this->*getTextByLangFunc)(920, os.str());
+            break;
+        case 296 :
+            texteTmp = (this->*getTextByLangFunc)(921, os.str());
+            break;
+        case 297 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>1) {
+                id=304;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==1
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=298;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(922, os.str());
+            break;
+        case 298 :
+            texteTmp = (this->*getTextByLangFunc)(923, os.str());
+            idsuiv=299;
+            break;
+        case 299 :
+            texteTmp = (this->*getTextByLangFunc)(924, os.str());
+            idsuiv=301;
+            break;
+        case 300 :
+            texteTmp = (this->*getTextByLangFunc)(925, os.str());
+            idsuiv=302;
+            break;
+        case 301 :
+            texteTmp = (this->*getTextByLangFunc)(926, os.str());
+            break;
+        case 302 :
+            texteTmp = (this->*getTextByLangFunc)(927, os.str());
+            break;
+        case 303 :
+            texteTmp = (this->*getTextByLangFunc)(928, os.str());
+            break;
+        case 304 :
+            texteTmp = (this->*getTextByLangFunc)(929, os.str());
+            break;
+        case 305 :
+            texteTmp = (this->*getTextByLangFunc)(930, os.str());
+            break;
+        case 306 :
+            texteTmp = (this->*getTextByLangFunc)(931, os.str());
+            break;
+        case 307 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>4) {
+                id=314;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==4
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=308;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(932, os.str());
+            buffer = (this->*getTextByLangFunc)(933, os.str());
+            break;
+        case 308 :
+            texteTmp = (this->*getTextByLangFunc)(934, os.str());
+            idsuiv=309;
+            break;
+        case 309 :
+            texteTmp = (this->*getTextByLangFunc)(935, os.str());
+            idsuiv=311;
+            break;
+        case 310 :
+            texteTmp = (this->*getTextByLangFunc)(936, os.str());
+            idsuiv=312;
+            break;
+        case 311 :
+            texteTmp = (this->*getTextByLangFunc)(937, os.str());
+            break;
+        case 312 :
+            texteTmp = (this->*getTextByLangFunc)(938, os.str());
+            break;
+        case 313 :
+            texteTmp = (this->*getTextByLangFunc)(939, os.str());
+            break;
+        case 314 :
+            texteTmp = (this->*getTextByLangFunc)(940, os.str());
+            buffer=(this->*getTextByLangFunc)(941, os.str());
+            break;
+        case 315 :
+            texteTmp = (this->*getTextByLangFunc)(942, os.str());
+            break;
 #ifdef __vita__
-        case 325 : texte = (this->*getTextByLangFunc)(955, os.str()); break;
+        case 316 :
+            texteTmp = (this->*getTextByLangFunc)(943, os.str());
+            break;
 #else
-        case 325 : texte = (this->*getTextByLangFunc)(956, os.str()); break;
+        case 316 :
+            texteTmp = (this->*getTextByLangFunc)(944, os.str());
+            break;
 #endif
-        case 326 : 
-            if (!gpJeu->getJoueur()->hasMedaillon(0)) {texte = (this->*getTextByLangFunc)(957, os.str()); break;}
-            if (!gpJeu->getJoueur()->hasMedaillon(1)) {texte = (this->*getTextByLangFunc)(958, os.str()); break;}
-            if (!gpJeu->getJoueur()->hasMedaillon(2)) {texte = (this->*getTextByLangFunc)(959, os.str()); break;}
-            if (gpJeu->getJoueur()->getEpee()<2 && !gpJeu->getJoueur()->hasObjet(O_OCARINA)) {id=327; chercheText();break;}
-            id=329; chercheText();break;
-        case 327 : texte = (this->*getTextByLangFunc)(960, os.str()); break;
-        case 328 : texte = (this->*getTextByLangFunc)(961, os.str()); break;
-        case 329 : 
-            if (gpJeu->getJoueur()->getAvancement() == PORTAIL_F_OUVERT) {texte = (this->*getTextByLangFunc)(962, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(963, os.str()); break;
-        case 330 : texte = (this->*getTextByLangFunc)(964, os.str()); break;
-        case 331 : 
-            texte = (this->*getTextByLangFunc)(965, os.str());
-            if (gpJeu->getJoueur()->getBouclier()!=1) {idsuiv=333; break;}
-            buffer=(this->*getTextByLangFunc)(966, os.str()); break;
-        case 332 : texte = (this->*getTextByLangFunc)(967, os.str()); break;
-        case 333 : texte = (this->*getTextByLangFunc)(968, os.str()); break;
-        case 334 : texte = (this->*getTextByLangFunc)(969, os.str()); break;
-        case 335 : texte = (this->*getTextByLangFunc)(970, os.str()); break;
-        case 336 : texte = (this->*getTextByLangFunc)(971, os.str()); break;
-        case 337 : texte = (this->*getTextByLangFunc)(972, os.str()); break;
+        case 317 :
+            texteTmp = (this->*getTextByLangFunc)(945, os.str());
+            break;
+        case 318 :
+            texteTmp = (this->*getTextByLangFunc)(946, os.str());
+            buffer=(this->*getTextByLangFunc)(947, os.str());
+            break;
+        case 319 :
+            texteTmp = (this->*getTextByLangFunc)(948, os.str());
+            break;
+        case 320 :
+            texteTmp = (this->*getTextByLangFunc)(949, os.str());
+            break;
+        case 321 :
+            texteTmp = (this->*getTextByLangFunc)(950, os.str());
+            idsuiv=322;
+            break;
+        case 322 :
+            texteTmp = (this->*getTextByLangFunc)(951, os.str());
+            break;
+        case 323 :
+            texteTmp = (this->*getTextByLangFunc)(952, os.str());
+            buffer=(this->*getTextByLangFunc)(953, os.str());
+            idsuiv=324;
+            break;
+        case 324 :
+            texteTmp = (this->*getTextByLangFunc)(954, os.str());
+            break;
+#ifdef __vita__
+        case 325 :
+            texteTmp = (this->*getTextByLangFunc)(955, os.str());
+            break;
+#else
+        case 325 :
+            texteTmp = (this->*getTextByLangFunc)(956, os.str());
+            break;
+#endif
+        case 326 :
+            if (!gpJeu->getJoueur()->hasMedaillon(0)) {
+                texteTmp = (this->*getTextByLangFunc)(957, os.str());
+                break;
+            }
+            if (!gpJeu->getJoueur()->hasMedaillon(1)) {
+                texteTmp = (this->*getTextByLangFunc)(958, os.str());
+                break;
+            }
+            if (!gpJeu->getJoueur()->hasMedaillon(2)) {
+                texteTmp = (this->*getTextByLangFunc)(959, os.str());
+                break;
+            }
+            if (gpJeu->getJoueur()->getEpee()<2 && !gpJeu->getJoueur()->hasObjet(O_OCARINA)) {
+                id=327;
+                break;
+            }
+            id=329;
+            break;
+        case 327 :
+            texteTmp = (this->*getTextByLangFunc)(960, os.str());
+            break;
+        case 328 :
+            texteTmp = (this->*getTextByLangFunc)(961, os.str());
+            break;
+        case 329 :
+            if (gpJeu->getJoueur()->getAvancement() == PORTAIL_F_OUVERT) {
+                texteTmp = (this->*getTextByLangFunc)(962, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(963, os.str());
+            break;
+        case 330 :
+            texteTmp = (this->*getTextByLangFunc)(964, os.str());
+            break;
+        case 331 :
+            texteTmp = (this->*getTextByLangFunc)(965, os.str());
+            if (gpJeu->getJoueur()->getBouclier()!=1) {
+                idsuiv=333;
+                break;
+            }
+            buffer=(this->*getTextByLangFunc)(966, os.str());
+            break;
+        case 332 :
+            texteTmp = (this->*getTextByLangFunc)(967, os.str());
+            break;
+        case 333 :
+            texteTmp = (this->*getTextByLangFunc)(968, os.str());
+            break;
+        case 334 :
+            texteTmp = (this->*getTextByLangFunc)(969, os.str());
+            break;
+        case 335 :
+            texteTmp = (this->*getTextByLangFunc)(970, os.str());
+            break;
+        case 336 :
+            texteTmp = (this->*getTextByLangFunc)(971, os.str());
+            break;
+        case 337 :
+            texteTmp = (this->*getTextByLangFunc)(972, os.str());
+            break;
         case 338 :
             if (gpJeu->getJoueur()->getAvancement() < GARS_MINE_AIDE) {
-                texte = (this->*getTextByLangFunc)(973, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(974, os.str()); break;
-        case 339 : texte = (this->*getTextByLangFunc)(975, os.str()); break;
-        case 340 : texte = (this->*getTextByLangFunc)(976, os.str()); break;
-        case 341 : texte = (this->*getTextByLangFunc)(977, os.str()); break;
-        case 342 : texte = (this->*getTextByLangFunc)(978, os.str()); break;
-        case 343 : texte = (this->*getTextByLangFunc)(979, os.str()); break;
-        case 344 : 
-            if (gpJeu->getJoueur()->getAvancement() < SAGES_GROTTE) {id=347; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement() < PORTAIL_PRE_PRESENT_FERME) {texte = (this->*getTextByLangFunc)(980, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(981, os.str()); break;
-        case 345 : 
-            if (gpJeu->getJoueur()->getAvancement() < SAGES_GROTTE) {id=347; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement() < PORTAIL_PRE_PRESENT_FERME) {texte = (this->*getTextByLangFunc)(982, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(983, os.str()); break;
-        case 346 : 
-            if (gpJeu->getJoueur()->getAvancement() < SAGES_GROTTE) {id=347; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement() < PORTAIL_PRE_PRESENT_FERME) {texte = (this->*getTextByLangFunc)(984, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(985, os.str()); buffer=(this->*getTextByLangFunc)(986, os.str()); break;
-        case 347 : texte = (this->*getTextByLangFunc)(987, os.str()); break;
-        case 348 : texte = (this->*getTextByLangFunc)(988, os.str()); break;
-        case 349 : texte = (this->*getTextByLangFunc)(989, os.str()); break;
-        case 350 :
-            if ((gpJeu->getJoueur()->getBombeMax()<30 && gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) 
-            || gpJeu->getJoueur()->getFlecheMax()<70)
-                {id=351; chercheText();break;}
-            if (!gpJeu->getJoueur()->hasObjet(O_RECUP_FLECHE) 
-            || !gpJeu->getJoueur()->hasObjet(O_RECUP_BOMBE))
-                {id=356; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(990, os.str()); break;
+                texteTmp = (this->*getTextByLangFunc)(973, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(974, os.str());
             break;
-        case 351 : 
-            texte = (this->*getTextByLangFunc)(991, os.str()); 
+        case 339 :
+            texteTmp = (this->*getTextByLangFunc)(975, os.str());
+            break;
+        case 340 :
+            texteTmp = (this->*getTextByLangFunc)(976, os.str());
+            break;
+        case 341 :
+            texteTmp = (this->*getTextByLangFunc)(977, os.str());
+            break;
+        case 342 :
+            texteTmp = (this->*getTextByLangFunc)(978, os.str());
+            break;
+        case 343 :
+            texteTmp = (this->*getTextByLangFunc)(979, os.str());
+            break;
+        case 344 :
+            if (gpJeu->getJoueur()->getAvancement() < SAGES_GROTTE) {
+                id=347;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement() < PORTAIL_PRE_PRESENT_FERME) {
+                texteTmp = (this->*getTextByLangFunc)(980, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(981, os.str());
+            break;
+        case 345 :
+            if (gpJeu->getJoueur()->getAvancement() < SAGES_GROTTE) {
+                id=347;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement() < PORTAIL_PRE_PRESENT_FERME) {
+                texteTmp = (this->*getTextByLangFunc)(982, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(983, os.str());
+            break;
+        case 346 :
+            if (gpJeu->getJoueur()->getAvancement() < SAGES_GROTTE) {
+                id=347;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement() < PORTAIL_PRE_PRESENT_FERME) {
+                texteTmp = (this->*getTextByLangFunc)(984, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(985, os.str());
+            buffer=(this->*getTextByLangFunc)(986, os.str());
+            break;
+        case 347 :
+            texteTmp = (this->*getTextByLangFunc)(987, os.str());
+            break;
+        case 348 :
+            texteTmp = (this->*getTextByLangFunc)(988, os.str());
+            break;
+        case 349 :
+            texteTmp = (this->*getTextByLangFunc)(989, os.str());
+            break;
+        case 350 :
+            if ((gpJeu->getJoueur()->getBombeMax()<30 && gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES))
+                || gpJeu->getJoueur()->getFlecheMax()<70)
+            {
+                id=351;
+                break;
+            }
+            if (!gpJeu->getJoueur()->hasObjet(O_RECUP_FLECHE)
+                || !gpJeu->getJoueur()->hasObjet(O_RECUP_BOMBE))
+            {
+                id=356;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(990, os.str());
+            break;
+            break;
+        case 351 :
+            texteTmp = (this->*getTextByLangFunc)(991, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<100) idsuiv=75;
             break;
-        case 352 : texte = (this->*getTextByLangFunc)(992, os.str()); idsuiv=353; break;
-        case 353 : texte = (this->*getTextByLangFunc)(993, os.str()); break;
-        case 354 : texte = (this->*getTextByLangFunc)(994, os.str()); break;
-        case 355 : texte = (this->*getTextByLangFunc)(995, os.str()); break;
-        case 356 : 
-            texte = (this->*getTextByLangFunc)(996, os.str()); 
+        case 352 :
+            texteTmp = (this->*getTextByLangFunc)(992, os.str());
+            idsuiv=353;
+            break;
+        case 353 :
+            texteTmp = (this->*getTextByLangFunc)(993, os.str());
+            break;
+        case 354 :
+            texteTmp = (this->*getTextByLangFunc)(994, os.str());
+            break;
+        case 355 :
+            texteTmp = (this->*getTextByLangFunc)(995, os.str());
+            break;
+        case 356 :
+            texteTmp = (this->*getTextByLangFunc)(996, os.str());
             if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<999) idsuiv=75;
             break;
-        case 357 : texte = (this->*getTextByLangFunc)(997, os.str()); idsuiv=353; break;
-        case 358 : texte = (this->*getTextByLangFunc)(998, os.str()); break;
-        case 359 : texte = (this->*getTextByLangFunc)(999, os.str()); break;
-        case 360 : 
-            if (gpJeu->getJoueur()->getMagieMax()>32) {id=333; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1000, os.str()); break;
-        case 361 : texte = (this->*getTextByLangFunc)(1001, os.str()); break;
-        case 362 : 
-            if (gpJeu->getEpoque()==T_PASSE && !gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1002, os.str()); break;
-        case 363 : texte = (this->*getTextByLangFunc)(1003, os.str()); break;
-        case 364 : texte = (this->*getTextByLangFunc)(1004, os.str()); break;
-        case 365 : texte = (this->*getTextByLangFunc)(1005, os.str()); break;
-        case 366 : texte = (this->*getTextByLangFunc)(1006, os.str()); break;
-        case 367 : 
-            if (gpJeu->getEpoque()==T_PASSE && !gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            if (gpJeu->getZone()==84 && gpJeu->getJoueur()->getNbGemmes() == 200 
-            && gpJeu->getJoueur()->getGemme() == 0) {id=405; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1007, os.str()); break;
-        case 368 : texte = (this->*getTextByLangFunc)(1008, os.str());
-            if (!gpJeu->getJoueur()->hasObjet(O_ARC)) {id=373; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<20) idsuiv=75; break;
-        case 369 : texte = (this->*getTextByLangFunc)(1009, os.str()); break;
-        case 370 : texte = (this->*getTextByLangFunc)(1010, os.str());
-            if (!gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {id=372; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<30) idsuiv=75; break;
-        case 371 : texte = (this->*getTextByLangFunc)(1011, os.str()); break;
-        case 372 : texte = (this->*getTextByLangFunc)(1012, os.str()); break;
-        case 373 : texte = (this->*getTextByLangFunc)(1013, os.str()); break;
-        case 374 : texte = (this->*getTextByLangFunc)(1014, os.str()); break;
-        case 375 : texte = (this->*getTextByLangFunc)(1015, os.str()); break;
-        case 376 : texte = (this->*getTextByLangFunc)(1016, os.str());
-            if (gpJeu->getJoueur()->getVie() + gpJeu->getJoueur()->getBoostVie() >= gpJeu->getJoueur()->getVieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<5) idsuiv=75; break;
-        case 377 : texte = (this->*getTextByLangFunc)(1017, os.str()); break;
-        case 378 : texte = (this->*getTextByLangFunc)(1018, os.str());
-            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<15) idsuiv=75; break;
-        case 379 : texte = (this->*getTextByLangFunc)(1019, os.str()); break;
-        case 380 : texte = (this->*getTextByLangFunc)(1020, os.str());
-            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<25) idsuiv=75; break;
-        case 381 : texte = (this->*getTextByLangFunc)(1021, os.str()); break;
-        case 382 :
-            if (gpJeu->getJoueur()->getAvancement()<APPREND_POUR_ROC_GIVRE) {texte = (this->*getTextByLangFunc)(1022, os.str()); break;}
-            if (gpJeu->getJoueur()->getAvancement()==APPREND_POUR_ROC_GIVRE 
-            && gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)==-1) {
-                texte = (this->*getTextByLangFunc)(1023, os.str()); idsuiv=383; break;
+        case 357 :
+            texteTmp = (this->*getTextByLangFunc)(997, os.str());
+            idsuiv=353;
+            break;
+        case 358 :
+            texteTmp = (this->*getTextByLangFunc)(998, os.str());
+            break;
+        case 359 :
+            texteTmp = (this->*getTextByLangFunc)(999, os.str());
+            break;
+        case 360 :
+            if (gpJeu->getJoueur()->getMagieMax()>32) {
+                id=333;
+                break;
             }
-            texte = (this->*getTextByLangFunc)(1024, os.str());
+            texteTmp = (this->*getTextByLangFunc)(1000, os.str());
+            break;
+        case 361 :
+            texteTmp = (this->*getTextByLangFunc)(1001, os.str());
+            break;
+        case 362 :
+            if (gpJeu->getEpoque()==T_PASSE && !gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1002, os.str());
+            break;
+        case 363 :
+            texteTmp = (this->*getTextByLangFunc)(1003, os.str());
+            break;
+        case 364 :
+            texteTmp = (this->*getTextByLangFunc)(1004, os.str());
+            break;
+        case 365 :
+            texteTmp = (this->*getTextByLangFunc)(1005, os.str());
+            break;
+        case 366 :
+            texteTmp = (this->*getTextByLangFunc)(1006, os.str());
+            break;
+        case 367 :
+            if (gpJeu->getEpoque()==T_PASSE && !gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getZone()==84 && gpJeu->getJoueur()->getNbGemmes() == 200
+                && gpJeu->getJoueur()->getGemme() == 0) {
+                id=405;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1007, os.str());
+            break;
+        case 368 :
+            texteTmp = (this->*getTextByLangFunc)(1008, os.str());
+            if (!gpJeu->getJoueur()->hasObjet(O_ARC)) {
+                id=373;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<20) idsuiv=75;
+            break;
+        case 369 :
+            texteTmp = (this->*getTextByLangFunc)(1009, os.str());
+            break;
+        case 370 :
+            texteTmp = (this->*getTextByLangFunc)(1010, os.str());
+            if (!gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {
+                id=372;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<30) idsuiv=75;
+            break;
+        case 371 :
+            texteTmp = (this->*getTextByLangFunc)(1011, os.str());
+            break;
+        case 372 :
+            texteTmp = (this->*getTextByLangFunc)(1012, os.str());
+            break;
+        case 373 :
+            texteTmp = (this->*getTextByLangFunc)(1013, os.str());
+            break;
+        case 374 :
+            texteTmp = (this->*getTextByLangFunc)(1014, os.str());
+            break;
+        case 375 :
+            texteTmp = (this->*getTextByLangFunc)(1015, os.str());
+            break;
+        case 376 :
+            if (gpJeu->getJoueur()->getVie() + gpJeu->getJoueur()->getBoostVie() >= gpJeu->getJoueur()->getVieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<5) idsuiv=75;
+			texteTmp = (this->*getTextByLangFunc)(1016, os.str());
+            break;
+        case 377 :
+            texteTmp = (this->*getTextByLangFunc)(1017, os.str());
+            break;
+        case 378 :
+            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<15) idsuiv=75;
+			texteTmp = (this->*getTextByLangFunc)(1018, os.str());
+            break;
+        case 379 :
+            texteTmp = (this->*getTextByLangFunc)(1019, os.str());
+            break;
+        case 380 :
+            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<25) idsuiv=75;
+			texteTmp = (this->*getTextByLangFunc)(1020, os.str());
+            break;
+        case 381 :
+            texteTmp = (this->*getTextByLangFunc)(1021, os.str());
+            break;
+        case 382 :
+            if (gpJeu->getJoueur()->getAvancement()<APPREND_POUR_ROC_GIVRE) {
+                texteTmp = (this->*getTextByLangFunc)(1022, os.str());
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()==APPREND_POUR_ROC_GIVRE
+                && gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)==-1) {
+                texteTmp = (this->*getTextByLangFunc)(1023, os.str());
+                idsuiv=383;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1024, os.str());
             buffer = (this->*getTextByLangFunc)(1025, os.str());
             break;
-        case 383 : texte = (this->*getTextByLangFunc)(1026, os.str());
-            if (gpJeu->getJoueur()->getGemme()<30) idsuiv=385; break;
-        case 384 : texte = (this->*getTextByLangFunc)(1027, os.str()); idsuiv=76; break;
-        case 385 : texte = (this->*getTextByLangFunc)(1028, os.str()); break;
-        case 386 : texte = (this->*getTextByLangFunc)(1029, os.str()); idsuiv=387; break;
-        case 387 : texte = (this->*getTextByLangFunc)(1030, os.str());
-            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385; break;
-        case 388 : texte = (this->*getTextByLangFunc)(1031, os.str()); break;
-#ifdef __vita__
-        case 389 : texte = (this->*getTextByLangFunc)(1032, os.str()); break;
-#else
-        case 389 : texte = (this->*getTextByLangFunc)(1033, os.str()); break;
-#endif
-        case 390 : 
-            if (gpJeu->getJoueur()->hasBouteille(0)) {id=393; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1034, os.str());
-            if (gpJeu->getJoueur()->getGemme()<10) idsuiv=385; break;
-        case 391 : texte = (this->*getTextByLangFunc)(1035, os.str()); break;
-        case 392 : texte = (this->*getTextByLangFunc)(1036, os.str()); break;
-        case 393 : texte = (this->*getTextByLangFunc)(1037, os.str());
-            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385; break;
-        case 394 : texte = (this->*getTextByLangFunc)(1038, os.str()); break;
-        case 395 : 
-            if (gpJeu->getJoueur()->hasObjet(O_BONUS_FORCE)==1) {id=398; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1039, os.str());
-            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385; break;
-        case 396 : texte = (this->*getTextByLangFunc)(1040, os.str()); break;
-        case 397 : texte = (this->*getTextByLangFunc)(1041, os.str()); break; 
-        case 398 : 
-            texte = (this->*getTextByLangFunc)(1042, os.str());
-            if (gpJeu->getJoueur()->getGemme()<40) idsuiv=385; break;
-        case 399 : texte = (this->*getTextByLangFunc)(1043, os.str()); break;
-        case 400 : 
-            if (gpJeu->getJoueur()->hasObjet(O_BONUS_DEFENSE)==1) {id=403; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1044, os.str());
-            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385; break;
-        case 401 : texte = (this->*getTextByLangFunc)(1045, os.str()); break;
-        case 402 : texte = (this->*getTextByLangFunc)(1046, os.str()); break; 
-        case 403 : 
-            texte = (this->*getTextByLangFunc)(1047, os.str());
-            if (gpJeu->getJoueur()->getGemme()<40) idsuiv=385; break;
-        case 404 : texte = (this->*getTextByLangFunc)(1048, os.str()); break;
-        case 405 : texte = (this->*getTextByLangFunc)(1049, os.str()); idsuiv=406; break;
-        case 406 : texte = (this->*getTextByLangFunc)(1050, os.str()); idsuiv=407; break;
-        case 407 : texte = (this->*getTextByLangFunc)(1051, os.str()); break;
-        case 408 : texte = (this->*getTextByLangFunc)(1052, os.str()); break;
-        case 409 :
-            if (gpJeu->getJoueur()->hasBouteille(0)!=1 
-            && gpJeu->getJoueur()->hasBouteille(1)!=1
-            && gpJeu->getJoueur()->hasBouteille(2)!=1
-            && gpJeu->getJoueur()->hasBouteille(3)!=1) {id=408; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1053, os.str()); 
-            idsuiv=410; break;
-        case 410 : texte = (this->*getTextByLangFunc)(1054, os.str()); idsuiv=413; break;
-        case 411 : texte = (this->*getTextByLangFunc)(1055, os.str()); 
-            if (!gpJeu->getJoueur()->hasObjet(O_LANTERNE)) idsuiv=374;
-            else idsuiv=415; break;
-        case 412 : texte = (this->*getTextByLangFunc)(1056, os.str()); break;
-        case 413 : texte = (this->*getTextByLangFunc)(1057, os.str()); 
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<60) idsuiv=75; break;
-        case 414 : texte = (this->*getTextByLangFunc)(1058, os.str()); break;
-        case 415 : texte = (this->*getTextByLangFunc)(1059, os.str());
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<40) idsuiv=75; break;
-        case 416 : texte = (this->*getTextByLangFunc)(1060, os.str()); break;
-        case 417 : texte = (this->*getTextByLangFunc)(1061, os.str()); break;
-        case 418 : texte = (this->*getTextByLangFunc)(1062, os.str()); break;
-        case 419 : texte = (this->*getTextByLangFunc)(1063, os.str()); break;
-        case 420 : texte = (this->*getTextByLangFunc)(1064, os.str()); break;
-        case 421 : texte = (this->*getTextByLangFunc)(1065, os.str()); break;
-        case 422 : texte = (this->*getTextByLangFunc)(1066, os.str()); break;
-        case 423 : texte = (this->*getTextByLangFunc)(1067, os.str()); break;
-        case 424 : 
-            if (gpJeu->getJoueur()->getCoffre(15,14)) {id=431; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==3 
-            && gpJeu->getJoueur()->getObjet()==3) {id=425; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1068, os.str()); break;
-        case 425 : texte = (this->*getTextByLangFunc)(1069, os.str()); idsuiv=426; break;
-        case 426 : texte = (this->*getTextByLangFunc)(1070, os.str()); idsuiv=428; break;
-        case 427 : texte = (this->*getTextByLangFunc)(1071, os.str()); idsuiv=429; break;
-        case 428 : texte = (this->*getTextByLangFunc)(1072, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1073, os.str()); break;
-        case 429 : texte = (this->*getTextByLangFunc)(1074, os.str()); break;
-        case 430 : texte = (this->*getTextByLangFunc)(1075, os.str()); break;
-        case 431 : texte = (this->*getTextByLangFunc)(1076, os.str()); break;
-        case 432 : texte = (this->*getTextByLangFunc)(1077, os.str()); break;
-        case 433 : 
-            tmp = 4-(gpJeu->getJoueur()->getCoeur(28) + gpJeu->getJoueur()->getGemme(160) 
-            + gpJeu->getJoueur()->getGemme(161) + gpJeu->getJoueur()->getGemme(162));
-            if (tmp==0) {id=432; chercheText();break;}
-            os << tmp; os2 << ((4-tmp+1)*5);
-            texte = (this->*getTextByLangFunc)(1078, os.str())+os.str()+(this->*getTextByLangFunc)(1079, os.str())+os2.str()+(this->*getTextByLangFunc)(1080, os.str());
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<(4-tmp+1)*5) idsuiv=75; break;
-        case 434 : 
-            tmp = 4-(gpJeu->getJoueur()->getCoeur(28) + gpJeu->getJoueur()->getGemme(160) 
-            + gpJeu->getJoueur()->getGemme(161) + gpJeu->getJoueur()->getGemme(162));
-            os << tmp; os2 << ((4-tmp+1)*5);
-            texte = (this->*getTextByLangFunc)(1081, os.str())+os.str()+(this->*getTextByLangFunc)(1082, os.str())+os2.str()+(this->*getTextByLangFunc)(1083, os.str()); break;
-        case 435 : texte = (this->*getTextByLangFunc)(1084, os.str()); break;
-        case 436 : texte = (this->*getTextByLangFunc)(1085, os.str()); break;
-        case 437 : texte = (this->*getTextByLangFunc)(1086, os.str()); break;
-        case 438 :
-            if (gpJeu->getJoueur()->hasObjet(O_SAC_TROC)) {id=444; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1087, os.str()); idsuiv=439;
+        case 383 :
+            texteTmp = (this->*getTextByLangFunc)(1026, os.str());
+            if (gpJeu->getJoueur()->getGemme()<30) idsuiv=385;
             break;
-        case 439 : texte = (this->*getTextByLangFunc)(1088, os.str()); 
-            buffer=(this->*getTextByLangFunc)(1089, os.str()); idsuiv=440; break;
-        case 440 : texte = (this->*getTextByLangFunc)(1090, os.str()); idsuiv=441; break;
-        case 441 : texte = (this->*getTextByLangFunc)(1091, os.str()); idsuiv=442; break;
-        case 442 : texte = (this->*getTextByLangFunc)(1092, os.str()); idsuiv=443; break;
+        case 384 :
+            texteTmp = (this->*getTextByLangFunc)(1027, os.str());
+            idsuiv=76;
+            break;
+        case 385 :
+            texteTmp = (this->*getTextByLangFunc)(1028, os.str());
+            break;
+        case 386 :
+            texteTmp = (this->*getTextByLangFunc)(1029, os.str());
+            idsuiv=387;
+            break;
+        case 387 :
+            texteTmp = (this->*getTextByLangFunc)(1030, os.str());
+            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385;
+            break;
+        case 388 :
+            texteTmp = (this->*getTextByLangFunc)(1031, os.str());
+            break;
 #ifdef __vita__
-        case 443 : texte = (this->*getTextByLangFunc)(1093, os.str()); break;
+        case 389 :
+            texteTmp = (this->*getTextByLangFunc)(1032, os.str());
+            break;
 #else
-        case 443 : texte = (this->*getTextByLangFunc)(1094, os.str()); break;
+        case 389 :
+            texteTmp = (this->*getTextByLangFunc)(1033, os.str());
+            break;
 #endif
-        case 444 : 
-            if (gpJeu->getJoueur()->getTroc(M_ROUAGE)==0) {id=446; chercheText();break;}
-            if (gpJeu->getJoueur()->getTroc(M_ROUAGE)>0) {id=445; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1095, os.str()); break;
-        case 445 : texte = (this->*getTextByLangFunc)(1096, os.str()); break;
-        case 446 : texte = (this->*getTextByLangFunc)(1097, os.str()); break;
-        case 447 : 
-            if (gpJeu->getJoueur()->hasBouteille(0)!=1 
-            && gpJeu->getJoueur()->hasBouteille(1)!=1
-            && gpJeu->getJoueur()->hasBouteille(2)!=1
-            && gpJeu->getJoueur()->hasBouteille(3)!=1) {id=408; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1098, os.str()); 
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<160) idsuiv=75; break;
-        case 448 : texte = (this->*getTextByLangFunc)(1099, os.str()); break;
-        case 449 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>1) {id=456; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==1 
-            && gpJeu->getJoueur()->getObjet()==15) {id=450; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1100, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1101, os.str()); break;
-        case 450 : texte = (this->*getTextByLangFunc)(1102, os.str()); idsuiv=451; break;
-        case 451 : texte = (this->*getTextByLangFunc)(1103, os.str()); idsuiv=453; break;
-        case 452 : texte = (this->*getTextByLangFunc)(1104, os.str()); idsuiv=454; break;
-        case 453 : texte = (this->*getTextByLangFunc)(1105, os.str()); break;
-        case 454 : texte = (this->*getTextByLangFunc)(1106, os.str()); break;
-        case 455 : texte = (this->*getTextByLangFunc)(1107, os.str()); break;
-        case 456 : texte = (this->*getTextByLangFunc)(1108, os.str()); break;
-        case 457 : texte = (this->*getTextByLangFunc)(1109, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1110, os.str()); break;
+        case 390 :
+            if (gpJeu->getJoueur()->hasBouteille(0)) {
+                id=393;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1034, os.str());
+            if (gpJeu->getJoueur()->getGemme()<10) idsuiv=385;
+            break;
+        case 391 :
+            texteTmp = (this->*getTextByLangFunc)(1035, os.str());
+            break;
+        case 392 :
+            texteTmp = (this->*getTextByLangFunc)(1036, os.str());
+            break;
+        case 393 :
+            texteTmp = (this->*getTextByLangFunc)(1037, os.str());
+            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385;
+            break;
+        case 394 :
+            texteTmp = (this->*getTextByLangFunc)(1038, os.str());
+            break;
+        case 395 :
+            if (gpJeu->getJoueur()->hasObjet(O_BONUS_FORCE)==1) {
+                id=398;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1039, os.str());
+            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385;
+            break;
+        case 396 :
+            texteTmp = (this->*getTextByLangFunc)(1040, os.str());
+            break;
+        case 397 :
+            texteTmp = (this->*getTextByLangFunc)(1041, os.str());
+            break;
+        case 398 :
+            texteTmp = (this->*getTextByLangFunc)(1042, os.str());
+            if (gpJeu->getJoueur()->getGemme()<40) idsuiv=385;
+            break;
+        case 399 :
+            texteTmp = (this->*getTextByLangFunc)(1043, os.str());
+            break;
+        case 400 :
+            if (gpJeu->getJoueur()->hasObjet(O_BONUS_DEFENSE)==1) {
+                id=403;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1044, os.str());
+            if (gpJeu->getJoueur()->getGemme()<20) idsuiv=385;
+            break;
+        case 401 :
+            texteTmp = (this->*getTextByLangFunc)(1045, os.str());
+            break;
+        case 402 :
+            texteTmp = (this->*getTextByLangFunc)(1046, os.str());
+            break;
+        case 403 :
+            texteTmp = (this->*getTextByLangFunc)(1047, os.str());
+            if (gpJeu->getJoueur()->getGemme()<40) idsuiv=385;
+            break;
+        case 404 :
+            texteTmp = (this->*getTextByLangFunc)(1048, os.str());
+            break;
+        case 405 :
+            texteTmp = (this->*getTextByLangFunc)(1049, os.str());
+            idsuiv=406;
+            break;
+        case 406 :
+            texteTmp = (this->*getTextByLangFunc)(1050, os.str());
+            idsuiv=407;
+            break;
+        case 407 :
+            texteTmp = (this->*getTextByLangFunc)(1051, os.str());
+            break;
+        case 408 :
+            texteTmp = (this->*getTextByLangFunc)(1052, os.str());
+            break;
+        case 409 :
+            if (gpJeu->getJoueur()->hasBouteille(0)!=1
+                && gpJeu->getJoueur()->hasBouteille(1)!=1
+                && gpJeu->getJoueur()->hasBouteille(2)!=1
+                && gpJeu->getJoueur()->hasBouteille(3)!=1) {
+                id=408;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1053, os.str());
+            idsuiv=410;
+            break;
+        case 410 :
+            texteTmp = (this->*getTextByLangFunc)(1054, os.str());
+            idsuiv=413;
+            break;
+        case 411 :
+            texteTmp = (this->*getTextByLangFunc)(1055, os.str());
+            if (!gpJeu->getJoueur()->hasObjet(O_LANTERNE)) idsuiv=374;
+            else idsuiv=415;
+            break;
+        case 412 :
+            texteTmp = (this->*getTextByLangFunc)(1056, os.str());
+            break;
+        case 413 :
+            texteTmp = (this->*getTextByLangFunc)(1057, os.str());
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<60) idsuiv=75;
+            break;
+        case 414 :
+            texteTmp = (this->*getTextByLangFunc)(1058, os.str());
+            break;
+        case 415 :
+            texteTmp = (this->*getTextByLangFunc)(1059, os.str());
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<40) idsuiv=75;
+            break;
+        case 416 :
+            texteTmp = (this->*getTextByLangFunc)(1060, os.str());
+            break;
+        case 417 :
+            texteTmp = (this->*getTextByLangFunc)(1061, os.str());
+            break;
+        case 418 :
+            texteTmp = (this->*getTextByLangFunc)(1062, os.str());
+            break;
+        case 419 :
+            texteTmp = (this->*getTextByLangFunc)(1063, os.str());
+            break;
+        case 420 :
+            texteTmp = (this->*getTextByLangFunc)(1064, os.str());
+            break;
+        case 421 :
+            texteTmp = (this->*getTextByLangFunc)(1065, os.str());
+            break;
+        case 422 :
+            texteTmp = (this->*getTextByLangFunc)(1066, os.str());
+            break;
+        case 423 :
+            texteTmp = (this->*getTextByLangFunc)(1067, os.str());
+            break;
+        case 424 :
+            if (gpJeu->getJoueur()->getCoffre(15,14)) {
+                id=431;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==3
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=425;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1068, os.str());
+            break;
+        case 425 :
+            texteTmp = (this->*getTextByLangFunc)(1069, os.str());
+            idsuiv=426;
+            break;
+        case 426 :
+            texteTmp = (this->*getTextByLangFunc)(1070, os.str());
+            idsuiv=428;
+            break;
+        case 427 :
+            texteTmp = (this->*getTextByLangFunc)(1071, os.str());
+            idsuiv=429;
+            break;
+        case 428 :
+            texteTmp = (this->*getTextByLangFunc)(1072, os.str());
+            buffer = (this->*getTextByLangFunc)(1073, os.str());
+            break;
+        case 429 :
+            texteTmp = (this->*getTextByLangFunc)(1074, os.str());
+            break;
+        case 430 :
+            texteTmp = (this->*getTextByLangFunc)(1075, os.str());
+            break;
+        case 431 :
+            texteTmp = (this->*getTextByLangFunc)(1076, os.str());
+            break;
+        case 432 :
+            texteTmp = (this->*getTextByLangFunc)(1077, os.str());
+            break;
+        case 433 :
+            tmp = 4-(gpJeu->getJoueur()->getCoeur(28) + gpJeu->getJoueur()->getGemme(160)
+                  + gpJeu->getJoueur()->getGemme(161) + gpJeu->getJoueur()->getGemme(162));
+            if (tmp==0) {
+                id=432;
+                break;
+            }
+            os << tmp;
+            os2 << ((4-tmp+1)*5);
+            texteTmp = (this->*getTextByLangFunc)(1078, os.str())+os.str()+(this->*getTextByLangFunc)(1079, os.str())+os2.str()+(this->*getTextByLangFunc)(1080, os.str());
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<(4-tmp+1)*5) idsuiv=75;
+            break;
+        case 434 :
+            tmp = 4-(gpJeu->getJoueur()->getCoeur(28) + gpJeu->getJoueur()->getGemme(160)
+                  + gpJeu->getJoueur()->getGemme(161) + gpJeu->getJoueur()->getGemme(162));
+            os << tmp;
+            os2 << ((4-tmp+1)*5);
+            texteTmp = (this->*getTextByLangFunc)(1081, os.str())+os.str()+(this->*getTextByLangFunc)(1082, os.str())+os2.str()+(this->*getTextByLangFunc)(1083, os.str());
+            break;
+        case 435 :
+            texteTmp = (this->*getTextByLangFunc)(1084, os.str());
+            break;
+        case 436 :
+            texteTmp = (this->*getTextByLangFunc)(1085, os.str());
+            break;
+        case 437 :
+            texteTmp = (this->*getTextByLangFunc)(1086, os.str());
+            break;
+        case 438 :
+            if (gpJeu->getJoueur()->hasObjet(O_SAC_TROC)) {
+                id=444;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1087, os.str());
+            idsuiv=439;
+            break;
+        case 439 :
+            texteTmp = (this->*getTextByLangFunc)(1088, os.str());
+            buffer=(this->*getTextByLangFunc)(1089, os.str());
+            idsuiv=440;
+            break;
+        case 440 :
+            texteTmp = (this->*getTextByLangFunc)(1090, os.str());
+            idsuiv=441;
+            break;
+        case 441 :
+            texteTmp = (this->*getTextByLangFunc)(1091, os.str());
+            idsuiv=442;
+            break;
+        case 442 :
+            texteTmp = (this->*getTextByLangFunc)(1092, os.str());
+            idsuiv=443;
+            break;
+#ifdef __vita__
+        case 443 :
+            texteTmp = (this->*getTextByLangFunc)(1093, os.str());
+            break;
+#else
+        case 443 :
+            texteTmp = (this->*getTextByLangFunc)(1094, os.str());
+            break;
+#endif
+        case 444 :
+            if (gpJeu->getJoueur()->getTroc(M_ROUAGE)==0) {
+                id=446;
+                break;
+            }
+            if (gpJeu->getJoueur()->getTroc(M_ROUAGE)>0) {
+                id=445;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1095, os.str());
+            break;
+        case 445 :
+            texteTmp = (this->*getTextByLangFunc)(1096, os.str());
+            break;
+        case 446 :
+            texteTmp = (this->*getTextByLangFunc)(1097, os.str());
+            break;
+        case 447 :
+            if (gpJeu->getJoueur()->hasBouteille(0)!=1
+                && gpJeu->getJoueur()->hasBouteille(1)!=1
+                && gpJeu->getJoueur()->hasBouteille(2)!=1
+                && gpJeu->getJoueur()->hasBouteille(3)!=1) {
+                id=408;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1098, os.str());
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<160) idsuiv=75;
+            break;
+        case 448 :
+            texteTmp = (this->*getTextByLangFunc)(1099, os.str());
+            break;
+        case 449 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>1) {
+                id=456;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==1
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=450;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1100, os.str());
+            buffer = (this->*getTextByLangFunc)(1101, os.str());
+            break;
+        case 450 :
+            texteTmp = (this->*getTextByLangFunc)(1102, os.str());
+            idsuiv=451;
+            break;
+        case 451 :
+            texteTmp = (this->*getTextByLangFunc)(1103, os.str());
+            idsuiv=453;
+            break;
+        case 452 :
+            texteTmp = (this->*getTextByLangFunc)(1104, os.str());
+            idsuiv=454;
+            break;
+        case 453 :
+            texteTmp = (this->*getTextByLangFunc)(1105, os.str());
+            break;
+        case 454 :
+            texteTmp = (this->*getTextByLangFunc)(1106, os.str());
+            break;
+        case 455 :
+            texteTmp = (this->*getTextByLangFunc)(1107, os.str());
+            break;
+        case 456 :
+            texteTmp = (this->*getTextByLangFunc)(1108, os.str());
+            break;
+        case 457 :
+            texteTmp = (this->*getTextByLangFunc)(1109, os.str());
+            buffer = (this->*getTextByLangFunc)(1110, os.str());
+            break;
         case 458 :
             // Concours de pêche
 
@@ -5687,1790 +6856,4455 @@ void Texte::chercheText() {
                     // Possède la canne à pêche niveau 2
                     if (gpJeu->getJoueur()->hasObjet(O_CANNE)>1) {
 
-                        // Possède bouteille
-                        if (gpJeu->getJoueur()->hasBouteille(2)) {
+                       // Possède bouteille
+                       if (gpJeu->getJoueur()->hasBouteille(2)) {
 
                             // Possède la canne à pêche niveau 3
                             if (gpJeu->getJoueur()->hasObjet(O_CANNE)>2) {
 
-                                // Possède coeur
-                                if (gpJeu->getJoueur()->getCoeur(27)) {
-                                    if (gpJeu->getJoueur()->hasObjet(O_POISSONS)>1) {
-                                        id=500; 
-                                        chercheText();
-                                        break;
-                                    }
+                               // Possède coeur
+                               if (gpJeu->getJoueur()->getCoeur(27)) {
+                                   if (gpJeu->getJoueur()->hasObjet(O_POISSONS)>1) {
+                                      id=500;
+                                      break;
+                                   }
 
-                                    // A attrapé plus de 30 poissons
-                                    if (gpJeu->getJoueur()->nbPoissons()>=30) {
-                                        id=498; 
-                                        chercheText();
-                                        break;
-                                    }
+                                   // A attrapé plus de 30 poissons
+                                   if (gpJeu->getJoueur()->nbPoissons()>=30) {
+                                      id=498;
+                                      break;
+                                   }
 
-                                    tmp = 30-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-                                    texte = (this->*getTextByLangFunc)(1158, os.str())+os.str()+(this->*getTextByLangFunc)(1159, os.str());
-                                    break;
-                                }
+                                   tmp = 30-gpJeu->getJoueur()->nbPoissons();
+                                   os << tmp;
+                                   texteTmp = (this->*getTextByLangFunc)(1158, os.str())+os.str()+(this->*getTextByLangFunc)(1159, os.str());
+                                   break;
+                               }
 
-                                // A attrapé plus de 25 poissons
-                                if (gpJeu->getJoueur()->nbPoissons()>=25) {
-                                    id=496; 
-                                    chercheText();
-                                    break;
-                                }
+                               // A attrapé plus de 25 poissons
+                               if (gpJeu->getJoueur()->nbPoissons()>=25) {
+                                   id=496;
+                                   break;
+                               }
 
-                                tmp = 25-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-                                texte = (this->*getTextByLangFunc)(1155, os.str())+os.str()+(this->*getTextByLangFunc)(1156, os.str());
-                                break;
+                               tmp = 25-gpJeu->getJoueur()->nbPoissons();
+                               os << tmp;
+                               texteTmp = (this->*getTextByLangFunc)(1155, os.str())+os.str()+(this->*getTextByLangFunc)(1156, os.str());
+                               break;
                             }
 
                             // A attrapé plus de 20 poissons
                             if (gpJeu->getJoueur()->nbPoissons()>=20) {
-                                id=493; 
-                                chercheText();
-                                break;
+                               id=493;
+                               break;
                             }
 
-                            tmp = 20-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-                            texte = (this->*getTextByLangFunc)(1151, os.str())+os.str()+(this->*getTextByLangFunc)(1152, os.str());
+                            tmp = 20-gpJeu->getJoueur()->nbPoissons();
+                            os << tmp;
+                            texteTmp = (this->*getTextByLangFunc)(1151, os.str())+os.str()+(this->*getTextByLangFunc)(1152, os.str());
                             break;
-                        }
-                        
-                        // A attrapé plus de 15 poissons
-                        if (gpJeu->getJoueur()->nbPoissons()>=15) {
-                            id=491; 
-                            chercheText();
-                            break;
-                        }
+                       }
 
-                        tmp = 15-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-                        texte = (this->*getTextByLangFunc)(1148, os.str())+os.str()+(this->*getTextByLangFunc)(1149, os.str());
-                        break;
+                       // A attrapé plus de 15 poissons
+                       if (gpJeu->getJoueur()->nbPoissons()>=15) {
+                            id=491;
+                            break;
+                       }
+
+                       tmp = 15-gpJeu->getJoueur()->nbPoissons();
+                       os << tmp;
+                       texteTmp = (this->*getTextByLangFunc)(1148, os.str())+os.str()+(this->*getTextByLangFunc)(1149, os.str());
+                       break;
                     }
 
                     // A attrapé plus de 10 poissons
                     if (gpJeu->getJoueur()->nbPoissons()>=10) {
-                        id=488; 
-                        chercheText();
-                        break;
+                       id=488;
+                       break;
                     }
 
                     // A attrapé moins de 10 poissons
-                    tmp = 10-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-                    texte = (this->*getTextByLangFunc)(1144, os.str())+os.str()+(this->*getTextByLangFunc)(1145, os.str());
+                    tmp = 10-gpJeu->getJoueur()->nbPoissons();
+                    os << tmp;
+                    texteTmp = (this->*getTextByLangFunc)(1144, os.str())+os.str()+(this->*getTextByLangFunc)(1145, os.str());
                     break;
                 }
-                
+
                 // A attrapé plus de 5 poissons
                 if (gpJeu->getJoueur()->nbPoissons()>=5) {
-                    id=479; chercheText();
+                    id=479;
                     break;
                 }
 
                 // A attrapé moins de 5 poissons
                 tmp = 5-gpJeu->getJoueur()->nbPoissons();
                 os << tmp;
-                if (tmp > 1) texte = (this->*getTextByLangFunc)(1132, os.str())+os.str()+(this->*getTextByLangFunc)(1133, os.str());
-                else texte = (this->*getTextByLangFunc)(1134, os.str()); break;    
+                if (tmp > 1)  texteTmp = (this->*getTextByLangFunc)(1132, os.str())+os.str()+(this->*getTextByLangFunc)(1133, os.str());
+                else  texteTmp = (this->*getTextByLangFunc)(1134, os.str());
+                break;
                 break;
             }
-            
-            if (gpJeu->getJoueur()->getAvancement() == PARLE_PECHE) {id=460; chercheText();break;}
+
+            if (gpJeu->getJoueur()->getAvancement() == PARLE_PECHE) {
+                id=460;
+                break;
+            }
             gpJeu->getJoueur()->setAvancement(PARLE_PECHE);
-            texte = (this->*getTextByLangFunc)(1111, os.str()); idsuiv = 459; break;
-        case 459 : texte = (this->*getTextByLangFunc)(1112, os.str()); idsuiv=460; break;
-        case 460 : texte = (this->*getTextByLangFunc)(1113, os.str()); idsuiv=461; break;
-        case 461 : texte = (this->*getTextByLangFunc)(1114, os.str()); idsuiv=463;
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<10) idsuiv=75; break;
-        case 462 : texte = (this->*getTextByLangFunc)(1115, os.str()); idsuiv=464; break;
-        case 463 : texte = (this->*getTextByLangFunc)(1116, os.str()); break;
-        case 464 : 
-            texte = (this->*getTextByLangFunc)(1117, os.str()); idsuiv=466; 
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<5) idsuiv=75; break;
-        case 465 : texte = (this->*getTextByLangFunc)(1118, os.str()); idsuiv=467; break;
-        case 466 : texte = (this->*getTextByLangFunc)(1119, os.str()); break;
-        case 467 : texte = (this->*getTextByLangFunc)(1120, os.str()); idsuiv=469;
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<2) idsuiv=75; break;
-        case 468 : texte = (this->*getTextByLangFunc)(1121, os.str()); idsuiv=470; break;
-        case 469 : texte = (this->*getTextByLangFunc)(1122, os.str()); break;
-        case 470 : texte = (this->*getTextByLangFunc)(1123, os.str()); idsuiv=472;
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<1) idsuiv=75; break;
-        case 471 : texte = (this->*getTextByLangFunc)(1124, os.str()); idsuiv=473; break;
-        case 472 : texte = (this->*getTextByLangFunc)(1125, os.str()); break;
-        case 473 : texte = (this->*getTextByLangFunc)(1126, os.str()); idsuiv=475; break;
-        case 474 : texte = (this->*getTextByLangFunc)(1127, os.str()); idsuiv=476; break;
-        case 475 : texte = (this->*getTextByLangFunc)(1128, os.str()); break;
-        case 476 : texte = (this->*getTextByLangFunc)(1129, os.str()); break;
+            texteTmp = (this->*getTextByLangFunc)(1111, os.str());
+            idsuiv = 459;
+            break;
+        case 459 :
+            texteTmp = (this->*getTextByLangFunc)(1112, os.str());
+            idsuiv=460;
+            break;
+        case 460 :
+            texteTmp = (this->*getTextByLangFunc)(1113, os.str());
+            idsuiv=461;
+            break;
+        case 461 :
+            texteTmp = (this->*getTextByLangFunc)(1114, os.str());
+            idsuiv=463;
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<10) idsuiv=75;
+            break;
+        case 462 :
+            texteTmp = (this->*getTextByLangFunc)(1115, os.str());
+            idsuiv=464;
+            break;
+        case 463 :
+            texteTmp = (this->*getTextByLangFunc)(1116, os.str());
+            break;
+        case 464 :
+            texteTmp = (this->*getTextByLangFunc)(1117, os.str());
+            idsuiv=466;
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<5) idsuiv=75;
+            break;
+        case 465 :
+            texteTmp = (this->*getTextByLangFunc)(1118, os.str());
+            idsuiv=467;
+            break;
+        case 466 :
+            texteTmp = (this->*getTextByLangFunc)(1119, os.str());
+            break;
+        case 467 :
+            texteTmp = (this->*getTextByLangFunc)(1120, os.str());
+            idsuiv=469;
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<2) idsuiv=75;
+            break;
+        case 468 :
+            texteTmp = (this->*getTextByLangFunc)(1121, os.str());
+            idsuiv=470;
+            break;
+        case 469 :
+            texteTmp = (this->*getTextByLangFunc)(1122, os.str());
+            break;
+        case 470 :
+            texteTmp = (this->*getTextByLangFunc)(1123, os.str());
+            idsuiv=472;
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<1) idsuiv=75;
+            break;
+        case 471 :
+            texteTmp = (this->*getTextByLangFunc)(1124, os.str());
+            idsuiv=473;
+            break;
+        case 472 :
+            texteTmp = (this->*getTextByLangFunc)(1125, os.str());
+            break;
+        case 473 :
+            texteTmp = (this->*getTextByLangFunc)(1126, os.str());
+            idsuiv=475;
+            break;
+        case 474 :
+            texteTmp = (this->*getTextByLangFunc)(1127, os.str());
+            idsuiv=476;
+            break;
+        case 475 :
+            texteTmp = (this->*getTextByLangFunc)(1128, os.str());
+            break;
+        case 476 :
+            texteTmp = (this->*getTextByLangFunc)(1129, os.str());
+            break;
 #ifdef __vita__
-        case 477 : texte = (this->*getTextByLangFunc)(1130, os.str()); break;
+        case 477 :
+            texteTmp = (this->*getTextByLangFunc)(1130, os.str());
+            break;
 #else
-        case 477 : texte = (this->*getTextByLangFunc)(1131, os.str()); break;
+        case 477 :
+            texteTmp = (this->*getTextByLangFunc)(1131, os.str());
+            break;
 #endif
-        case 478 : 
-            if (gpJeu->getJoueur()->hasObjet(O_POISSONS)) {id=487; chercheText();break;}
-            if (gpJeu->getJoueur()->nbPoissons()>=5) {id=479; chercheText();break;}
+        case 478 :
+            if (gpJeu->getJoueur()->hasObjet(O_POISSONS)) {
+                id=487;
+                break;
+            }
+            if (gpJeu->getJoueur()->nbPoissons()>=5) {
+                id=479;
+                break;
+            }
             tmp = 5-gpJeu->getJoueur()->nbPoissons();
             os << tmp;
-            if (tmp > 1) texte = (this->*getTextByLangFunc)(1132, os.str())+os.str()+(this->*getTextByLangFunc)(1133, os.str());
-            else texte = (this->*getTextByLangFunc)(1134, os.str()); break;
-        case 479 : texte = (this->*getTextByLangFunc)(1135, os.str()); idsuiv=480; break;
-        case 480 : texte = (this->*getTextByLangFunc)(1136, os.str()); idsuiv=481; break;
-        case 481 : texte = (this->*getTextByLangFunc)(1137, os.str()); idsuiv=482; break;
-        case 482 : texte = (this->*getTextByLangFunc)(1138, os.str()); idsuiv=483; break;
-        case 483 : texte = (this->*getTextByLangFunc)(1139, os.str()); idsuiv=484; break;
+            if (tmp > 1)  texteTmp = (this->*getTextByLangFunc)(1132, os.str())+os.str()+(this->*getTextByLangFunc)(1133, os.str());
+            else  texteTmp = (this->*getTextByLangFunc)(1134, os.str());
+            break;
+        case 479 :
+            texteTmp = (this->*getTextByLangFunc)(1135, os.str());
+            idsuiv=480;
+            break;
+        case 480 :
+            texteTmp = (this->*getTextByLangFunc)(1136, os.str());
+            idsuiv=481;
+            break;
+        case 481 :
+            texteTmp = (this->*getTextByLangFunc)(1137, os.str());
+            idsuiv=482;
+            break;
+        case 482 :
+            texteTmp = (this->*getTextByLangFunc)(1138, os.str());
+            idsuiv=483;
+            break;
+        case 483 :
+            texteTmp = (this->*getTextByLangFunc)(1139, os.str());
+            idsuiv=484;
+            break;
 #ifdef __vita__
-        case 484 : texte = (this->*getTextByLangFunc)(1140, os.str()); idsuiv=485; break;
+        case 484 :
+            texteTmp = (this->*getTextByLangFunc)(1140, os.str());
+            idsuiv=485;
+            break;
 #else
-        case 484 : texte = (this->*getTextByLangFunc)(1141, os.str()); idsuiv=485; break;
+        case 484 :
+            texteTmp = (this->*getTextByLangFunc)(1141, os.str());
+            idsuiv=485;
+            break;
 #endif
-        case 485 : texte = (this->*getTextByLangFunc)(1142, os.str()); break;
-        case 486 : texte = (this->*getTextByLangFunc)(1143, os.str()); break;
+        case 485 :
+            texteTmp = (this->*getTextByLangFunc)(1142, os.str());
+            break;
+        case 486 :
+            texteTmp = (this->*getTextByLangFunc)(1143, os.str());
+            break;
         case 487 :
-            if (gpJeu->getJoueur()->hasObjet(O_CANNE)>1) {id=490; chercheText();break;}
-            if (gpJeu->getJoueur()->nbPoissons()>=10) {id=488; chercheText();break;}
-            tmp = 10-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1144, os.str())+os.str()+(this->*getTextByLangFunc)(1145, os.str());
-            break;
-        case 488 : texte = (this->*getTextByLangFunc)(1146, os.str()); break;
-        case 489 : texte = (this->*getTextByLangFunc)(1147, os.str()); break;
-        case 490 : 
-            if (gpJeu->getJoueur()->hasBouteille(2)) {id=492; chercheText();break;}
-            if (gpJeu->getJoueur()->nbPoissons()>=15) {id=491; chercheText();break;}
-            tmp = 15-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1148, os.str())+os.str()+(this->*getTextByLangFunc)(1149, os.str());
-            break;
-        case 491 : texte = (this->*getTextByLangFunc)(1150, os.str()); break;
-        case 492 : 
-            if (gpJeu->getJoueur()->hasObjet(O_CANNE)>2) {id=495; chercheText();break;}
-            if (gpJeu->getJoueur()->nbPoissons()>=20) {id=493; chercheText();break;}
-            tmp = 20-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1151, os.str())+os.str()+(this->*getTextByLangFunc)(1152, os.str());
-            break;
-        case 493 : texte = (this->*getTextByLangFunc)(1153, os.str()); break;
-        case 494 : texte = (this->*getTextByLangFunc)(1154, os.str()); break;
-        case 495 : 
-            if (gpJeu->getJoueur()->getCoeur(27)) {id=497; chercheText();break;}
-            if (gpJeu->getJoueur()->nbPoissons()>=25) {id=496; chercheText();break;}
-            tmp = 25-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1155, os.str())+os.str()+(this->*getTextByLangFunc)(1156, os.str());
-            break;
-        case 496 : texte = (this->*getTextByLangFunc)(1157, os.str()); break;
-        case 497 : 
-            if (gpJeu->getJoueur()->hasObjet(O_POISSONS)>1) {id=500; chercheText();break;}
-            if (gpJeu->getJoueur()->nbPoissons()>=30) {id=498; chercheText();break;}
-            tmp = 30-gpJeu->getJoueur()->nbPoissons(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1158, os.str())+os.str()+(this->*getTextByLangFunc)(1159, os.str());
-            break;
-        case 498 : texte = (this->*getTextByLangFunc)(1160, os.str()); break;
-        case 499 : texte = (this->*getTextByLangFunc)(1161, os.str()); break;
-        case 500 : texte = (this->*getTextByLangFunc)(1162, os.str()); break;
-        case 501 : texte = (this->*getTextByLangFunc)(1163, os.str()); 
-            if (gpJeu->getJoueur()->hasObjet(O_POISSONS)) idsuiv=503; else idsuiv=502; break;
-        case 502 : texte = (this->*getTextByLangFunc)(1164, os.str()); break;
-        case 503 : texte = (this->*getTextByLangFunc)(1165, os.str()); break;
-        case 504 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>1) {id=511; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==1 
-            && gpJeu->getJoueur()->getObjet()==7) {id=505; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1166, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1167, os.str()); break;
-        case 505 : texte = (this->*getTextByLangFunc)(1168, os.str()); idsuiv=506; break;
-        case 506 : texte = (this->*getTextByLangFunc)(1169, os.str()); idsuiv=508; break;
-        case 507 : texte = (this->*getTextByLangFunc)(1170, os.str()); idsuiv=509; break;
-        case 508 : texte = (this->*getTextByLangFunc)(1171, os.str()); buffer=(this->*getTextByLangFunc)(1172, os.str()); break;
-        case 509 : texte = (this->*getTextByLangFunc)(1173, os.str()); break;
-        case 510 : texte = (this->*getTextByLangFunc)(1174, os.str()); break;
-        case 511 : texte = (this->*getTextByLangFunc)(1175, os.str()); break;
-        case 512 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_CANNE)) texte = (this->*getTextByLangFunc)(1176, os.str());
-            else {texte = (this->*getTextByLangFunc)(1177, os.str()); idsuiv=513;} break;
-        case 513 : texte = (this->*getTextByLangFunc)(1178, os.str()); idsuiv=517; break;
-        case 514 : texte = (this->*getTextByLangFunc)(1179, os.str()); idsuiv=518; break;
-        case 515 : texte = (this->*getTextByLangFunc)(1180, os.str()); idsuiv=519; break;
-        case 516 : texte = (this->*getTextByLangFunc)(1181, os.str()); idsuiv=520; break;
-        case 517 : texte = (this->*getTextByLangFunc)(1182, os.str()); break;
-        case 518 : texte = (this->*getTextByLangFunc)(1183, os.str()); 
-            buffer=(this->*getTextByLangFunc)(1184, os.str()); break;
-        case 519 : texte = (this->*getTextByLangFunc)(1185, os.str()); break;
-        case 520 : texte = (this->*getTextByLangFunc)(1186, os.str()); break;
-        case 521 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_POISSONS)) texte = (this->*getTextByLangFunc)(1187, os.str()); 
-            else texte = (this->*getTextByLangFunc)(1188, os.str()); break;
-        case 522 :
-            if (gpJeu->getJoueur()->getAvancement()==PARLE_GARS_MINE_SALOON) {id=523; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_BARMAN_SALOON
-            && gpJeu->getJoueur()->getAvancement()<DETTE_PAYEE) {id=528; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1189, os.str()); break;
-        case 523 : texte = (this->*getTextByLangFunc)(1190, os.str()); idsuiv=524; break;
-        case 524 : texte = (this->*getTextByLangFunc)(1191, os.str()); idsuiv=75; break;
-        case 525 : texte = (this->*getTextByLangFunc)(1192, os.str()); idsuiv=526; break;
-        case 526 : texte = (this->*getTextByLangFunc)(1193, os.str()); buffer=(this->*getTextByLangFunc)(1194, os.str()); idsuiv=527; break;
-        case 527 : texte = (this->*getTextByLangFunc)(1195, os.str()); break;
-        case 528 : 
-            if (gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)>0) {id=529; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1196, os.str()); break;
-        case 529 : texte = (this->*getTextByLangFunc)(1197, os.str()); idsuiv=530; break;
-        case 530 : texte = (this->*getTextByLangFunc)(1198, os.str()); idsuiv=533; break;
-        case 531 : texte = (this->*getTextByLangFunc)(1199, os.str()); idsuiv=532; break;
-        case 532 : texte = (this->*getTextByLangFunc)(1200, os.str()); break;
-        case 533 : texte = (this->*getTextByLangFunc)(1201, os.str()); break;
-        case 534 : 
-            if (gpJeu->getJoueur()->getAvancement()==PANCARTE_MINE_LUE) {id=535; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()==PARLE_GARS_MINE_SALOON) {id=537; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()==PARLE_BARMAN_SALOON) {id=538; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>PARLE_BARMAN_SALOON
-            && gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)<0) {id=540; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()<DETTE_PAYEE
-            && gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)>0) {id=541; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()==DETTE_PAYEE) {id=542; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()==GARS_MINE_AIDE) {id=543; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1202, os.str()); break;
-        case 535 : texte = (this->*getTextByLangFunc)(1203, os.str()); idsuiv=536; break;
-        case 536 : texte = (this->*getTextByLangFunc)(1204, os.str()); idsuiv=537; break;
-        case 537 : texte = (this->*getTextByLangFunc)(1205, os.str()); break;
-        case 538 : texte = (this->*getTextByLangFunc)(1206, os.str()); idsuiv=539; break;
-        case 539 : texte = (this->*getTextByLangFunc)(1207, os.str()); break;
-        case 540 : texte = (this->*getTextByLangFunc)(1208, os.str()); break;
-        case 541 : texte = (this->*getTextByLangFunc)(1209, os.str()); break;
-        case 542 : texte = (this->*getTextByLangFunc)(1210, os.str()); idsuiv=543; break;
-        case 543 : texte = (this->*getTextByLangFunc)(1211, os.str()); break;
-        case 544 : texte = (this->*getTextByLangFunc)(1212, os.str()); break;
-        case 545 : texte = (this->*getTextByLangFunc)(1213, os.str()); break;
-        case 546 : texte = (this->*getTextByLangFunc)(1214, os.str()); buffer=(this->*getTextByLangFunc)(1215, os.str()); break;
-        case 547 : texte = (this->*getTextByLangFunc)(1216, os.str()); break;
-        case 548 : texte = (this->*getTextByLangFunc)(1217, os.str()); break;
-        case 549 : texte = (this->*getTextByLangFunc)(1218, os.str()); break;
-        case 550 : texte = (this->*getTextByLangFunc)(1219, os.str()); break;
-        case 551 : 
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0 
-            && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())==0) idsuiv=552;
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0 
-            && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>0) idsuiv=553;
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0 
-            && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())==0) idsuiv=559;
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0 
-            && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>0) idsuiv=564;
-            texte = (this->*getTextByLangFunc)(1220, os.str()); break;
-        case 552 : texte = (this->*getTextByLangFunc)(1221, os.str()); break;
-        case 553 : texte = (this->*getTextByLangFunc)(1222, os.str()); idsuiv=554; break;
-        case 554 : texte = (this->*getTextByLangFunc)(1223, os.str()); idsuiv=555; break;
-        case 555 : 
-            int g;
-            int gmax;
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()>gpJeu->getJoueur()->getRubisMax()-2) {id=557; chercheText();break;}
-            g=gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon();
-            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/2);
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g*2);
-            texte = os.str()+(this->*getTextByLangFunc)(1224, os.str())+os2.str()+(this->*getTextByLangFunc)(1225, os.str()); idsuiv=558; break;
-        case 556 : 
-            g=gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon();
-            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/2);
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g*2);
-            texte = os.str()+(this->*getTextByLangFunc)(1226, os.str())+os2.str()+(this->*getTextByLangFunc)(1227, os.str()); idsuiv=76; break;
-        case 557 : texte = (this->*getTextByLangFunc)(1228, os.str()); break;
-        case 558 : texte = (this->*getTextByLangFunc)(1229, os.str()); break;
-        case 559 : texte = (this->*getTextByLangFunc)(1230, os.str()); idsuiv=560; break;
-        case 560 : texte = (this->*getTextByLangFunc)(1231, os.str()); idsuiv=561; break;
-        case 561 : 
-            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()>gpJeu->getJoueur()->getRubisMax()-4) {id=557; chercheText();break;}
-            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
-            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/4);
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g*4);
-            texte = os.str()+(this->*getTextByLangFunc)(1232, os.str())+os2.str()+(this->*getTextByLangFunc)(1233, os.str()); idsuiv=563; break;
-        case 562 : 
-            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
-            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/4);
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g*4);
-            texte = os.str()+(this->*getTextByLangFunc)(1234, os.str())+os2.str()+(this->*getTextByLangFunc)(1235, os.str()); idsuiv=76; break;
-        case 563 : texte = (this->*getTextByLangFunc)(1236, os.str()); break;
-        case 564 : texte = (this->*getTextByLangFunc)(1237, os.str()); idsuiv=560; break;
-        case 565 : texte = (this->*getTextByLangFunc)(1238, os.str()); idsuiv=554; break;
-        case 566 : texte = (this->*getTextByLangFunc)(1239, os.str()); idsuiv=76; break;
-        case 567 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==10
-            && gpJeu->getJoueur()->hasObjet(O_TROC2)==10
-            && gpJeu->getJoueur()->hasObjet(O_TROC3)==10
-            && gpJeu->getJoueur()->hasObjet(O_TROC4)==10) {id=574; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==7 
-            && gpJeu->getJoueur()->getObjet()==3) {id=568; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==7 
-            && gpJeu->getJoueur()->getObjet()==7) {id=575; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==8 
-            && gpJeu->getJoueur()->getObjet()==11) {id=580; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==7 
-            && gpJeu->getJoueur()->getObjet()==15) {id=585; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1240, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1241, os.str()); break;
-        case 568 : texte = (this->*getTextByLangFunc)(1242, os.str()); idsuiv=569; break;
-        case 569 : texte = (this->*getTextByLangFunc)(1243, os.str()); idsuiv=571; break;
-        case 570 : texte = (this->*getTextByLangFunc)(1244, os.str()); idsuiv=572; break;
-        case 571 : texte = (this->*getTextByLangFunc)(1245, os.str()); break;
-        case 572 : texte = (this->*getTextByLangFunc)(1246, os.str()); break;
-        case 573 : texte = (this->*getTextByLangFunc)(1247, os.str()); break;
-        case 574 : texte = (this->*getTextByLangFunc)(1248, os.str()); break;
-        case 575 : texte = (this->*getTextByLangFunc)(1249, os.str()); idsuiv=576; break;
-        case 576 : texte = (this->*getTextByLangFunc)(1250, os.str()); idsuiv=578; break;
-        case 577 : texte = (this->*getTextByLangFunc)(1251, os.str()); idsuiv=572; break;
-        case 578 : texte = (this->*getTextByLangFunc)(1252, os.str()); break;
-        case 579 : texte = (this->*getTextByLangFunc)(1253, os.str()); break;
-        case 580 : texte = (this->*getTextByLangFunc)(1254, os.str()); idsuiv=581; break;
-        case 581 : texte = (this->*getTextByLangFunc)(1255, os.str()); idsuiv=583; break;
-        case 582 : texte = (this->*getTextByLangFunc)(1256, os.str()); idsuiv=572; break;
-        case 583 : texte = (this->*getTextByLangFunc)(1257, os.str()); break;
-        case 584 : texte = (this->*getTextByLangFunc)(1258, os.str()); break;
-        case 585 : texte = (this->*getTextByLangFunc)(1259, os.str()); idsuiv=586; break;
-        case 586 : texte = (this->*getTextByLangFunc)(1260, os.str()); idsuiv=588; break;
-        case 587 : texte = (this->*getTextByLangFunc)(1261, os.str()); idsuiv=572; break;
-        case 588 : texte = (this->*getTextByLangFunc)(1262, os.str()); break;
-        case 589 : 
-            if (gpJeu->getJoueur()->hasObjet(O_ENCYCL)) {id=593; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1263, os.str()); idsuiv=590; break;
-        case 590 : texte = (this->*getTextByLangFunc)(1264, os.str()); idsuiv=591; break;
-#ifdef __vita__
-        case 591 : texte = (this->*getTextByLangFunc)(1265, os.str()); idsuiv=592; break;
-#else
-        case 591 : texte = (this->*getTextByLangFunc)(1266, os.str()); idsuiv=592; break;
-#endif
-        case 592 : 
-            switch (gpJeu->getEpoque()) {
-                case T_PASSE : os<<(this->*getTextByLangFunc)(1267, os.str()); break;
-                case T_PRESENT : os<<(this->*getTextByLangFunc)(1268, os.str()); break;
-                case T_FUTUR : os<<(this->*getTextByLangFunc)(1269, os.str()); break;
-            }
-            texte = (this->*getTextByLangFunc)(1270, os.str())+os.str()+(this->*getTextByLangFunc)(1271, os.str()); break;
-        case 593 :
-            g = gpJeu->getJoueur()->getSolde();
-            if (g == 0) {id=595; chercheText();break;}
-            switch (gpJeu->getEpoque()) {
-                case T_PASSE : os<<(g/4)<<(this->*getTextByLangFunc)(1272, os.str()); break;
-                case T_PRESENT : os<<g<<(this->*getTextByLangFunc)(1273, os.str()); break;
-                case T_FUTUR : os<<(g/2)<<(this->*getTextByLangFunc)(1274, os.str()); break;
-            }
-            if (gpJeu->getEpoque() == T_FUTUR 
-            && gpJeu->getJoueur()->getGanonMax() == 0) {id=1368; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1275, os.str())+os.str()+(this->*getTextByLangFunc)(1276, os.str()); break;
-        case 594 : 
-            g = gpJeu->getJoueur()->getSolde();
-            switch (gpJeu->getEpoque()) {
-                case T_PASSE : os<<(g/4)<<(this->*getTextByLangFunc)(1277, os.str()); break;
-                case T_PRESENT : os<<g<<(this->*getTextByLangFunc)(1278, os.str()); break;
-                case T_FUTUR : os<<(g/2)<<(this->*getTextByLangFunc)(1279, os.str()); break;
-            }
-            texte = (this->*getTextByLangFunc)(1280, os.str())+os.str()+(this->*getTextByLangFunc)(1281, os.str()); break;
-        case 595 : texte=(this->*getTextByLangFunc)(1282, os.str()); break;
-        case 596 : 
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<2) idsuiv=597;
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>1) idsuiv=598;
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<2) idsuiv=603;
-            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>1) idsuiv=608;
-            texte = (this->*getTextByLangFunc)(1283, os.str()); break;
-        case 597 : texte = (this->*getTextByLangFunc)(1284, os.str()); break;
-        case 598 : texte = (this->*getTextByLangFunc)(1285, os.str()); idsuiv=599; break;
-        case 599 : texte = (this->*getTextByLangFunc)(1286, os.str()); idsuiv=600; break;
-        case 600 : 
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()==gpJeu->getJoueur()->getGanonMax()) {id=557; chercheText();break;}
-            g=gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis();
-            if (g%2 != 0) g--;
-            gmax = (gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))*2;
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g/2);
-            texte = os.str()+(this->*getTextByLangFunc)(1287, os.str())+os2.str()+(this->*getTextByLangFunc)(1288, os.str()); idsuiv=602; break;
-        case 601 : 
-            g=gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis();
-            if (g%2 != 0) g--;
-            gmax = (gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))*2;
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g/2);
-            texte = os.str()+(this->*getTextByLangFunc)(1289, os.str())+os2.str()+(this->*getTextByLangFunc)(1290, os.str()); idsuiv=76; break;
-        case 602 : texte = (this->*getTextByLangFunc)(1291, os.str()); break;
-        case 603 : texte = (this->*getTextByLangFunc)(1292, os.str()); idsuiv=604; break;
-        case 604 : texte = (this->*getTextByLangFunc)(1293, os.str()); idsuiv=605; break;
-        case 605 : 
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()>gpJeu->getJoueur()->getGanonMax()-2) {id=557; chercheText();break;}
-            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
-            gmax = ((gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))/2);
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g*2);
-            texte = os.str()+(this->*getTextByLangFunc)(1294, os.str())+os2.str()+(this->*getTextByLangFunc)(1295, os.str()); idsuiv=607; break;
-        case 606 : 
-            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
-            gmax = ((gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))/2);
-            if (g > gmax) g=gmax;
-            os << g; os2 << (g*2);
-            texte = os.str()+(this->*getTextByLangFunc)(1296, os.str())+os2.str()+(this->*getTextByLangFunc)(1297, os.str()); idsuiv=76; break;
-        case 607 : texte = (this->*getTextByLangFunc)(1298, os.str()); break;
-        case 608 : texte = (this->*getTextByLangFunc)(1299, os.str()); idsuiv=604; break;
-        case 609 : texte = (this->*getTextByLangFunc)(1300, os.str()); idsuiv=599; break;
-        case 610 : texte = (this->*getTextByLangFunc)(1301, os.str()); idsuiv=76; break;
-        case 611 : texte = (this->*getTextByLangFunc)(1302, os.str()); break;
-        case 612 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>6) {id=619; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==6 
-            && gpJeu->getJoueur()->getObjet()==7) {id=613; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1303, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1304, os.str()); break;
-        case 613 : texte = (this->*getTextByLangFunc)(1305, os.str()); idsuiv=614; break;
-        case 614 : texte = (this->*getTextByLangFunc)(1306, os.str()); idsuiv=616; break;
-        case 615 : texte = (this->*getTextByLangFunc)(1307, os.str()); idsuiv=617; break;
-        case 616 : texte = (this->*getTextByLangFunc)(1308, os.str()); break;
-        case 617 : texte = (this->*getTextByLangFunc)(1309, os.str()); break;
-        case 618 : texte = (this->*getTextByLangFunc)(1310, os.str()); break;
-        case 619 : texte = (this->*getTextByLangFunc)(1311, os.str()); break;
-        case 620 : 
-            if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {id=624; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1312, os.str()); idsuiv=621; break;
-        case 621 : texte = (this->*getTextByLangFunc)(1313, os.str()); idsuiv=622; break;
-        case 622 : texte = (this->*getTextByLangFunc)(1314, os.str()); break;
-        case 623 : texte = (this->*getTextByLangFunc)(1315, os.str()); break;
-        case 624 : texte = (this->*getTextByLangFunc)(1316, os.str()); break;
-        case 625 : 
-            if (gpJeu->getJoueur()->hasObjet(O_GRAPPIN)) {id=635; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1317, os.str()); idsuiv=626; break;
-        case 626 : texte = (this->*getTextByLangFunc)(1318, os.str()); idsuiv=627; break;
-        case 627 : texte = (this->*getTextByLangFunc)(1319, os.str()); idsuiv=628; break;
-        case 628 : texte = (this->*getTextByLangFunc)(1320, os.str()); idsuiv=629; break;
-        case 629 : texte = (this->*getTextByLangFunc)(1321, os.str()); idsuiv=630; break;
-        case 630 : texte = (this->*getTextByLangFunc)(1322, os.str()); idsuiv=631; break;
-        case 631 : texte = (this->*getTextByLangFunc)(1323, os.str()); idsuiv=632; break;
-        case 632 : texte = (this->*getTextByLangFunc)(1324, os.str()); idsuiv=633; break;
-        case 633 : texte = (this->*getTextByLangFunc)(1325, os.str()); break;
-        case 634 : texte = (this->*getTextByLangFunc)(1326, os.str()); break;
-        case 635 : 
-            if (gpJeu->getJoueur()->getCoffre(3,29)) {
-                id=636; 
-                if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {
-                    id=637; 
-                    if (gpJeu->getJoueur()->hasObjet(O_CLE_TEMPS)) {
-                        id=638; 
-                        if (gpJeu->getJoueur()->getAvancement()>SAGES_GROTTE) {
-                            id=639; 
-                            if (gpJeu->getJoueur()->hasMelodie(1)) {
-                                id=640; 
-                                texte = (this->*getTextByLangFunc)(1332, os.str());
-                                break;
-                            }
-                            texte = (this->*getTextByLangFunc)(1331, os.str());
-                            break;
-                        }
-                        
-                        texte = (this->*getTextByLangFunc)(1330, os.str());
-                        break;
-                    }
-                    
-                    texte = (this->*getTextByLangFunc)(1329, os.str()); 
-                    break;
-                }
-
-                texte = (this->*getTextByLangFunc)(1328, os.str());
+            if (gpJeu->getJoueur()->hasObjet(O_CANNE)>1) {
+                id=490;
                 break;
             }
-
-            texte = (this->*getTextByLangFunc)(1327, os.str()); break;
-        case 636 : 
-            if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {id=637; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1328, os.str()); break;
-        case 637 : 
-            if (gpJeu->getJoueur()->hasObjet(O_CLE_TEMPS)) {id=638; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1329, os.str()); break;
-        case 638 : 
-            if (gpJeu->getJoueur()->getAvancement()>SAGES_GROTTE) {id=639; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1330, os.str()); break;
-        case 639 :
-            if (gpJeu->getJoueur()->hasMelodie(1)) {id=640; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1331, os.str()); break;
-        case 640 : texte = (this->*getTextByLangFunc)(1332, os.str()); break;
-        case 641 : texte = (this->*getTextByLangFunc)(1333, os.str());
-            if (!gpJeu->getJoueur()->hasObjet(O_ARC)) {id=373; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<10) idsuiv=75; break;
-        case 642 : texte = (this->*getTextByLangFunc)(1334, os.str()); break;
-        case 643 : texte = (this->*getTextByLangFunc)(1335, os.str());
-            if (!gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {id=372; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<15) idsuiv=75; break;
-        case 644 : texte = (this->*getTextByLangFunc)(1336, os.str()); break;
-        case 645 : texte = (this->*getTextByLangFunc)(1337, os.str());
-            if (gpJeu->getJoueur()->getVie() + gpJeu->getJoueur()->getBoostVie() >= gpJeu->getJoueur()->getVieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<4) idsuiv=75; break;
-        case 646 : texte = (this->*getTextByLangFunc)(1338, os.str()); break;
-        case 647 : texte = (this->*getTextByLangFunc)(1339, os.str());
-            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<8) idsuiv=75; break;
-        case 648 : texte = (this->*getTextByLangFunc)(1340, os.str()); break;
-        case 649 : texte = (this->*getTextByLangFunc)(1341, os.str());
-            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<16) idsuiv=75; break;
-        case 650 : texte = (this->*getTextByLangFunc)(1342, os.str()); break;
-        case 651 : 
-            if (gpJeu->getJoueur()->getGanonMax()>0) {
-                if (gpJeu->getJoueur()->getCafe()>-1) {
-                    id=653; 
-                    chercheText(); 
+            if (gpJeu->getJoueur()->nbPoissons()>=10) {
+                id=488;
+                break;
+            }
+            tmp = 10-gpJeu->getJoueur()->nbPoissons();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1144, os.str())+os.str()+(this->*getTextByLangFunc)(1145, os.str());
+            break;
+        case 488 :
+            texteTmp = (this->*getTextByLangFunc)(1146, os.str());
+            break;
+        case 489 :
+            texteTmp = (this->*getTextByLangFunc)(1147, os.str());
+            break;
+        case 490 :
+            if (gpJeu->getJoueur()->hasBouteille(2)) {
+                id=492;
+                break;
+            }
+            if (gpJeu->getJoueur()->nbPoissons()>=15) {
+                id=491;
+                break;
+            }
+            tmp = 15-gpJeu->getJoueur()->nbPoissons();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1148, os.str())+os.str()+(this->*getTextByLangFunc)(1149, os.str());
+            break;
+        case 491 :
+            texteTmp = (this->*getTextByLangFunc)(1150, os.str());
+            break;
+        case 492 :
+            if (gpJeu->getJoueur()->hasObjet(O_CANNE)>2) {
+                id=495;
+                break;
+            }
+            if (gpJeu->getJoueur()->nbPoissons()>=20) {
+                id=493;
+                break;
+            }
+            tmp = 20-gpJeu->getJoueur()->nbPoissons();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1151, os.str())+os.str()+(this->*getTextByLangFunc)(1152, os.str());
+            break;
+        case 493 :
+            texteTmp = (this->*getTextByLangFunc)(1153, os.str());
+            break;
+        case 494 :
+            texteTmp = (this->*getTextByLangFunc)(1154, os.str());
+            break;
+        case 495 :
+            if (gpJeu->getJoueur()->getCoeur(27)) {
+                id=497;
+                break;
+            }
+            if (gpJeu->getJoueur()->nbPoissons()>=25) {
+                id=496;
+                break;
+            }
+            tmp = 25-gpJeu->getJoueur()->nbPoissons();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1155, os.str())+os.str()+(this->*getTextByLangFunc)(1156, os.str());
+            break;
+        case 496 :
+            texteTmp = (this->*getTextByLangFunc)(1157, os.str());
+            break;
+        case 497 :
+            if (gpJeu->getJoueur()->hasObjet(O_POISSONS)>1) {
+                id=500;
+                break;
+            }
+            if (gpJeu->getJoueur()->nbPoissons()>=30) {
+                id=498;
+                break;
+            }
+            tmp = 30-gpJeu->getJoueur()->nbPoissons();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1158, os.str())+os.str()+(this->*getTextByLangFunc)(1159, os.str());
+            break;
+        case 498 :
+            texteTmp = (this->*getTextByLangFunc)(1160, os.str());
+            break;
+        case 499 :
+            texteTmp = (this->*getTextByLangFunc)(1161, os.str());
+            break;
+        case 500 :
+            texteTmp = (this->*getTextByLangFunc)(1162, os.str());
+            break;
+        case 501 :
+            texteTmp = (this->*getTextByLangFunc)(1163, os.str());
+            if (gpJeu->getJoueur()->hasObjet(O_POISSONS)) idsuiv=503;
+            else idsuiv=502;
+            break;
+        case 502 :
+            texteTmp = (this->*getTextByLangFunc)(1164, os.str());
+            break;
+        case 503 :
+            texteTmp = (this->*getTextByLangFunc)(1165, os.str());
+            break;
+        case 504 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>1) {
+                id=511;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==1
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=505;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1166, os.str());
+            buffer = (this->*getTextByLangFunc)(1167, os.str());
+            break;
+        case 505 :
+            texteTmp = (this->*getTextByLangFunc)(1168, os.str());
+            idsuiv=506;
+            break;
+        case 506 :
+            texteTmp = (this->*getTextByLangFunc)(1169, os.str());
+            idsuiv=508;
+            break;
+        case 507 :
+            texteTmp = (this->*getTextByLangFunc)(1170, os.str());
+            idsuiv=509;
+            break;
+        case 508 :
+            texteTmp = (this->*getTextByLangFunc)(1171, os.str());
+            buffer=(this->*getTextByLangFunc)(1172, os.str());
+            break;
+        case 509 :
+            texteTmp = (this->*getTextByLangFunc)(1173, os.str());
+            break;
+        case 510 :
+            texteTmp = (this->*getTextByLangFunc)(1174, os.str());
+            break;
+        case 511 :
+            texteTmp = (this->*getTextByLangFunc)(1175, os.str());
+            break;
+        case 512 :
+            if (!gpJeu->getJoueur()->hasObjet(O_CANNE)) texteTmp = (this->*getTextByLangFunc)(1176, os.str());
+            else {
+                texteTmp = (this->*getTextByLangFunc)(1177, os.str());
+                idsuiv=513;
+            }
+            break;
+        case 513 :
+            texteTmp = (this->*getTextByLangFunc)(1178, os.str());
+            idsuiv=517;
+            break;
+        case 514 :
+            texteTmp = (this->*getTextByLangFunc)(1179, os.str());
+            idsuiv=518;
+            break;
+        case 515 :
+            texteTmp = (this->*getTextByLangFunc)(1180, os.str());
+            idsuiv=519;
+            break;
+        case 516 :
+            texteTmp = (this->*getTextByLangFunc)(1181, os.str());
+            idsuiv=520;
+            break;
+        case 517 :
+            texteTmp = (this->*getTextByLangFunc)(1182, os.str());
+            break;
+        case 518 :
+            texteTmp = (this->*getTextByLangFunc)(1183, os.str());
+            buffer=(this->*getTextByLangFunc)(1184, os.str());
+            break;
+        case 519 :
+            texteTmp = (this->*getTextByLangFunc)(1185, os.str());
+            break;
+        case 520 :
+            texteTmp = (this->*getTextByLangFunc)(1186, os.str());
+            break;
+        case 521 :
+            if (!gpJeu->getJoueur()->hasObjet(O_POISSONS))  texteTmp = (this->*getTextByLangFunc)(1187, os.str());
+            else  texteTmp = (this->*getTextByLangFunc)(1188, os.str());
+            break;
+        case 522 :
+            if (gpJeu->getJoueur()->getAvancement()==PARLE_GARS_MINE_SALOON) {
+                id=523;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_BARMAN_SALOON
+                && gpJeu->getJoueur()->getAvancement()<DETTE_PAYEE) {
+                id=528;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1189, os.str());
+            break;
+        case 523 :
+            texteTmp = (this->*getTextByLangFunc)(1190, os.str());
+            idsuiv=524;
+            break;
+        case 524 :
+            texteTmp = (this->*getTextByLangFunc)(1191, os.str());
+            idsuiv=75;
+            break;
+        case 525 :
+            texteTmp = (this->*getTextByLangFunc)(1192, os.str());
+            idsuiv=526;
+            break;
+        case 526 :
+            texteTmp = (this->*getTextByLangFunc)(1193, os.str());
+            buffer=(this->*getTextByLangFunc)(1194, os.str());
+            idsuiv=527;
+            break;
+        case 527 :
+            texteTmp = (this->*getTextByLangFunc)(1195, os.str());
+            break;
+        case 528 :
+            if (gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)>0) {
+                id=529;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1196, os.str());
+            break;
+        case 529 :
+            texteTmp = (this->*getTextByLangFunc)(1197, os.str());
+            idsuiv=530;
+            break;
+        case 530 :
+            texteTmp = (this->*getTextByLangFunc)(1198, os.str());
+            idsuiv=533;
+            break;
+        case 531 :
+            texteTmp = (this->*getTextByLangFunc)(1199, os.str());
+            idsuiv=532;
+            break;
+        case 532 :
+            texteTmp = (this->*getTextByLangFunc)(1200, os.str());
+            break;
+        case 533 :
+            texteTmp = (this->*getTextByLangFunc)(1201, os.str());
+            break;
+        case 534 :
+            if (gpJeu->getJoueur()->getAvancement()==PANCARTE_MINE_LUE) {
+                id=535;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()==PARLE_GARS_MINE_SALOON) {
+                id=537;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()==PARLE_BARMAN_SALOON) {
+                id=538;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>PARLE_BARMAN_SALOON
+                 && gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)<0) {
+                id=540;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()<DETTE_PAYEE
+                && gpJeu->getJoueur()->getTroc(M_ROC_GIVRE)>0) {
+                id=541;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()==DETTE_PAYEE) {
+                id=542;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()==GARS_MINE_AIDE) {
+                id=543;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1202, os.str());
+            break;
+        case 535 :
+            texteTmp = (this->*getTextByLangFunc)(1203, os.str());
+            idsuiv=536;
+            break;
+        case 536 :
+            texteTmp = (this->*getTextByLangFunc)(1204, os.str());
+            idsuiv=537;
+            break;
+        case 537 :
+            texteTmp = (this->*getTextByLangFunc)(1205, os.str());
+            break;
+        case 538 :
+            texteTmp = (this->*getTextByLangFunc)(1206, os.str());
+            idsuiv=539;
+            break;
+        case 539 :
+            texteTmp = (this->*getTextByLangFunc)(1207, os.str());
+            break;
+        case 540 :
+            texteTmp = (this->*getTextByLangFunc)(1208, os.str());
+            break;
+        case 541 :
+            texteTmp = (this->*getTextByLangFunc)(1209, os.str());
+            break;
+        case 542 :
+            texteTmp = (this->*getTextByLangFunc)(1210, os.str());
+            idsuiv=543;
+            break;
+        case 543 :
+            texteTmp = (this->*getTextByLangFunc)(1211, os.str());
+            break;
+        case 544 :
+            texteTmp = (this->*getTextByLangFunc)(1212, os.str());
+            break;
+        case 545 :
+            texteTmp = (this->*getTextByLangFunc)(1213, os.str());
+            break;
+        case 546 :
+            texteTmp = (this->*getTextByLangFunc)(1214, os.str());
+            buffer=(this->*getTextByLangFunc)(1215, os.str());
+            break;
+        case 547 :
+            texteTmp = (this->*getTextByLangFunc)(1216, os.str());
+            break;
+        case 548 :
+            texteTmp = (this->*getTextByLangFunc)(1217, os.str());
+            break;
+        case 549 :
+            texteTmp = (this->*getTextByLangFunc)(1218, os.str());
+            break;
+        case 550 :
+            texteTmp = (this->*getTextByLangFunc)(1219, os.str());
+            break;
+        case 551 :
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0
+                && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())==0) idsuiv=552;
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0
+                && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>0) idsuiv=553;
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0
+                && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())==0) idsuiv=559;
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0
+                && (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>0) idsuiv=564;
+            texteTmp = (this->*getTextByLangFunc)(1220, os.str());
+            break;
+        case 552 :
+            texteTmp = (this->*getTextByLangFunc)(1221, os.str());
+            break;
+        case 553 :
+            texteTmp = (this->*getTextByLangFunc)(1222, os.str());
+            idsuiv=554;
+            break;
+        case 554 :
+            texteTmp = (this->*getTextByLangFunc)(1223, os.str());
+            idsuiv=555;
+            break;
+        case 555 :
+            int g;
+            int gmax;
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()>gpJeu->getJoueur()->getRubisMax()-2) {
+                id=557;
+                break;
+            }
+            g=gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon();
+            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/2);
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g*2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1224, os.str())+os2.str()+(this->*getTextByLangFunc)(1225, os.str());
+            idsuiv=558;
+            break;
+        case 556 :
+            g=gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon();
+            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/2);
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g*2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1226, os.str())+os2.str()+(this->*getTextByLangFunc)(1227, os.str());
+            idsuiv=76;
+            break;
+        case 557 :
+            texteTmp = (this->*getTextByLangFunc)(1228, os.str());
+            break;
+        case 558 :
+            texteTmp = (this->*getTextByLangFunc)(1229, os.str());
+            break;
+        case 559 :
+            texteTmp = (this->*getTextByLangFunc)(1230, os.str());
+            idsuiv=560;
+            break;
+        case 560 :
+            texteTmp = (this->*getTextByLangFunc)(1231, os.str());
+            idsuiv=561;
+            break;
+        case 561 :
+            if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()>gpJeu->getJoueur()->getRubisMax()-4) {
+                id=557;
+                break;
+            }
+            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
+            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/4);
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g*4);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1232, os.str())+os2.str()+(this->*getTextByLangFunc)(1233, os.str());
+            idsuiv=563;
+            break;
+        case 562 :
+            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
+            gmax = ((gpJeu->getJoueur()->getRubisMax()-(gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()))/4);
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g*4);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1234, os.str())+os2.str()+(this->*getTextByLangFunc)(1235, os.str());
+            idsuiv=76;
+            break;
+        case 563 :
+            texteTmp = (this->*getTextByLangFunc)(1236, os.str());
+            break;
+        case 564 :
+            texteTmp = (this->*getTextByLangFunc)(1237, os.str());
+            idsuiv=560;
+            break;
+        case 565 :
+            texteTmp = (this->*getTextByLangFunc)(1238, os.str());
+            idsuiv=554;
+            break;
+        case 566 :
+            texteTmp = (this->*getTextByLangFunc)(1239, os.str());
+            idsuiv=76;
+            break;
+        case 567 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==10
+                && gpJeu->getJoueur()->hasObjet(O_TROC2)==10
+                && gpJeu->getJoueur()->hasObjet(O_TROC3)==10
+                && gpJeu->getJoueur()->hasObjet(O_TROC4)==10) {
+                id=574;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==7
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=568;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==7
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=575;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==8
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=580;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==7
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=585;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1240, os.str());
+            buffer = (this->*getTextByLangFunc)(1241, os.str());
+            break;
+        case 568 :
+            texteTmp = (this->*getTextByLangFunc)(1242, os.str());
+            idsuiv=569;
+            break;
+        case 569 :
+            texteTmp = (this->*getTextByLangFunc)(1243, os.str());
+            idsuiv=571;
+            break;
+        case 570 :
+            texteTmp = (this->*getTextByLangFunc)(1244, os.str());
+            idsuiv=572;
+            break;
+        case 571 :
+            texteTmp = (this->*getTextByLangFunc)(1245, os.str());
+            break;
+        case 572 :
+            texteTmp = (this->*getTextByLangFunc)(1246, os.str());
+            break;
+        case 573 :
+            texteTmp = (this->*getTextByLangFunc)(1247, os.str());
+            break;
+        case 574 :
+            texteTmp = (this->*getTextByLangFunc)(1248, os.str());
+            break;
+        case 575 :
+            texteTmp = (this->*getTextByLangFunc)(1249, os.str());
+            idsuiv=576;
+            break;
+        case 576 :
+            texteTmp = (this->*getTextByLangFunc)(1250, os.str());
+            idsuiv=578;
+            break;
+        case 577 :
+            texteTmp = (this->*getTextByLangFunc)(1251, os.str());
+            idsuiv=572;
+            break;
+        case 578 :
+            texteTmp = (this->*getTextByLangFunc)(1252, os.str());
+            break;
+        case 579 :
+            texteTmp = (this->*getTextByLangFunc)(1253, os.str());
+            break;
+        case 580 :
+            texteTmp = (this->*getTextByLangFunc)(1254, os.str());
+            idsuiv=581;
+            break;
+        case 581 :
+            texteTmp = (this->*getTextByLangFunc)(1255, os.str());
+            idsuiv=583;
+            break;
+        case 582 :
+            texteTmp = (this->*getTextByLangFunc)(1256, os.str());
+            idsuiv=572;
+            break;
+        case 583 :
+            texteTmp = (this->*getTextByLangFunc)(1257, os.str());
+            break;
+        case 584 :
+            texteTmp = (this->*getTextByLangFunc)(1258, os.str());
+            break;
+        case 585 :
+            texteTmp = (this->*getTextByLangFunc)(1259, os.str());
+            idsuiv=586;
+            break;
+        case 586 :
+            texteTmp = (this->*getTextByLangFunc)(1260, os.str());
+            idsuiv=588;
+            break;
+        case 587 :
+            texteTmp = (this->*getTextByLangFunc)(1261, os.str());
+            idsuiv=572;
+            break;
+        case 588 :
+            texteTmp = (this->*getTextByLangFunc)(1262, os.str());
+            break;
+        case 589 :
+            if (gpJeu->getJoueur()->hasObjet(O_ENCYCL)) {
+                id=593;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1263, os.str());
+            idsuiv=590;
+            break;
+        case 590 :
+            texteTmp = (this->*getTextByLangFunc)(1264, os.str());
+            idsuiv=591;
+            break;
+#ifdef __vita__
+        case 591 :
+            texteTmp = (this->*getTextByLangFunc)(1265, os.str());
+            idsuiv=592;
+            break;
+#else
+        case 591 :
+            texteTmp = (this->*getTextByLangFunc)(1266, os.str());
+            idsuiv=592;
+            break;
+#endif
+        case 592 :
+            switch (gpJeu->getEpoque()) {
+            case T_PASSE :
+                os<<(this->*getTextByLangFunc)(1267, os.str());
+                break;
+            case T_PRESENT :
+                os<<(this->*getTextByLangFunc)(1268, os.str());
+                break;
+            case T_FUTUR :
+                os<<(this->*getTextByLangFunc)(1269, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1270, os.str())+os.str()+(this->*getTextByLangFunc)(1271, os.str());
+            break;
+        case 593 :
+            g = gpJeu->getJoueur()->getSolde();
+            if (g == 0) {
+                id=595;
+                break;
+            }
+            switch (gpJeu->getEpoque()) {
+            case T_PASSE :
+                os<<(g/4)<<(this->*getTextByLangFunc)(1272, os.str());
+                break;
+            case T_PRESENT :
+                os<<g<<(this->*getTextByLangFunc)(1273, os.str());
+                break;
+            case T_FUTUR :
+                os<<(g/2)<<(this->*getTextByLangFunc)(1274, os.str());
+                break;
+            }
+            if (gpJeu->getEpoque() == T_FUTUR
+                && gpJeu->getJoueur()->getGanonMax() == 0) {
+                id=1368;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1275, os.str())+os.str()+(this->*getTextByLangFunc)(1276, os.str());
+            break;
+        case 594 :
+            g = gpJeu->getJoueur()->getSolde();
+            switch (gpJeu->getEpoque()) {
+            case T_PASSE :
+                os<<(g/4)<<(this->*getTextByLangFunc)(1277, os.str());
+                break;
+            case T_PRESENT :
+                os<<g<<(this->*getTextByLangFunc)(1278, os.str());
+                break;
+            case T_FUTUR :
+                os<<(g/2)<<(this->*getTextByLangFunc)(1279, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1280, os.str())+os.str()+(this->*getTextByLangFunc)(1281, os.str());
+            break;
+        case 595 :
+            texteTmp = (this->*getTextByLangFunc)(1282, os.str());
+            break;
+        case 596 :
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<2) idsuiv=597;
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())==0
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>1) idsuiv=598;
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<2) idsuiv=603;
+            if ((gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece())>0
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>1) idsuiv=608;
+            texteTmp = (this->*getTextByLangFunc)(1283, os.str());
+            break;
+        case 597 :
+            texteTmp = (this->*getTextByLangFunc)(1284, os.str());
+            break;
+        case 598 :
+            texteTmp = (this->*getTextByLangFunc)(1285, os.str());
+            idsuiv=599;
+            break;
+        case 599 :
+            texteTmp = (this->*getTextByLangFunc)(1286, os.str());
+            idsuiv=600;
+            break;
+        case 600 :
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()==gpJeu->getJoueur()->getGanonMax()) {
+                id=557;
+                break;
+            }
+            g=gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis();
+            if (g%2 != 0) g--;
+            gmax = (gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))*2;
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g/2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1287, os.str())+os2.str()+(this->*getTextByLangFunc)(1288, os.str());
+            idsuiv=602;
+            break;
+        case 601 :
+            g=gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis();
+            if (g%2 != 0) g--;
+            gmax = (gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))*2;
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g/2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1289, os.str())+os2.str()+(this->*getTextByLangFunc)(1290, os.str());
+            idsuiv=76;
+            break;
+        case 602 :
+            texteTmp = (this->*getTextByLangFunc)(1291, os.str());
+            break;
+        case 603 :
+            texteTmp = (this->*getTextByLangFunc)(1292, os.str());
+            idsuiv=604;
+            break;
+        case 604 :
+            texteTmp = (this->*getTextByLangFunc)(1293, os.str());
+            idsuiv=605;
+            break;
+        case 605 :
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()>gpJeu->getJoueur()->getGanonMax()-2) {
+                id=557;
+                break;
+            }
+            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
+            gmax = ((gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))/2);
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g*2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1294, os.str())+os2.str()+(this->*getTextByLangFunc)(1295, os.str());
+            idsuiv=607;
+            break;
+        case 606 :
+            g=gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece();
+            gmax = ((gpJeu->getJoueur()->getGanonMax()-(gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()))/2);
+            if (g > gmax) g=gmax;
+            os << g;
+            os2 << (g*2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1296, os.str())+os2.str()+(this->*getTextByLangFunc)(1297, os.str());
+            idsuiv=76;
+            break;
+        case 607 :
+            texteTmp = (this->*getTextByLangFunc)(1298, os.str());
+            break;
+        case 608 :
+            texteTmp = (this->*getTextByLangFunc)(1299, os.str());
+            idsuiv=604;
+            break;
+        case 609 :
+            texteTmp = (this->*getTextByLangFunc)(1300, os.str());
+            idsuiv=599;
+            break;
+        case 610 :
+            texteTmp = (this->*getTextByLangFunc)(1301, os.str());
+            idsuiv=76;
+            break;
+        case 611 :
+            texteTmp = (this->*getTextByLangFunc)(1302, os.str());
+            break;
+        case 612 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>6) {
+                id=619;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==6
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=613;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1303, os.str());
+            buffer = (this->*getTextByLangFunc)(1304, os.str());
+            break;
+        case 613 :
+            texteTmp = (this->*getTextByLangFunc)(1305, os.str());
+            idsuiv=614;
+            break;
+        case 614 :
+            texteTmp = (this->*getTextByLangFunc)(1306, os.str());
+            idsuiv=616;
+            break;
+        case 615 :
+            texteTmp = (this->*getTextByLangFunc)(1307, os.str());
+            idsuiv=617;
+            break;
+        case 616 :
+            texteTmp = (this->*getTextByLangFunc)(1308, os.str());
+            break;
+        case 617 :
+            texteTmp = (this->*getTextByLangFunc)(1309, os.str());
+            break;
+        case 618 :
+            texteTmp = (this->*getTextByLangFunc)(1310, os.str());
+            break;
+        case 619 :
+            texteTmp = (this->*getTextByLangFunc)(1311, os.str());
+            break;
+        case 620 :
+            if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {
+                id=624;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1312, os.str());
+            idsuiv=621;
+            break;
+        case 621 :
+            texteTmp = (this->*getTextByLangFunc)(1313, os.str());
+            idsuiv=622;
+            break;
+        case 622 :
+            texteTmp = (this->*getTextByLangFunc)(1314, os.str());
+            break;
+        case 623 :
+            texteTmp = (this->*getTextByLangFunc)(1315, os.str());
+            break;
+        case 624 :
+            texteTmp = (this->*getTextByLangFunc)(1316, os.str());
+            break;
+        case 625 :
+            if (gpJeu->getJoueur()->hasObjet(O_GRAPPIN)) {
+                id=635;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1317, os.str());
+            idsuiv=626;
+            break;
+        case 626 :
+            texteTmp = (this->*getTextByLangFunc)(1318, os.str());
+            idsuiv=627;
+            break;
+        case 627 :
+            texteTmp = (this->*getTextByLangFunc)(1319, os.str());
+            idsuiv=628;
+            break;
+        case 628 :
+            texteTmp = (this->*getTextByLangFunc)(1320, os.str());
+            idsuiv=629;
+            break;
+        case 629 :
+            texteTmp = (this->*getTextByLangFunc)(1321, os.str());
+            idsuiv=630;
+            break;
+        case 630 :
+            texteTmp = (this->*getTextByLangFunc)(1322, os.str());
+            idsuiv=631;
+            break;
+        case 631 :
+            texteTmp = (this->*getTextByLangFunc)(1323, os.str());
+            idsuiv=632;
+            break;
+        case 632 :
+            texteTmp = (this->*getTextByLangFunc)(1324, os.str());
+            idsuiv=633;
+            break;
+        case 633 :
+            texteTmp = (this->*getTextByLangFunc)(1325, os.str());
+            break;
+        case 634 :
+            texteTmp = (this->*getTextByLangFunc)(1326, os.str());
+            break;
+        case 635 :
+            if (gpJeu->getJoueur()->getCoffre(3,29)) {
+                id=636;
+                if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {
+                    id=637;
+                    if (gpJeu->getJoueur()->hasObjet(O_CLE_TEMPS)) {
+                       id=638;
+                       if (gpJeu->getJoueur()->getAvancement()>SAGES_GROTTE) {
+                           id=639;
+                           if (gpJeu->getJoueur()->hasMelodie(1)) {
+                               id=640;
+                               texteTmp = (this->*getTextByLangFunc)(1332, os.str());
+                               break;
+                            }
+                            texteTmp = (this->*getTextByLangFunc)(1331, os.str());
+                            break;
+                       }
+                       texteTmp = (this->*getTextByLangFunc)(1330, os.str());
+                       break;
+                    }
+                    texteTmp = (this->*getTextByLangFunc)(1329, os.str());
                     break;
                 }
-                
-                texte = (this->*getTextByLangFunc)(1344, os.str()); 
+                texteTmp = (this->*getTextByLangFunc)(1328, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1327, os.str());
+            break;
+        case 636 :
+            if (gpJeu->getJoueur()->getTroc(M_POIVRON)>-1) {
+                id=637;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1328, os.str());
+            break;
+        case 637 :
+            if (gpJeu->getJoueur()->hasObjet(O_CLE_TEMPS)) {
+                id=638;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1329, os.str());
+            break;
+        case 638 :
+            if (gpJeu->getJoueur()->getAvancement()>SAGES_GROTTE) {
+                id=639;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1330, os.str());
+            break;
+        case 639 :
+            if (gpJeu->getJoueur()->hasMelodie(1)) {
+                id=640;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1331, os.str());
+            break;
+        case 640 :
+            texteTmp = (this->*getTextByLangFunc)(1332, os.str());
+            break;
+        case 641 :
+            if (!gpJeu->getJoueur()->hasObjet(O_ARC)) {
+                id=373;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<10) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1333, os.str());
+            break;
+        case 642 :
+            texteTmp = (this->*getTextByLangFunc)(1334, os.str());
+            break;
+        case 643 :
+            if (!gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {
+                id=372;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<15) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1335, os.str());
+            break;
+        case 644 :
+            texteTmp = (this->*getTextByLangFunc)(1336, os.str());
+            break;
+        case 645 :
+            if (gpJeu->getJoueur()->getVie() + gpJeu->getJoueur()->getBoostVie() >= gpJeu->getJoueur()->getVieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<4) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1337, os.str());
+            break;
+        case 646 :
+            texteTmp = (this->*getTextByLangFunc)(1338, os.str());
+            break;
+        case 647 :
+            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<8) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1339, os.str());
+            break;
+        case 648 :
+            texteTmp = (this->*getTextByLangFunc)(1340, os.str());
+            break;
+        case 649 :
+            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<16) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1341, os.str());
+            break;
+        case 650 :
+            texteTmp = (this->*getTextByLangFunc)(1342, os.str());
+            break;
+        case 651 :
+            if (gpJeu->getJoueur()->getGanonMax()>0) {
+                if (gpJeu->getJoueur()->getCafe()>-1) {
+                    id=653;
+                    break;
+                }
+
+                texteTmp = (this->*getTextByLangFunc)(1344, os.str());
                 idsuiv=653;
                 break;
             }
-            
-            texte = (this->*getTextByLangFunc)(1343, os.str()); 
+
+            texteTmp = (this->*getTextByLangFunc)(1343, os.str());
             break;
         case 652 :
             if (gpJeu->getJoueur()->getCafe()>-1) {
-                id=653; 
-                chercheText(); 
+                id=653;
                 break;
             }
-            
-            texte = (this->*getTextByLangFunc)(1344, os.str()); 
-            idsuiv=653; 
+
+            texteTmp = (this->*getTextByLangFunc)(1344, os.str());
+            idsuiv=653;
             break;
-        case 653 : 
-            if (gpJeu->getJoueur()->getChargeCafe()==-1 
-            && gpJeu->getMonde()->motifValue(6*16,8*16)==1005) {
+        case 653 :
+            if (gpJeu->getJoueur()->getChargeCafe()==-1
+                && gpJeu->getMonde()->motifValue(6*16,8*16)==1005) {
                 if (gpJeu->getJoueur()->getCafe()>1) {
-                    id=654+gpJeu->getJoueur()->getCafe(); 
-                    chercheText(); 
+                    id=654+gpJeu->getJoueur()->getCafe();
                     break;
                 }
 
                 id = 655;
-                texte = (this->*getTextByLangFunc)(1347, os.str());
+                 texteTmp = (this->*getTextByLangFunc)(1347, os.str());
                 break;
             }
 
             if (gpJeu->getJoueur()->getCafe()>=17) {
-                id=672; 
+                id=672;
                 if (gpJeu->getJoueur()->getGemme(173)) {
-                    id=673; 
-                    texte = (this->*getTextByLangFunc)(1365, os.str()); 
+                    id=673;
+                     texteTmp = (this->*getTextByLangFunc)(1365, os.str());
                     break;
                 }
-                
-                texte = (this->*getTextByLangFunc)(1364, os.str()); break;
+
+                 texteTmp = (this->*getTextByLangFunc)(1364, os.str());
+                break;
                 break;
             }
 
-            texte = (this->*getTextByLangFunc)(1345, os.str()); 
-            idsuiv=654; 
+            texteTmp = (this->*getTextByLangFunc)(1345, os.str());
+            idsuiv=654;
             break;
-        case 654 : texte = (this->*getTextByLangFunc)(1346, os.str()); break;
-        case 655 : 
+        case 654 :
+            texteTmp = (this->*getTextByLangFunc)(1346, os.str());
+            break;
+        case 655 :
             if (gpJeu->getJoueur()->getCafe()>1) {
-                id=654+gpJeu->getJoueur()->getCafe(); chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1347, os.str()); break;
-        case 656 : texte = (this->*getTextByLangFunc)(1348, os.str()); break;
-        case 657 : texte = (this->*getTextByLangFunc)(1349, os.str()); break;
-        case 658 : texte = (this->*getTextByLangFunc)(1350, os.str()); break;
-        case 659 : texte = (this->*getTextByLangFunc)(1351, os.str()); break;
-        case 660 : texte = (this->*getTextByLangFunc)(1352, os.str()); break;
-        case 661 : texte = (this->*getTextByLangFunc)(1353, os.str()); break;
-        case 662 : texte = (this->*getTextByLangFunc)(1354, os.str()); break;
-        case 663 : texte = (this->*getTextByLangFunc)(1355, os.str()); break;
-        case 664 : texte = (this->*getTextByLangFunc)(1356, os.str()); break;
-        case 665 : texte = (this->*getTextByLangFunc)(1357, os.str()); break;
-        case 666 : texte = (this->*getTextByLangFunc)(1358, os.str()); break;
-        case 667 : texte = (this->*getTextByLangFunc)(1359, os.str()); break;
-        case 668 : texte = (this->*getTextByLangFunc)(1360, os.str()); break;
-        case 669 : texte = (this->*getTextByLangFunc)(1361, os.str()); break;
-        case 670 : texte = (this->*getTextByLangFunc)(1362, os.str()); break;
-        case 671 : texte = (this->*getTextByLangFunc)(1363, os.str()); break;
-        case 672 : 
-            if (gpJeu->getJoueur()->getGemme(173)) {id=673; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1364, os.str()); break;
-        case 673 : texte = (this->*getTextByLangFunc)(1365, os.str()); break;
+                id=654+gpJeu->getJoueur()->getCafe();
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1347, os.str());
+            break;
+        case 656 :
+            texteTmp = (this->*getTextByLangFunc)(1348, os.str());
+            break;
+        case 657 :
+            texteTmp = (this->*getTextByLangFunc)(1349, os.str());
+            break;
+        case 658 :
+            texteTmp = (this->*getTextByLangFunc)(1350, os.str());
+            break;
+        case 659 :
+            texteTmp = (this->*getTextByLangFunc)(1351, os.str());
+            break;
+        case 660 :
+            texteTmp = (this->*getTextByLangFunc)(1352, os.str());
+            break;
+        case 661 :
+            texteTmp = (this->*getTextByLangFunc)(1353, os.str());
+            break;
+        case 662 :
+            texteTmp = (this->*getTextByLangFunc)(1354, os.str());
+            break;
+        case 663 :
+            texteTmp = (this->*getTextByLangFunc)(1355, os.str());
+            break;
+        case 664 :
+            texteTmp = (this->*getTextByLangFunc)(1356, os.str());
+            break;
+        case 665 :
+            texteTmp = (this->*getTextByLangFunc)(1357, os.str());
+            break;
+        case 666 :
+            texteTmp = (this->*getTextByLangFunc)(1358, os.str());
+            break;
+        case 667 :
+            texteTmp = (this->*getTextByLangFunc)(1359, os.str());
+            break;
+        case 668 :
+            texteTmp = (this->*getTextByLangFunc)(1360, os.str());
+            break;
+        case 669 :
+            texteTmp = (this->*getTextByLangFunc)(1361, os.str());
+            break;
+        case 670 :
+            texteTmp = (this->*getTextByLangFunc)(1362, os.str());
+            break;
+        case 671 :
+            texteTmp = (this->*getTextByLangFunc)(1363, os.str());
+            break;
+        case 672 :
+            if (gpJeu->getJoueur()->getGemme(173)) {
+                id=673;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1364, os.str());
+            break;
+        case 673 :
+            texteTmp = (this->*getTextByLangFunc)(1365, os.str());
+            break;
         case 674 :
-            if (gpJeu->getJoueur()->hasBouteille(0)!=1 
-            && gpJeu->getJoueur()->hasBouteille(1)!=1
-            && gpJeu->getJoueur()->hasBouteille(2)!=1
-            && gpJeu->getJoueur()->hasBouteille(3)!=1) {id=408; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1366, os.str()); 
-            idsuiv=675; break;
-        case 675 : texte = (this->*getTextByLangFunc)(1367, os.str()); idsuiv=678; break;
-        case 676 : texte = (this->*getTextByLangFunc)(1368, os.str()); 
+            if (gpJeu->getJoueur()->hasBouteille(0)!=1
+                && gpJeu->getJoueur()->hasBouteille(1)!=1
+                && gpJeu->getJoueur()->hasBouteille(2)!=1
+                && gpJeu->getJoueur()->hasBouteille(3)!=1) {
+                id=408;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1366, os.str());
+            idsuiv=675;
+            break;
+        case 675 :
+            texteTmp = (this->*getTextByLangFunc)(1367, os.str());
+            idsuiv=678;
+            break;
+        case 676 :
+            texteTmp = (this->*getTextByLangFunc)(1368, os.str());
             if (!gpJeu->getJoueur()->hasObjet(O_LANTERNE)) idsuiv=374;
-            else idsuiv=680; break;
-        case 677 : texte = (this->*getTextByLangFunc)(1369, os.str()); break;
-        case 678 : texte = (this->*getTextByLangFunc)(1370, os.str()); 
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<40) idsuiv=75; break;
-        case 679 : texte = (this->*getTextByLangFunc)(1371, os.str()); break;
-        case 680 : texte = (this->*getTextByLangFunc)(1372, os.str());
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<25) idsuiv=75; break;
-        case 681 : texte = (this->*getTextByLangFunc)(1373, os.str()); break;
-        case 682 : 
-            if (gpJeu->getJoueur()->getCoffre(15,14)) {id=683; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1374, os.str()); break;
+            else idsuiv=680;
+            break;
+        case 677 :
+            texteTmp = (this->*getTextByLangFunc)(1369, os.str());
+            break;
+        case 678 :
+            texteTmp = (this->*getTextByLangFunc)(1370, os.str());
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<40) idsuiv=75;
+            break;
+        case 679 :
+            texteTmp = (this->*getTextByLangFunc)(1371, os.str());
+            break;
+        case 680 :
+            texteTmp = (this->*getTextByLangFunc)(1372, os.str());
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<25) idsuiv=75;
+            break;
+        case 681 :
+            texteTmp = (this->*getTextByLangFunc)(1373, os.str());
+            break;
+        case 682 :
+            if (gpJeu->getJoueur()->getCoffre(15,14)) {
+                id=683;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1374, os.str());
+            break;
         case 683 :
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>=4) {id=685; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1375, os.str()); buffer = (this->*getTextByLangFunc)(1376, os.str()); break;
-        case 684 : texte = (this->*getTextByLangFunc)(1377, os.str()); break;
-        case 685 : texte = (this->*getTextByLangFunc)(1378, os.str()); break;
-        case 686 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>4) {id=693; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==4 
-            && gpJeu->getJoueur()->getObjet()==15) {id=687; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1379, os.str()); buffer = (this->*getTextByLangFunc)(1380, os.str()); break;
-        case 687 : texte = (this->*getTextByLangFunc)(1381, os.str()); idsuiv=688; break;
-        case 688 : texte = (this->*getTextByLangFunc)(1382, os.str()); idsuiv=690; break;
-        case 689 : texte = (this->*getTextByLangFunc)(1383, os.str()); idsuiv=691; break;
-        case 690 : texte = (this->*getTextByLangFunc)(1384, os.str()); break;
-        case 691 : texte = (this->*getTextByLangFunc)(1385, os.str()); break;
-        case 692 : texte = (this->*getTextByLangFunc)(1386, os.str()); break;
-        case 693 : texte = (this->*getTextByLangFunc)(1387, os.str()); break;
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>=4) {
+                id=685;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1375, os.str());
+            buffer = (this->*getTextByLangFunc)(1376, os.str());
+            break;
+        case 684 :
+            texteTmp = (this->*getTextByLangFunc)(1377, os.str());
+            break;
+        case 685 :
+            texteTmp = (this->*getTextByLangFunc)(1378, os.str());
+            break;
+        case 686 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>4) {
+                id=693;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==4
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=687;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1379, os.str());
+            buffer = (this->*getTextByLangFunc)(1380, os.str());
+            break;
+        case 687 :
+            texteTmp = (this->*getTextByLangFunc)(1381, os.str());
+            idsuiv=688;
+            break;
+        case 688 :
+            texteTmp = (this->*getTextByLangFunc)(1382, os.str());
+            idsuiv=690;
+            break;
+        case 689 :
+            texteTmp = (this->*getTextByLangFunc)(1383, os.str());
+            idsuiv=691;
+            break;
+        case 690 :
+            texteTmp = (this->*getTextByLangFunc)(1384, os.str());
+            break;
+        case 691 :
+            texteTmp = (this->*getTextByLangFunc)(1385, os.str());
+            break;
+        case 692 :
+            texteTmp = (this->*getTextByLangFunc)(1386, os.str());
+            break;
+        case 693 :
+            texteTmp = (this->*getTextByLangFunc)(1387, os.str());
+            break;
         case 694 :
-            if (gpJeu->getJoueur()->getGanonMax() > 0) {id=696; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1388, os.str()); buffer = (this->*getTextByLangFunc)(1389, os.str()); break;
-        case 695 : texte = (this->*getTextByLangFunc)(1390, os.str()); break;
-        case 696 : texte = (this->*getTextByLangFunc)(1391, os.str()); break;
-        case 697 : 
-            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())<2 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<4) idsuiv=698;
-            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())<2 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>3) idsuiv=699;
-            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>1 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<4) idsuiv=704;
-            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>1 
-            && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>3) idsuiv=709;
-            texte = (this->*getTextByLangFunc)(1392, os.str()); break;
-        case 698 : texte = (this->*getTextByLangFunc)(1393, os.str()); break;
-        case 699 : texte = (this->*getTextByLangFunc)(1394, os.str()); idsuiv=700; break;
-        case 700 : texte = (this->*getTextByLangFunc)(1395, os.str()); idsuiv=701; break;
-        case 701 : 
-            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()==gpJeu->getJoueur()->getPieceMax()) {id=557; chercheText();break;}
+            if (gpJeu->getJoueur()->getGanonMax() > 0) {
+                id=696;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1388, os.str());
+            buffer = (this->*getTextByLangFunc)(1389, os.str());
+            break;
+        case 695 :
+            texteTmp = (this->*getTextByLangFunc)(1390, os.str());
+            break;
+        case 696 :
+            texteTmp = (this->*getTextByLangFunc)(1391, os.str());
+            break;
+        case 697 :
+            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())<2
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<4) idsuiv=698;
+            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())<2
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>3) idsuiv=699;
+            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>1
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())<4) idsuiv=704;
+            if ((gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon())>1
+                && (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis())>3) idsuiv=709;
+            texteTmp = (this->*getTextByLangFunc)(1392, os.str());
+            break;
+        case 698 :
+            texteTmp = (this->*getTextByLangFunc)(1393, os.str());
+            break;
+        case 699 :
+            texteTmp = (this->*getTextByLangFunc)(1394, os.str());
+            idsuiv=700;
+            break;
+        case 700 :
+            texteTmp = (this->*getTextByLangFunc)(1395, os.str());
+            idsuiv=701;
+            break;
+        case 701 :
+            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()==gpJeu->getJoueur()->getPieceMax()) {
+                id=557;
+                break;
+            }
             g=gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis();
             while (g%4 != 0) g--;
             gmax = (gpJeu->getJoueur()->getPieceMax()-(gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()))*4;
             if (g > gmax) g=gmax;
-            os << g; os2 << (g/4);
-            texte = os.str()+(this->*getTextByLangFunc)(1396, os.str())+os2.str()+(this->*getTextByLangFunc)(1397, os.str()); idsuiv=703; break;
-        case 702 : 
+            os << g;
+            os2 << (g/4);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1396, os.str())+os2.str()+(this->*getTextByLangFunc)(1397, os.str());
+            idsuiv=703;
+            break;
+        case 702 :
             g=gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis();
             while (g%4 != 0) g--;
             gmax = (gpJeu->getJoueur()->getPieceMax()-(gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()))*4;
             if (g > gmax) g=gmax;
-            os << g; os2 << (g/4);
-            texte = os.str()+(this->*getTextByLangFunc)(1398, os.str())+os2.str()+(this->*getTextByLangFunc)(1399, os.str()); idsuiv=76; break;
-        case 703 : texte = (this->*getTextByLangFunc)(1400, os.str()); break;
-        case 704 : texte = (this->*getTextByLangFunc)(1401, os.str()); idsuiv=705; break;
-        case 705 : texte = (this->*getTextByLangFunc)(1402, os.str()); idsuiv=706; break;
-        case 706 : 
-            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()==gpJeu->getJoueur()->getPieceMax()) {id=557; chercheText();break;}
+            os << g;
+            os2 << (g/4);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1398, os.str())+os2.str()+(this->*getTextByLangFunc)(1399, os.str());
+            idsuiv=76;
+            break;
+        case 703 :
+            texteTmp = (this->*getTextByLangFunc)(1400, os.str());
+            break;
+        case 704 :
+            texteTmp = (this->*getTextByLangFunc)(1401, os.str());
+            idsuiv=705;
+            break;
+        case 705 :
+            texteTmp = (this->*getTextByLangFunc)(1402, os.str());
+            idsuiv=706;
+            break;
+        case 706 :
+            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()==gpJeu->getJoueur()->getPieceMax()) {
+                id=557;
+                break;
+            }
             g=gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon();
             if (g%2 != 0) g--;
             gmax = (gpJeu->getJoueur()->getPieceMax()-(gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()))*2;
             if (g > gmax) g=gmax;
-            os << g; os2 << (g/2);
-            texte = os.str()+(this->*getTextByLangFunc)(1403, os.str())+os2.str()+(this->*getTextByLangFunc)(1404, os.str()); idsuiv=708; break;
-        case 707 : 
+            os << g;
+            os2 << (g/2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1403, os.str())+os2.str()+(this->*getTextByLangFunc)(1404, os.str());
+            idsuiv=708;
+            break;
+        case 707 :
             g=gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon();
             if (g%2 != 0) g--;
             gmax = (gpJeu->getJoueur()->getPieceMax()-(gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()))*2;
             if (g > gmax) g=gmax;
-            os << g; os2 << (g/2);
-            texte = os.str()+(this->*getTextByLangFunc)(1405, os.str())+os2.str()+(this->*getTextByLangFunc)(1406, os.str()); idsuiv=76; break;
-        case 708 : texte = (this->*getTextByLangFunc)(1407, os.str()); break;
-        case 709 : texte = (this->*getTextByLangFunc)(1408, os.str()); idsuiv=700; break;
-        case 710 : texte = (this->*getTextByLangFunc)(1409, os.str()); idsuiv=705; break;
-        case 711 : texte = (this->*getTextByLangFunc)(1410, os.str()); idsuiv=76; break;
+            os << g;
+            os2 << (g/2);
+            texteTmp = os.str()+(this->*getTextByLangFunc)(1405, os.str())+os2.str()+(this->*getTextByLangFunc)(1406, os.str());
+            idsuiv=76;
+            break;
+        case 708 :
+            texteTmp = (this->*getTextByLangFunc)(1407, os.str());
+            break;
+        case 709 :
+            texteTmp = (this->*getTextByLangFunc)(1408, os.str());
+            idsuiv=700;
+            break;
+        case 710 :
+            texteTmp = (this->*getTextByLangFunc)(1409, os.str());
+            idsuiv=705;
+            break;
+        case 711 :
+            texteTmp = (this->*getTextByLangFunc)(1410, os.str());
+            idsuiv=76;
+            break;
         case 712 :
-            if (gpJeu->getJoueur()->getCoffre(15,22)) {id=717; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1411, os.str()); idsuiv=713; break;
-        case 713 : texte = (this->*getTextByLangFunc)(1412, os.str()); idsuiv=714; break;
-        case 714 : texte = (this->*getTextByLangFunc)(1413, os.str()); idsuiv=715; break;
-        case 715 : texte = (this->*getTextByLangFunc)(1414, os.str()); idsuiv=716; break;
-        case 716 : texte = (this->*getTextByLangFunc)(1415, os.str()); idsuiv=717; break;
-        case 717 : texte = (this->*getTextByLangFunc)(1416, os.str()); idsuiv=718; break;
-        case 718 : texte = (this->*getTextByLangFunc)(1417, os.str()); break;
-        case 719 : 
+            if (gpJeu->getJoueur()->getCoffre(15,22)) {
+                id=717;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1411, os.str());
+            idsuiv=713;
+            break;
+        case 713 :
+            texteTmp = (this->*getTextByLangFunc)(1412, os.str());
+            idsuiv=714;
+            break;
+        case 714 :
+            texteTmp = (this->*getTextByLangFunc)(1413, os.str());
+            idsuiv=715;
+            break;
+        case 715 :
+            texteTmp = (this->*getTextByLangFunc)(1414, os.str());
+            idsuiv=716;
+            break;
+        case 716 :
+            texteTmp = (this->*getTextByLangFunc)(1415, os.str());
+            idsuiv=717;
+            break;
+        case 717 :
+            texteTmp = (this->*getTextByLangFunc)(1416, os.str());
+            idsuiv=718;
+            break;
+        case 718 :
+            texteTmp = (this->*getTextByLangFunc)(1417, os.str());
+            break;
+        case 719 :
             if (gpJeu->getJoueur()->hasObjet(O_TROC1)>2
-            && gpJeu->getJoueur()->hasObjet(O_TROC2)>3
-            && gpJeu->getJoueur()->hasObjet(O_TROC3)>3) {id=726; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==2 
-            && gpJeu->getJoueur()->getObjet()==3) {id=720; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==3 
-            && gpJeu->getJoueur()->getObjet()==7) {id=727; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==3 
-            && gpJeu->getJoueur()->getObjet()==11) {id=733; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1418, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1419, os.str()); break;
-        case 720 : texte = (this->*getTextByLangFunc)(1420, os.str()); buffer = (this->*getTextByLangFunc)(1421, os.str()); idsuiv=721; break;
-        case 721 : texte = (this->*getTextByLangFunc)(1422, os.str()); idsuiv=723; break;
-        case 722 : texte = (this->*getTextByLangFunc)(1423, os.str()); idsuiv=724; break;
-        case 723 : texte = (this->*getTextByLangFunc)(1424, os.str()); break;
-        case 724 : texte = (this->*getTextByLangFunc)(1425, os.str()); break;
-        case 725 : texte = (this->*getTextByLangFunc)(1426, os.str()); break;
-        case 726 : texte = (this->*getTextByLangFunc)(1427, os.str()); break;
-        case 727 : texte = (this->*getTextByLangFunc)(1428, os.str()); idsuiv=728; break;
-        case 728 : texte = (this->*getTextByLangFunc)(1429, os.str()); idsuiv=730; break;
-        case 729 : texte = (this->*getTextByLangFunc)(1430, os.str()); idsuiv=731; break;
-        case 730 : texte = (this->*getTextByLangFunc)(1431, os.str()); break;
-        case 731 : texte = (this->*getTextByLangFunc)(1432, os.str()); break;
-        case 732 : texte = (this->*getTextByLangFunc)(1433, os.str()); break;
-        case 733 : texte = (this->*getTextByLangFunc)(1434, os.str()); idsuiv=734; break;
-        case 734 : texte = (this->*getTextByLangFunc)(1435, os.str()); idsuiv=736; break;
-        case 735 : texte = (this->*getTextByLangFunc)(1436, os.str()); idsuiv=737; break;
-        case 736 : texte = (this->*getTextByLangFunc)(1437, os.str()); break;
-        case 737 : texte = (this->*getTextByLangFunc)(1438, os.str()); break;
-        case 738 : texte = (this->*getTextByLangFunc)(1439, os.str()); break;
-        case 739 : 
-            if (gpJeu->getJoueur()->getEpee()>2) {id=748; chercheText();break;}
-            if (gpJeu->getJoueur()->getEpee()==0) {id=745; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1440, os.str()); idsuiv=740; break;
-        case 740 : texte = (this->*getTextByLangFunc)(1441, os.str()); idsuiv=742; break;
-        case 741 : texte = (this->*getTextByLangFunc)(1442, os.str()); idsuiv=743; break;
-        case 742 : texte = (this->*getTextByLangFunc)(1443, os.str()); break;
-        case 743 : texte = (this->*getTextByLangFunc)(1444, os.str()); break;
-        case 744 : texte = (this->*getTextByLangFunc)(1445, os.str()); break;
-        case 745 : texte = (this->*getTextByLangFunc)(1446, os.str()); break;
+                && gpJeu->getJoueur()->hasObjet(O_TROC2)>3
+                && gpJeu->getJoueur()->hasObjet(O_TROC3)>3) {
+                id=726;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==2
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=720;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==3
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=727;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==3
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=733;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1418, os.str());
+            buffer = (this->*getTextByLangFunc)(1419, os.str());
+            break;
+        case 720 :
+            texteTmp = (this->*getTextByLangFunc)(1420, os.str());
+            buffer = (this->*getTextByLangFunc)(1421, os.str());
+            idsuiv=721;
+            break;
+        case 721 :
+            texteTmp = (this->*getTextByLangFunc)(1422, os.str());
+            idsuiv=723;
+            break;
+        case 722 :
+            texteTmp = (this->*getTextByLangFunc)(1423, os.str());
+            idsuiv=724;
+            break;
+        case 723 :
+            texteTmp = (this->*getTextByLangFunc)(1424, os.str());
+            break;
+        case 724 :
+            texteTmp = (this->*getTextByLangFunc)(1425, os.str());
+            break;
+        case 725 :
+            texteTmp = (this->*getTextByLangFunc)(1426, os.str());
+            break;
+        case 726 :
+            texteTmp = (this->*getTextByLangFunc)(1427, os.str());
+            break;
+        case 727 :
+            texteTmp = (this->*getTextByLangFunc)(1428, os.str());
+            idsuiv=728;
+            break;
+        case 728 :
+            texteTmp = (this->*getTextByLangFunc)(1429, os.str());
+            idsuiv=730;
+            break;
+        case 729 :
+            texteTmp = (this->*getTextByLangFunc)(1430, os.str());
+            idsuiv=731;
+            break;
+        case 730 :
+            texteTmp = (this->*getTextByLangFunc)(1431, os.str());
+            break;
+        case 731 :
+            texteTmp = (this->*getTextByLangFunc)(1432, os.str());
+            break;
+        case 732 :
+            texteTmp = (this->*getTextByLangFunc)(1433, os.str());
+            break;
+        case 733 :
+            texteTmp = (this->*getTextByLangFunc)(1434, os.str());
+            idsuiv=734;
+            break;
+        case 734 :
+            texteTmp = (this->*getTextByLangFunc)(1435, os.str());
+            idsuiv=736;
+            break;
+        case 735 :
+            texteTmp = (this->*getTextByLangFunc)(1436, os.str());
+            idsuiv=737;
+            break;
+        case 736 :
+            texteTmp = (this->*getTextByLangFunc)(1437, os.str());
+            break;
+        case 737 :
+            texteTmp = (this->*getTextByLangFunc)(1438, os.str());
+            break;
+        case 738 :
+            texteTmp = (this->*getTextByLangFunc)(1439, os.str());
+            break;
+        case 739 :
+            if (gpJeu->getJoueur()->getEpee()>2) {
+                id=748;
+                break;
+            }
+            if (gpJeu->getJoueur()->getEpee()==0) {
+                id=745;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1440, os.str());
+            idsuiv=740;
+            break;
+        case 740 :
+            texteTmp = (this->*getTextByLangFunc)(1441, os.str());
+            idsuiv=742;
+            break;
+        case 741 :
+            texteTmp = (this->*getTextByLangFunc)(1442, os.str());
+            idsuiv=743;
+            break;
+        case 742 :
+            texteTmp = (this->*getTextByLangFunc)(1443, os.str());
+            break;
+        case 743 :
+            texteTmp = (this->*getTextByLangFunc)(1444, os.str());
+            break;
+        case 744 :
+            texteTmp = (this->*getTextByLangFunc)(1445, os.str());
+            break;
+        case 745 :
+            texteTmp = (this->*getTextByLangFunc)(1446, os.str());
+            break;
         case 746 :
-            if (gpJeu->getJoueur()->getEpee()) {id=748; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1447, os.str()); break;
-        case 747 : texte = (this->*getTextByLangFunc)(1448, os.str()); break;
-        case 748 : texte = (this->*getTextByLangFunc)(1449, os.str()); break;
-        case 749 : texte = (this->*getTextByLangFunc)(1450, os.str()); break;
-        case 750 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1451, os.str());
-            if (!gpJeu->getJoueur()->hasObjet(O_ARC)) {id=373; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<5) idsuiv=75; break;
-        case 751 : texte = (this->*getTextByLangFunc)(1452, os.str()); break;
-        case 752 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1453, os.str());
-            if (!gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {id=372; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<10) idsuiv=75; break;
-        case 753 : texte = (this->*getTextByLangFunc)(1454, os.str()); break;
-        case 754 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1455, os.str());
-            if (gpJeu->getJoueur()->getVie() + gpJeu->getJoueur()->getBoostVie() >= gpJeu->getJoueur()->getVieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<1) idsuiv=75; break;
-        case 755 : texte = (this->*getTextByLangFunc)(1456, os.str()); break;
-        case 756 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1457, os.str());
-            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<3) idsuiv=75; break;
-        case 757 : texte = (this->*getTextByLangFunc)(1458, os.str()); break;
-        case 758 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1459, os.str());
-            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {id=374; chercheText(); break;}
-            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<6) idsuiv=75; break;
-        case 759 : texte = (this->*getTextByLangFunc)(1460, os.str()); break;
-        case 760 : texte = (this->*getTextByLangFunc)(1461, os.str()); break;
-        case 761 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1462, os.str()); break;
-        case 762 : texte = (this->*getTextByLangFunc)(1463, os.str()); break;
+            if (gpJeu->getJoueur()->getEpee()) {
+                id=748;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1447, os.str());
+            break;
+        case 747 :
+            texteTmp = (this->*getTextByLangFunc)(1448, os.str());
+            break;
+        case 748 :
+            texteTmp = (this->*getTextByLangFunc)(1449, os.str());
+            break;
+        case 749 :
+            texteTmp = (this->*getTextByLangFunc)(1450, os.str());
+            break;
+        case 750 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1451, os.str());
+            if (!gpJeu->getJoueur()->hasObjet(O_ARC)) {
+                id=373;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<5) idsuiv=75;
+            break;
+        case 751 :
+            texteTmp = (this->*getTextByLangFunc)(1452, os.str());
+            break;
+        case 752 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1453, os.str());
+            if (!gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {
+                id=372;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<10) idsuiv=75;
+            break;
+        case 753 :
+            texteTmp = (this->*getTextByLangFunc)(1454, os.str());
+            break;
+        case 754 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1455, os.str());
+            if (gpJeu->getJoueur()->getVie() + gpJeu->getJoueur()->getBoostVie() >= gpJeu->getJoueur()->getVieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<1) idsuiv=75;
+            break;
+        case 755 :
+            texteTmp = (this->*getTextByLangFunc)(1456, os.str());
+            break;
+        case 756 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<3) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1457, os.str());
+            break;
+        case 757 :
+            texteTmp = (this->*getTextByLangFunc)(1458, os.str());
+            break;
+        case 758 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getJoueur()->getMagie() + gpJeu->getJoueur()->getBoostMagie() >= gpJeu->getJoueur()->getMagieMax()) {
+                id=374;
+                break;
+            }
+            else if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<6) idsuiv=75;
+            texteTmp = (this->*getTextByLangFunc)(1459, os.str());
+            break;
+        case 759 :
+            texteTmp = (this->*getTextByLangFunc)(1460, os.str());
+            break;
+        case 760 :
+            texteTmp = (this->*getTextByLangFunc)(1461, os.str());
+            break;
+        case 761 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1462, os.str());
+            break;
+        case 762 :
+            texteTmp = (this->*getTextByLangFunc)(1463, os.str());
+            break;
         case 763 :
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            if (gpJeu->getJoueur()->hasBouteille(0)!=1 
-            && gpJeu->getJoueur()->hasBouteille(1)!=1
-            && gpJeu->getJoueur()->hasBouteille(2)!=1
-            && gpJeu->getJoueur()->hasBouteille(3)!=1) {id=408; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1464, os.str()); 
-            idsuiv=764; break;
-        case 764 : texte = (this->*getTextByLangFunc)(1465, os.str()); idsuiv=767; break;
-        case 765 : texte = (this->*getTextByLangFunc)(1466, os.str()); 
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasBouteille(0)!=1
+                && gpJeu->getJoueur()->hasBouteille(1)!=1
+                && gpJeu->getJoueur()->hasBouteille(2)!=1
+                && gpJeu->getJoueur()->hasBouteille(3)!=1) {
+                id=408;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1464, os.str());
+            idsuiv=764;
+            break;
+        case 764 :
+            texteTmp = (this->*getTextByLangFunc)(1465, os.str());
+            idsuiv=767;
+            break;
+        case 765 :
+            texteTmp = (this->*getTextByLangFunc)(1466, os.str());
             if (!gpJeu->getJoueur()->hasObjet(O_LANTERNE)) idsuiv=374;
-            else idsuiv=769; break;
-        case 766 : texte = (this->*getTextByLangFunc)(1467, os.str()); break;
-        case 767 : texte = (this->*getTextByLangFunc)(1468, os.str()); 
-            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<15) idsuiv=75; break;
-        case 768 : texte = (this->*getTextByLangFunc)(1469, os.str()); break;
-        case 769 : texte = (this->*getTextByLangFunc)(1470, os.str());
-            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<10) idsuiv=75; break;
-        case 770 : texte = (this->*getTextByLangFunc)(1471, os.str()); break;
-        case 771 : texte = (this->*getTextByLangFunc)(1472, os.str()); break;
-        case 772 : texte = (this->*getTextByLangFunc)(1473, os.str()); break;
+            else idsuiv=769;
+            break;
+        case 766 :
+            texteTmp = (this->*getTextByLangFunc)(1467, os.str());
+            break;
+        case 767 :
+            texteTmp = (this->*getTextByLangFunc)(1468, os.str());
+            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<15) idsuiv=75;
+            break;
+        case 768 :
+            texteTmp = (this->*getTextByLangFunc)(1469, os.str());
+            break;
+        case 769 :
+            texteTmp = (this->*getTextByLangFunc)(1470, os.str());
+            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<10) idsuiv=75;
+            break;
+        case 770 :
+            texteTmp = (this->*getTextByLangFunc)(1471, os.str());
+            break;
+        case 771 :
+            texteTmp = (this->*getTextByLangFunc)(1472, os.str());
+            break;
+        case 772 :
+            texteTmp = (this->*getTextByLangFunc)(1473, os.str());
+            break;
         case 773 :
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1474, os.str()); idsuiv=774; break; 
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1474, os.str());
+            idsuiv=774;
+            break;
         case 774 :
-            texte =(this->*getTextByLangFunc)(1475, os.str());
-            buffer = (this->*getTextByLangFunc)(1476, os.str()); break;
-        case 775 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1477, os.str()); break;
-        case 776 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1478, os.str()); break;
+            texteTmp =(this->*getTextByLangFunc)(1475, os.str());
+            buffer = (this->*getTextByLangFunc)(1476, os.str());
+            break;
+        case 775 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1477, os.str());
+            break;
+        case 776 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1478, os.str());
+            break;
         case 777 :
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1479, os.str()); break;
-        case 778 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>5) {id=785; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==5 
-            && gpJeu->getJoueur()->getObjet()==15) {id=779; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1480, os.str()); break;
-        case 779 : texte = (this->*getTextByLangFunc)(1481, os.str()); idsuiv=780; break;
-        case 780 : texte = (this->*getTextByLangFunc)(1482, os.str()); idsuiv=782; break;
-        case 781 : texte = (this->*getTextByLangFunc)(1483, os.str()); idsuiv=783; break;
-        case 782 : texte = (this->*getTextByLangFunc)(1484, os.str()); break;
-        case 783 : texte = (this->*getTextByLangFunc)(1485, os.str()); break;
-        case 784 : texte = (this->*getTextByLangFunc)(1486, os.str()); break;
-        case 785 : texte = (this->*getTextByLangFunc)(1487, os.str()); break;
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1479, os.str());
+            break;
+        case 778 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>5) {
+                id=785;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==5
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=779;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1480, os.str());
+            break;
+        case 779 :
+            texteTmp = (this->*getTextByLangFunc)(1481, os.str());
+            idsuiv=780;
+            break;
+        case 780 :
+            texteTmp = (this->*getTextByLangFunc)(1482, os.str());
+            idsuiv=782;
+            break;
+        case 781 :
+            texteTmp = (this->*getTextByLangFunc)(1483, os.str());
+            idsuiv=783;
+            break;
+        case 782 :
+            texteTmp = (this->*getTextByLangFunc)(1484, os.str());
+            break;
+        case 783 :
+            texteTmp = (this->*getTextByLangFunc)(1485, os.str());
+            break;
+        case 784 :
+            texteTmp = (this->*getTextByLangFunc)(1486, os.str());
+            break;
+        case 785 :
+            texteTmp = (this->*getTextByLangFunc)(1487, os.str());
+            break;
         case 786 :
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1488, os.str()); break;
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1488, os.str());
+            break;
         case 787 :
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            if (gpJeu->getJoueur()->getCoffre(15,23)<3) {id=788; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1489, os.str()); break;
-        case 788 : 
-            texte = (this->*getTextByLangFunc)(1490, os.str()); idsuiv=789; break;
-        case 789 : 
-            texte = (this->*getTextByLangFunc)(1491, os.str());
-            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<1) idsuiv=75; break;
-        case 790 : texte = (this->*getTextByLangFunc)(1492, os.str()); idsuiv=76; break;
-        case 791 : 
-            if (gpJeu->getJoueur()->getCoffre(15,23)>0) {id=792; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1493, os.str()); break;
-        case 792 : 
-            if (gpJeu->getJoueur()->getCoffre(15,23)>1) {id=793; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1494, os.str()); break;
-        case 793 : texte = (this->*getTextByLangFunc)(1495, os.str()); break;
-        case 794 : texte = (this->*getTextByLangFunc)(1496, os.str()); break;
-        case 795 : texte = (this->*getTextByLangFunc)(1497, os.str()); break;
-        case 796 : texte = (this->*getTextByLangFunc)(1498, os.str()); break;
-        case 797 : texte = (this->*getTextByLangFunc)(1499, os.str()); break;
-        case 798 : texte = (this->*getTextByLangFunc)(1500, os.str()); break;
-        case 799 : texte = (this->*getTextByLangFunc)(1501, os.str()); break;
-        case 800 : texte = (this->*getTextByLangFunc)(1502, os.str()); break;
-        case 801 : texte = (this->*getTextByLangFunc)(1503, os.str()); idsuiv=802; break;
-        case 802 : texte = (this->*getTextByLangFunc)(1504, os.str()); idsuiv=803; break;
-        case 803 : texte = (this->*getTextByLangFunc)(1505, os.str()); idsuiv=804; break;
-        case 804 : texte = (this->*getTextByLangFunc)(1506, os.str()); idsuiv=805; break;
-        case 805 : texte = (this->*getTextByLangFunc)(1507, os.str()); idsuiv=806; break;
-        case 806 : texte = (this->*getTextByLangFunc)(1508, os.str()); break;
-        case 807 : 
-            if (gpJeu->getJoueur()->getGemme(178)) {id=816; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1509, os.str()); idsuiv=808; break;
-        case 808 : 
-
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(15,23)<3) {
+                id=788;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1489, os.str());
+            break;
+        case 788 :
+            texteTmp = (this->*getTextByLangFunc)(1490, os.str());
+            idsuiv=789;
+            break;
+        case 789 :
+            texteTmp = (this->*getTextByLangFunc)(1491, os.str());
+            if (gpJeu->getJoueur()->getPiece() + gpJeu->getJoueur()->getBoostPiece()<1) idsuiv=75;
+            break;
+        case 790 :
+            texteTmp = (this->*getTextByLangFunc)(1492, os.str());
+            idsuiv=76;
+            break;
+        case 791 :
+            if (gpJeu->getJoueur()->getCoffre(15,23)>0) {
+                id=792;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1493, os.str());
+            break;
+        case 792 :
+            if (gpJeu->getJoueur()->getCoffre(15,23)>1) {
+                id=793;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1494, os.str());
+            break;
+        case 793 :
+            texteTmp = (this->*getTextByLangFunc)(1495, os.str());
+            break;
+        case 794 :
+            texteTmp = (this->*getTextByLangFunc)(1496, os.str());
+            break;
+        case 795 :
+            texteTmp = (this->*getTextByLangFunc)(1497, os.str());
+            break;
+        case 796 :
+            texteTmp = (this->*getTextByLangFunc)(1498, os.str());
+            break;
+        case 797 :
+            texteTmp = (this->*getTextByLangFunc)(1499, os.str());
+            break;
+        case 798 :
+            texteTmp = (this->*getTextByLangFunc)(1500, os.str());
+            break;
+        case 799 :
+            texteTmp = (this->*getTextByLangFunc)(1501, os.str());
+            break;
+        case 800 :
+            texteTmp = (this->*getTextByLangFunc)(1502, os.str());
+            break;
+        case 801 :
+            texteTmp = (this->*getTextByLangFunc)(1503, os.str());
+            idsuiv=802;
+            break;
+        case 802 :
+            texteTmp = (this->*getTextByLangFunc)(1504, os.str());
+            idsuiv=803;
+            break;
+        case 803 :
+            texteTmp = (this->*getTextByLangFunc)(1505, os.str());
+            idsuiv=804;
+            break;
+        case 804 :
+            texteTmp = (this->*getTextByLangFunc)(1506, os.str());
+            idsuiv=805;
+            break;
+        case 805 :
+            texteTmp = (this->*getTextByLangFunc)(1507, os.str());
+            idsuiv=806;
+            break;
+        case 806 :
+            texteTmp = (this->*getTextByLangFunc)(1508, os.str());
+            break;
+        case 807 :
+            if (gpJeu->getJoueur()->getGemme(178)) {
+                id=816;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1509, os.str());
+            idsuiv=808;
+            break;
+        case 808 :
             // Quête des loups
             g=gpJeu->getJoueur()->nbLoups();
             if (g>=1) {
                 if (g>=2) {
                     if (g>=50) {
-                        if (g>=80) {
+                       if (g>=80) {
                             if (g>=100) {
-                                if (g>100) {
-                                    texte = (this->*getTextByLangFunc)(1519, os.str()); 
-                                    idsuiv=815; 
-                                    break;
-                                }
+                               if (g>100) {
+                                   texteTmp = (this->*getTextByLangFunc)(1519, os.str());
+                                   idsuiv=815;
+                                   break;
+                               }
 
-                                texte = (this->*getTextByLangFunc)(1518, os.str()); 
-                                break;
+                               texteTmp = (this->*getTextByLangFunc)(1518, os.str());
+                               break;
                             }
                             os << g;
-                            texte = (this->*getTextByLangFunc)(1516, os.str())+os.str()+(this->*getTextByLangFunc)(1517, os.str()); 
+                            texteTmp = (this->*getTextByLangFunc)(1516, os.str())+os.str()+(this->*getTextByLangFunc)(1517, os.str());
                             break;
-                        }
-                        os << g;
-                        texte = (this->*getTextByLangFunc)(1514, os.str())+os.str()+(this->*getTextByLangFunc)(1515, os.str());
-                        break;
+                       }
+                       os << g;
+                       texteTmp = (this->*getTextByLangFunc)(1514, os.str())+os.str()+(this->*getTextByLangFunc)(1515, os.str());
+                       break;
                     }
                     os << g;
-                    texte = (this->*getTextByLangFunc)(1512, os.str())+os.str()+(this->*getTextByLangFunc)(1513, os.str()); 
+                    texteTmp = (this->*getTextByLangFunc)(1512, os.str())+os.str()+(this->*getTextByLangFunc)(1513, os.str());
                     break;
                 }
 
-                texte = (this->*getTextByLangFunc)(1511, os.str());
+                texteTmp = (this->*getTextByLangFunc)(1511, os.str());
                 break;
             }
 
-            texte = (this->*getTextByLangFunc)(1510, os.str()); 
+            texteTmp = (this->*getTextByLangFunc)(1510, os.str());
             break;
-        case 809 : 
+        case 809 :
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>=2) {id=810; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1511, os.str()); break;
-        case 810 : 
+            if (g>=2) {
+                id=810;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1511, os.str());
+            break;
+        case 810 :
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>=50) {id=811; chercheText(); break;}
+            if (g>=50) {
+                id=811;
+                break;
+            }
             os << g;
-            texte = (this->*getTextByLangFunc)(1512, os.str())+os.str()+(this->*getTextByLangFunc)(1513, os.str()); break;
-        case 811 : 
+            texteTmp = (this->*getTextByLangFunc)(1512, os.str())+os.str()+(this->*getTextByLangFunc)(1513, os.str());
+            break;
+        case 811 :
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>=80) {id=812; chercheText(); break;}
+            if (g>=80) {
+                id=812;
+                break;
+            }
             os << g;
-            texte = (this->*getTextByLangFunc)(1514, os.str())+os.str()+(this->*getTextByLangFunc)(1515, os.str()); break;
-        case 812 : 
+            texteTmp = (this->*getTextByLangFunc)(1514, os.str())+os.str()+(this->*getTextByLangFunc)(1515, os.str());
+            break;
+        case 812 :
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>=100) {id=813; chercheText(); break;}
+            if (g>=100) {
+                id=813;
+                break;
+            }
             os << g;
-            texte = (this->*getTextByLangFunc)(1516, os.str())+os.str()+(this->*getTextByLangFunc)(1517, os.str()); break;
-        case 813 : 
+            texteTmp = (this->*getTextByLangFunc)(1516, os.str())+os.str()+(this->*getTextByLangFunc)(1517, os.str());
+            break;
+        case 813 :
             g=gpJeu->getJoueur()->nbLoups();
-            if (g>100) {id=814; chercheText(); break;}
-            texte = (this->*getTextByLangFunc)(1518, os.str()); break;
-        case 814 : 
-            texte = (this->*getTextByLangFunc)(1519, os.str()); idsuiv=815; break;
-        case 815 : texte = (this->*getTextByLangFunc)(1520, os.str()); break;
-        case 816 : texte = (this->*getTextByLangFunc)(1521, os.str()); break;
-        case 817 : texte = (this->*getTextByLangFunc)(1522, os.str()); break;
-        case 818 : texte = (this->*getTextByLangFunc)(1523, os.str()); break;
-        case 819 : texte = (this->*getTextByLangFunc)(1524, os.str()); break;
-        case 820 : texte = (this->*getTextByLangFunc)(1525, os.str()); break;
-        case 821 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>5) {id=828; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==5 
-            && gpJeu->getJoueur()->getObjet()==7) {id=822; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1526, os.str()); break;
-        case 822 : texte = (this->*getTextByLangFunc)(1527, os.str()); idsuiv=823; break;
-        case 823 : texte = (this->*getTextByLangFunc)(1528, os.str()); idsuiv=825; break;
-        case 824 : texte = (this->*getTextByLangFunc)(1529, os.str()); idsuiv=826; break;
-        case 825 : texte = (this->*getTextByLangFunc)(1530, os.str()); break;
-        case 826 : texte = (this->*getTextByLangFunc)(1531, os.str()); break;
-        case 827 : texte = (this->*getTextByLangFunc)(1532, os.str()); break;
-        case 828 : texte = (this->*getTextByLangFunc)(1533, os.str()); break;
-        case 829 : texte = (this->*getTextByLangFunc)(1534, os.str()); idsuiv=830; break;
-        case 830 : texte = (this->*getTextByLangFunc)(1535, os.str()); buffer = (this->*getTextByLangFunc)(1536, os.str()); break;
-        case 831 : texte = (this->*getTextByLangFunc)(1537, os.str()); break;
-        case 832 : 
-            if (gpJeu->getJoueur()->getCoffre(15,26)) {id=839; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==6 
-            && gpJeu->getJoueur()->getObjet()==3) {id=833; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1538, os.str()); break;
-        case 833 : texte = (this->*getTextByLangFunc)(1539, os.str()); idsuiv=834; break;
-        case 834 : texte = (this->*getTextByLangFunc)(1540, os.str()); idsuiv=836; break;
-        case 835 : texte = (this->*getTextByLangFunc)(1541, os.str()); idsuiv=837; break;
-        case 836 : texte = (this->*getTextByLangFunc)(1542, os.str()); break;
-        case 837 : texte = (this->*getTextByLangFunc)(1543, os.str()); idsuiv=834; break;
-        case 838 : texte = (this->*getTextByLangFunc)(1544, os.str()); break;
-        case 839 : texte = (this->*getTextByLangFunc)(1545, os.str()); break;
-        case 840 : texte = (this->*getTextByLangFunc)(1546, os.str()); break;
-        case 841 : texte = (this->*getTextByLangFunc)(1547, os.str());
-            buffer = (this->*getTextByLangFunc)(1548, os.str()); break;
-        case 842 : texte = (this->*getTextByLangFunc)(1549, os.str()); break;
-        case 843 : texte = (this->*getTextByLangFunc)(1550, os.str()); break;
-        case 844 : texte = (this->*getTextByLangFunc)(1551, os.str()); idsuiv=845; break;
-        case 845 : texte = (this->*getTextByLangFunc)(1552, os.str()); idsuiv=846; break;
-        case 846 : texte = (this->*getTextByLangFunc)(1553, os.str()); break;
-        case 847 : texte = (this->*getTextByLangFunc)(1554, os.str()); idsuiv=848; break;
-        case 848 : texte = (this->*getTextByLangFunc)(1555, os.str()); idsuiv=849; break;
-        case 849 : texte = (this->*getTextByLangFunc)(1556, os.str()); break;
-        case 850 : texte = (this->*getTextByLangFunc)(1557, os.str()); idsuiv=851; break; 
-        case 851 : texte = (this->*getTextByLangFunc)(1558, os.str()); break;
-        case 852 : texte = (this->*getTextByLangFunc)(1559, os.str()); break;
-        case 853 : 
-            if (gpJeu->getJoueur()->getGemme(182)) {id=854; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>0) {id=855; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1560, os.str()); break;
-        case 854 : texte = (this->*getTextByLangFunc)(1561, os.str()); break;
-        case 855 : texte = (this->*getTextByLangFunc)(1562, os.str()); idsuiv=856; break;
-        case 856 : texte = (this->*getTextByLangFunc)(1563, os.str()); break;
-        case 857 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>4) {id=864; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==4 
-            && gpJeu->getJoueur()->getObjet()==3) {id=858; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1564, os.str()); break;
-        case 858 : texte = (this->*getTextByLangFunc)(1565, os.str()); idsuiv=859; break;
-        case 859 : texte = (this->*getTextByLangFunc)(1566, os.str()); idsuiv=861; break;
-        case 860 : texte = (this->*getTextByLangFunc)(1567, os.str()); idsuiv=862; break;
-        case 861 : texte = (this->*getTextByLangFunc)(1568, os.str()); break;
-        case 862 : texte = (this->*getTextByLangFunc)(1569, os.str()); break;
-        case 863 : texte = (this->*getTextByLangFunc)(1570, os.str()); break;
-        case 864 : texte = (this->*getTextByLangFunc)(1571, os.str()); break;
-        case 865 : texte = (this->*getTextByLangFunc)(1572, os.str()); break;
+            if (g>100) {
+                id=814;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1518, os.str());
+            break;
+        case 814 :
+            texteTmp = (this->*getTextByLangFunc)(1519, os.str());
+            idsuiv=815;
+            break;
+        case 815 :
+            texteTmp = (this->*getTextByLangFunc)(1520, os.str());
+            break;
+        case 816 :
+            texteTmp = (this->*getTextByLangFunc)(1521, os.str());
+            break;
+        case 817 :
+            texteTmp = (this->*getTextByLangFunc)(1522, os.str());
+            break;
+        case 818 :
+            texteTmp = (this->*getTextByLangFunc)(1523, os.str());
+            break;
+        case 819 :
+            texteTmp = (this->*getTextByLangFunc)(1524, os.str());
+            break;
+        case 820 :
+            texteTmp = (this->*getTextByLangFunc)(1525, os.str());
+            break;
+        case 821 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)>5) {
+                id=828;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC2)==5
+                && gpJeu->getJoueur()->getObjet()==7) {
+                id=822;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1526, os.str());
+            break;
+        case 822 :
+            texteTmp = (this->*getTextByLangFunc)(1527, os.str());
+            idsuiv=823;
+            break;
+        case 823 :
+            texteTmp = (this->*getTextByLangFunc)(1528, os.str());
+            idsuiv=825;
+            break;
+        case 824 :
+            texteTmp = (this->*getTextByLangFunc)(1529, os.str());
+            idsuiv=826;
+            break;
+        case 825 :
+            texteTmp = (this->*getTextByLangFunc)(1530, os.str());
+            break;
+        case 826 :
+            texteTmp = (this->*getTextByLangFunc)(1531, os.str());
+            break;
+        case 827 :
+            texteTmp = (this->*getTextByLangFunc)(1532, os.str());
+            break;
+        case 828 :
+            texteTmp = (this->*getTextByLangFunc)(1533, os.str());
+            break;
+        case 829 :
+            texteTmp = (this->*getTextByLangFunc)(1534, os.str());
+            idsuiv=830;
+            break;
+        case 830 :
+            texteTmp = (this->*getTextByLangFunc)(1535, os.str());
+            buffer = (this->*getTextByLangFunc)(1536, os.str());
+            break;
+        case 831 :
+            texteTmp = (this->*getTextByLangFunc)(1537, os.str());
+            break;
+        case 832 :
+            if (gpJeu->getJoueur()->getCoffre(15,26)) {
+                id=839;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==6
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=833;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1538, os.str());
+            break;
+        case 833 :
+            texteTmp = (this->*getTextByLangFunc)(1539, os.str());
+            idsuiv=834;
+            break;
+        case 834 :
+            texteTmp = (this->*getTextByLangFunc)(1540, os.str());
+            idsuiv=836;
+            break;
+        case 835 :
+            texteTmp = (this->*getTextByLangFunc)(1541, os.str());
+            idsuiv=837;
+            break;
+        case 836 :
+            texteTmp = (this->*getTextByLangFunc)(1542, os.str());
+            break;
+        case 837 :
+            texteTmp = (this->*getTextByLangFunc)(1543, os.str());
+            idsuiv=834;
+            break;
+        case 838 :
+            texteTmp = (this->*getTextByLangFunc)(1544, os.str());
+            break;
+        case 839 :
+            texteTmp = (this->*getTextByLangFunc)(1545, os.str());
+            break;
+        case 840 :
+            texteTmp = (this->*getTextByLangFunc)(1546, os.str());
+            break;
+        case 841 :
+            texteTmp = (this->*getTextByLangFunc)(1547, os.str());
+            buffer = (this->*getTextByLangFunc)(1548, os.str());
+            break;
+        case 842 :
+            texteTmp = (this->*getTextByLangFunc)(1549, os.str());
+            break;
+        case 843 :
+            texteTmp = (this->*getTextByLangFunc)(1550, os.str());
+            break;
+        case 844 :
+            texteTmp = (this->*getTextByLangFunc)(1551, os.str());
+            idsuiv=845;
+            break;
+        case 845 :
+            texteTmp = (this->*getTextByLangFunc)(1552, os.str());
+            idsuiv=846;
+            break;
+        case 846 :
+            texteTmp = (this->*getTextByLangFunc)(1553, os.str());
+            break;
+        case 847 :
+            texteTmp = (this->*getTextByLangFunc)(1554, os.str());
+            idsuiv=848;
+            break;
+        case 848 :
+            texteTmp = (this->*getTextByLangFunc)(1555, os.str());
+            idsuiv=849;
+            break;
+        case 849 :
+            texteTmp = (this->*getTextByLangFunc)(1556, os.str());
+            break;
+        case 850 :
+            texteTmp = (this->*getTextByLangFunc)(1557, os.str());
+            idsuiv=851;
+            break;
+        case 851 :
+            texteTmp = (this->*getTextByLangFunc)(1558, os.str());
+            break;
+        case 852 :
+            texteTmp = (this->*getTextByLangFunc)(1559, os.str());
+            break;
+        case 853 :
+            if (gpJeu->getJoueur()->getGemme(182)) {
+                id=854;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>0) {
+                id=855;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1560, os.str());
+            break;
+        case 854 :
+            texteTmp = (this->*getTextByLangFunc)(1561, os.str());
+            break;
+        case 855 :
+            texteTmp = (this->*getTextByLangFunc)(1562, os.str());
+            idsuiv=856;
+            break;
+        case 856 :
+            texteTmp = (this->*getTextByLangFunc)(1563, os.str());
+            break;
+        case 857 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>4) {
+                id=864;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==4
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=858;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1564, os.str());
+            break;
+        case 858 :
+            texteTmp = (this->*getTextByLangFunc)(1565, os.str());
+            idsuiv=859;
+            break;
+        case 859 :
+            texteTmp = (this->*getTextByLangFunc)(1566, os.str());
+            idsuiv=861;
+            break;
+        case 860 :
+            texteTmp = (this->*getTextByLangFunc)(1567, os.str());
+            idsuiv=862;
+            break;
+        case 861 :
+            texteTmp = (this->*getTextByLangFunc)(1568, os.str());
+            break;
+        case 862 :
+            texteTmp = (this->*getTextByLangFunc)(1569, os.str());
+            break;
+        case 863 :
+            texteTmp = (this->*getTextByLangFunc)(1570, os.str());
+            break;
+        case 864 :
+            texteTmp = (this->*getTextByLangFunc)(1571, os.str());
+            break;
+        case 865 :
+            texteTmp = (this->*getTextByLangFunc)(1572, os.str());
+            break;
         case 866 :
-            if (gpJeu->getJoueur()->getCoffre(15,27)==12) {id=886; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(15,27)) {id=868; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==7 
-            && gpJeu->getJoueur()->getObjet()==11) {id=867; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1573, os.str()); break;
-        case 867 : texte = (this->*getTextByLangFunc)(1574, os.str()); break;
-        case 868 : texte = (this->*getTextByLangFunc)(1575, os.str()); break;
-        case 869 : texte = (this->*getTextByLangFunc)(1576, os.str()); buffer=(this->*getTextByLangFunc)(1577, os.str()); break;
-        case 870 : texte = (this->*getTextByLangFunc)(1578, os.str()); break;
-        case 871 : texte = (this->*getTextByLangFunc)(1579, os.str()); idsuiv=872; break;
-        case 872 : texte = (this->*getTextByLangFunc)(1580, os.str()); break;
-        case 873 : texte = (this->*getTextByLangFunc)(1581, os.str()); break;
-        case 874 : texte = (this->*getTextByLangFunc)(1582, os.str()); idsuiv=875; break;
-        case 875 : texte = (this->*getTextByLangFunc)(1583, os.str()); break;
-        case 876 : texte = (this->*getTextByLangFunc)(1584, os.str()); idsuiv=877; break;
-        case 877 : texte = (this->*getTextByLangFunc)(1585, os.str()); break;
-        case 878 : texte = (this->*getTextByLangFunc)(1586, os.str()); break;
-        case 879 : texte = (this->*getTextByLangFunc)(1587, os.str()); break;
-        case 880 : texte = (this->*getTextByLangFunc)(1588, os.str()); idsuiv=881; break;
-        case 881 : texte = (this->*getTextByLangFunc)(1589, os.str()); break;
-        case 882 : texte = (this->*getTextByLangFunc)(1590, os.str()); idsuiv=883; break;
-        case 883 : texte = (this->*getTextByLangFunc)(1591, os.str()); break;
-        case 884 : texte = (this->*getTextByLangFunc)(1592, os.str()); idsuiv=885; break;
-        case 885 : texte = (this->*getTextByLangFunc)(1593, os.str()); break;
-        case 886 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>7) {id=893; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==7 
-            && gpJeu->getJoueur()->getObjet()==11) {id=887; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1594, os.str()); break;
-        case 887 : texte = (this->*getTextByLangFunc)(1595, os.str()); idsuiv=888; break;
-        case 888 : texte = (this->*getTextByLangFunc)(1596, os.str()); idsuiv=890; break;
-        case 889 : texte = (this->*getTextByLangFunc)(1597, os.str()); idsuiv=891; break;
-        case 890 : texte = (this->*getTextByLangFunc)(1598, os.str()); buffer=(this->*getTextByLangFunc)(1599, os.str()); break;
-        case 891 : texte = (this->*getTextByLangFunc)(1600, os.str()); break;
-        case 892 : texte = (this->*getTextByLangFunc)(1601, os.str()); break;
-        case 893 : texte = (this->*getTextByLangFunc)(1602, os.str()); break;
-        case 894 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {id=319; chercheText(); break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>1) {id=901; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==1 
-            && gpJeu->getJoueur()->getObjet()==11) {id=895; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1603, os.str());
-            buffer = (this->*getTextByLangFunc)(1604, os.str()); break;
-        case 895 : texte = (this->*getTextByLangFunc)(1605, os.str()); idsuiv=896; break;
-        case 896 : texte = (this->*getTextByLangFunc)(1606, os.str()); idsuiv=898; break;
-        case 897 : texte = (this->*getTextByLangFunc)(1607, os.str()); idsuiv=899; break;
-        case 898 : texte = (this->*getTextByLangFunc)(1608, os.str()); break;
-        case 899 : texte = (this->*getTextByLangFunc)(1609, os.str()); break;
-        case 900 : texte = (this->*getTextByLangFunc)(1610, os.str()); break;
-        case 901 : texte = (this->*getTextByLangFunc)(1611, os.str()); break;
-        case 902 : 
-            if (!gpJeu->getJoueur()->hasObjet(O_OCARINA)) {id=1079; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1612, os.str()); break;
-        case 903 : texte = (this->*getTextByLangFunc)(1613, os.str()); break;
-        case 904 : texte = (this->*getTextByLangFunc)(1614, os.str()); break;
-        case 905 : texte = (this->*getTextByLangFunc)(1615, os.str()); break;
-        case 906 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>5) {id=913; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==5 
-            && gpJeu->getJoueur()->getObjet()==3) {id=907; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1616, os.str()); break;
-        case 907 : texte = (this->*getTextByLangFunc)(1617, os.str()); idsuiv=908; break;
-        case 908 : texte = (this->*getTextByLangFunc)(1618, os.str()); idsuiv=910; break;
-        case 909 : texte = (this->*getTextByLangFunc)(1619, os.str()); idsuiv=911; break;
-        case 910 : texte = (this->*getTextByLangFunc)(1620, os.str()); buffer=(this->*getTextByLangFunc)(1621, os.str()); break;
-        case 911 : texte = (this->*getTextByLangFunc)(1622, os.str()); break;
-        case 912 : texte = (this->*getTextByLangFunc)(1623, os.str()); break;
-        case 913 : texte = (this->*getTextByLangFunc)(1624, os.str()); break;
-        case 914 : 
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>5) {id=921; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==5 
-            && gpJeu->getJoueur()->getObjet()==11) {id=915; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1625, os.str()); break;
-        case 915 : texte = (this->*getTextByLangFunc)(1626, os.str()); idsuiv=916; break;
-        case 916 : texte = (this->*getTextByLangFunc)(1627, os.str()); idsuiv=918; break;
-        case 917 : texte = (this->*getTextByLangFunc)(1628, os.str()); idsuiv=919; break;
-        case 918 : texte = (this->*getTextByLangFunc)(1629, os.str()); break;
-        case 919 : texte = (this->*getTextByLangFunc)(1630, os.str()); break;
-        case 920 : texte = (this->*getTextByLangFunc)(1631, os.str()); break;
-        case 921 : texte = (this->*getTextByLangFunc)(1632, os.str()); break;
-        case 922 : texte = (this->*getTextByLangFunc)(1633, os.str()); break;
-        case 923 : texte = (this->*getTextByLangFunc)(1634, os.str()); break;
-        case 924 : texte = (this->*getTextByLangFunc)(1635, os.str()); idsuiv=925; break;
-        case 925 : texte = (this->*getTextByLangFunc)(1636, os.str()); idsuiv=926; break;
-        case 926 : texte = (this->*getTextByLangFunc)(1637, os.str()); break;
-        case 927 : texte = (this->*getTextByLangFunc)(1638, os.str()); break;
-        case 928 : texte = (this->*getTextByLangFunc)(1639, os.str()); break;
-        case 929 : texte = (this->*getTextByLangFunc)(1640, os.str()); break;
-        case 930 : texte = (this->*getTextByLangFunc)(1641, os.str()); break;
-        case 931 : texte = (this->*getTextByLangFunc)(1642, os.str()); break;
-        case 932 : texte = (this->*getTextByLangFunc)(1643, os.str()); break;
-        case 933 : texte = (this->*getTextByLangFunc)(1644, os.str()); break;
-        case 934 : texte = (this->*getTextByLangFunc)(1645, os.str()); break;
-        case 935 : texte = (this->*getTextByLangFunc)(1646, os.str()); break;
-        case 936 : texte = (this->*getTextByLangFunc)(1647, os.str()); break;
-        case 937 : texte = (this->*getTextByLangFunc)(1648, os.str()); break;
-        case 938 : 
+            if (gpJeu->getJoueur()->getCoffre(15,27)==12) {
+                id=886;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(15,27)) {
+                id=868;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==7
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=867;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1573, os.str());
+            break;
+        case 867 :
+            texteTmp = (this->*getTextByLangFunc)(1574, os.str());
+            break;
+        case 868 :
+            texteTmp = (this->*getTextByLangFunc)(1575, os.str());
+            break;
+        case 869 :
+            texteTmp = (this->*getTextByLangFunc)(1576, os.str());
+            buffer=(this->*getTextByLangFunc)(1577, os.str());
+            break;
+        case 870 :
+            texteTmp = (this->*getTextByLangFunc)(1578, os.str());
+            break;
+        case 871 :
+            texteTmp = (this->*getTextByLangFunc)(1579, os.str());
+            idsuiv=872;
+            break;
+        case 872 :
+            texteTmp = (this->*getTextByLangFunc)(1580, os.str());
+            break;
+        case 873 :
+            texteTmp = (this->*getTextByLangFunc)(1581, os.str());
+            break;
+        case 874 :
+            texteTmp = (this->*getTextByLangFunc)(1582, os.str());
+            idsuiv=875;
+            break;
+        case 875 :
+            texteTmp = (this->*getTextByLangFunc)(1583, os.str());
+            break;
+        case 876 :
+            texteTmp = (this->*getTextByLangFunc)(1584, os.str());
+            idsuiv=877;
+            break;
+        case 877 :
+            texteTmp = (this->*getTextByLangFunc)(1585, os.str());
+            break;
+        case 878 :
+            texteTmp = (this->*getTextByLangFunc)(1586, os.str());
+            break;
+        case 879 :
+            texteTmp = (this->*getTextByLangFunc)(1587, os.str());
+            break;
+        case 880 :
+            texteTmp = (this->*getTextByLangFunc)(1588, os.str());
+            idsuiv=881;
+            break;
+        case 881 :
+            texteTmp = (this->*getTextByLangFunc)(1589, os.str());
+            break;
+        case 882 :
+            texteTmp = (this->*getTextByLangFunc)(1590, os.str());
+            idsuiv=883;
+            break;
+        case 883 :
+            texteTmp = (this->*getTextByLangFunc)(1591, os.str());
+            break;
+        case 884 :
+            texteTmp = (this->*getTextByLangFunc)(1592, os.str());
+            idsuiv=885;
+            break;
+        case 885 :
+            texteTmp = (this->*getTextByLangFunc)(1593, os.str());
+            break;
+        case 886 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>7) {
+                id=893;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==7
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=887;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1594, os.str());
+            break;
+        case 887 :
+            texteTmp = (this->*getTextByLangFunc)(1595, os.str());
+            idsuiv=888;
+            break;
+        case 888 :
+            texteTmp = (this->*getTextByLangFunc)(1596, os.str());
+            idsuiv=890;
+            break;
+        case 889 :
+            texteTmp = (this->*getTextByLangFunc)(1597, os.str());
+            idsuiv=891;
+            break;
+        case 890 :
+            texteTmp = (this->*getTextByLangFunc)(1598, os.str());
+            buffer=(this->*getTextByLangFunc)(1599, os.str());
+            break;
+        case 891 :
+            texteTmp = (this->*getTextByLangFunc)(1600, os.str());
+            break;
+        case 892 :
+            texteTmp = (this->*getTextByLangFunc)(1601, os.str());
+            break;
+        case 893 :
+            texteTmp = (this->*getTextByLangFunc)(1602, os.str());
+            break;
+        case 894 :
+            if (!gpJeu->getJoueur()->hasObjet(O_LIVRE)) {
+                id=319;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>1) {
+                id=901;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==1
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=895;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1603, os.str());
+            buffer = (this->*getTextByLangFunc)(1604, os.str());
+            break;
+        case 895 :
+            texteTmp = (this->*getTextByLangFunc)(1605, os.str());
+            idsuiv=896;
+            break;
+        case 896 :
+            texteTmp = (this->*getTextByLangFunc)(1606, os.str());
+            idsuiv=898;
+            break;
+        case 897 :
+            texteTmp = (this->*getTextByLangFunc)(1607, os.str());
+            idsuiv=899;
+            break;
+        case 898 :
+            texteTmp = (this->*getTextByLangFunc)(1608, os.str());
+            break;
+        case 899 :
+            texteTmp = (this->*getTextByLangFunc)(1609, os.str());
+            break;
+        case 900 :
+            texteTmp = (this->*getTextByLangFunc)(1610, os.str());
+            break;
+        case 901 :
+            texteTmp = (this->*getTextByLangFunc)(1611, os.str());
+            break;
+        case 902 :
+            if (!gpJeu->getJoueur()->hasObjet(O_OCARINA)) {
+                id=1079;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1612, os.str());
+            break;
+        case 903 :
+            texteTmp = (this->*getTextByLangFunc)(1613, os.str());
+            break;
+        case 904 :
+            texteTmp = (this->*getTextByLangFunc)(1614, os.str());
+            break;
+        case 905 :
+            texteTmp = (this->*getTextByLangFunc)(1615, os.str());
+            break;
+        case 906 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)>5) {
+                id=913;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC1)==5
+                && gpJeu->getJoueur()->getObjet()==3) {
+                id=907;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1616, os.str());
+            break;
+        case 907 :
+            texteTmp = (this->*getTextByLangFunc)(1617, os.str());
+            idsuiv=908;
+            break;
+        case 908 :
+            texteTmp = (this->*getTextByLangFunc)(1618, os.str());
+            idsuiv=910;
+            break;
+        case 909 :
+            texteTmp = (this->*getTextByLangFunc)(1619, os.str());
+            idsuiv=911;
+            break;
+        case 910 :
+            texteTmp = (this->*getTextByLangFunc)(1620, os.str());
+            buffer=(this->*getTextByLangFunc)(1621, os.str());
+            break;
+        case 911 :
+            texteTmp = (this->*getTextByLangFunc)(1622, os.str());
+            break;
+        case 912 :
+            texteTmp = (this->*getTextByLangFunc)(1623, os.str());
+            break;
+        case 913 :
+            texteTmp = (this->*getTextByLangFunc)(1624, os.str());
+            break;
+        case 914 :
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)>5) {
+                id=921;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==5
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=915;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1625, os.str());
+            break;
+        case 915 :
+            texteTmp = (this->*getTextByLangFunc)(1626, os.str());
+            idsuiv=916;
+            break;
+        case 916 :
+            texteTmp = (this->*getTextByLangFunc)(1627, os.str());
+            idsuiv=918;
+            break;
+        case 917 :
+            texteTmp = (this->*getTextByLangFunc)(1628, os.str());
+            idsuiv=919;
+            break;
+        case 918 :
+            texteTmp = (this->*getTextByLangFunc)(1629, os.str());
+            break;
+        case 919 :
+            texteTmp = (this->*getTextByLangFunc)(1630, os.str());
+            break;
+        case 920 :
+            texteTmp = (this->*getTextByLangFunc)(1631, os.str());
+            break;
+        case 921 :
+            texteTmp = (this->*getTextByLangFunc)(1632, os.str());
+            break;
+        case 922 :
+            texteTmp = (this->*getTextByLangFunc)(1633, os.str());
+            break;
+        case 923 :
+            texteTmp = (this->*getTextByLangFunc)(1634, os.str());
+            break;
+        case 924 :
+            texteTmp = (this->*getTextByLangFunc)(1635, os.str());
+            idsuiv=925;
+            break;
+        case 925 :
+            texteTmp = (this->*getTextByLangFunc)(1636, os.str());
+            idsuiv=926;
+            break;
+        case 926 :
+            texteTmp = (this->*getTextByLangFunc)(1637, os.str());
+            break;
+        case 927 :
+            texteTmp = (this->*getTextByLangFunc)(1638, os.str());
+            break;
+        case 928 :
+            texteTmp = (this->*getTextByLangFunc)(1639, os.str());
+            break;
+        case 929 :
+            texteTmp = (this->*getTextByLangFunc)(1640, os.str());
+            break;
+        case 930 :
+            texteTmp = (this->*getTextByLangFunc)(1641, os.str());
+            break;
+        case 931 :
+            texteTmp = (this->*getTextByLangFunc)(1642, os.str());
+            break;
+        case 932 :
+            texteTmp = (this->*getTextByLangFunc)(1643, os.str());
+            break;
+        case 933 :
+            texteTmp = (this->*getTextByLangFunc)(1644, os.str());
+            break;
+        case 934 :
+            texteTmp = (this->*getTextByLangFunc)(1645, os.str());
+            break;
+        case 935 :
+            texteTmp = (this->*getTextByLangFunc)(1646, os.str());
+            break;
+        case 936 :
+            texteTmp = (this->*getTextByLangFunc)(1647, os.str());
+            break;
+        case 937 :
+            texteTmp = (this->*getTextByLangFunc)(1648, os.str());
+            break;
+        case 938 :
             if (gpJeu->getAudio()->isSpecial()) {
-            texte = (this->*getTextByLangFunc)(1649, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(1650, os.str()); break;
-        case 939 : texte = (this->*getTextByLangFunc)(1651, os.str()); break;
-        case 940 : texte = (this->*getTextByLangFunc)(1652, os.str()); break;
-        case 941 : texte = (this->*getTextByLangFunc)(1653, os.str()); break;
-        
+                texteTmp = (this->*getTextByLangFunc)(1649, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1650, os.str());
+            break;
+        case 939 :
+            texteTmp = (this->*getTextByLangFunc)(1651, os.str());
+            break;
+        case 940 :
+            texteTmp = (this->*getTextByLangFunc)(1652, os.str());
+            break;
+        case 941 :
+            texteTmp = (this->*getTextByLangFunc)(1653, os.str());
+            break;
 #ifdef __vita__
-        case 942 : texte = (this->*getTextByLangFunc)(1654, os.str()); break;
+        case 942 :
+            texteTmp = (this->*getTextByLangFunc)(1654, os.str());
+            break;
 #else
-        case 942 : texte = (this->*getTextByLangFunc)(1655, os.str()); break;
+        case 942 :
+            texteTmp = (this->*getTextByLangFunc)(1655, os.str());
+            break;
 #endif
-        case 943 : texte = (this->*getTextByLangFunc)(1656, os.str()); break;
-        case 944 : texte = (this->*getTextByLangFunc)(1657, os.str()); break;
-        case 945 : texte = (this->*getTextByLangFunc)(1658, os.str()); break;
-        case 946 : texte = (this->*getTextByLangFunc)(1659, os.str()); break;
+        case 943 :
+            texteTmp = (this->*getTextByLangFunc)(1656, os.str());
+            break;
+        case 944 :
+            texteTmp = (this->*getTextByLangFunc)(1657, os.str());
+            break;
+        case 945 :
+            texteTmp = (this->*getTextByLangFunc)(1658, os.str());
+            break;
+        case 946 :
+            texteTmp = (this->*getTextByLangFunc)(1659, os.str());
+            break;
 #ifdef __vita__
-        case 947 : texte = (this->*getTextByLangFunc)(1660, os.str()); break;
+        case 947 :
+            texteTmp = (this->*getTextByLangFunc)(1660, os.str());
+            break;
 #else
-        case 947 : texte = (this->*getTextByLangFunc)(1661, os.str()); break;
+        case 947 :
+            texteTmp = (this->*getTextByLangFunc)(1661, os.str());
+            break;
 #endif
-        case 948 : 
-            if (gpJeu->getZone()==47) {id=949; chercheText();break;}
-            if (gpJeu->getZone()==48) {id=950; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1662, os.str()); break;
-        case 949 : texte = (this->*getTextByLangFunc)(1663, os.str()); break;
-        case 950 : texte = (this->*getTextByLangFunc)(1664, os.str()); break;
-        case 951 : texte = (this->*getTextByLangFunc)(1665, os.str()); break;
-        case 952 : 
-            if (gpJeu->getJoueur()->hasObjet(O_GANTS)) {id=954; chercheText();break;}
-            if (gpJeu->getJoueur()->getExplore(1,16,4)) {id=953; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1666, os.str()); break;
-        case 953 : texte = (this->*getTextByLangFunc)(1667, os.str()); break;
-        case 954 : texte = (this->*getTextByLangFunc)(1668, os.str()); break;
-        case 955 : texte = (this->*getTextByLangFunc)(1669, os.str()); break;
-        case 956 : texte = (this->*getTextByLangFunc)(1670, os.str()); break;
-        case 957 : 
-            if (gpJeu->getJoueur()->getCoffre(3,29)) {id=960; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1671, os.str()); idsuiv=958; break;
-        case 958 : texte = (this->*getTextByLangFunc)(1672, os.str()); idsuiv=959; break;
-        case 959 : texte = (this->*getTextByLangFunc)(1673, os.str()); idsuiv=960; break;
-        case 960 : texte = (this->*getTextByLangFunc)(1674, os.str()); break;
-        case 961 : texte = (this->*getTextByLangFunc)(1675, os.str()); break;
-        case 962 : texte = (this->*getTextByLangFunc)(1676, os.str()); break;
-        case 963 : texte = (this->*getTextByLangFunc)(1677, os.str()); break;
-        case 964 : texte = (this->*getTextByLangFunc)(1678, os.str()); break;
-        case 965 : texte = (this->*getTextByLangFunc)(1679, os.str()); break;
-        case 966 : texte = (this->*getTextByLangFunc)(1680, os.str()); break;
-        case 967 : texte = (this->*getTextByLangFunc)(1681, os.str()); break;
-        case 968 : texte = (this->*getTextByLangFunc)(1682, os.str()); break;
-        case 969 : texte = (this->*getTextByLangFunc)(1683, os.str()); break;
-        case 970 : texte = (this->*getTextByLangFunc)(1684, os.str()); break;
-        case 971 : texte = (this->*getTextByLangFunc)(1685, os.str()); break;
-        case 972 : texte = (this->*getTextByLangFunc)(1686, os.str()); break;
-        case 973 : texte = (this->*getTextByLangFunc)(1687, os.str()); idsuiv=974; break;
-        case 974 : texte = (this->*getTextByLangFunc)(1688, os.str()); idsuiv=975; break;
-        case 975 : texte = (this->*getTextByLangFunc)(1689, os.str()); idsuiv=976; break;
-        case 976 : texte = (this->*getTextByLangFunc)(1690, os.str()); idsuiv=977; break;
-        case 977 : texte = (this->*getTextByLangFunc)(1691, os.str()); idsuiv=978; break;
-        case 978 : texte = (this->*getTextByLangFunc)(1692, os.str()); idsuiv=979; break;
-        case 979 : texte = (this->*getTextByLangFunc)(1693, os.str()); idsuiv=980; break;
-        case 980 : texte = (this->*getTextByLangFunc)(1694, os.str()); break;
-        case 981 : texte = (this->*getTextByLangFunc)(1695, os.str()); idsuiv=982; break;
-        case 982 : texte = (this->*getTextByLangFunc)(1696, os.str()); break;
-        case 983 : texte = (this->*getTextByLangFunc)(1697, os.str()); idsuiv=984; break;
-        case 984 : texte = (this->*getTextByLangFunc)(1698, os.str()); idsuiv=985; break;
-        case 985 : texte = (this->*getTextByLangFunc)(1699, os.str()); idsuiv=986; break;
-        case 986 : texte = (this->*getTextByLangFunc)(1700, os.str()); idsuiv=987; break;
-        case 987 : texte = (this->*getTextByLangFunc)(1701, os.str()); idsuiv=988; break;
-        case 988 : texte = (this->*getTextByLangFunc)(1702, os.str()); idsuiv=989; break;
-        case 989 : texte = (this->*getTextByLangFunc)(1703, os.str()); idsuiv=990; break;
-        case 990 : texte = (this->*getTextByLangFunc)(1704, os.str()); idsuiv=991; break;
-        case 991 : texte = (this->*getTextByLangFunc)(1705, os.str()); idsuiv=992; break;
-        case 992 : texte = (this->*getTextByLangFunc)(1706, os.str()); idsuiv=993; break;
-        case 993 : texte = (this->*getTextByLangFunc)(1707, os.str()); idsuiv=994; break;
-        case 994 : texte = (this->*getTextByLangFunc)(1708, os.str()); idsuiv=995; break;
-        case 995 : texte = (this->*getTextByLangFunc)(1709, os.str()); idsuiv=996; break;
-        case 996 : texte = (this->*getTextByLangFunc)(1710, os.str()); idsuiv=997; break;
-        case 997 : texte = (this->*getTextByLangFunc)(1711, os.str()); idsuiv=998; break;
-        case 998 : texte = (this->*getTextByLangFunc)(1712, os.str()); break;
-        case 999 : texte = (this->*getTextByLangFunc)(1713, os.str()); break;
-        case 1000: texte = (this->*getTextByLangFunc)(1714, os.str()); break;
-        case 1001: texte = (this->*getTextByLangFunc)(1715, os.str()); break;
-        case 1002: texte = (this->*getTextByLangFunc)(1716, os.str()); idsuiv=1003; break;
-        case 1003: texte = (this->*getTextByLangFunc)(1717, os.str()); break;
-        case 1004: 
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_PALAIS) {id=1010; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1718, os.str()); break;
-        case 1005: 
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_ZELDA_PALAIS) {id=1010; chercheText();break;}
-            if (gpJeu->getJoueur()->getRubisMax()) {id=1013; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_PALAIS) {id=1007; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1719, os.str()); idsuiv=1006; break; 
-        case 1006: texte = (this->*getTextByLangFunc)(1720, os.str()); break;
-        case 1007: texte = (this->*getTextByLangFunc)(1721, os.str()); break;
+        case 948 :
+            if (gpJeu->getZone()==47) {
+                id=949;
+                break;
+            }
+            if (gpJeu->getZone()==48) {
+                id=950;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1662, os.str());
+            break;
+        case 949 :
+            texteTmp = (this->*getTextByLangFunc)(1663, os.str());
+            break;
+        case 950 :
+            texteTmp = (this->*getTextByLangFunc)(1664, os.str());
+            break;
+        case 951 :
+            texteTmp = (this->*getTextByLangFunc)(1665, os.str());
+            break;
+        case 952 :
+            if (gpJeu->getJoueur()->hasObjet(O_GANTS)) {
+                id=954;
+                break;
+            }
+            if (gpJeu->getJoueur()->getExplore(1,16,4)) {
+                id=953;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1666, os.str());
+            break;
+        case 953 :
+            texteTmp = (this->*getTextByLangFunc)(1667, os.str());
+            break;
+        case 954 :
+            texteTmp = (this->*getTextByLangFunc)(1668, os.str());
+            break;
+        case 955 :
+            texteTmp = (this->*getTextByLangFunc)(1669, os.str());
+            break;
+        case 956 :
+            texteTmp = (this->*getTextByLangFunc)(1670, os.str());
+            break;
+        case 957 :
+            if (gpJeu->getJoueur()->getCoffre(3,29)) {
+                id=960;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1671, os.str());
+            idsuiv=958;
+            break;
+        case 958 :
+            texteTmp = (this->*getTextByLangFunc)(1672, os.str());
+            idsuiv=959;
+            break;
+        case 959 :
+            texteTmp = (this->*getTextByLangFunc)(1673, os.str());
+            idsuiv=960;
+            break;
+        case 960 :
+            texteTmp = (this->*getTextByLangFunc)(1674, os.str());
+            break;
+        case 961 :
+            texteTmp = (this->*getTextByLangFunc)(1675, os.str());
+            break;
+        case 962 :
+            texteTmp = (this->*getTextByLangFunc)(1676, os.str());
+            break;
+        case 963 :
+            texteTmp = (this->*getTextByLangFunc)(1677, os.str());
+            break;
+        case 964 :
+            texteTmp = (this->*getTextByLangFunc)(1678, os.str());
+            break;
+        case 965 :
+            texteTmp = (this->*getTextByLangFunc)(1679, os.str());
+            break;
+        case 966 :
+            texteTmp = (this->*getTextByLangFunc)(1680, os.str());
+            break;
+        case 967 :
+            texteTmp = (this->*getTextByLangFunc)(1681, os.str());
+            break;
+        case 968 :
+            texteTmp = (this->*getTextByLangFunc)(1682, os.str());
+            break;
+        case 969 :
+            texteTmp = (this->*getTextByLangFunc)(1683, os.str());
+            break;
+        case 970 :
+            texteTmp = (this->*getTextByLangFunc)(1684, os.str());
+            break;
+        case 971 :
+            texteTmp = (this->*getTextByLangFunc)(1685, os.str());
+            break;
+        case 972 :
+            texteTmp = (this->*getTextByLangFunc)(1686, os.str());
+            break;
+        case 973 :
+            texteTmp = (this->*getTextByLangFunc)(1687, os.str());
+            idsuiv=974;
+            break;
+        case 974 :
+            texteTmp = (this->*getTextByLangFunc)(1688, os.str());
+            idsuiv=975;
+            break;
+        case 975 :
+            texteTmp = (this->*getTextByLangFunc)(1689, os.str());
+            idsuiv=976;
+            break;
+        case 976 :
+            texteTmp = (this->*getTextByLangFunc)(1690, os.str());
+            idsuiv=977;
+            break;
+        case 977 :
+            texteTmp = (this->*getTextByLangFunc)(1691, os.str());
+            idsuiv=978;
+            break;
+        case 978 :
+            texteTmp = (this->*getTextByLangFunc)(1692, os.str());
+            idsuiv=979;
+            break;
+        case 979 :
+            texteTmp = (this->*getTextByLangFunc)(1693, os.str());
+            idsuiv=980;
+            break;
+        case 980 :
+            texteTmp = (this->*getTextByLangFunc)(1694, os.str());
+            break;
+        case 981 :
+            texteTmp = (this->*getTextByLangFunc)(1695, os.str());
+            idsuiv=982;
+            break;
+        case 982 :
+            texteTmp = (this->*getTextByLangFunc)(1696, os.str());
+            break;
+        case 983 :
+            texteTmp = (this->*getTextByLangFunc)(1697, os.str());
+            idsuiv=984;
+            break;
+        case 984 :
+            texteTmp = (this->*getTextByLangFunc)(1698, os.str());
+            idsuiv=985;
+            break;
+        case 985 :
+            texteTmp = (this->*getTextByLangFunc)(1699, os.str());
+            idsuiv=986;
+            break;
+        case 986 :
+            texteTmp = (this->*getTextByLangFunc)(1700, os.str());
+            idsuiv=987;
+            break;
+        case 987 :
+            texteTmp = (this->*getTextByLangFunc)(1701, os.str());
+            idsuiv=988;
+            break;
+        case 988 :
+            texteTmp = (this->*getTextByLangFunc)(1702, os.str());
+            idsuiv=989;
+            break;
+        case 989 :
+            texteTmp = (this->*getTextByLangFunc)(1703, os.str());
+            idsuiv=990;
+            break;
+        case 990 :
+            texteTmp = (this->*getTextByLangFunc)(1704, os.str());
+            idsuiv=991;
+            break;
+        case 991 :
+            texteTmp = (this->*getTextByLangFunc)(1705, os.str());
+            idsuiv=992;
+            break;
+        case 992 :
+            texteTmp = (this->*getTextByLangFunc)(1706, os.str());
+            idsuiv=993;
+            break;
+        case 993 :
+            texteTmp = (this->*getTextByLangFunc)(1707, os.str());
+            idsuiv=994;
+            break;
+        case 994 :
+            texteTmp = (this->*getTextByLangFunc)(1708, os.str());
+            idsuiv=995;
+            break;
+        case 995 :
+            texteTmp = (this->*getTextByLangFunc)(1709, os.str());
+            idsuiv=996;
+            break;
+        case 996 :
+            texteTmp = (this->*getTextByLangFunc)(1710, os.str());
+            idsuiv=997;
+            break;
+        case 997 :
+            texteTmp = (this->*getTextByLangFunc)(1711, os.str());
+            idsuiv=998;
+            break;
+        case 998 :
+            texteTmp = (this->*getTextByLangFunc)(1712, os.str());
+            break;
+        case 999 :
+            texteTmp = (this->*getTextByLangFunc)(1713, os.str());
+            break;
+        case 1000:
+            texteTmp = (this->*getTextByLangFunc)(1714, os.str());
+            break;
+        case 1001:
+            texteTmp = (this->*getTextByLangFunc)(1715, os.str());
+            break;
+        case 1002:
+            texteTmp = (this->*getTextByLangFunc)(1716, os.str());
+            idsuiv=1003;
+            break;
+        case 1003:
+            texteTmp = (this->*getTextByLangFunc)(1717, os.str());
+            break;
+        case 1004:
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_PALAIS) {
+                id=1010;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1718, os.str());
+            break;
+        case 1005:
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_ZELDA_PALAIS) {
+                id=1010;
+                break;
+            }
+            if (gpJeu->getJoueur()->getRubisMax()) {
+                id=1013;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_PALAIS) {
+                id=1007;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1719, os.str());
+            idsuiv=1006;
+            break;
+        case 1006:
+            texteTmp = (this->*getTextByLangFunc)(1720, os.str());
+            break;
+        case 1007:
+            texteTmp = (this->*getTextByLangFunc)(1721, os.str());
+            break;
         case 1008:
-            if (gpJeu->getJoueur()->getRubisMax()) {id=1010; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()<PARLE_GARDE_PALAIS) {id=1004; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_RESERVE) {id=1009; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1722, os.str()); break;
-        case 1009: texte = (this->*getTextByLangFunc)(1723, os.str()); break;
-        case 1010: texte = (this->*getTextByLangFunc)(1724, os.str()); break;
-        case 1011: texte = (this->*getTextByLangFunc)(1725, os.str()); break;
-        case 1012: texte = (this->*getTextByLangFunc)(1726, os.str()); break;
-        case 1013: texte = (this->*getTextByLangFunc)(1727, os.str()); break;
-        case 1014: texte = (this->*getTextByLangFunc)(1728, os.str()); break;
-        case 1015: texte = (this->*getTextByLangFunc)(1729, os.str()); break;
-        case 1016: 
-            if (gpJeu->getJoueur()->getAvancement()>=PASSAGE_TROUVE) {id=1031; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=ZELDA_SOUS_SOL) {id=1025; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_ZELDA_PALAIS) {id=1019; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1730, os.str()); idsuiv=1017; break;
-        case 1017: texte = (this->*getTextByLangFunc)(1731, os.str()); idsuiv=1018; break;
-        case 1018: texte = (this->*getTextByLangFunc)(1732, os.str()); idsuiv=1019; break;
-        case 1019: texte = (this->*getTextByLangFunc)(1733, os.str()); break;
-        case 1020: 
-            if (gpJeu->getJoueur()->getAvancement()<PARLE_ZELDA_PALAIS) {id=1004; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_CH_FORTE) {id=1010; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1734, os.str()); break;
-        case 1021: texte = (this->*getTextByLangFunc)(1735, os.str()); break;
-        case 1022: 
-            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_SOUS_SOL) {id=1023; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1736, os.str()); break;
-        case 1023: texte = (this->*getTextByLangFunc)(1737, os.str()); break;
-        case 1024: texte = (this->*getTextByLangFunc)(1738, os.str()); idsuiv=1025; break;
+            if (gpJeu->getJoueur()->getRubisMax()) {
+                id=1010;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()<PARLE_GARDE_PALAIS) {
+                id=1004;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_RESERVE) {
+                id=1009;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1722, os.str());
+            break;
+        case 1009:
+            texteTmp = (this->*getTextByLangFunc)(1723, os.str());
+            break;
+        case 1010:
+            texteTmp = (this->*getTextByLangFunc)(1724, os.str());
+            break;
+        case 1011:
+            texteTmp = (this->*getTextByLangFunc)(1725, os.str());
+            break;
+        case 1012:
+            texteTmp = (this->*getTextByLangFunc)(1726, os.str());
+            break;
+        case 1013:
+            texteTmp = (this->*getTextByLangFunc)(1727, os.str());
+            break;
+        case 1014:
+            texteTmp = (this->*getTextByLangFunc)(1728, os.str());
+            break;
+        case 1015:
+            texteTmp = (this->*getTextByLangFunc)(1729, os.str());
+            break;
+        case 1016:
+            if (gpJeu->getJoueur()->getAvancement()>=PASSAGE_TROUVE) {
+                id=1031;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=ZELDA_SOUS_SOL) {
+                id=1025;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_ZELDA_PALAIS) {
+                id=1019;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1730, os.str());
+            idsuiv=1017;
+            break;
+        case 1017:
+            texteTmp = (this->*getTextByLangFunc)(1731, os.str());
+            idsuiv=1018;
+            break;
+        case 1018:
+            texteTmp = (this->*getTextByLangFunc)(1732, os.str());
+            idsuiv=1019;
+            break;
+        case 1019:
+            texteTmp = (this->*getTextByLangFunc)(1733, os.str());
+            break;
+        case 1020:
+            if (gpJeu->getJoueur()->getAvancement()<PARLE_ZELDA_PALAIS) {
+                id=1004;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_CH_FORTE) {
+                id=1010;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1734, os.str());
+            break;
+        case 1021:
+            texteTmp = (this->*getTextByLangFunc)(1735, os.str());
+            break;
+        case 1022:
+            if (gpJeu->getJoueur()->getAvancement()>=PARLE_GARDE_SOUS_SOL) {
+                id=1023;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1736, os.str());
+            break;
+        case 1023:
+            texteTmp = (this->*getTextByLangFunc)(1737, os.str());
+            break;
+        case 1024:
+            texteTmp = (this->*getTextByLangFunc)(1738, os.str());
+            idsuiv=1025;
+            break;
 #ifdef __vita__
-        case 1025: texte = (this->*getTextByLangFunc)(1739, os.str()); break;
+        case 1025:
+            texteTmp = (this->*getTextByLangFunc)(1739, os.str());
+            break;
 #else
-        case 1025: texte = (this->*getTextByLangFunc)(1740, os.str()); break;
+        case 1025:
+            texteTmp = (this->*getTextByLangFunc)(1740, os.str());
+            break;
 #endif
-        case 1026: texte = (this->*getTextByLangFunc)(1741, os.str()); break;
-        case 1027: texte = (this->*getTextByLangFunc)(1742, os.str()); break;
-        case 1028: 
-            if (gpJeu->getJoueur()->getAvancement()>=RIDEAUX_REPERES) {id=1030; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1743, os.str()); break;
-        case 1029: texte = (this->*getTextByLangFunc)(1744, os.str()); break;
-        case 1030: texte = (this->*getTextByLangFunc)(1745, os.str()); break;
-        case 1031: texte = (this->*getTextByLangFunc)(1746, os.str()); break;
-        case 1032: texte = (this->*getTextByLangFunc)(1747, os.str()); break;
-        case 1033: texte = (this->*getTextByLangFunc)(1748, os.str()); break;
+        case 1026:
+            texteTmp = (this->*getTextByLangFunc)(1741, os.str());
+            break;
+        case 1027:
+            texteTmp = (this->*getTextByLangFunc)(1742, os.str());
+            break;
+        case 1028:
+            if (gpJeu->getJoueur()->getAvancement()>=RIDEAUX_REPERES) {
+                id=1030;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1743, os.str());
+            break;
+        case 1029:
+            texteTmp = (this->*getTextByLangFunc)(1744, os.str());
+            break;
+        case 1030:
+            texteTmp = (this->*getTextByLangFunc)(1745, os.str());
+            break;
+        case 1031:
+            texteTmp = (this->*getTextByLangFunc)(1746, os.str());
+            break;
+        case 1032:
+            texteTmp = (this->*getTextByLangFunc)(1747, os.str());
+            break;
+        case 1033:
+            texteTmp = (this->*getTextByLangFunc)(1748, os.str());
+            break;
 #ifdef __vita__
-        case 1034: texte = (this->*getTextByLangFunc)(1749, os.str()); break;
-        case 1035: texte = (this->*getTextByLangFunc)(1750, os.str()); break;
+        case 1034:
+            texteTmp = (this->*getTextByLangFunc)(1749, os.str());
+            break;
+        case 1035:
+            texteTmp = (this->*getTextByLangFunc)(1750, os.str());
+            break;
 #else
-        case 1034: texte = (this->*getTextByLangFunc)(1751, os.str()); break;
-        case 1035: texte = (this->*getTextByLangFunc)(1752, os.str()); break;
+        case 1034:
+            texteTmp = (this->*getTextByLangFunc)(1751, os.str());
+            break;
+        case 1035:
+            texteTmp = (this->*getTextByLangFunc)(1752, os.str());
+            break;
 #endif
-        case 1036: texte = (this->*getTextByLangFunc)(1753, os.str()); break;
-        case 1037: texte = (this->*getTextByLangFunc)(1754, os.str()); break;
-        case 1038: texte = (this->*getTextByLangFunc)(1755, os.str()); break;
-        case 1039: texte = (this->*getTextByLangFunc)(1756, os.str()); break;
-        case 1040: texte = (this->*getTextByLangFunc)(1757, os.str()); break;
-        case 1041: texte = (this->*getTextByLangFunc)(1758, os.str()); break;
-        case 1042: texte = (this->*getTextByLangFunc)(1759, os.str()); break;
-        case 1043: texte = (this->*getTextByLangFunc)(1760, os.str()); break;
-        case 1044: texte = (this->*getTextByLangFunc)(1761, os.str()); break;
-        case 1045: texte = (this->*getTextByLangFunc)(1762, os.str()); break;
-        case 1046: texte = (this->*getTextByLangFunc)(1763, os.str()); idsuiv=1047; break;
-        case 1047: texte = (this->*getTextByLangFunc)(1764, os.str()); break;
-        case 1048: texte = (this->*getTextByLangFunc)(1765, os.str()); break;
-        case 1049: texte = (this->*getTextByLangFunc)(1766, os.str()); break;
-        case 1050: texte = (this->*getTextByLangFunc)(1767, os.str()); break;
-        case 1051: texte = (this->*getTextByLangFunc)(1768, os.str()); break;
-        case 1052: texte = (this->*getTextByLangFunc)(1769, os.str()); break;
-        case 1053: texte = (this->*getTextByLangFunc)(1770, os.str()); break;
-        case 1054: texte = (this->*getTextByLangFunc)(1771, os.str()); break;
-        case 1055: texte = (this->*getTextByLangFunc)(1772, os.str()); break;
-        case 1056: texte = (this->*getTextByLangFunc)(1773, os.str()); break;
-        case 1057: texte = (this->*getTextByLangFunc)(1774, os.str()); break;
-        case 1058: texte = (this->*getTextByLangFunc)(1775, os.str()); break;
-        case 1059: 
-            if (gpJeu->getJoueur()->getAvancement()>=MOT_DE_PASSE_DONNE) {id=1062; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()==MOT_DE_PASSE_CONNU) {id=1061; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1776, os.str()); break;
-        case 1060: 
-            if (gpJeu->getJoueur()->getAvancement()>=MULTIPASSE_UTILISE) {id=1062; chercheText();break;}
-            if (gpJeu->getJoueur()->getAvancement()>=MULTIPASS) {id=1063; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1777, os.str()); break;
-        case 1061: texte = (this->*getTextByLangFunc)(1778, os.str()); break;
-        case 1062: texte = (this->*getTextByLangFunc)(1779, os.str()); break;
-        case 1063: texte = (this->*getTextByLangFunc)(1780, os.str()); break;
-        case 1064: 
-            if (gpJeu->getJoueur()->getAvancement()>=MOT_DE_PASSE_CONNU) {id=1070; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1781, os.str()); idsuiv=1065; break;
-        case 1065: texte = (this->*getTextByLangFunc)(1782, os.str()); idsuiv=1066; break;
-        case 1066: texte = (this->*getTextByLangFunc)(1783, os.str()); idsuiv=1067; break;
-        case 1067: texte = (this->*getTextByLangFunc)(1784, os.str()); idsuiv=1068; break;
-        case 1068: texte = (this->*getTextByLangFunc)(1785, os.str()); idsuiv=1069; break;
-        case 1069: texte = (this->*getTextByLangFunc)(1786, os.str()); idsuiv=1070; break;
-        case 1070: texte = (this->*getTextByLangFunc)(1787, os.str()); break;
-        case 1071: texte = (this->*getTextByLangFunc)(1788, os.str()); idsuiv=1072; break;
-        case 1072: 
+        case 1036:
+            texteTmp = (this->*getTextByLangFunc)(1753, os.str());
+            break;
+        case 1037:
+            texteTmp = (this->*getTextByLangFunc)(1754, os.str());
+            break;
+        case 1038:
+            texteTmp = (this->*getTextByLangFunc)(1755, os.str());
+            break;
+        case 1039:
+            texteTmp = (this->*getTextByLangFunc)(1756, os.str());
+            break;
+        case 1040:
+            texteTmp = (this->*getTextByLangFunc)(1757, os.str());
+            break;
+        case 1041:
+            texteTmp = (this->*getTextByLangFunc)(1758, os.str());
+            break;
+        case 1042:
+            texteTmp = (this->*getTextByLangFunc)(1759, os.str());
+            break;
+        case 1043:
+            texteTmp = (this->*getTextByLangFunc)(1760, os.str());
+            break;
+        case 1044:
+            texteTmp = (this->*getTextByLangFunc)(1761, os.str());
+            break;
+        case 1045:
+            texteTmp = (this->*getTextByLangFunc)(1762, os.str());
+            break;
+        case 1046:
+            texteTmp = (this->*getTextByLangFunc)(1763, os.str());
+            idsuiv=1047;
+            break;
+        case 1047:
+            texteTmp = (this->*getTextByLangFunc)(1764, os.str());
+            break;
+        case 1048:
+            texteTmp = (this->*getTextByLangFunc)(1765, os.str());
+            break;
+        case 1049:
+            texteTmp = (this->*getTextByLangFunc)(1766, os.str());
+            break;
+        case 1050:
+            texteTmp = (this->*getTextByLangFunc)(1767, os.str());
+            break;
+        case 1051:
+            texteTmp = (this->*getTextByLangFunc)(1768, os.str());
+            break;
+        case 1052:
+            texteTmp = (this->*getTextByLangFunc)(1769, os.str());
+            break;
+        case 1053:
+            texteTmp = (this->*getTextByLangFunc)(1770, os.str());
+            break;
+        case 1054:
+            texteTmp = (this->*getTextByLangFunc)(1771, os.str());
+            break;
+        case 1055:
+            texteTmp = (this->*getTextByLangFunc)(1772, os.str());
+            break;
+        case 1056:
+            texteTmp = (this->*getTextByLangFunc)(1773, os.str());
+            break;
+        case 1057:
+            texteTmp = (this->*getTextByLangFunc)(1774, os.str());
+            break;
+        case 1058:
+            texteTmp = (this->*getTextByLangFunc)(1775, os.str());
+            break;
+        case 1059:
+            if (gpJeu->getJoueur()->getAvancement()>=MOT_DE_PASSE_DONNE) {
+                id=1062;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()==MOT_DE_PASSE_CONNU) {
+                id=1061;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1776, os.str());
+            break;
+        case 1060:
+            if (gpJeu->getJoueur()->getAvancement()>=MULTIPASSE_UTILISE) {
+                id=1062;
+                break;
+            }
+            if (gpJeu->getJoueur()->getAvancement()>=MULTIPASS) {
+                id=1063;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1777, os.str());
+            break;
+        case 1061:
+            texteTmp = (this->*getTextByLangFunc)(1778, os.str());
+            break;
+        case 1062:
+            texteTmp = (this->*getTextByLangFunc)(1779, os.str());
+            break;
+        case 1063:
+            texteTmp = (this->*getTextByLangFunc)(1780, os.str());
+            break;
+        case 1064:
+            if (gpJeu->getJoueur()->getAvancement()>=MOT_DE_PASSE_CONNU) {
+                id=1070;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1781, os.str());
+            idsuiv=1065;
+            break;
+        case 1065:
+            texteTmp = (this->*getTextByLangFunc)(1782, os.str());
+            idsuiv=1066;
+            break;
+        case 1066:
+            texteTmp = (this->*getTextByLangFunc)(1783, os.str());
+            idsuiv=1067;
+            break;
+        case 1067:
+            texteTmp = (this->*getTextByLangFunc)(1784, os.str());
+            idsuiv=1068;
+            break;
+        case 1068:
+            texteTmp = (this->*getTextByLangFunc)(1785, os.str());
+            idsuiv=1069;
+            break;
+        case 1069:
+            texteTmp = (this->*getTextByLangFunc)(1786, os.str());
+            idsuiv=1070;
+            break;
+        case 1070:
+            texteTmp = (this->*getTextByLangFunc)(1787, os.str());
+            break;
+        case 1071:
+            texteTmp = (this->*getTextByLangFunc)(1788, os.str());
+            idsuiv=1072;
+            break;
+        case 1072:
             gpJeu->getAudio()->stopSpecial();
-            texte = (this->*getTextByLangFunc)(1789, os.str()); idsuiv=1073; break;
-        case 1073: texte = (this->*getTextByLangFunc)(1790, os.str()); break;
-        case 1074: 
-            if (gpJeu->getJoueur()->isLapin()) {id=1073; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>6) {id=1078; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==6 
-            && gpJeu->getJoueur()->getObjet()==15) {id=1075; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1791, os.str()); break;
-        case 1075: texte = (this->*getTextByLangFunc)(1792, os.str()); idsuiv=1076; break;
-        case 1076: texte = (this->*getTextByLangFunc)(1793, os.str()); break;
-        case 1077: texte = (this->*getTextByLangFunc)(1794, os.str()); break;
-        case 1078: texte = (this->*getTextByLangFunc)(1795, os.str()); break;
-        case 1079: texte = (this->*getTextByLangFunc)(1796, os.str()); break;
-        case 1080: texte = (this->*getTextByLangFunc)(1797, os.str()); break;
-        case 1081: texte = (this->*getTextByLangFunc)(1798, os.str()); break;
-        case 1082: texte = (this->*getTextByLangFunc)(1799, os.str()); idsuiv=1083; break;
-        case 1083: 
-            if (gpJeu->getJoueur()->getEpee()==5 && gpJeu->getJoueur()->hasObjet(O_ARC_OR) < 2) {id=1092; chercheText();break;}
-            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==4 
-            && gpJeu->getJoueur()->getObjet()==11) {id=1085; chercheText();break;}
-            if (gpJeu->getJoueur()->getEpee()==5 && gpJeu->getJoueur()->getEnnemi(50)) {id=1112; chercheText();break;}
-            if (gpJeu->getJoueur()->getEpee()==5) {id=1095; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1800, os.str()); break;
-        case 1084: texte = (this->*getTextByLangFunc)(1801, os.str()); break;
-        case 1085: texte = (this->*getTextByLangFunc)(1802, os.str()); idsuiv=1087; break;
-        case 1086: texte = (this->*getTextByLangFunc)(1803, os.str()); idsuiv=1088; break;
-        case 1087: texte = (this->*getTextByLangFunc)(1804, os.str()); 
-            buffer = (this->*getTextByLangFunc)(1805, os.str()); break;
-        case 1088: texte = (this->*getTextByLangFunc)(1806, os.str()); break;
-        case 1089: texte = (this->*getTextByLangFunc)(1807, os.str()); break;
-        case 1090: texte = (this->*getTextByLangFunc)(1808, os.str()); break;
-        case 1091: texte = (this->*getTextByLangFunc)(1809, os.str()); break;
-        case 1092: texte = (this->*getTextByLangFunc)(1810, os.str()); idsuiv=1093; break;
-        case 1093: texte = (this->*getTextByLangFunc)(1811, os.str()); break;
-        case 1094: texte = (this->*getTextByLangFunc)(1812, os.str()); break;
-        case 1095: texte = (this->*getTextByLangFunc)(1813, os.str()); idsuiv=1096; break;
-        case 1096: texte = (this->*getTextByLangFunc)(1814, os.str()); break;
-        case 1097: texte = (this->*getTextByLangFunc)(1815, os.str()); break;
-        case 1098: texte = (this->*getTextByLangFunc)(1816, os.str()); break;
-        case 1099: texte = (this->*getTextByLangFunc)(1817, os.str()); break;
-        case 1100: texte = (this->*getTextByLangFunc)(1818, os.str()); idsuiv=1101; break;
-        case 1101: texte = (this->*getTextByLangFunc)(1819, os.str()); idsuiv=1102; break;
-        case 1102: texte = (this->*getTextByLangFunc)(1820, os.str()); idsuiv=1103; break;
-        case 1103: texte = (this->*getTextByLangFunc)(1821, os.str()); idsuiv=1104; break;
-        case 1104: texte = (this->*getTextByLangFunc)(1822, os.str()); idsuiv=1105; break;
-        case 1105: texte = (this->*getTextByLangFunc)(1823, os.str()); idsuiv=1106; break;
-        case 1106: texte = (this->*getTextByLangFunc)(1824, os.str()); idsuiv=1107; break;
-        case 1107: texte = (this->*getTextByLangFunc)(1825, os.str()); idsuiv=1108; break;
-        case 1108: texte = (this->*getTextByLangFunc)(1826, os.str()); idsuiv=1109; break;
-        case 1109: texte = (this->*getTextByLangFunc)(1827, os.str()); break;
-        case 1110: texte = (this->*getTextByLangFunc)(1828, os.str()); break;
-        case 1111: texte = (this->*getTextByLangFunc)(1829, os.str()); break;
-        case 1112: texte = (this->*getTextByLangFunc)(1830, os.str()); break;
-        case 1113: texte = (this->*getTextByLangFunc)(1831, os.str()); break;
-        case 1114: 
-            if (gpJeu->getMonde()->motifValue(69*16,90*16) == 6380) {texte = (this->*getTextByLangFunc)(1832, os.str()); break;}
-            texte = (this->*getTextByLangFunc)(1833, os.str()); idsuiv=1117; break;
-        case 1115: texte = (this->*getTextByLangFunc)(1834, os.str()); idsuiv=1116; break;
-        case 1116: texte = (this->*getTextByLangFunc)(1835, os.str()); break;
-        case 1117: 
-            if (gpJeu->getMonde()->motifValue(69*16,90*16) != 6380 &&
-            gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<10) {id=1118; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1836, os.str()); break;
-        case 1118: texte = (this->*getTextByLangFunc)(1837, os.str()); break;
-        case 1119: texte = (this->*getTextByLangFunc)(1838, os.str()); break;
-        case 1120: texte = (this->*getTextByLangFunc)(1839, os.str()); idsuiv=1122; break;
-        case 1121: texte = (this->*getTextByLangFunc)(1840, os.str()); idsuiv=1116; break;
-        case 1122: 
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<5) {id=1118; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1841, os.str()); idsuiv=1123; break;
-        case 1123: texte = (this->*getTextByLangFunc)(1842, os.str()); idsuiv=1124; break;
-        case 1124: texte = (this->*getTextByLangFunc)(1843, os.str()); break;
-        case 1125: 
-            if (gpJeu->getJoueur()->getCoffre(12,1)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {id=1129; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {id=1130; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1844, os.str()); 
-            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126; break;
-        case 1126: texte = (this->*getTextByLangFunc)(1845, os.str()); break;
-        case 1127: texte = (this->*getTextByLangFunc)(1846, os.str()); idsuiv=1116; break;
-        case 1128: texte = (this->*getTextByLangFunc)(1847, os.str()); break;
-        case 1129: texte = (this->*getTextByLangFunc)(1848, os.str()); break;
-        case 1130: texte = (this->*getTextByLangFunc)(1849, os.str()); break;
+            texteTmp = (this->*getTextByLangFunc)(1789, os.str());
+            idsuiv=1073;
+            break;
+        case 1073:
+            texteTmp = (this->*getTextByLangFunc)(1790, os.str());
+            break;
+        case 1074:
+            if (gpJeu->getJoueur()->isLapin()) {
+                id=1073;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)>6) {
+                id=1078;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC4)==6
+                && gpJeu->getJoueur()->getObjet()==15) {
+                id=1075;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1791, os.str());
+            break;
+        case 1075:
+            texteTmp = (this->*getTextByLangFunc)(1792, os.str());
+            idsuiv=1076;
+            break;
+        case 1076:
+            texteTmp = (this->*getTextByLangFunc)(1793, os.str());
+            break;
+        case 1077:
+            texteTmp = (this->*getTextByLangFunc)(1794, os.str());
+            break;
+        case 1078:
+            texteTmp = (this->*getTextByLangFunc)(1795, os.str());
+            break;
+        case 1079:
+            texteTmp = (this->*getTextByLangFunc)(1796, os.str());
+            break;
+        case 1080:
+            texteTmp = (this->*getTextByLangFunc)(1797, os.str());
+            break;
+        case 1081:
+            texteTmp = (this->*getTextByLangFunc)(1798, os.str());
+            break;
+        case 1082:
+            texteTmp = (this->*getTextByLangFunc)(1799, os.str());
+            idsuiv=1083;
+            break;
+        case 1083:
+            if (gpJeu->getJoueur()->getEpee()==5 && gpJeu->getJoueur()->hasObjet(O_ARC_OR) < 2) {
+                id=1092;
+                break;
+            }
+            if (gpJeu->getJoueur()->hasObjet(O_TROC3)==4
+                && gpJeu->getJoueur()->getObjet()==11) {
+                id=1085;
+                break;
+            }
+            if (gpJeu->getJoueur()->getEpee()==5 && gpJeu->getJoueur()->getEnnemi(50)) {
+                id=1112;
+                break;
+            }
+            if (gpJeu->getJoueur()->getEpee()==5) {
+                id=1095;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1800, os.str());
+            break;
+        case 1084:
+            texteTmp = (this->*getTextByLangFunc)(1801, os.str());
+            break;
+        case 1085:
+            texteTmp = (this->*getTextByLangFunc)(1802, os.str());
+            idsuiv=1087;
+            break;
+        case 1086:
+            texteTmp = (this->*getTextByLangFunc)(1803, os.str());
+            idsuiv=1088;
+            break;
+        case 1087:
+            texteTmp = (this->*getTextByLangFunc)(1804, os.str());
+            buffer = (this->*getTextByLangFunc)(1805, os.str());
+            break;
+        case 1088:
+            texteTmp = (this->*getTextByLangFunc)(1806, os.str());
+            break;
+        case 1089:
+            texteTmp = (this->*getTextByLangFunc)(1807, os.str());
+            break;
+        case 1090:
+            texteTmp = (this->*getTextByLangFunc)(1808, os.str());
+            break;
+        case 1091:
+            texteTmp = (this->*getTextByLangFunc)(1809, os.str());
+            break;
+        case 1092:
+            texteTmp = (this->*getTextByLangFunc)(1810, os.str());
+            idsuiv=1093;
+            break;
+        case 1093:
+            texteTmp = (this->*getTextByLangFunc)(1811, os.str());
+            break;
+        case 1094:
+            texteTmp = (this->*getTextByLangFunc)(1812, os.str());
+            break;
+        case 1095:
+            texteTmp = (this->*getTextByLangFunc)(1813, os.str());
+            idsuiv=1096;
+            break;
+        case 1096:
+            texteTmp = (this->*getTextByLangFunc)(1814, os.str());
+            break;
+        case 1097:
+            texteTmp = (this->*getTextByLangFunc)(1815, os.str());
+            break;
+        case 1098:
+            texteTmp = (this->*getTextByLangFunc)(1816, os.str());
+            break;
+        case 1099:
+            texteTmp = (this->*getTextByLangFunc)(1817, os.str());
+            break;
+        case 1100:
+            texteTmp = (this->*getTextByLangFunc)(1818, os.str());
+            idsuiv=1101;
+            break;
+        case 1101:
+            texteTmp = (this->*getTextByLangFunc)(1819, os.str());
+            idsuiv=1102;
+            break;
+        case 1102:
+            texteTmp = (this->*getTextByLangFunc)(1820, os.str());
+            idsuiv=1103;
+            break;
+        case 1103:
+            texteTmp = (this->*getTextByLangFunc)(1821, os.str());
+            idsuiv=1104;
+            break;
+        case 1104:
+            texteTmp = (this->*getTextByLangFunc)(1822, os.str());
+            idsuiv=1105;
+            break;
+        case 1105:
+            texteTmp = (this->*getTextByLangFunc)(1823, os.str());
+            idsuiv=1106;
+            break;
+        case 1106:
+            texteTmp = (this->*getTextByLangFunc)(1824, os.str());
+            idsuiv=1107;
+            break;
+        case 1107:
+            texteTmp = (this->*getTextByLangFunc)(1825, os.str());
+            idsuiv=1108;
+            break;
+        case 1108:
+            texteTmp = (this->*getTextByLangFunc)(1826, os.str());
+            idsuiv=1109;
+            break;
+        case 1109:
+            texteTmp = (this->*getTextByLangFunc)(1827, os.str());
+            break;
+        case 1110:
+            texteTmp = (this->*getTextByLangFunc)(1828, os.str());
+            break;
+        case 1111:
+            texteTmp = (this->*getTextByLangFunc)(1829, os.str());
+            break;
+        case 1112:
+            texteTmp = (this->*getTextByLangFunc)(1830, os.str());
+            break;
+        case 1113:
+            texteTmp = (this->*getTextByLangFunc)(1831, os.str());
+            break;
+        case 1114:
+            if (gpJeu->getMonde()->motifValue(69*16,90*16) == 6380) {
+                texteTmp = (this->*getTextByLangFunc)(1832, os.str());
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1833, os.str());
+            idsuiv=1117;
+            break;
+        case 1115:
+            texteTmp = (this->*getTextByLangFunc)(1834, os.str());
+            idsuiv=1116;
+            break;
+        case 1116:
+            texteTmp = (this->*getTextByLangFunc)(1835, os.str());
+            break;
+        case 1117:
+            if (gpJeu->getMonde()->motifValue(69*16,90*16) != 6380 && gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<10) {
+                id=1118;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1836, os.str());
+            break;
+        case 1118:
+            texteTmp = (this->*getTextByLangFunc)(1837, os.str());
+            break;
+        case 1119:
+            texteTmp = (this->*getTextByLangFunc)(1838, os.str());
+            break;
+        case 1120:
+            texteTmp = (this->*getTextByLangFunc)(1839, os.str());
+            idsuiv=1122;
+            break;
+        case 1121:
+            texteTmp = (this->*getTextByLangFunc)(1840, os.str());
+            idsuiv=1116;
+            break;
+        case 1122:
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<5) {
+                id=1118;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1841, os.str());
+            idsuiv=1123;
+            break;
+        case 1123:
+            texteTmp = (this->*getTextByLangFunc)(1842, os.str());
+            idsuiv=1124;
+            break;
+        case 1124:
+            texteTmp = (this->*getTextByLangFunc)(1843, os.str());
+            break;
+        case 1125:
+            if (gpJeu->getJoueur()->getCoffre(12,1)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {
+                id=1129;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {
+                id=1130;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1844, os.str());
+            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126;
+            break;
+        case 1126:
+            texteTmp = (this->*getTextByLangFunc)(1845, os.str());
+            break;
+        case 1127:
+            texteTmp = (this->*getTextByLangFunc)(1846, os.str());
+            idsuiv=1116;
+            break;
+        case 1128:
+            texteTmp = (this->*getTextByLangFunc)(1847, os.str());
+            break;
+        case 1129:
+            texteTmp = (this->*getTextByLangFunc)(1848, os.str());
+            break;
+        case 1130:
+            texteTmp = (this->*getTextByLangFunc)(1849, os.str());
+            break;
         case 1131:
-            if (gpJeu->getJoueur()->getCoffre(12,2)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {id=1129; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {id=1132; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1850, os.str()); 
-            buffer=(this->*getTextByLangFunc)(1851, os.str()); 
-            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126; break;
-        case 1132: texte = (this->*getTextByLangFunc)(1852, os.str()); break;
-        case 1133: texte = (this->*getTextByLangFunc)(1853, os.str()); idsuiv=1116; break;
+            if (gpJeu->getJoueur()->getCoffre(12,2)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {
+                id=1129;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {
+                id=1132;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1850, os.str());
+            buffer=(this->*getTextByLangFunc)(1851, os.str());
+            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126;
+            break;
+        case 1132:
+            texteTmp = (this->*getTextByLangFunc)(1852, os.str());
+            break;
+        case 1133:
+            texteTmp = (this->*getTextByLangFunc)(1853, os.str());
+            idsuiv=1116;
+            break;
         case 1134:
-            if (gpJeu->getJoueur()->getCoffre(12,5)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->isTempsVisible()) {id=1135; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1854, os.str()); 
-            idsuiv=1126; break;
-        case 1135: texte = (this->*getTextByLangFunc)(1855, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(12,5)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->isTempsVisible()) {
+                id=1135;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1854, os.str());
+            idsuiv=1126;
+            break;
+        case 1135:
+            texteTmp = (this->*getTextByLangFunc)(1855, os.str());
+            break;
         case 1136:
-            if (gpJeu->getJoueur()->getCoffre(12,5)) {id=1128; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1856, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(12,5)) {
+                id=1128;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1856, os.str());
+            break;
         case 1137:
-            if (gpJeu->getJoueur()->getCle(12,0)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {id=1129; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {id=1130; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1857, os.str()); 
-            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126; break;
+            if (gpJeu->getJoueur()->getCle(12,0)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {
+                id=1129;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {
+                id=1130;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1857, os.str());
+            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126;
+            break;
         case 1138:
-            if (gpJeu->getJoueur()->getCoffre(12,4)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {id=1129; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {id=1130; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1858, os.str()); 
-            idsuiv=1139; break;
-        case 1139: texte = (this->*getTextByLangFunc)(1859, os.str()); idsuiv=1141; break;
-        case 1140: texte = (this->*getTextByLangFunc)(1860, os.str()); idsuiv=1116; break;
-        case 1141: texte = (this->*getTextByLangFunc)(1861, os.str()); break;
-        case 1142: texte = (this->*getTextByLangFunc)(1862, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(12,4)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {
+                id=1129;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {
+                id=1130;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1858, os.str());
+            idsuiv=1139;
+            break;
+        case 1139:
+            texteTmp = (this->*getTextByLangFunc)(1859, os.str());
+            idsuiv=1141;
+            break;
+        case 1140:
+            texteTmp = (this->*getTextByLangFunc)(1860, os.str());
+            idsuiv=1116;
+            break;
+        case 1141:
+            texteTmp = (this->*getTextByLangFunc)(1861, os.str());
+            break;
+        case 1142:
+            texteTmp = (this->*getTextByLangFunc)(1862, os.str());
+            break;
         case 1143:
-            if (gpJeu->getJoueur()->getCle(12,1)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {id=1129; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {id=1130; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1863, os.str()); 
-            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126; break;
+            if (gpJeu->getJoueur()->getCle(12,1)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 2) {
+                id=1129;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) == 3) {
+                id=1130;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1863, os.str());
+            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126;
+            break;
         case 1144:
-            if (gpJeu->getJoueur()->getCoffre(12,3)) {id=1128; chercheText();break;}
-            if (gpJeu->getJoueur()->getCoffre(12,13) > 1) {id=1145; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1864, os.str()); 
-            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126; break;
+            if (gpJeu->getJoueur()->getCoffre(12,3)) {
+                id=1128;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCoffre(12,13) > 1) {
+                id=1145;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1864, os.str());
+            if (!gpJeu->getJoueur()->getCoffre(12,13)) idsuiv=1126;
+            break;
         case 1145:
-            tmp = gpJeu->getJoueur()->getCoffre(12,13)-2; os << tmp;
-            texte = (this->*getTextByLangFunc)(1865, os.str())+os.str()+(this->*getTextByLangFunc)(1866, os.str()); idsuiv=1129; 
-            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<tmp) {idsuiv=1118;break;}
+            tmp = gpJeu->getJoueur()->getCoffre(12,13)-2;
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1865, os.str())+os.str()+(this->*getTextByLangFunc)(1866, os.str());
+            idsuiv=1129;
+            if (gpJeu->getJoueur()->getGanon() + gpJeu->getJoueur()->getBoostGanon()<tmp) {
+                idsuiv=1118;
+                break;
+            }
             break;
         case 1146:
-            tmp = gpJeu->getJoueur()->getCoffre(12,13)-2; os << tmp;
-            texte = (this->*getTextByLangFunc)(1867, os.str())+os.str()+(this->*getTextByLangFunc)(1868, os.str()); idsuiv=1116; break;
+            tmp = gpJeu->getJoueur()->getCoffre(12,13)-2;
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1867, os.str())+os.str()+(this->*getTextByLangFunc)(1868, os.str());
+            idsuiv=1116;
+            break;
             break;
         case 1147:
-            if (gpJeu->getJoueur()->getCle(12,2)) {id=1148; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1869, os.str());
+            if (gpJeu->getJoueur()->getCle(12,2)) {
+                id=1148;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1869, os.str());
             break;
-        case 1148: 
-            if (gpJeu->getJoueur()->getCoeur(11)) {id=1149; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(1870, os.str()); break;
-        case 1149: texte = (this->*getTextByLangFunc)(1871, os.str()); break;
-        case 1150: texte = (this->*getTextByLangFunc)(1872, os.str()); idsuiv=1151; break;
-        case 1151: texte = (this->*getTextByLangFunc)(1873, os.str()); idsuiv=1152; break;
-        case 1152: 
+        case 1148:
+            if (gpJeu->getJoueur()->getCoeur(11)) {
+                id=1149;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(1870, os.str());
+            break;
+        case 1149:
+            texteTmp = (this->*getTextByLangFunc)(1871, os.str());
+            break;
+        case 1150:
+            texteTmp = (this->*getTextByLangFunc)(1872, os.str());
+            idsuiv=1151;
+            break;
+        case 1151:
+            texteTmp = (this->*getTextByLangFunc)(1873, os.str());
+            idsuiv=1152;
+            break;
+        case 1152:
             gpJeu->getJoueur()->setCoffre(12,14,0); // ->nb questions posées
             for (int i = 0; i < MAX_QUIZZ; i++) gpJeu->getJoueur()->setCoffre(12,15+i,0);
-            tmp = rand()%MAX_QUIZZ; idsuiv = 1154 + tmp*4;
+            tmp = rand()%MAX_QUIZZ;
+            idsuiv = 1154 + tmp*4;
             gpJeu->getJoueur()->setCoffre(12,15+tmp,1);
-            texte = (this->*getTextByLangFunc)(1874, os.str()); 
+            texteTmp = (this->*getTextByLangFunc)(1874, os.str());
             break;
-        case 1153: 
+        case 1153:
             if ((MAX_QUIZZ-gpJeu->getJoueur()->getCoffre(12,14)) > 0) {
                 tmp = rand()%(MAX_QUIZZ-gpJeu->getJoueur()->getCoffre(12,14));
                 for (int i = 0; i <= tmp; i++) {
                     if (gpJeu->getJoueur()->getCoffre(12,15+i) > 0) {
                         tmp++;
                     }
-                } 
+                }
                 idsuiv=1154+tmp*4;
                 gpJeu->getJoueur()->setCoffre(12,15+tmp,1);
             }
-            texte = (this->*getTextByLangFunc)(1875, os.str()); break;
-        case 1154: texte = (this->*getTextByLangFunc)(1876, os.str()); idsuiv=1157; break;
-        case 1155: texte = (this->*getTextByLangFunc)(1877, os.str()); idsuiv=1156; break;
-        case 1156: texte = (this->*getTextByLangFunc)(1878, os.str()); break;
-        case 1157: texte = (this->*getTextByLangFunc)(1879, os.str()); break;
-        
-        case 1158: texte = (this->*getTextByLangFunc)(1880, os.str()); idsuiv=1161; break;
-        case 1159: texte = (this->*getTextByLangFunc)(1881, os.str()); idsuiv=1160; break;
-        case 1160: texte = (this->*getTextByLangFunc)(1882, os.str()); break;
-        case 1161: texte = (this->*getTextByLangFunc)(1883, os.str()); break;
-        
-        case 1162: texte = (this->*getTextByLangFunc)(1884, os.str()); idsuiv=1165; break;
-        case 1163: texte = (this->*getTextByLangFunc)(1885, os.str()); idsuiv=1164; break;
-        case 1164: texte = (this->*getTextByLangFunc)(1886, os.str()); break;
-        case 1165: texte = (this->*getTextByLangFunc)(1887, os.str()); break;
-        
-        case 1166: texte = (this->*getTextByLangFunc)(1888, os.str()); idsuiv=1168; break;
-        case 1167: texte = (this->*getTextByLangFunc)(1889, os.str()); idsuiv=1169; break;
-        case 1168: texte = (this->*getTextByLangFunc)(1890, os.str()); break;
-        case 1169: texte = (this->*getTextByLangFunc)(1891, os.str()); break;
+            texteTmp = (this->*getTextByLangFunc)(1875, os.str());
+            break;
+        case 1154:
+            texteTmp = (this->*getTextByLangFunc)(1876, os.str());
+            idsuiv=1157;
+            break;
+        case 1155:
+            texteTmp = (this->*getTextByLangFunc)(1877, os.str());
+            idsuiv=1156;
+            break;
+        case 1156:
+            texteTmp = (this->*getTextByLangFunc)(1878, os.str());
+            break;
+        case 1157:
+            texteTmp = (this->*getTextByLangFunc)(1879, os.str());
+            break;
+        case 1158:
+            texteTmp = (this->*getTextByLangFunc)(1880, os.str());
+            idsuiv=1161;
+            break;
+        case 1159:
+            texteTmp = (this->*getTextByLangFunc)(1881, os.str());
+            idsuiv=1160;
+            break;
+        case 1160:
+            texteTmp = (this->*getTextByLangFunc)(1882, os.str());
+            break;
+        case 1161:
+            texteTmp = (this->*getTextByLangFunc)(1883, os.str());
+            break;
+        case 1162:
+            texteTmp = (this->*getTextByLangFunc)(1884, os.str());
+            idsuiv=1165;
+            break;
+        case 1163:
+            texteTmp = (this->*getTextByLangFunc)(1885, os.str());
+            idsuiv=1164;
+            break;
+        case 1164:
+            texteTmp = (this->*getTextByLangFunc)(1886, os.str());
+            break;
+        case 1165:
+            texteTmp = (this->*getTextByLangFunc)(1887, os.str());
+            break;
+        case 1166:
+            texteTmp = (this->*getTextByLangFunc)(1888, os.str());
+            idsuiv=1168;
+            break;
+        case 1167:
+            texteTmp = (this->*getTextByLangFunc)(1889, os.str());
+            idsuiv=1169;
+            break;
+        case 1168:
+            texteTmp = (this->*getTextByLangFunc)(1890, os.str());
+            break;
+        case 1169:
+            texteTmp = (this->*getTextByLangFunc)(1891, os.str());
+            break;
+        case 1170:
+            tmp = gpJeu->getJoueur()->getMort() + 1;
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1892, os.str())+os.str()+(this->*getTextByLangFunc)(1893, os.str());
+            idsuiv=1173;
+            break;
+        case 1171:
+            tmp = gpJeu->getJoueur()->getMort() + 1;
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1894, os.str())+os.str()+(this->*getTextByLangFunc)(1895, os.str());
+            idsuiv=1172;
+            break;
+        case 1172:
+            tmp = gpJeu->getJoueur()->getMort();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1896, os.str())+os.str()+(this->*getTextByLangFunc)(1897, os.str());
+            break;
+        case 1173:
+            tmp = gpJeu->getJoueur()->getMort();
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1898, os.str())+os.str()+(this->*getTextByLangFunc)(1899, os.str());
+            break;
+        case 1174:
+            texteTmp = (this->*getTextByLangFunc)(1900, os.str());
+            idsuiv=1176;
+            break;
+        case 1175:
+            texteTmp = (this->*getTextByLangFunc)(1901, os.str());
+            idsuiv=1177;
+            break;
+        case 1176:
+            texteTmp = (this->*getTextByLangFunc)(1902, os.str());
+            break;
+        case 1177:
+            texteTmp = (this->*getTextByLangFunc)(1903, os.str());
+            break;
 
-        case 1170: 
-            tmp = gpJeu->getJoueur()->getMort() + 1; os << tmp;
-            texte = (this->*getTextByLangFunc)(1892, os.str())+os.str()+(this->*getTextByLangFunc)(1893, os.str()); idsuiv=1173; break;
-        case 1171: 
-            tmp = gpJeu->getJoueur()->getMort() + 1; os << tmp;
-            texte = (this->*getTextByLangFunc)(1894, os.str())+os.str()+(this->*getTextByLangFunc)(1895, os.str()); idsuiv=1172; break;
-        case 1172: 
-            tmp = gpJeu->getJoueur()->getMort(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1896, os.str())+os.str()+(this->*getTextByLangFunc)(1897, os.str()); break;
-        case 1173: 
-            tmp = gpJeu->getJoueur()->getMort(); os << tmp;
-            texte = (this->*getTextByLangFunc)(1898, os.str())+os.str()+(this->*getTextByLangFunc)(1899, os.str()); break;
-            
-        case 1174: texte = (this->*getTextByLangFunc)(1900, os.str()); idsuiv=1176; break;
-        case 1175: texte = (this->*getTextByLangFunc)(1901, os.str()); idsuiv=1177; break;
-        case 1176: texte = (this->*getTextByLangFunc)(1902, os.str()); break;
-        case 1177: texte = (this->*getTextByLangFunc)(1903, os.str()); break;
-        
-        case 1178: texte = (this->*getTextByLangFunc)(1904, os.str()); idsuiv=1180; break;
-        case 1179: texte = (this->*getTextByLangFunc)(1905, os.str()); idsuiv=1181; break;
-        case 1180: texte = (this->*getTextByLangFunc)(1906, os.str()); break;
-        case 1181: texte = (this->*getTextByLangFunc)(1907, os.str()); break;
-        
-        case 1182: texte = (this->*getTextByLangFunc)(1908, os.str()); idsuiv=1184; break;
-        case 1183: texte = (this->*getTextByLangFunc)(1909, os.str()); idsuiv=1185; break;
-        case 1184: texte = (this->*getTextByLangFunc)(1910, os.str()); break;
-        case 1185: texte = (this->*getTextByLangFunc)(1911, os.str()); break;
-        
-        case 1186: texte = (this->*getTextByLangFunc)(1912, os.str()); idsuiv=1189; break;
-        case 1187: texte = (this->*getTextByLangFunc)(1913, os.str()); idsuiv=1188; break;
-        case 1188: texte = (this->*getTextByLangFunc)(1914, os.str()); break;
-        case 1189: texte = (this->*getTextByLangFunc)(1915, os.str()); break;
-        
-        case 1190: texte = (this->*getTextByLangFunc)(1916, os.str()); idsuiv=1192; break;
-        case 1191: texte = (this->*getTextByLangFunc)(1917, os.str()); idsuiv=1193; break;
-        case 1192: texte = (this->*getTextByLangFunc)(1918, os.str()); break;
-        case 1193: texte = (this->*getTextByLangFunc)(1919, os.str()); break;
-        
-        case 1194: 
-            tmp = gpJeu->getJoueur()->getCoffre(12,14) + 1; os << tmp;
-            texte = (this->*getTextByLangFunc)(1920, os.str())+os.str()+(this->*getTextByLangFunc)(1921, os.str()); idsuiv=1197; break;
-        case 1195: 
-            tmp = gpJeu->getJoueur()->getCoffre(12,14) + 1; os << tmp;
-            texte = (this->*getTextByLangFunc)(1922, os.str())+os.str()+(this->*getTextByLangFunc)(1923, os.str()); idsuiv=1196; break;
-        case 1196: texte = (this->*getTextByLangFunc)(1924, os.str()); break;
-        case 1197: texte = (this->*getTextByLangFunc)(1925, os.str()); break;
-        
-        case 1198: texte = (this->*getTextByLangFunc)(1926, os.str()); idsuiv=1200; break;
-        case 1199: texte = (this->*getTextByLangFunc)(1927, os.str()); idsuiv=1201; break;
-        case 1200: texte = (this->*getTextByLangFunc)(1928, os.str()); break;
-        case 1201: texte = (this->*getTextByLangFunc)(1929, os.str()); break;
-        
-        case 1202: texte = (this->*getTextByLangFunc)(1930, os.str()); idsuiv=1204; break;
-        case 1203: texte = (this->*getTextByLangFunc)(1931, os.str()); idsuiv=1205; break;
-        case 1204: texte = (this->*getTextByLangFunc)(1932, os.str()); break;
-        case 1205: texte = (this->*getTextByLangFunc)(1933, os.str()); break;
-        
-        case 1206: texte = (this->*getTextByLangFunc)(1934, os.str()); idsuiv=1209; break;
-        case 1207: texte = (this->*getTextByLangFunc)(1935, os.str()); idsuiv=1208; break;
-        case 1208: texte = (this->*getTextByLangFunc)(1936, os.str()); break;
-        case 1209: texte = (this->*getTextByLangFunc)(1937, os.str()); break;
-        
-        case 1210: texte = (this->*getTextByLangFunc)(1938, os.str()); idsuiv=1213; break;
-        case 1211: texte = (this->*getTextByLangFunc)(1939, os.str()); idsuiv=1212; break;
-        case 1212: texte = (this->*getTextByLangFunc)(1940, os.str()); break;
-        case 1213: texte = (this->*getTextByLangFunc)(1941, os.str()); break;
-        
-        case 1214: texte = (this->*getTextByLangFunc)(1942, os.str()); idsuiv=1217; break;
-        case 1215: texte = (this->*getTextByLangFunc)(1943, os.str()); idsuiv=1216; break;
-        case 1216: texte = (this->*getTextByLangFunc)(1944, os.str()); break;
-        case 1217: texte = (this->*getTextByLangFunc)(1945, os.str()); break;
-        
-        case 1218: texte = (this->*getTextByLangFunc)(1946, os.str()); idsuiv=1221; break;
-        case 1219: texte = (this->*getTextByLangFunc)(1947, os.str()); idsuiv=1220; break;
-        case 1220: texte = (this->*getTextByLangFunc)(1948, os.str()); break;
-        case 1221: texte = (this->*getTextByLangFunc)(1949, os.str()); break;
-        
-        case 1222: texte = (this->*getTextByLangFunc)(1950, os.str()); idsuiv=1224; break;
-        case 1223: texte = (this->*getTextByLangFunc)(1951, os.str()); idsuiv=1225; break;
-        case 1224: texte = (this->*getTextByLangFunc)(1952, os.str()); break;
-        case 1225: texte = (this->*getTextByLangFunc)(1953, os.str()); break;
-        
-        case 1226: texte = (this->*getTextByLangFunc)(1954, os.str()); idsuiv=1229; break;
-        case 1227: texte = (this->*getTextByLangFunc)(1955, os.str()); idsuiv=1228; break;
-        case 1228: texte = (this->*getTextByLangFunc)(1956, os.str()); break;
-        case 1229: texte = (this->*getTextByLangFunc)(1957, os.str()); break;
-        
-        case 1230: texte = (this->*getTextByLangFunc)(1958, os.str()); idsuiv=1232; break;
-        case 1231: texte = (this->*getTextByLangFunc)(1959, os.str()); idsuiv=1233; break;
-        case 1232: texte = (this->*getTextByLangFunc)(1960, os.str()); break;
-        case 1233: texte = (this->*getTextByLangFunc)(1961, os.str()); break;
-        
-        case 1234: texte = (this->*getTextByLangFunc)(1962, os.str()); idsuiv=1237; break;
-        case 1235: texte = (this->*getTextByLangFunc)(1963, os.str()); idsuiv=1236; break;
-        case 1236: texte = (this->*getTextByLangFunc)(1964, os.str()); break;
-        case 1237: texte = (this->*getTextByLangFunc)(1965, os.str()); break;
-        
-        case 1238: texte = (this->*getTextByLangFunc)(1966, os.str()); idsuiv=1241; break;
-        case 1239: texte = (this->*getTextByLangFunc)(1967, os.str()); idsuiv=1240; break;
-        case 1240: texte = (this->*getTextByLangFunc)(1968, os.str()); break;
-        case 1241: texte = (this->*getTextByLangFunc)(1969, os.str()); break;
-        
-        case 1242: texte = (this->*getTextByLangFunc)(1970, os.str()); idsuiv=1244; break;
-        case 1243: texte = (this->*getTextByLangFunc)(1971, os.str()); idsuiv=1245; break;
-        case 1244: texte = (this->*getTextByLangFunc)(1972, os.str()); break;
-        case 1245: texte = (this->*getTextByLangFunc)(1973, os.str()); break;
-        
-        case 1246: texte = (this->*getTextByLangFunc)(1974, os.str()); idsuiv=1249; break;
-        case 1247: texte = (this->*getTextByLangFunc)(1975, os.str()); idsuiv=1248; break;
-        case 1248: texte = (this->*getTextByLangFunc)(1976, os.str()); break;
-        case 1249: texte = (this->*getTextByLangFunc)(1977, os.str()); break;
-        
-        case 1250: texte = (this->*getTextByLangFunc)(1978, os.str()); idsuiv=1253; break;
-        case 1251: texte = (this->*getTextByLangFunc)(1979, os.str()); idsuiv=1252; break;
-        case 1252: texte = (this->*getTextByLangFunc)(1980, os.str()); break;
-        case 1253: texte = (this->*getTextByLangFunc)(1981, os.str()); break;
-        
-        case 1254: texte = (this->*getTextByLangFunc)(1982, os.str()); idsuiv=1257; break;
-        case 1255: texte = (this->*getTextByLangFunc)(1983, os.str()); idsuiv=1256; break;
-        case 1256: texte = (this->*getTextByLangFunc)(1984, os.str()); break;
-        case 1257: texte = (this->*getTextByLangFunc)(1985, os.str()); break;
-        
-        case 1258: texte = (this->*getTextByLangFunc)(1986, os.str()); idsuiv=1261; break;
-        case 1259: texte = (this->*getTextByLangFunc)(1987, os.str()); idsuiv=1260; break;
-        case 1260: texte = (this->*getTextByLangFunc)(1988, os.str()); break;
-        case 1261: texte = (this->*getTextByLangFunc)(1989, os.str()); break;
-        
-        case 1262: texte = (this->*getTextByLangFunc)(1990, os.str()); idsuiv=1264; break;
-        case 1263: texte = (this->*getTextByLangFunc)(1991, os.str()); idsuiv=1265; break;
-        case 1264: texte = (this->*getTextByLangFunc)(1992, os.str()); break;
-        case 1265: texte = (this->*getTextByLangFunc)(1993, os.str()); break;
-        
-        case 1266: 
-            tmp = gpJeu->getJoueur()->getTemps(2); os << tmp;
-            texte = (this->*getTextByLangFunc)(1994, os.str())+os.str()+(this->*getTextByLangFunc)(1995, os.str()); idsuiv=1268; break;
-        case 1267: 
-            tmp = gpJeu->getJoueur()->getTemps(2); os << tmp;
-            texte = (this->*getTextByLangFunc)(1996, os.str())+os.str()+(this->*getTextByLangFunc)(1997, os.str()); idsuiv=1269; break;
-        case 1268: texte = (this->*getTextByLangFunc)(1998, os.str()); break;
-        case 1269: texte = (this->*getTextByLangFunc)(1999, os.str()); break;
-        
-        case 1270: texte = (this->*getTextByLangFunc)(2000, os.str()); idsuiv=1273; break;
-        case 1271: texte = (this->*getTextByLangFunc)(2001, os.str()); idsuiv=1272; break;
-        case 1272: texte = (this->*getTextByLangFunc)(2002, os.str()); break;
-        case 1273: texte = (this->*getTextByLangFunc)(2003, os.str()); break;
-        
-        case 1274: texte = (this->*getTextByLangFunc)(2004, os.str()); idsuiv=1276; break;
-        case 1275: texte = (this->*getTextByLangFunc)(2005, os.str()); idsuiv=1277; break;
-        case 1276: texte = (this->*getTextByLangFunc)(2006, os.str()); break;
-        case 1277: texte = (this->*getTextByLangFunc)(2007, os.str()); break;
-        
-        case 1278: texte = (this->*getTextByLangFunc)(2008, os.str()); idsuiv=1280; break;
-        case 1279: texte = (this->*getTextByLangFunc)(2009, os.str()); idsuiv=1281; break;
-        case 1280: texte = (this->*getTextByLangFunc)(2010, os.str()); break;
-        case 1281: texte = (this->*getTextByLangFunc)(2011, os.str()); break;
-        
-        case 1282: texte = (this->*getTextByLangFunc)(2012, os.str()); idsuiv=1285; break;
-        case 1283: texte = (this->*getTextByLangFunc)(2013, os.str()); idsuiv=1284; break;
-        case 1284: texte = (this->*getTextByLangFunc)(2014, os.str()); break;
-        case 1285: texte = (this->*getTextByLangFunc)(2015, os.str()); break;
-        
-        case 1286: texte = (this->*getTextByLangFunc)(2016, os.str()); idsuiv=1289; break;
-        case 1287: texte = (this->*getTextByLangFunc)(2017, os.str()); idsuiv=1288; break;
-        case 1288: texte = (this->*getTextByLangFunc)(2018, os.str()); break;
-        case 1289: texte = (this->*getTextByLangFunc)(2019, os.str()); break;
-        
-        case 1290: texte = (this->*getTextByLangFunc)(2020, os.str()); idsuiv=1292; break;
-        case 1291: texte = (this->*getTextByLangFunc)(2021, os.str()); idsuiv=1293; break;
-        case 1292: texte = (this->*getTextByLangFunc)(2022, os.str()); break;
-        case 1293: texte = (this->*getTextByLangFunc)(2023, os.str()); break;
-        
-        case 1294: texte = (this->*getTextByLangFunc)(2024, os.str()); idsuiv=1297; break;
-        case 1295: texte = (this->*getTextByLangFunc)(2025, os.str()); idsuiv=1296; break;
-        case 1296: texte = (this->*getTextByLangFunc)(2026, os.str()); break;
-        case 1297: texte = (this->*getTextByLangFunc)(2027, os.str()); break;
-        
-        case 1298: texte = (this->*getTextByLangFunc)(2028, os.str()); idsuiv=1300; break;
-        case 1299: texte = (this->*getTextByLangFunc)(2029, os.str()); idsuiv=1301; break;
-        case 1300: texte = (this->*getTextByLangFunc)(2030, os.str()); break;
-        case 1301: texte = (this->*getTextByLangFunc)(2031, os.str()); break;
-        
-        case 1302: texte = (this->*getTextByLangFunc)(2032, os.str()); idsuiv=1305; break;
-        case 1303: texte = (this->*getTextByLangFunc)(2033, os.str()); idsuiv=1304; break;
-        case 1304: texte = (this->*getTextByLangFunc)(2034, os.str()); break;
-        case 1305: texte = (this->*getTextByLangFunc)(2035, os.str()); break;
-        
-        case 1306: texte = (this->*getTextByLangFunc)(2036, os.str()); idsuiv=1308; break;
-        case 1307: texte = (this->*getTextByLangFunc)(2037, os.str()); idsuiv=1309; break;
-        case 1308: texte = (this->*getTextByLangFunc)(2038, os.str()); break;
-        case 1309: texte = (this->*getTextByLangFunc)(2039, os.str()); break;
-        
-        case 1310: texte = (this->*getTextByLangFunc)(2040, os.str()); idsuiv=1313; break;
-        case 1311: texte = (this->*getTextByLangFunc)(2041, os.str()); idsuiv=1312; break;
-        case 1312: texte = (this->*getTextByLangFunc)(2042, os.str()); break;
-        case 1313: texte = (this->*getTextByLangFunc)(2043, os.str()); break;
-        
-        case 1314: texte = (this->*getTextByLangFunc)(2044, os.str()); break;
-        case 1315: texte = (this->*getTextByLangFunc)(2045, os.str()); break;
-        
-        case 1316: texte = (this->*getTextByLangFunc)(2046, os.str()); break;
-        case 1317: texte = (this->*getTextByLangFunc)(2047, os.str()); idsuiv=1318; break;
-        case 1318: texte = (this->*getTextByLangFunc)(2048, os.str()); idsuiv=1319; break;
-        case 1319: texte = (this->*getTextByLangFunc)(2049, os.str()); idsuiv=1320; break;
-        case 1320: texte = (this->*getTextByLangFunc)(2050, os.str()); break;
-        
-        case 1321: texte = (this->*getTextByLangFunc)(2051, os.str()); break;
-        case 1322: texte = (this->*getTextByLangFunc)(2052, os.str()); idsuiv=1323; break;
-        case 1323: texte = (this->*getTextByLangFunc)(2053, os.str()); idsuiv=1324; break;
-        case 1324: texte = (this->*getTextByLangFunc)(2054, os.str()); idsuiv=1325; break;
-        case 1325: texte = (this->*getTextByLangFunc)(2055, os.str()); idsuiv=1326; break;
-        case 1326: texte = (this->*getTextByLangFunc)(2056, os.str()); break;
-        
-        case 1327: texte = (this->*getTextByLangFunc)(2057, os.str()); idsuiv=1329; break;
-        case 1328: texte = (this->*getTextByLangFunc)(2058, os.str()); idsuiv=1332; break;
-        case 1329: texte = (this->*getTextByLangFunc)(2059, os.str()); idsuiv=1330; break; 
-        case 1330: texte = (this->*getTextByLangFunc)(2060, os.str()); idsuiv=1331; break;
-        case 1331: texte = (this->*getTextByLangFunc)(2061, os.str()); idsuiv=1332; break;
-        case 1332: texte = (this->*getTextByLangFunc)(2062, os.str()); break;
-        
+        case 1178:
+            texteTmp = (this->*getTextByLangFunc)(1904, os.str());
+            idsuiv=1180;
+            break;
+        case 1179:
+            texteTmp = (this->*getTextByLangFunc)(1905, os.str());
+            idsuiv=1181;
+            break;
+        case 1180:
+            texteTmp = (this->*getTextByLangFunc)(1906, os.str());
+            break;
+        case 1181:
+            texteTmp = (this->*getTextByLangFunc)(1907, os.str());
+            break;
+        case 1182:
+            texteTmp = (this->*getTextByLangFunc)(1908, os.str());
+            idsuiv=1184;
+            break;
+        case 1183:
+            texteTmp = (this->*getTextByLangFunc)(1909, os.str());
+            idsuiv=1185;
+            break;
+        case 1184:
+            texteTmp = (this->*getTextByLangFunc)(1910, os.str());
+            break;
+        case 1185:
+            texteTmp = (this->*getTextByLangFunc)(1911, os.str());
+            break;
+        case 1186:
+            texteTmp = (this->*getTextByLangFunc)(1912, os.str());
+            idsuiv=1189;
+            break;
+        case 1187:
+            texteTmp = (this->*getTextByLangFunc)(1913, os.str());
+            idsuiv=1188;
+            break;
+        case 1188:
+            texteTmp = (this->*getTextByLangFunc)(1914, os.str());
+            break;
+        case 1189:
+            texteTmp = (this->*getTextByLangFunc)(1915, os.str());
+            break;
+        case 1190:
+            texteTmp = (this->*getTextByLangFunc)(1916, os.str());
+            idsuiv=1192;
+            break;
+        case 1191:
+            texteTmp = (this->*getTextByLangFunc)(1917, os.str());
+            idsuiv=1193;
+            break;
+        case 1192:
+            texteTmp = (this->*getTextByLangFunc)(1918, os.str());
+            break;
+        case 1193:
+            texteTmp = (this->*getTextByLangFunc)(1919, os.str());
+            break;
+        case 1194:
+            tmp = gpJeu->getJoueur()->getCoffre(12,14) + 1;
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1920, os.str())+os.str()+(this->*getTextByLangFunc)(1921, os.str());
+            idsuiv=1197;
+            break;
+        case 1195:
+            tmp = gpJeu->getJoueur()->getCoffre(12,14) + 1;
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1922, os.str())+os.str()+(this->*getTextByLangFunc)(1923, os.str());
+            idsuiv=1196;
+            break;
+        case 1196:
+            texteTmp = (this->*getTextByLangFunc)(1924, os.str());
+            break;
+        case 1197:
+            texteTmp = (this->*getTextByLangFunc)(1925, os.str());
+            break;
+        case 1198:
+            texteTmp = (this->*getTextByLangFunc)(1926, os.str());
+            idsuiv=1200;
+            break;
+        case 1199:
+            texteTmp = (this->*getTextByLangFunc)(1927, os.str());
+            idsuiv=1201;
+            break;
+        case 1200:
+            texteTmp = (this->*getTextByLangFunc)(1928, os.str());
+            break;
+        case 1201:
+            texteTmp = (this->*getTextByLangFunc)(1929, os.str());
+            break;
+        case 1202:
+            texteTmp = (this->*getTextByLangFunc)(1930, os.str());
+            idsuiv=1204;
+            break;
+        case 1203:
+            texteTmp = (this->*getTextByLangFunc)(1931, os.str());
+            idsuiv=1205;
+            break;
+        case 1204:
+            texteTmp = (this->*getTextByLangFunc)(1932, os.str());
+            break;
+        case 1205:
+            texteTmp = (this->*getTextByLangFunc)(1933, os.str());
+            break;
+        case 1206:
+            texteTmp = (this->*getTextByLangFunc)(1934, os.str());
+            idsuiv=1209;
+            break;
+        case 1207:
+            texteTmp = (this->*getTextByLangFunc)(1935, os.str());
+            idsuiv=1208;
+            break;
+        case 1208:
+            texteTmp = (this->*getTextByLangFunc)(1936, os.str());
+            break;
+        case 1209:
+            texteTmp = (this->*getTextByLangFunc)(1937, os.str());
+            break;
+        case 1210:
+            texteTmp = (this->*getTextByLangFunc)(1938, os.str());
+            idsuiv=1213;
+            break;
+        case 1211:
+            texteTmp = (this->*getTextByLangFunc)(1939, os.str());
+            idsuiv=1212;
+            break;
+        case 1212:
+            texteTmp = (this->*getTextByLangFunc)(1940, os.str());
+            break;
+        case 1213:
+            texteTmp = (this->*getTextByLangFunc)(1941, os.str());
+            break;
+        case 1214:
+            texteTmp = (this->*getTextByLangFunc)(1942, os.str());
+            idsuiv=1217;
+            break;
+        case 1215:
+            texteTmp = (this->*getTextByLangFunc)(1943, os.str());
+            idsuiv=1216;
+            break;
+        case 1216:
+            texteTmp = (this->*getTextByLangFunc)(1944, os.str());
+            break;
+        case 1217:
+            texteTmp = (this->*getTextByLangFunc)(1945, os.str());
+            break;
+        case 1218:
+            texteTmp = (this->*getTextByLangFunc)(1946, os.str());
+            idsuiv=1221;
+            break;
+        case 1219:
+            texteTmp = (this->*getTextByLangFunc)(1947, os.str());
+            idsuiv=1220;
+            break;
+        case 1220:
+            texteTmp = (this->*getTextByLangFunc)(1948, os.str());
+            break;
+        case 1221:
+            texteTmp = (this->*getTextByLangFunc)(1949, os.str());
+            break;
+        case 1222:
+            texteTmp = (this->*getTextByLangFunc)(1950, os.str());
+            idsuiv=1224;
+            break;
+        case 1223:
+            texteTmp = (this->*getTextByLangFunc)(1951, os.str());
+            idsuiv=1225;
+            break;
+        case 1224:
+            texteTmp = (this->*getTextByLangFunc)(1952, os.str());
+            break;
+        case 1225:
+            texteTmp = (this->*getTextByLangFunc)(1953, os.str());
+            break;
+        case 1226:
+            texteTmp = (this->*getTextByLangFunc)(1954, os.str());
+            idsuiv=1229;
+            break;
+        case 1227:
+            texteTmp = (this->*getTextByLangFunc)(1955, os.str());
+            idsuiv=1228;
+            break;
+        case 1228:
+            texteTmp = (this->*getTextByLangFunc)(1956, os.str());
+            break;
+        case 1229:
+            texteTmp = (this->*getTextByLangFunc)(1957, os.str());
+            break;
+        case 1230:
+            texteTmp = (this->*getTextByLangFunc)(1958, os.str());
+            idsuiv=1232;
+            break;
+        case 1231:
+            texteTmp = (this->*getTextByLangFunc)(1959, os.str());
+            idsuiv=1233;
+            break;
+        case 1232:
+            texteTmp = (this->*getTextByLangFunc)(1960, os.str());
+            break;
+        case 1233:
+            texteTmp = (this->*getTextByLangFunc)(1961, os.str());
+            break;
+        case 1234:
+            texteTmp = (this->*getTextByLangFunc)(1962, os.str());
+            idsuiv=1237;
+            break;
+        case 1235:
+            texteTmp = (this->*getTextByLangFunc)(1963, os.str());
+            idsuiv=1236;
+            break;
+        case 1236:
+            texteTmp = (this->*getTextByLangFunc)(1964, os.str());
+            break;
+        case 1237:
+            texteTmp = (this->*getTextByLangFunc)(1965, os.str());
+            break;
+        case 1238:
+            texteTmp = (this->*getTextByLangFunc)(1966, os.str());
+            idsuiv=1241;
+            break;
+        case 1239:
+            texteTmp = (this->*getTextByLangFunc)(1967, os.str());
+            idsuiv=1240;
+            break;
+        case 1240:
+            texteTmp = (this->*getTextByLangFunc)(1968, os.str());
+            break;
+        case 1241:
+            texteTmp = (this->*getTextByLangFunc)(1969, os.str());
+            break;
+        case 1242:
+            texteTmp = (this->*getTextByLangFunc)(1970, os.str());
+            idsuiv=1244;
+            break;
+        case 1243:
+            texteTmp = (this->*getTextByLangFunc)(1971, os.str());
+            idsuiv=1245;
+            break;
+        case 1244:
+            texteTmp = (this->*getTextByLangFunc)(1972, os.str());
+            break;
+        case 1245:
+            texteTmp = (this->*getTextByLangFunc)(1973, os.str());
+            break;
+        case 1246:
+            texteTmp = (this->*getTextByLangFunc)(1974, os.str());
+            idsuiv=1249;
+            break;
+        case 1247:
+            texteTmp = (this->*getTextByLangFunc)(1975, os.str());
+            idsuiv=1248;
+            break;
+        case 1248:
+            texteTmp = (this->*getTextByLangFunc)(1976, os.str());
+            break;
+        case 1249:
+            texteTmp = (this->*getTextByLangFunc)(1977, os.str());
+            break;
+        case 1250:
+            texteTmp = (this->*getTextByLangFunc)(1978, os.str());
+            idsuiv=1253;
+            break;
+        case 1251:
+            texteTmp = (this->*getTextByLangFunc)(1979, os.str());
+            idsuiv=1252;
+            break;
+        case 1252:
+            texteTmp = (this->*getTextByLangFunc)(1980, os.str());
+            break;
+        case 1253:
+            texteTmp = (this->*getTextByLangFunc)(1981, os.str());
+            break;
+        case 1254:
+            texteTmp = (this->*getTextByLangFunc)(1982, os.str());
+            idsuiv=1257;
+            break;
+        case 1255:
+            texteTmp = (this->*getTextByLangFunc)(1983, os.str());
+            idsuiv=1256;
+            break;
+        case 1256:
+            texteTmp = (this->*getTextByLangFunc)(1984, os.str());
+            break;
+        case 1257:
+            texteTmp = (this->*getTextByLangFunc)(1985, os.str());
+            break;
+        case 1258:
+            texteTmp = (this->*getTextByLangFunc)(1986, os.str());
+            idsuiv=1261;
+            break;
+        case 1259:
+            texteTmp = (this->*getTextByLangFunc)(1987, os.str());
+            idsuiv=1260;
+            break;
+        case 1260:
+            texteTmp = (this->*getTextByLangFunc)(1988, os.str());
+            break;
+        case 1261:
+            texteTmp = (this->*getTextByLangFunc)(1989, os.str());
+            break;
+        case 1262:
+            texteTmp = (this->*getTextByLangFunc)(1990, os.str());
+            idsuiv=1264;
+            break;
+        case 1263:
+            texteTmp = (this->*getTextByLangFunc)(1991, os.str());
+            idsuiv=1265;
+            break;
+        case 1264:
+            texteTmp = (this->*getTextByLangFunc)(1992, os.str());
+            break;
+        case 1265:
+            texteTmp = (this->*getTextByLangFunc)(1993, os.str());
+            break;
+        case 1266:
+            tmp = gpJeu->getJoueur()->getTemps(2);
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1994, os.str())+os.str()+(this->*getTextByLangFunc)(1995, os.str());
+            idsuiv=1268;
+            break;
+        case 1267:
+            tmp = gpJeu->getJoueur()->getTemps(2);
+            os << tmp;
+            texteTmp = (this->*getTextByLangFunc)(1996, os.str())+os.str()+(this->*getTextByLangFunc)(1997, os.str());
+            idsuiv=1269;
+            break;
+        case 1268:
+            texteTmp = (this->*getTextByLangFunc)(1998, os.str());
+            break;
+        case 1269:
+            texteTmp = (this->*getTextByLangFunc)(1999, os.str());
+            break;
+        case 1270:
+            texteTmp = (this->*getTextByLangFunc)(2000, os.str());
+            idsuiv=1273;
+            break;
+        case 1271:
+            texteTmp = (this->*getTextByLangFunc)(2001, os.str());
+            idsuiv=1272;
+            break;
+        case 1272:
+            texteTmp = (this->*getTextByLangFunc)(2002, os.str());
+            break;
+        case 1273:
+            texteTmp = (this->*getTextByLangFunc)(2003, os.str());
+            break;
+        case 1274:
+            texteTmp = (this->*getTextByLangFunc)(2004, os.str());
+            idsuiv=1276;
+            break;
+        case 1275:
+            texteTmp = (this->*getTextByLangFunc)(2005, os.str());
+            idsuiv=1277;
+            break;
+        case 1276:
+            texteTmp = (this->*getTextByLangFunc)(2006, os.str());
+            break;
+        case 1277:
+            texteTmp = (this->*getTextByLangFunc)(2007, os.str());
+            break;
+        case 1278:
+            texteTmp = (this->*getTextByLangFunc)(2008, os.str());
+            idsuiv=1280;
+            break;
+        case 1279:
+            texteTmp = (this->*getTextByLangFunc)(2009, os.str());
+            idsuiv=1281;
+            break;
+        case 1280:
+            texteTmp = (this->*getTextByLangFunc)(2010, os.str());
+            break;
+        case 1281:
+            texteTmp = (this->*getTextByLangFunc)(2011, os.str());
+            break;
+        case 1282:
+            texteTmp = (this->*getTextByLangFunc)(2012, os.str());
+            idsuiv=1285;
+            break;
+        case 1283:
+            texteTmp = (this->*getTextByLangFunc)(2013, os.str());
+            idsuiv=1284;
+            break;
+        case 1284:
+            texteTmp = (this->*getTextByLangFunc)(2014, os.str());
+            break;
+        case 1285:
+            texteTmp = (this->*getTextByLangFunc)(2015, os.str());
+            break;
+        case 1286:
+            texteTmp = (this->*getTextByLangFunc)(2016, os.str());
+            idsuiv=1289;
+            break;
+        case 1287:
+            texteTmp = (this->*getTextByLangFunc)(2017, os.str());
+            idsuiv=1288;
+            break;
+        case 1288:
+            texteTmp = (this->*getTextByLangFunc)(2018, os.str());
+            break;
+        case 1289:
+            texteTmp = (this->*getTextByLangFunc)(2019, os.str());
+            break;
+        case 1290:
+            texteTmp = (this->*getTextByLangFunc)(2020, os.str());
+            idsuiv=1292;
+            break;
+        case 1291:
+            texteTmp = (this->*getTextByLangFunc)(2021, os.str());
+            idsuiv=1293;
+            break;
+        case 1292:
+            texteTmp = (this->*getTextByLangFunc)(2022, os.str());
+            break;
+        case 1293:
+            texteTmp = (this->*getTextByLangFunc)(2023, os.str());
+            break;
+        case 1294:
+            texteTmp = (this->*getTextByLangFunc)(2024, os.str());
+            idsuiv=1297;
+            break;
+        case 1295:
+            texteTmp = (this->*getTextByLangFunc)(2025, os.str());
+            idsuiv=1296;
+            break;
+        case 1296:
+            texteTmp = (this->*getTextByLangFunc)(2026, os.str());
+            break;
+        case 1297:
+            texteTmp = (this->*getTextByLangFunc)(2027, os.str());
+            break;
+        case 1298:
+            texteTmp = (this->*getTextByLangFunc)(2028, os.str());
+            idsuiv=1300;
+            break;
+        case 1299:
+            texteTmp = (this->*getTextByLangFunc)(2029, os.str());
+            idsuiv=1301;
+            break;
+        case 1300:
+            texteTmp = (this->*getTextByLangFunc)(2030, os.str());
+            break;
+        case 1301:
+            texteTmp = (this->*getTextByLangFunc)(2031, os.str());
+            break;
+        case 1302:
+            texteTmp = (this->*getTextByLangFunc)(2032, os.str());
+            idsuiv=1305;
+            break;
+        case 1303:
+            texteTmp = (this->*getTextByLangFunc)(2033, os.str());
+            idsuiv=1304;
+            break;
+        case 1304:
+            texteTmp = (this->*getTextByLangFunc)(2034, os.str());
+            break;
+        case 1305:
+            texteTmp = (this->*getTextByLangFunc)(2035, os.str());
+            break;
+        case 1306:
+            texteTmp = (this->*getTextByLangFunc)(2036, os.str());
+            idsuiv=1308;
+            break;
+        case 1307:
+            texteTmp = (this->*getTextByLangFunc)(2037, os.str());
+            idsuiv=1309;
+            break;
+        case 1308:
+            texteTmp = (this->*getTextByLangFunc)(2038, os.str());
+            break;
+        case 1309:
+            texteTmp = (this->*getTextByLangFunc)(2039, os.str());
+            break;
+        case 1310:
+            texteTmp = (this->*getTextByLangFunc)(2040, os.str());
+            idsuiv=1313;
+            break;
+        case 1311:
+            texteTmp = (this->*getTextByLangFunc)(2041, os.str());
+            idsuiv=1312;
+            break;
+        case 1312:
+            texteTmp = (this->*getTextByLangFunc)(2042, os.str());
+            break;
+        case 1313:
+            texteTmp = (this->*getTextByLangFunc)(2043, os.str());
+            break;
+        case 1314:
+            texteTmp = (this->*getTextByLangFunc)(2044, os.str());
+            break;
+        case 1315:
+            texteTmp = (this->*getTextByLangFunc)(2045, os.str());
+            break;
+        case 1316:
+            texteTmp = (this->*getTextByLangFunc)(2046, os.str());
+            break;
+        case 1317:
+            texteTmp = (this->*getTextByLangFunc)(2047, os.str());
+            idsuiv=1318;
+            break;
+        case 1318:
+            texteTmp = (this->*getTextByLangFunc)(2048, os.str());
+            idsuiv=1319;
+            break;
+        case 1319:
+            texteTmp = (this->*getTextByLangFunc)(2049, os.str());
+            idsuiv=1320;
+            break;
+        case 1320:
+            texteTmp = (this->*getTextByLangFunc)(2050, os.str());
+            break;
+        case 1321:
+            texteTmp = (this->*getTextByLangFunc)(2051, os.str());
+            break;
+        case 1322:
+            texteTmp = (this->*getTextByLangFunc)(2052, os.str());
+            idsuiv=1323;
+            break;
+        case 1323:
+            texteTmp = (this->*getTextByLangFunc)(2053, os.str());
+            idsuiv=1324;
+            break;
+        case 1324:
+            texteTmp = (this->*getTextByLangFunc)(2054, os.str());
+            idsuiv=1325;
+            break;
+        case 1325:
+            texteTmp = (this->*getTextByLangFunc)(2055, os.str());
+            idsuiv=1326;
+            break;
+        case 1326:
+            texteTmp = (this->*getTextByLangFunc)(2056, os.str());
+            break;
+        case 1327:
+            texteTmp = (this->*getTextByLangFunc)(2057, os.str());
+            idsuiv=1329;
+            break;
+        case 1328:
+            texteTmp = (this->*getTextByLangFunc)(2058, os.str());
+            idsuiv=1332;
+            break;
+        case 1329:
+            texteTmp = (this->*getTextByLangFunc)(2059, os.str());
+            idsuiv=1330;
+            break;
+        case 1330:
+            texteTmp = (this->*getTextByLangFunc)(2060, os.str());
+            idsuiv=1331;
+            break;
+        case 1331:
+            texteTmp = (this->*getTextByLangFunc)(2061, os.str());
+            idsuiv=1332;
+            break;
+        case 1332:
+            texteTmp = (this->*getTextByLangFunc)(2062, os.str());
+            break;
         case 1333:
-            if (gpJeu->getJoueur()->getCoffre(14,9)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 30 && gpJeu->getJoueur()->getCompteurType() >= 4) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2063, os.str()); break;
-        case 1334: texte = (this->*getTextByLangFunc)(2064, os.str()); break;
-        case 1335: texte = (this->*getTextByLangFunc)(2065, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,9)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 30 && gpJeu->getJoueur()->getCompteurType() >= 4) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2063, os.str());
+            break;
+        case 1334:
+            texteTmp = (this->*getTextByLangFunc)(2064, os.str());
+            break;
+        case 1335:
+            texteTmp = (this->*getTextByLangFunc)(2065, os.str());
+            break;
         case 1336:
-            if (gpJeu->getJoueur()->getCoffre(14,10)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 60 && gpJeu->getJoueur()->getCompteurType() >= 10) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2066, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,10)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 60 && gpJeu->getJoueur()->getCompteurType() >= 10) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2066, os.str());
+            break;
         case 1337:
-            if (gpJeu->getJoueur()->getCoffre(14,11)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 20 && gpJeu->getJoueur()->getCompteurType() >= 3) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2067, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,11)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 20 && gpJeu->getJoueur()->getCompteurType() >= 3) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2067, os.str());
+            break;
         case 1338:
-            if (gpJeu->getJoueur()->getCoffre(14,12)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 99 && gpJeu->getJoueur()->getCompteurType() >= 12) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2068, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,12)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 99 && gpJeu->getJoueur()->getCompteurType() >= 12) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2068, os.str());
+            break;
         case 1339:
-            if (gpJeu->getJoueur()->getCoffre(14,13)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 30 && gpJeu->getJoueur()->getCompteurType() >= 12) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2069, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,13)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 30 && gpJeu->getJoueur()->getCompteurType() >= 12) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2069, os.str());
+            break;
         case 1340:
-            if (gpJeu->getJoueur()->getCoffre(14,14)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 40 && gpJeu->getJoueur()->getCompteurType() >= 6) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2070, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,14)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 40 && gpJeu->getJoueur()->getCompteurType() >= 6) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2070, os.str());
+            break;
         case 1341:
-            if (gpJeu->getJoueur()->getCoffre(14,15)) {id=1334; chercheText();break;}
-            if (gpJeu->getJoueur()->getCompteurEnn() >= 50 && gpJeu->getJoueur()->getCompteurType() >= 7) {id=1335; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2071, os.str()); break;
+            if (gpJeu->getJoueur()->getCoffre(14,15)) {
+                id=1334;
+                break;
+            }
+            if (gpJeu->getJoueur()->getCompteurEnn() >= 50 && gpJeu->getJoueur()->getCompteurType() >= 7) {
+                id=1335;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2071, os.str());
+            break;
 #ifdef __vita__
-        case 1342: texte = (this->*getTextByLangFunc)(2072, os.str()); break;
+        case 1342:
+            texteTmp = (this->*getTextByLangFunc)(2072, os.str());
+            break;
 #else
-        case 1342: texte = (this->*getTextByLangFunc)(2073, os.str()); break;
+        case 1342:
+            texteTmp = (this->*getTextByLangFunc)(2073, os.str());
+            break;
 #endif
-        case 1343: texte = (this->*getTextByLangFunc)(2074, os.str()); idsuiv=1344; break;
-        case 1344: texte = (this->*getTextByLangFunc)(2075, os.str()); idsuiv=1345; break;
-        case 1345: texte = (this->*getTextByLangFunc)(2076, os.str()); break;
-        case 1346: 
-            if (gpJeu->nbEnnemis()==0) {id=1348; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2077, os.str()); break;
-        case 1347: 
-            if (gpJeu->nbEnnemis()==0) {id=1349; chercheText();break;}
-            if (gpJeu->getEnnemi()->getSuivant()->getSpecial(2)<13) {id=1350; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2078, os.str()); break;
-        case 1348: texte = (this->*getTextByLangFunc)(2079, os.str()); break;
-        case 1349: texte = (this->*getTextByLangFunc)(2080, os.str()); break;
-        case 1350: texte = (this->*getTextByLangFunc)(2081, os.str()); break;
-        case 1351: texte = (this->*getTextByLangFunc)(2082, os.str()); break;
-        case 1352: texte = (this->*getTextByLangFunc)(2083, os.str()); idsuiv=1353; break;
-        case 1353: texte = (this->*getTextByLangFunc)(2084, os.str()); idsuiv=1354; break;
-        case 1354: texte = (this->*getTextByLangFunc)(2085, os.str()); idsuiv=1355; break;
-        case 1355: texte = (this->*getTextByLangFunc)(2086, os.str()); idsuiv=1356; break;
-        case 1356: texte = (this->*getTextByLangFunc)(2087, os.str()); idsuiv=1357; break;
-        case 1357: texte = (this->*getTextByLangFunc)(2088, os.str()); idsuiv=1358; break;
-        case 1358: texte = (this->*getTextByLangFunc)(2089, os.str()); break;
-        case 1359: texte = (this->*getTextByLangFunc)(2090, os.str()); idsuiv=1360; break;
-        case 1360: texte = (this->*getTextByLangFunc)(2091, os.str()); break;
-        case 1361: texte = (this->*getTextByLangFunc)(2092, os.str()); idsuiv=1362; break;
-        case 1362: texte = (this->*getTextByLangFunc)(2093, os.str()); idsuiv=1363; break;
-        case 1363: texte = (this->*getTextByLangFunc)(2094, os.str()); idsuiv=1364; break;
-        case 1364: texte = (this->*getTextByLangFunc)(2095, os.str()); buffer=(this->*getTextByLangFunc)(2096, os.str()); idsuiv=1365; break;
-        case 1365: texte = (this->*getTextByLangFunc)(2097, os.str()); break;
-        case 1366: texte = (this->*getTextByLangFunc)(2098, os.str()); break;
+        case 1343:
+            texteTmp = (this->*getTextByLangFunc)(2074, os.str());
+            idsuiv=1344;
+            break;
+        case 1344:
+            texteTmp = (this->*getTextByLangFunc)(2075, os.str());
+            idsuiv=1345;
+            break;
+        case 1345:
+            texteTmp = (this->*getTextByLangFunc)(2076, os.str());
+            break;
+        case 1346:
+            if (gpJeu->nbEnnemis()==0) {
+                id=1348;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2077, os.str());
+            break;
+        case 1347:
+            if (gpJeu->nbEnnemis()==0) {
+                id=1349;
+                break;
+            }
+            if (gpJeu->getEnnemi()->getSuivant()->getSpecial(2)<13) {
+                id=1350;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2078, os.str());
+            break;
+        case 1348:
+            texteTmp = (this->*getTextByLangFunc)(2079, os.str());
+            break;
+        case 1349:
+            texteTmp = (this->*getTextByLangFunc)(2080, os.str());
+            break;
+        case 1350:
+            texteTmp = (this->*getTextByLangFunc)(2081, os.str());
+            break;
+        case 1351:
+            texteTmp = (this->*getTextByLangFunc)(2082, os.str());
+            break;
+        case 1352:
+            texteTmp = (this->*getTextByLangFunc)(2083, os.str());
+            idsuiv=1353;
+            break;
+        case 1353:
+            texteTmp = (this->*getTextByLangFunc)(2084, os.str());
+            idsuiv=1354;
+            break;
+        case 1354:
+            texteTmp = (this->*getTextByLangFunc)(2085, os.str());
+            idsuiv=1355;
+            break;
+        case 1355:
+            texteTmp = (this->*getTextByLangFunc)(2086, os.str());
+            idsuiv=1356;
+            break;
+        case 1356:
+            texteTmp = (this->*getTextByLangFunc)(2087, os.str());
+            idsuiv=1357;
+            break;
+        case 1357:
+            texteTmp = (this->*getTextByLangFunc)(2088, os.str());
+            idsuiv=1358;
+            break;
+        case 1358:
+            texteTmp = (this->*getTextByLangFunc)(2089, os.str());
+            break;
+        case 1359:
+            texteTmp = (this->*getTextByLangFunc)(2090, os.str());
+            idsuiv=1360;
+            break;
+        case 1360:
+            texteTmp = (this->*getTextByLangFunc)(2091, os.str());
+            break;
+        case 1361:
+            texteTmp = (this->*getTextByLangFunc)(2092, os.str());
+            idsuiv=1362;
+            break;
+        case 1362:
+            texteTmp = (this->*getTextByLangFunc)(2093, os.str());
+            idsuiv=1363;
+            break;
+        case 1363:
+            texteTmp = (this->*getTextByLangFunc)(2094, os.str());
+            idsuiv=1364;
+            break;
+        case 1364:
+            texteTmp = (this->*getTextByLangFunc)(2095, os.str());
+            buffer=(this->*getTextByLangFunc)(2096, os.str());
+            idsuiv=1365;
+            break;
+        case 1365:
+            texteTmp = (this->*getTextByLangFunc)(2097, os.str());
+            break;
+        case 1366:
+            texteTmp = (this->*getTextByLangFunc)(2098, os.str());
+            break;
 #ifdef __vita__
-        case 1367: texte = (this->*getTextByLangFunc)(2099, os.str()); break;
+        case 1367:
+            texteTmp = (this->*getTextByLangFunc)(2099, os.str());
+            break;
 #else
-        case 1367: texte = (this->*getTextByLangFunc)(2100, os.str()); break;
+        case 1367:
+            texteTmp = (this->*getTextByLangFunc)(2100, os.str());
+            break;
 #endif
-        case 1368: texte = (this->*getTextByLangFunc)(2101, os.str()); break;
-        case 1369: texte = (this->*getTextByLangFunc)(2102, os.str()); break;
-        case 1370: texte = (this->*getTextByLangFunc)(2103, os.str()); break;
-		case 1371:
+        case 1368:
+            texteTmp = (this->*getTextByLangFunc)(2101, os.str());
+            break;
+        case 1369:
+            texteTmp = (this->*getTextByLangFunc)(2102, os.str());
+            break;
+        case 1370:
+            texteTmp = (this->*getTextByLangFunc)(2103, os.str());
+            break;
+        case 1371:
             tmp = 0;
             for (int i = 0; i < 9; i++) if (gpJeu->getKeyboard()->getRang(i)) tmp++;
-            if (tmp == 9 && gpJeu->getJoueur()->getEnnemi(141)) {id=1372; chercheText();break;}
-            texte = (this->*getTextByLangFunc)(2104, os.str());
+            if (tmp == 9 && gpJeu->getJoueur()->getEnnemi(141)) {
+                id=1372;
+                break;
+            }
+            texteTmp = (this->*getTextByLangFunc)(2104, os.str());
             break;
-        case 1372: texte = (this->*getTextByLangFunc)(2105, os.str()); break;
-        case 1373: texte = (this->*getTextByLangFunc)(2106, os.str()); idsuiv=1374; break;
-        case 1374: texte = (this->*getTextByLangFunc)(2107, os.str()); break;
-        case 1375: texte = (this->*getTextByLangFunc)(2108, os.str()); break;
-        case 1376: texte = (this->*getTextByLangFunc)(2109, os.str()); idsuiv=1377; break;
-        case 1377: texte = (this->*getTextByLangFunc)(2110, os.str()); break;
-        case 1378: texte = (this->*getTextByLangFunc)(2111, os.str());break;
+        case 1372:
+            texteTmp = (this->*getTextByLangFunc)(2105, os.str());
+            break;
+        case 1373:
+            texteTmp = (this->*getTextByLangFunc)(2106, os.str());
+            idsuiv=1374;
+            break;
+        case 1374:
+            texteTmp = (this->*getTextByLangFunc)(2107, os.str());
+            break;
+        case 1375:
+            texteTmp = (this->*getTextByLangFunc)(2108, os.str());
+            break;
+        case 1376:
+            texteTmp = (this->*getTextByLangFunc)(2109, os.str());
+            idsuiv=1377;
+            break;
+        case 1377:
+            texteTmp = (this->*getTextByLangFunc)(2110, os.str());
+            break;
+        case 1378:
+            texteTmp = (this->*getTextByLangFunc)(2111, os.str());
+            break;
+        }
     }
+
+    texte = texteTmp;
 }
 
 int Texte::afficheCaractere(SDL_Surface* gpScreen, char character, int &i, std::string s, int a, int b) {

@@ -232,7 +232,7 @@ void ImGui_callback() {
 
         if (credits_window) {
             ImGui::Begin("Credits", &credits_window);
-            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Time to Triumph v1.4");
+            ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Time to Triumph v1.3.2");
             ImGui::Text("Game Creator: Vincent Jouillat");
             ImGui::Text("Port Author: usineur");
             ImGui::Separator();

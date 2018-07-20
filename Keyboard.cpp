@@ -507,7 +507,7 @@ void Keyboard::pollKeys(Uint8* keys) {
             }
             
             
-            //épée
+            //ï¿½pï¿½e
             if ((gpJoueur->getTypeAnim()==AUCUNE || gpJoueur->getTypeAnim()==MARCHE) 
             && !gpJoueur->getCharge() && gpJoueur->getEpee() && !gpJeu->getStop()
             && !gpJoueur->isLapin() && !gpJoueur->getImmo()) {
@@ -579,7 +579,7 @@ void Keyboard::pollKeys(Uint8* keys) {
                         if (gpJoueur->hasObjet(O_SAC_BOMBES) && gpJoueur->getBombe()) 
                             gpJoueur->setTypeAnim(BOMBE);
                         break;
-                    case 3 : //flèche feu ou troc 1
+                    case 3 : //flï¿½che feu ou troc 1
                         if (gpJoueur->hasObjet(O_FFEU)) {
                             if (gpJoueur->hasObjet(O_ARC)) gpJoueur->setTypeAnim(ARC);
                         }
@@ -611,7 +611,7 @@ void Keyboard::pollKeys(Uint8* keys) {
                             gpJoueur->setTypeAnim(JOUE);
                             gpJeu->ecrit(47);}
                         break;
-                    case 10 : //canne à pêche
+                    case 10 : //canne ï¿½ pï¿½che
                         if (gpJoueur->getTypeAnim()==PECHE) gpJoueur->finPeche();
                         else gpJoueur->peche();
                         break;
@@ -1197,10 +1197,10 @@ int Keyboard::stickPosition(int stick, int direction) {
     if (stick == RSTICK && (direction == STICK_UP || direction == STICK_DOWN)) axis = 3; // Right stick, vertical axis
 
     axisValue = SDL_JoystickGetAxis(joystick, axis); // range is -32768 to 32767
-    if ((axisValue < -31000 && direction == STICK_LEFT)
-      || (axisValue > 31000 && direction == STICK_RIGHT)
-      || (axisValue < -31000 && direction == STICK_UP)
-      || (axisValue > 31000 && direction == STICK_DOWN)) return 1;
+    if ((axisValue < -16384 && direction == STICK_LEFT)
+      || (axisValue > 16384 && direction == STICK_RIGHT)
+      || (axisValue < -16384 && direction == STICK_UP)
+      || (axisValue > 16384 && direction == STICK_DOWN)) return 1;
     else return 0;
 #else
     return 0;
